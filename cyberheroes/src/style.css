@@ -1,0 +1,166 @@
+body {
+    color: #89BFF2 !important;
+    background-image: url('./img/main_background.png');
+}
+
+/* exploration map css */
+.exploration-heading {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0;
+    padding: 20px 0;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.exploration-container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+    position: relative;
+}
+
+.planets-map {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    min-width: min-content;
+}
+
+.planet-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+    margin-top: 200px;  /* Increased from 100px to 200px for more exaggeration */
+}
+
+/* Create zig-zag pattern by moving odd-numbered planets up */
+.planet-container:nth-child(odd) {
+    margin-top: 0;
+}
+
+.planet {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+    overflow: visible;
+    margin-bottom: 60px;
+}
+
+.planet:hover {
+    transform: scale(1.1);
+}
+
+.planet-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.planet-name {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #89BFF2;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+.planet-connector {
+    width: 80px;
+    height: 2px;
+    background-color: transparent;
+    border-top: 2px dotted #89BFF2;
+    opacity: 0.5;
+    position: relative;
+}
+
+/* Adjust connector for even-numbered planets (lower) */
+.planet-container:nth-child(even) .planet-connector {
+    transform: rotate(-45deg);
+    transform-origin: left center;
+}
+
+/* Adjust connector for odd-numbered planets (higher) */
+.planet-container:nth-child(odd) .planet-connector {
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
+/* Remove rotation for the last connector */
+.planet-container:last-child .planet-connector {
+    display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.exploration-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.exploration-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@media (max-width: 768px) {
+    .planets-map {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .planet-connector {
+        width: 2px;
+        height: 50px;
+    }
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 40px;
+    background-color: rgba(137, 191, 242, 0.2);
+    border: 2px solid #89BFF2;
+    color: #89BFF2;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-left {
+    left: 40px;
+}
+
+.scroll-right {
+    right: 40px;
+}
+
+.scroll-button:hover {
+    background-color: rgba(137, 191, 242, 0.4);
+    transform: scale(1.1);
+}
