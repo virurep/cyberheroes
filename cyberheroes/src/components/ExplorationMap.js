@@ -12,8 +12,11 @@ const ExplorationMap = () => {
   const [showRightButton, setShowRightButton] = useState(true);
 
   const planets = [
-    { name: "Privacy Planet", image: privacyPlanet },
-    { name: "Privacy Moon", image: privacyMoon },
+    { 
+      name: "Privacy Planet", 
+      image: privacyPlanet,
+      moon: { name: "Privacy Moon", image: privacyMoon }
+    },
     { name: "Passwords", image: passwordPlanet },
     { name: "Safe Browsing", image: safeBrowsingPlanet },
     { name: "Online Sharing", image: onlineSharingPlanet },
@@ -58,6 +61,15 @@ const ExplorationMap = () => {
               <img src={planet.image} alt={planet.name} className="planet-image" />
               <span className="planet-name">{planet.name}</span>
             </div>
+            {planet.moon && (
+              <div className="moon-container">
+                <div className="moon">
+                  <img src={planet.moon.image} alt={planet.moon.name} className="moon-image" />
+                  <span className="moon-name">{planet.moon.name}</span>
+                </div>
+                <div className="moon-connector"></div>
+              </div>
+            )}
             {index < planets.length - 1 && <div className="planet-connector" />}
           </div>
         ))}
