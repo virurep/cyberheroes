@@ -5,6 +5,7 @@ import passwordPlanet from '../img/passwordsplanet.png';
 import safeBrowsingPlanet from '../img/safebrowsing.png';
 import onlineSharingPlanet from '../img/onlinesharing.png';
 import malwarePlanet from '../img/malware.png';
+import jet from '../img/jet.png';
 import { useState, useEffect } from 'react';
 
 const ExplorationMap = () => {
@@ -55,6 +56,9 @@ const ExplorationMap = () => {
     <div className="exploration-container">
       <h1 className="exploration-heading">Explore the Galaxy Through Various Lessons</h1>
       <div className="planets-map">
+        <div className="jet-container">
+          <img src={jet} alt="Jet" className="jet-image" />
+        </div>
         {planets.map((planet, index) => (
           <div key={planet.name} className="planet-container">
             <div className="planet">
