@@ -6,6 +6,7 @@ import safeBrowsingPlanet from '../img/safebrowsing.png';
 import onlineSharingPlanet from '../img/onlinesharing.png';
 import malwarePlanet from '../img/malware.png';
 import jet from '../img/jet.png';
+import Navbar from './NavBar';
 import { useState, useEffect } from 'react';
 
 const ExplorationMap = () => {
@@ -53,41 +54,44 @@ const ExplorationMap = () => {
   }, []);
 
   return (
-    <div className="exploration-container">
-      <h1 className="exploration-heading">Explore the Galaxy Through Various Lessons</h1>
-      <div className="planets-map">
-        <div className="jet-container">
-          <img src={jet} alt="Jet" className="jet-image" />
-        </div>
-        {planets.map((planet, index) => (
-          <div key={planet.name} className="planet-container">
-            <div className="planet">
-              <img src={planet.image} alt={planet.name} className="planet-image" />
-              <span className="planet-name">{planet.name}</span>
-            </div>
-            {planet.moon && (
-              <div className="moon-container">
-                <div className="moon">
-                  <img src={planet.moon.image} alt={planet.moon.name} className="moon-image" />
-                  <span className="moon-name">{planet.moon.name}</span>
-                </div>
-                <div className="moon-connector"></div>
-              </div>
-            )}
-            {index < planets.length - 1 && <div className="planet-connector" />}
+    <div>
+      <Navbar />
+      <div className="exploration-container">
+        <h1 className="exploration-heading">Explore the Galaxy Through Various Lessons</h1>
+        <div className="planets-map">
+          <div className="jet-container">
+            <img src={jet} alt="Jet" className="jet-image" />
           </div>
-        ))}
+          {planets.map((planet, index) => (
+            <div key={planet.name} className="planet-container">
+              <div className="planet">
+                <img src={planet.image} alt={planet.name} className="planet-image" />
+                <span className="planet-name">{planet.name}</span>
+              </div>
+              {planet.moon && (
+                <div className="moon-container">
+                  <div className="moon">
+                    <img src={planet.moon.image} alt={planet.moon.name} className="moon-image" />
+                    <span className="moon-name">{planet.moon.name}</span>
+                  </div>
+                  <div className="moon-connector"></div>
+                </div>
+              )}
+              {index < planets.length - 1 && <div className="planet-connector" />}
+            </div>
+          ))}
+        </div>
+        {showLeftButton && (
+          <button className="scroll-button scroll-left" onClick={() => handleScroll(-1)}>
+            ← Scroll Left
+          </button>
+        )}
+        {showRightButton && (
+          <button className="scroll-button scroll-right" onClick={() => handleScroll(1)}>
+            Scroll Right →
+          </button>
+        )}
       </div>
-      {showLeftButton && (
-        <button className="scroll-button scroll-left" onClick={() => handleScroll(-1)}>
-          ← Scroll Left
-        </button>
-      )}
-      {showRightButton && (
-        <button className="scroll-button scroll-right" onClick={() => handleScroll(1)}>
-          Scroll Right →
-        </button>
-      )}
     </div>
   );
 };
