@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import logo from "./img/logo.png";
-import hero from "./img/hero.png";
+import rocket from "./img/rocket.png";
 import { useNavigate } from "react-router-dom";
 
 const IntroPage = () => {
@@ -25,11 +25,16 @@ const IntroPage = () => {
             <main>
                 <div>
                     <h1 className="intro-text">
-                        Your adventure has begun!
+                    Hi I'm Cyber Hero. I fly around space and protect those in need from online threats.
+                    Let us checkout some new planets and see if anyone needs help.
+
                     </h1>
                     <button className="red-button" onClick={goToMap}>
                         Open Exploration Map
                     </button>
+                </div>
+                <div>
+                    <img id="rocket-flying" src={rocket} alt="Rocket Flying" />
                 </div>
             </main>
         </div>
