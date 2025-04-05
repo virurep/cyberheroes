@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import Button from './components/Button';
 import PrivacyPlanet from './components/PrivacyPlanet';
 import ExplorationMap from "./components/ExplorationMap";
@@ -13,7 +11,7 @@ function App() {
         <Routes>
           <Route index element={<LandingPage />} />
           <Route path="/intro" element={<IntroPage />} />
-        <Route path="/privacy-planet/*" element={<PrivacyPlanet />} />
+          <Route path="/privacy-planet/*" element={<PrivacyPlanet />} />
           <Route path="/exploration-map" element={<ExplorationMap />} />
         </Routes>
       </div>
