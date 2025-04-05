@@ -366,3 +366,13 @@ body {
 .home-button:hover {
     background-color: #FFC000;
 }
+
+.logo-link, .title-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-link:hover, .title-link:hover {
+    opacity: 0.9;
+}
