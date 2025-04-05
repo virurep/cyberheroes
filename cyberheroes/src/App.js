@@ -1,14 +1,23 @@
-import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import LandingPage from './components/landing.js'
-import IntroPage from './components/intro.js'
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route index element={<LandingPage />} />
-        <Route path="/intro" element={<IntroPage />} />
-      </Routes>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CYBERHEROES
+        </a>
+      </header>
     </div>
   );
 }
