@@ -1,3 +1,7 @@
+body {
+    color: #89BFF2 !important;
+    background-image: url('../img/main_background.png');
+}
 /* exploration map css */
 .exploration-heading {
     font-size: 48px;

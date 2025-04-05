@@ -1,4 +1,3 @@
-import '../styles/style.css';
 import '../styles/map.css';
 import privacyPlanet from '../img/privacyplanet.png';
 import privacyMoon from '../img/privacymoon.png';
