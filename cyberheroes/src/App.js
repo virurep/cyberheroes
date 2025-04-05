@@ -1,3 +1,7 @@
+import logo from './logo.svg';
+import './App.css';
+import Button from './components/Button';
+import PrivacyPlanet from './components/PrivacyPlanet';
 import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import LandingPage from './components/landing.js'
 import IntroPage from './components/intro.js'
@@ -8,6 +12,7 @@ function App() {
       <Routes>
         <Route index element={<LandingPage />} />
         <Route path="/intro" element={<IntroPage />} />
+        <Route path="/privacy-planet/*" element={<PrivacyPlanet />} />
       </Routes>
     </div>
   );
