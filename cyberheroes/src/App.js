@@ -2,19 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button';
 import PrivacyPlanet from './components/PrivacyPlanet';
+import ExplorationMap from "./components/ExplorationMap";
 import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import LandingPage from './components/landing.js'
 import IntroPage from './components/intro.js'
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route index element={<LandingPage />} />
-        <Route path="/intro" element={<IntroPage />} />
+      <div>
+        <Routes>
+          <Route index element={<LandingPage />} />
+          <Route path="/intro" element={<IntroPage />} />
         <Route path="/privacy-planet/*" element={<PrivacyPlanet />} />
-      </Routes>
-    </div>
+          <Route path="/exploration-map" element={<ExplorationMap />} />
+        </Routes>
+      </div>
+
   );
 }
 
