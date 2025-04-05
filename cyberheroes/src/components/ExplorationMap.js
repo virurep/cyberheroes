@@ -1,4 +1,5 @@
-import '../style.css';
+import '../styles/style.css';
+import '../styles/map.css';
 import privacyPlanet from '../img/privacyplanet.png';
 import privacyMoon from '../img/privacymoon.png';
 import passwordPlanet from '../img/passwordsplanet.png';
