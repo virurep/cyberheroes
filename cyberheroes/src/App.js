@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import LandingPage from './landing.js'
-import IntroPage from './intro.js'
+import LandingPage from './components/landing.js'
+import IntroPage from './components/intro.js'
 
 function App() {
   return (
