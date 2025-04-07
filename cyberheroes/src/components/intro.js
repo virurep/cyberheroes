@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/style.css";
-import logo from "../img/logo.png";
-import rocket from "../img/rocket.png";
+import logo from "../img/general/logo.png";
+import rocket from "../img/general/rocket.png";
 import { useNavigate } from "react-router-dom";
 
 const IntroPage = () => {

@@ -1,8 +1,8 @@
 // import '../style.css';
 import '../styles/intro.css';
 import { useNavigate } from "react-router-dom";
-import computer from "../img/computer.png";
-import patrick from "../img/patrick-wanted.png";
+import computer from "../img/general/computer.png";
+import patrick from "../img/characters/patrick-wanted.png";
 
 const PrivacyIntro = () => {
 

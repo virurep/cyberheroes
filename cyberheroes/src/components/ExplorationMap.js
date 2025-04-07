@@ -1,11 +1,11 @@
 import '../styles/map.css';
-import privacyPlanet from '../img/privacyplanet.png';
-import privacyMoon from '../img/privacymoon.png';
-import passwordPlanet from '../img/passwordsplanet.png';
-import safeBrowsingPlanet from '../img/safebrowsing.png';
-import onlineSharingPlanet from '../img/onlinesharing.png';
-import malwarePlanet from '../img/malware.png';
-import jet from '../img/jet.png';
+import privacyPlanet from '../img/planets/privacyplanet.png';
+import privacyMoon from '../img/planets/privacymoon.png';
+import passwordPlanet from '../img/planets/passwordsplanet.png';
+import safeBrowsingPlanet from '../img/planets/safebrowsing.png';
+import onlineSharingPlanet from '../img/planets/onlinesharing.png';
+import malwarePlanet from '../img/planets/malware.png';
+import jet from '../img/general/jet.png';
 import Navbar from './NavBar';
 import { useState, useEffect } from 'react';
 
