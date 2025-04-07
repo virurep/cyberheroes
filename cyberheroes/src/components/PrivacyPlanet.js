@@ -19,10 +19,10 @@ const PrivacyPlanet = () => {
       {isIntroPage ? (
         <PrivacyIntro />
       ) : (
-        <div className="background">
+        <div className="lesson-intro-background">
           <div className="lesson-intro-side">
-            <img src={rocket} alt="Rocket Ship" className="rocket" />
-            <img src={privacyplanet} alt="Privacy Planet" className="planet" />
+            <img src={rocket} alt="Rocket Ship" className="lesson-intro-rocket" />
+            <img src={privacyplanet} alt="Privacy Planet" className="lesson-intro-planet" />
           </div>
           <div className="intro-message">
             <h1 className="arrivalTitle">You have arrived at Privacy Planet</h1>

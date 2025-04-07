@@ -5,7 +5,7 @@ body {
   place-content: center;
 }
 
-.background div {
+.lesson-intro-background div {
   width: 50%;
 }
 
@@ -18,7 +18,7 @@ h1 {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-button {
+.lesson-intro-background button, .privacy-intro-container button {
   background: #0F746F;
   color: #ffffff;
   border: none;
@@ -33,18 +33,26 @@ button {
   display: block;
 }
 
-button:hover {
+.lesson-intro-background button:hover, .privacy-intro-container button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
   background: #19ada6;
 }
 
-.start-button:active {
+.privacy-intro-container button {
+  background: #BF3B27;
+}
+
+.privacy-intro-container button:hover {
+  background: #EC5E48;
+}
+
+.lesson-intro-background button:active, .privacy-intro-container button:active {
   transform: translateY(0);
 }
 
 /* lesson intro page */
-.background {
+.lesson-intro-background {
   flex: 1;
   display: flex;
   justify-content: space-evenly;
@@ -59,11 +67,32 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
+.lesson-intro-side {
+  height: 100%;
+  width: 50%;
+}
+
 .intro-message {
   width: 50%;
   background-color: #C5E0EF;
   padding: 2rem;
   border-radius: 20px;
+}
+
+.lesson-intro-rocket {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, 25%) rotate(37.5deg);
+  max-width: 180px;
+}
+
+.lesson-intro-planet {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-125%, -25%);
+  width: 240px;
 }
 
 
