@@ -1,6 +1,6 @@
 import '../styles/map.css';
-import privacyPlanet from '../img/planets/privacyplanet.png';
-import privacyMoon from '../img/planets/privacymoon.png';
+import privacyPlanet from '../img/planets/privacy-planet.png';
+import privacyMoon from '../img/planets/privacy-moon.png';
 import passwordPlanet from '../img/planets/passwordsplanet.png';
 import safeBrowsingPlanet from '../img/planets/safebrowsing.png';
 import onlineSharingPlanet from '../img/planets/onlinesharing.png';
@@ -8,22 +8,32 @@ import malwarePlanet from '../img/planets/malware.png';
 import jet from '../img/general/jet.png';
 import Navbar from './NavBar';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const ExplorationMap = () => {
+  const navigate = useNavigate();
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
 
   const planets = [
-    { 
-      name: "Privacy Planet", 
+    {
+      name: "Privacy Planet",
       image: privacyPlanet,
-      moon: { name: "Privacy Moon", image: privacyMoon }
+      route: "privacy-planet",
+      moon: { name: "Privacy Moon", image: privacyMoon, route: "privacy-moon" }
     },
-    { name: "Passwords", image: passwordPlanet },
-    { name: "Safe Browsing", image: safeBrowsingPlanet },
-    { name: "Online Sharing", image: onlineSharingPlanet },
-    { name: "Malware", image: malwarePlanet }
+    { name: "Passwords", image: passwordPlanet, route: "passwords"},
+    { name: "Safe Browsing", image: safeBrowsingPlanet, route: "safe-browsing"},
+    { name: "Online Sharing", image: onlineSharingPlanet, route: "online-sharing"},
+    { name: "Malware", image: malwarePlanet, route: "malware"}
   ];
+
+  // goes to lesson intro of each planet
+  const handlePlanetClick = (planetRoute) => {
+    console.log("planetRoute: " + planetRoute);
+    navigate(`/${planetRoute}/lesson-intro`);
+  };
 
   const handleScroll = (direction) => {
     const container = document.querySelector('.exploration-container');
@@ -39,7 +49,7 @@ const ExplorationMap = () => {
       if (container) {
         // Show left button if we're not at the start
         setShowLeftButton(container.scrollLeft > 0);
-        
+
         // Show right button if we're not at the end
         const maxScroll = container.scrollWidth - container.clientWidth;
         setShowRightButton(container.scrollLeft < maxScroll - 10); // -10 for some tolerance
@@ -64,13 +74,13 @@ const ExplorationMap = () => {
           </div>
           {planets.map((planet, index) => (
             <div key={planet.name} className="planet-container">
-              <div className="planet">
+              <div className="planet" onClick={() => handlePlanetClick(planet.route)}>
                 <img src={planet.image} alt={planet.name} className="planet-image" />
                 <span className="planet-name">{planet.name}</span>
               </div>
               {planet.moon && (
                 <div className="moon-container">
-                  <div className="moon">
+                  <div className="moon" onClick={() => handlePlanetClick(planet.moon.route)}>
                     <img src={planet.moon.image} alt={planet.moon.name} className="moon-image" />
                     <span className="moon-name">{planet.moon.name}</span>
                   </div>
