@@ -72,8 +72,8 @@ h1 {
     width: 600px;
     height: 600px;
     position: absolute;
-    left: -450px;
-    top: 630px;
+    left: -400px;
+    top: 400px;
     animation: fly 7s linear forwards;
 }
 
