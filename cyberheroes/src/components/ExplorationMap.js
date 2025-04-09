@@ -2,7 +2,7 @@ import '../styles/map.css';
 
 import privacyPlanet from '../img/planets/privacy-planet.png';
 import privacyMoon from '../img/planets/privacy-moon.png';
-import passwordPlanet from '../img/planets/passwordsplanet.png';
+import phishingPlanet from '../img/planets/phishing-planet.png';
 
 import safeBrowsingPlanet from '../img/planets/safebrowsing.png';
 import onlineSharingPlanet from '../img/planets/onlinesharing.png';
@@ -25,7 +25,7 @@ const ExplorationMap = () => {
       route: "privacy-planet",
       moon: { name: "Privacy Moon", image: privacyMoon, route: "privacy-moon" }
     },
-    { name: "Passwords", image: passwordPlanet, route: "passwords"},
+    { name: "Phishing", image: phishingPlanet, route: "phishing-planet"},
     { name: "Safe Browsing", image: safeBrowsingPlanet, route: "safe-browsing"},
     { name: "Online Sharing", image: onlineSharingPlanet, route: "online-sharing"},
     { name: "Malware", image: malwarePlanet, route: "malware"}
