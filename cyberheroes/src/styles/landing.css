@@ -1,35 +1,27 @@
-.landing-container {
-    min-height: 100vh;
-    background: #ffffff;
+/* This will only apply to the landing page */
+body.landing-page {
+    background-color: #ffffff !important;
+    background-image: none !important;
     color: #4686B5;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+    font-family: 'Fredoka One', 'Arial', sans-serif;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
 }
 
-header {
+.landing-container {
     width: 100%;
     max-width: 1200px;
-    padding: 1rem;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #4686B5;
-}
-
-.logo .icon img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
 }
 
 main {
@@ -90,6 +82,7 @@ main {
     box-shadow: 0 4px 15px rgba(70, 134, 181, 0.3);
     margin: 0 auto;
     display: block;
+    font-family: 'Fredoka One', 'Arial', sans-serif;
 }
 
 .start-button:hover {
@@ -107,7 +100,7 @@ main {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     100% {
         transform: translateY(0px);

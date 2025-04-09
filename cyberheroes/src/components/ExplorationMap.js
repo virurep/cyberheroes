@@ -1,7 +1,9 @@
 import '../styles/map.css';
+
 import privacyPlanet from '../img/planets/privacy-planet.png';
 import privacyMoon from '../img/planets/privacy-moon.png';
 import passwordPlanet from '../img/planets/passwordsplanet.png';
+
 import safeBrowsingPlanet from '../img/planets/safebrowsing.png';
 import onlineSharingPlanet from '../img/planets/onlinesharing.png';
 import malwarePlanet from '../img/planets/malware.png';
