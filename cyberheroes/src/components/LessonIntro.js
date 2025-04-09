@@ -93,6 +93,7 @@ const LessonIntro = () => {
 
   return (
     <>
+    {/* Lesson Intro Page */}
       <div className="lesson-intro-background">
         <div className="lesson-intro-side">
           <img src={rocket} alt="Rocket Ship" className="lesson-intro-rocket" />
@@ -106,12 +107,16 @@ const LessonIntro = () => {
           </button>
         </div>
       </div>
+      {/* Computer Intro Page */}
       <div className="lesson-intro-background hidden computer-container">
         <img src={computer} alt="Computer" className="computer-image" />
         <div className="computer-content">
           {computerIntroImage && <img src={computerIntroImage} alt="Computer" className="computer-intro-image" />}
           <div className="intro-message">
             <p>{computerIntroMessage}</p>
+            <button className="start-lesson-btn">
+              Start Your Adventure
+            </button>
           </div>
         </div>
       </div>

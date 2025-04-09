@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/landing.css";
-import logo from "../img/general/logo.png";
-import hero from "../img/characters/hero.png";
+import hero from "../img/characters/cyber-hero.png";
 import Navbar from './NavBar';
 
 

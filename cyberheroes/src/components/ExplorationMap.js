@@ -26,9 +26,9 @@ const ExplorationMap = () => {
       moon: { name: "Privacy Moon", image: privacyMoon, route: "privacy-moon" }
     },
     { name: "Phishing", image: phishingPlanet, route: "phishing-planet"},
+    { name: "Malware", image: malwarePlanet, route: "malware"},
     { name: "Safe Browsing", image: safeBrowsingPlanet, route: "safe-browsing"},
-    { name: "Online Sharing", image: onlineSharingPlanet, route: "online-sharing"},
-    { name: "Malware", image: malwarePlanet, route: "malware"}
+    { name: "Online Sharing", image: onlineSharingPlanet, route: "online-sharing"}
   ];
 
   // goes to lesson intro of each planet
