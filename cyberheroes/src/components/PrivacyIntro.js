@@ -2,7 +2,7 @@
 import '../styles/intro.css';
 import { useNavigate } from "react-router-dom";
 import computer from "../img/general/computer.png";
-import patrick from "../img/characters/patrick-wanted.png";
+import patrick from "../img/lesson-intro/patrick-wanted.png";
 
 const PrivacyIntro = () => {
 

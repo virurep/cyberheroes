@@ -1,7 +1,7 @@
 import '../styles/intro.css';
 import { useNavigate, useLocation } from "react-router-dom";
 import rocket from "../img/general/rocket.png";
-import privacyplanet from "../img/planets/privacyplanet.png";
+import privacyplanet from "../img/planets/privacy-planet.png";
 import PrivacyIntro from "./PrivacyIntro";
 
 const PrivacyPlanet = () => {
