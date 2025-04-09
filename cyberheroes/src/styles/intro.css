@@ -5,6 +5,10 @@ body {
   place-content: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .lesson-intro-background div {
   width: 50%;
 }
@@ -18,7 +22,7 @@ h1 {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-.lesson-intro-background button, .privacy-intro-container button {
+.lesson-intro-background button {
   background: #0F746F;
   color: #ffffff;
   border: none;
@@ -33,7 +37,7 @@ h1 {
   display: block;
 }
 
-.lesson-intro-background button:hover, .privacy-intro-container button:hover {
+.lesson-intro-background button:hover, .computer-intro-container button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
   background: #19ada6;
@@ -114,10 +118,11 @@ h1 {
 
 .computer-container {
   position: relative;
-  width: 95%;
+  width: 80%;
   max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -130,37 +135,31 @@ h1 {
 
 .computer-content {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 60%;
   height: 60%;
   z-index: 2;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-.patrick-image {
-  max-width: 200px;
-  height: auto;
-  margin-right: 20px;
-}
-
-.intro-message {
-  color: #000000;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 0;
-  flex: 1;
-  max-width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+
+.computer-intro-image {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.computer-content .intro-message {
+  color: #000000;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 90%;
 }
 
 .enter-lesson-btn {
