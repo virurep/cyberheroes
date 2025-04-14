@@ -33,7 +33,6 @@ const ExplorationMap = () => {
 
   // goes to lesson intro of each planet
   const handlePlanetClick = (planetRoute) => {
-    console.log("planetRoute: " + planetRoute);
     navigate(`/${planetRoute}/lesson-intro`);
   };
 

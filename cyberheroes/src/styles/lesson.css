@@ -1,0 +1,48 @@
+/* background images for different planets */
+.privacy-planet-background {
+  background-image: url('../img/backgrounds/privacy-planet-background.png');
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+
+
+/* styles */
+.lesson-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* characters */
+.character {
+  height: 50vh;
+}
+
+
+
+/* text / message box */
+.text-container {
+  background-color: #B8DEFF;
+  color: black;
+  font-size: 16pt;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.speaker-name {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.speaker-name p {
+  text-transform: capitalize;
+}

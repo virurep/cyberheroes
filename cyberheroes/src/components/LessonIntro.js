@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/intro.css';
 import lessonIntroData from '../data/lesson_intro.json';
 import rocket from '../img/general/rocket.png';
@@ -10,6 +10,12 @@ const introImages = require.context('../img/lesson-intro', false, /\.(png|jpe?g|
 const LessonIntro = () => {
   const { planet } = useParams();
   console.log("Planet parameter:", planet);
+
+  const navigate = useNavigate();
+
+  const startLesson = () => {
+    navigate(`/${planet}/lesson`);
+  };
 
   const getPlanetData = (planetName) => {
     // Convert the URL parameter to match the JSON format
@@ -65,7 +71,6 @@ const LessonIntro = () => {
     const planetData = lessonIntroData.intros.find(
       planet => planet.planet_name.toLowerCase() === formattedPlanetName
     );
-    console.log("still ok");
     // The path in JSON is already relative to the lesson-intro directory
     return introImages(`./${planetData.computer_image_name}`);
   };
@@ -114,10 +119,15 @@ const LessonIntro = () => {
           {computerIntroImage && <img src={computerIntroImage} alt="Computer" className="computer-intro-image" />}
           <div className="intro-message">
             <p>{computerIntroMessage}</p>
-            <button className="start-lesson-btn">
-              Start Your Adventure
-            </button>
           </div>
+        </div>
+        <div className="button-content">
+          <button className="to-map-btn" onClick={() => navigate('/exploration-map')}>
+            GO BACK TO MAP
+          </button>
+          <button className="start-lesson-btn" onClick={startLesson}>
+            START YOUR ADVENTURE
+          </button>
         </div>
       </div>
     </>

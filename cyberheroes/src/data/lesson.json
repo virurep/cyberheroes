@@ -1,0 +1,51 @@
+{
+  "planets": [
+    {
+      "planet_name": "Privacy Planet",
+      "pages": [
+        {
+          "page_number": 1,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character left"
+            },
+            {
+              "name":"Cyber Hero",
+              "style": "character right"
+            }
+          ],
+          "message": {
+            "text": "I’ve made it to Privacy Planet, I wonder what I'm going to find!",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right"
+          },
+          "buttons": {
+            "next": 2
+          }
+        },
+        {
+          "page_number": 2,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character right"
+            }
+          ],
+          "message": {
+            "text": "Hii! I’m Allie. I lost my sensitive data to Patrick. Can you help me get it back?",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left"
+          },
+          "buttons": {
+            "previous": 1,
+            "next": 3
+          }
+
+        }
+      ]
+    }
+  ]
+}

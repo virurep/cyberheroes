@@ -10,7 +10,7 @@ body {
 }
 
 
-p {
+.lesson-intro-background p {
   color: #752a2a;
 }
 
@@ -139,6 +139,7 @@ h1 {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -182,7 +183,7 @@ h1 {
   align-items: center;
 }
 
-.start-lesson-btn {
+.start-lesson-btn, .to-map-btn {
   background-color: #BF3B27;
   color: #ffffff;
   border: none;
@@ -197,5 +198,14 @@ h1 {
 
 .start-lesson-btn:hover {
   background-color: #E14733;
+  transform: scale(1.05);
+}
+
+.to-map-btn {
+  background-color: #386F95;
+}
+
+.to-map-btn:hover {
+  background-color: #57A2D8;
   transform: scale(1.05);
 }
