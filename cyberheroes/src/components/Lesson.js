@@ -58,54 +58,11 @@ const Lesson = () => {
   const pageData = getPageData();
   console.log("Page data:", pageData);
 
-  const getCharacters = () => {
-    console.log(getPageData().characters);
-
-
-    return (
-      <div className="character-container">
-        {pageData.characters.map((character) => (
-          <div className={`character ${character.style}`} key={character.name}>
-            {character.name}
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  console.log(getCharacters);
-
-  const getMessage = () => {
-    const msgData = getPageData().message;
-    console.log(msgData);
-
-    return (
-      <div className="text-container">
-        <div className={`speaker-name ${msgData.speaker_style}`}>
-          <p>{msgData.speaker}</p>
-        </div>
-        <div className={`message-box ${msgData.style}`}>
-          <p>{msgData.text}</p>
-        </div>
-      </div>
-    );
-  };
-
-  console.log(getMessage);
-
 
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
       <div className="lesson-content">
-        <h1>{planetData.planet_name}</h1>
-        <p>lesson content here</p>
-        {/* <div className="character-container">
-
-        </div>
-        <div className="text-container">
-
-        </div> */}
         <Characters characters={pageData.characters} />
         <Message message={pageData.message} />
       </div>
