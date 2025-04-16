@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/intro.css';
 import lessonIntroData from '../data/lesson_intro.json';
 import rocket from '../img/general/rocket.png';
@@ -9,6 +9,7 @@ const introImages = require.context('../img/lesson-intro', false, /\.(png|jpe?g|
 
 const LessonIntro = () => {
   const { planet } = useParams();
+  const navigate = useNavigate();
   console.log("Planet parameter:", planet);
 
   const getPlanetData = (planetName) => {
@@ -91,6 +92,11 @@ const LessonIntro = () => {
     });
   };
 
+  const handleBackToMap = () => {
+    navigate('/exploration-map');
+  };
+
+
   return (
     <>
     {/* Lesson Intro Page */}
@@ -100,7 +106,7 @@ const LessonIntro = () => {
           {planetImage && <img src={planetImage} alt={`${planet} Planet`} className="lesson-intro-planet" />}
         </div>
         <div className="lesson-intro-message">
-          <h1>You have arrived at {planetData.planet_name}!</h1>
+          <h1 className="lesson-intro-title">You have arrived at {planetData.planet_name}!</h1>
           <p>{lessonIntroMessage}</p>
           <button className="enter-lesson-btn" onClick={handleEnterLesson}>
             ENTER {planetData.planet_name.toUpperCase()}
@@ -111,10 +117,17 @@ const LessonIntro = () => {
       <div className="lesson-intro-background hidden computer-container">
         <img src={computer} alt="Computer" className="computer-image" />
         <div className="computer-content">
-          {computerIntroImage && <img src={computerIntroImage} alt="Computer" className="computer-intro-image" />}
-          <div className="intro-message">
-            <p>{computerIntroMessage}</p>
-            <button className="start-lesson-btn">
+          <div className="computer-content-top">
+            {computerIntroImage && <img src={computerIntroImage} alt="Computer" className="computer-intro-image" />}
+            <div className="intro-message">
+              <p>{computerIntroMessage}</p>
+              </div>
+          </div>
+          <div className="computer-btn-container">
+            <button className="go-back-map-btn" onClick={handleBackToMap}>
+              Go Back to Map
+            </button>
+            <button className="start-lesson-btn" >
               Start Your Adventure
             </button>
           </div>
