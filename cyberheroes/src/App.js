@@ -5,8 +5,8 @@ import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-route
 import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
 import LessonIntroPage from './components/LessonIntro';
-import Quiz from './components/quiz';
-import QuizAnswers from './components/quiz-Answers';
+import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
+import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
          
           {/* change this to rout to the quiz page of a specific planet */}
-          <Route path="/quiz" element={<Quiz />} /> 
-          <Route path="/quiz-answers" element={<QuizAnswers />} />
+          <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} /> 
+          <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
           </Routes>
         </div>
 
