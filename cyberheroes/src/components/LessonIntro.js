@@ -9,7 +9,6 @@ const introImages = require.context('../img/lesson-intro', false, /\.(png|jpe?g|
 
 const LessonIntro = () => {
   const { planet } = useParams();
-  const navigate = useNavigate();
   console.log("Planet parameter:", planet);
 
   const navigate = useNavigate();
