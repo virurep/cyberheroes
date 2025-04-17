@@ -8,7 +8,7 @@ import lessonData from '../data/lesson.json';
 
 const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
-let pageNum = 18;
+let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();

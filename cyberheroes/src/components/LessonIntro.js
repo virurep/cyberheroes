@@ -131,19 +131,19 @@ const LessonIntro = () => {
             <button className="go-back-map-btn" onClick={handleBackToMap}>
               Go Back to Map
             </button>
-            <button className="start-lesson-btn" >
+            <button className="start-lesson-btn" onClick={startLesson}>
               Start Your Adventure
             </button>
           </div>
         </div>
-        <div className="button-content">
+        {/* <div className="button-content">
           <button className="to-map-btn" onClick={() => navigate('/exploration-map')}>
             GO BACK TO MAP
           </button>
           <button className="start-lesson-btn" onClick={startLesson}>
             START YOUR ADVENTURE
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );
