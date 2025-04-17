@@ -14,9 +14,8 @@ body {
   color: #752a2a;
 }
 
-h1 {
+.lesson-intro-title {
   color: #E14733;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .enter-lesson-btn {
@@ -160,10 +159,17 @@ h1 {
   height: 65%;
   z-index: 2;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+
+.computer-content-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .computer-intro-image {
@@ -183,8 +189,16 @@ h1 {
   align-items: center;
 }
 
-.start-lesson-btn, .to-map-btn {
-  background-color: #BF3B27;
+.computer-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.go-back-map-btn {
+  background-color: #386F95;
   color: #ffffff;
   border: none;
   padding: 1.2rem 2.4rem;
@@ -194,6 +208,11 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 35px;
+}
+
+.go-back-map-btn:hover {
+  background-color: #2f6084;
+  transform: scale(1.05);
 }
 
 .start-lesson-btn:hover {

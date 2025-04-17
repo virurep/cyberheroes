@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-route
 import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
 import LessonIntroPage from './components/LessonIntro';
-import LessonPage from './components/Lesson';
 
 function App() {
   return (
@@ -16,6 +15,12 @@ function App() {
           <Route path="/:planet/lesson" element={<LessonPage />} />
         </Routes>
       </div>
+
+          {/* change this to rout to the quiz page of a specific planet */}
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/quiz-answers" element={<QuizAnswers />} />
+          </Routes>
+        </div>
 
   );
 }
