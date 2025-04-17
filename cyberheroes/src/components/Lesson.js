@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import '../styles/lesson.css';
 import Navbar from './NavBar';
 import Characters from './Characters';
@@ -7,11 +8,13 @@ import lessonData from '../data/lesson.json';
 
 const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
-let pageNum = 1;
+let pageNum = 18;
 
 const Lesson = () => {
   const { planet } = useParams();
   console.log("Planet parameter:", planet);
+
+  const [currentPage, setCurrentPage] = useState(pageNum);  // might need to be 1
 
 
   const navigate = useNavigate();
@@ -55,16 +58,23 @@ const Lesson = () => {
     return pageData;
   };
 
-  const pageData = getPageData();
+  let pageData = getPageData();
   console.log("Page data:", pageData);
 
+  const goToPage = (page) => {
+    console.log(page);
+    console.log("button clicked");
+    pageNum = page;
+    setCurrentPage(page);
+    console.log("page changed");
+  }
 
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
       <div className="lesson-content">
         <Characters characters={pageData.characters} />
-        <Message message={pageData.message} />
+        <Message message={pageData.message} onButtonClick={goToPage} />
       </div>
     </div>
   );

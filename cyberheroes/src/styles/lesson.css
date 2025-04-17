@@ -42,6 +42,12 @@
   transform: translate(0%, 50%);
 }
 
+.character-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
 .character-right {
   top: 0;
   right: 0;
@@ -60,7 +66,10 @@
   transform: translate(0%, 50%) scaleX(-1);
 }
 
-
+.character-l {
+  height: 60vh;
+  transform: translate(0%, 25%);
+}
 
 /* text / message box */
 .text-container {
@@ -72,7 +81,7 @@
   color: black;
   width: 90%;
   height: 300px;
-  font-size: 16pt;
+  font-size: 1.5rem;
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
@@ -103,16 +112,27 @@
   transform: translate(20px, -20px);
 }
 
+.message-box {
+  width: 90%;
+  text-align: center;
+}
+
+.alert-header {
+  background-color: transparent;
+}
+
 /* buttons */
 .button-container {
   display: flex;
   width: 90%;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .lesson-button {
-  border: 5px solid #0F746F;
-  width: 4vh;
-  height: 4vh;
+  border: 0.2rem solid #0F746F;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background-color: transparent;
   display: flex;
@@ -122,7 +142,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  margin-right: 20vh;
+  margin: 0;
   color: #0F746F;
   text-decoration: none;
 }
@@ -132,11 +152,15 @@
 }
 
 .next-button {
-  align-self: flex-end;
+  margin-left: auto;
 }
 
 .next-button:before {
   content: "→";
+}
+
+.prev-button {
+  margin-right: auto;
 }
 
 .prev-button:before {

@@ -1,6 +1,6 @@
 import Buttons from './Buttons';
 
-const Message = ({ message }) => {
+const Message = ({ message, onButtonClick }) => {
   return (
     <div className="text-container">
       {message.speaker && (
@@ -11,7 +11,7 @@ const Message = ({ message }) => {
       <div className={`message-box ${message.style}`}>
         <p>{message.text}</p>
       </div>
-      <Buttons buttons={message.buttons} />
+      <Buttons buttons={message.buttons} onClick={onButtonClick} />
     </div>
   );
 };

@@ -9,10 +9,6 @@
             {
               "name": "Cyber Hero",
               "style": "character-left"
-            },
-            {
-              "name":"Cyber Hero",
-              "style": "character-right"
             }
           ],
           "message": {
@@ -43,7 +39,362 @@
               "next": 3
             }
           }
+        },
+        {
+          "page_number": 3,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            }
+          ],
+          "message": {
+            "text": "Sensitive data? What is that?",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 2,
+              "next": 4
+            }
+          }
+        },
+        {
+          "page_number": 4,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-right-flip"
+            }
+          ],
+          "message": {
+            "text": "Sensitive data is private and personal information that belongs to you and should be kept safe. This kind of information is important because it helps identify who you are, where you live, or how someone can contact you.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 3,
+              "next": 5
+            }
+          }
+        },
+        {
+          "page_number": 5,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-right-flip"
+            }
+          ],
+          "message": {
+            "text": "Sharing your sensitive data with the wrong people like Patrick could lead to problems, so it’s important to know what sensitive data is and how to protect it.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 4,
+              "next": 6
+            }
+          }
+        },
+        {
+          "page_number": 6,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-right-flip"
+            }
+          ],
+          "message": {
+            "text": "So what do you say? Will you Help me?",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 5,
+              "next": 7
+            }
+          }
+        },
+        {
 
+          "page_number": 7,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            }
+          ],
+          "message": {
+            "text": "Ok! Let's go find Patrick!",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 6,
+              "next": 8
+            }
+          }
+        },
+        {
+
+          "page_number": 8,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left-s-1"
+            },
+            {
+              "name": "Allie",
+              "style": "character-left-s-2"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-right-s"
+            }
+          ],
+          "message": {
+            "text": "!! YOU'VE ENCOUNTERED ENEMIES !!",
+            "style": "alert-header",
+            "buttons": {
+              "continue": {
+                "next": 9,
+                "style": "privacy-enemies-button lesson-button"
+              }
+            }
+          }
+        },
+        {
+          "page_number": 9,
+          "characters": [
+            {
+              "name": "Privacy Enemy",
+              "style": "character-left character-l"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-center"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "What's your full name?",
+            "speaker": "Enemy #1",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 8,
+              "next": 10
+            }
+          }
+        },
+        {
+          "page_number": 10,
+          "characters": [
+            {
+              "name": "Privacy Enemy",
+              "style": "character-left"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-center character-l"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "What's your birthday?",
+            "speaker": "Enemy #2",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 9,
+              "next": 11
+            }
+          }
+        },
+        {
+          "page_number": 11,
+          "characters": [
+            {
+              "name": "Privacy Enemy",
+              "style": "character-left"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-center"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-right character-l"
+            }
+          ],
+          "message": {
+            "text": "Where do you live? Where are you from?",
+            "speaker": "Enemy #3",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 10,
+              "next": 12
+            }
+          }
+        },
+        {
+          "page_number": 12,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            }
+          ],
+          "message": {
+            "text": "Why are you asking me these questions?",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 11,
+              "next": 13
+            }
+          }
+        },
+        {
+
+          "page_number": 13,
+          "characters": [
+            {
+              "name": "Privacy Enemy",
+              "style": "character-left"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-center character-l"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "So we can tell Patrick about it. DUH!",
+            "speaker": "Enemy #2",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 12,
+              "next": 14
+            }
+          }
+        },
+        {
+          "page_number": 14,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-right-flip"
+            }
+          ],
+          "message": {
+            "text": "If they want to tell Patrick, you should probably not tell them. Let me tell you what you need to keep private.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 13,
+              "next": 15
+            }
+          }
+        },
+        {
+          "page_number": 15,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left-flip"
+            }
+          ],
+          "message": {
+            "text": "Full Name:\n\nWhile it’s okay to share just your name with people, your full name (first, middle, and last) is special and should be kept private.\n\nWhy? Because if a stranger knows your full name, they can look up more information about you, like where you live or where you go to school.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 14,
+              "next": 16
+            }
+          }
+        },
+        {
+          "page_number": 16,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left-flip"
+            }
+          ],
+          "message": {
+            "text": "Home address:\n\nYour home is your safe place, and only trusted people (like family and close friends) should know where you live.\n\nSharing your address with strangers or online could be dangerous because it tells people exactly where to find you.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 15,
+              "next": 17
+            }
+          }
+        },
+        {
+          "page_number": 17,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left-flip"
+            }
+          ],
+          "message": {
+            "text": "Birthday:\n\nYour birthday might seem like a fun thing to share—after all, everyone loves birthday parties!\n\nBut did you know that some people can use your birthdate to guess passwords or pretend to be you? Some websites even use your birthday to confirm your identity, so sharing it could make it easier for someone to pretend they’re you online.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 16,
+              "next": 18
+            }
+          }
+        },
+        {
+          "page_number": 18,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left-flip"
+            }
+          ],
+          "message": {
+            "text": "Phone number and email address:\n\nYour phone number and email is how people can contact you, and it should only be given to trusted adults, family members, or close friends. \n\nIf a stranger gets your phone number or email, they could call or message you, even if you don’t want them to.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 17,
+              "next": 19
+            }
+          }
+        },
+        {
+          "page_number": 19,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left-flip"
+            }
+          ],
+          "message": {
+            "text": "There are many things that people may ask you, but you should not tell everyone about everything. Some information is private and personal and should be kept safe. These are all sensitive data, they can help identify who you are, where you live, and how to find you.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 18,
+              "next": "quiz-1-prompt"
+            }
+          }
         }
       ]
     }
