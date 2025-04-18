@@ -216,3 +216,83 @@
 .quiz-next-btn:hover{
     transform: scale(1.05);
 }
+
+
+
+/* redflag green flag ::grammar-error */
+
+.rf-gf-background{
+    background-image: url("../img/backgrounds/privacy-moon-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+}
+.game-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flag-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.flags{
+    max-width: 400px;
+}
+
+.flags:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* red flag green flag answer popup */
+
+.answer-popup-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.popup-text-container{
+    background-color: #B8DEFF;
+    color: #02101b;
+    min-height: 15vh;
+    max-height: 40vh;
+    min-width: 15vw;
+    max-width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.popup-Al{
+    max-height: 60vh;
+}
+
+.next-question-btn{
+
+}
+
+.try-again-btn{
+    
+}

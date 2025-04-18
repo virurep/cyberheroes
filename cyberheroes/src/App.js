@@ -7,6 +7,7 @@ import IntroPage from './components/intro.js';
 import LessonIntroPage from './components/LessonIntro';
 import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
+import RedFlagGreenFlag from "./components/RedFlag-GreenFlag-Quiz.js"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           {/* change this to rout to the quiz page of a specific planet */}
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} /> 
           <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
+          <Route path="/privacy-moon/quiz/redflag-greenflag" element={<RedFlagGreenFlag />} />
           </Routes>
         </div>
 
