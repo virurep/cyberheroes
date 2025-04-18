@@ -72,7 +72,7 @@ const Lesson = () => {
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
-      <div className="lesson-content">
+      <div className={`lesson-content ${pageData.message.style}-container`}>
         <Characters characters={pageData.characters} />
         <Message message={pageData.message} onButtonClick={goToPage} />
       </div>

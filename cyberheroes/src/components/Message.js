@@ -9,9 +9,10 @@ const Message = ({ message, onButtonClick }) => {
         </div>
       )}
       <div className={`message-box ${message.style}`}>
-        <p>{message.text}</p>
+        <p className="lesson-text">{message.text}</p>
+        <Buttons buttons={message.buttons} onClick={onButtonClick} />
       </div>
-      <Buttons buttons={message.buttons} onClick={onButtonClick} />
+      {/* <Buttons buttons={message.buttons} onClick={onButtonClick} /> */}
     </div>
   );
 };
