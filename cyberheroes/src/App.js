@@ -6,6 +6,8 @@ import LessonIntroPage from './components/LessonIntro';
 import LessonPage from './components/Lesson'
 import Quiz from './components/quiz';
 import QuizAnswers from './components/quiz-Answers';
+import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
+import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
 
 function App() {
   return (
@@ -18,10 +20,10 @@ function App() {
           <Route path="/:planet/lesson" element={<LessonPage />} />
 
           {/* change this to rout to the quiz page of a specific planet */}
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/quiz-answers" element={<QuizAnswers />} />
-          </Routes>
-        </div>
+          <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
+          <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
+        </Routes>
+      </div>
 
   );
 }

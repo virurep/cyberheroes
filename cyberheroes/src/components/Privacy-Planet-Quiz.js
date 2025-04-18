@@ -18,12 +18,12 @@ const Quiz = () => {
 
     // Get the current quiz data based on the part
     //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizes
-    const currentQuiz = quizData.quizes.find(quiz => quiz.part === "quiz-3"); 
+    const currentQuiz = quizData.quizes.find(quiz => quiz.part === "quiz-1"); 
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
     //for multiple choice and true false questions
     const handleAnswerClick = (answer) => {
-        navigate(`/quiz-answers`, { 
+        navigate(`/privacy-planet/quiz/quiz-answers`, { 
             state: { 
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,
@@ -49,7 +49,7 @@ const Quiz = () => {
 
     const handleSubmitClick = () => {
         console.log("selected answers: " + selectedAnswers)
-        navigate(`/quiz-answers`, { 
+        navigate(`/privacy-planet/quiz/quiz-answers`, { 
             state: { 
                 selectedAnswer: selectedAnswers,
                 currentQuestion: currentQuestion,
