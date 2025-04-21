@@ -46,7 +46,7 @@
   height: 100%;
   flex-direction: column-reverse;
   align-self: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 /* characters */

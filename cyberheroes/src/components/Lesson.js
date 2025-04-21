@@ -62,12 +62,22 @@ const Lesson = () => {
   console.log("Page data:", pageData);
 
   const goToPage = (page) => {
-    console.log(page);
-    console.log("button clicked");
-    pageNum = page;
-    setCurrentPage(page);
-    console.log("page changed");
+    if (wildcardMatch(page, "quiz*")) {
+      navigate(`/${planet}/quiz`);
+    } else if (wildcardMatch(page, "review*")) {
+      navigate(`/${planet}/review`);
+    } else {
+      pageNum = page;
+      setCurrentPage(page);
+    }
   }
+
+  // wildcard matching function from GeeksforGeeks
+  const wildcardMatch = (text, pattern) => {
+    const regexPattern =
+        new RegExp('^' + pattern.replace(/\?/g, '.').replace(/\*/g, '.*') + '$');
+    return regexPattern.test(text);
+}
 
   return (
     <div className={`lesson-container ${planet}-background`}>
