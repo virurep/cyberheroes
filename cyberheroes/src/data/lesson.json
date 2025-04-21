@@ -26,7 +26,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -64,7 +64,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -83,7 +83,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -102,7 +102,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -137,7 +137,6 @@
           }
         },
         {
-
           "page_number": 8,
           "characters": [
             {
@@ -297,7 +296,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -316,7 +315,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -333,11 +332,11 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
-            "text": "Home address:\n\nYour home is your safe place, and only trusted people (like family and close friends) should know where you live.\n\nSharing your address with strangers or online could be dangerous because it tells people exactly where to find you.",
+            "text": "Home Address:\n\nYour home is your safe place, and only trusted people (like family and close friends) should know where you live.\n\nSharing your address with strangers or online could be dangerous because it tells people exactly where to find you.",
             "style": "message-box-right",
             "buttons": {
               "prev": 15,
@@ -350,7 +349,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -367,7 +366,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -384,7 +383,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -424,7 +423,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -462,7 +461,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -481,7 +480,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -500,7 +499,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -517,7 +516,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -534,7 +533,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -551,7 +550,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -570,7 +569,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -587,7 +586,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -604,7 +603,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
@@ -621,7 +620,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
