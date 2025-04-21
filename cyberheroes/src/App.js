@@ -7,7 +7,7 @@ import LessonIntroPage from './components/LessonIntro';
 import LessonPage from './components/Lesson'
 import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
-import Arrival from './components/arrival.js';
+import Arrival from './components/Arrival.js';
 import PrivacyIntro from './components/PrivacyIntro';
 import RedFlagGreenFlag from "./components/RedFlag-GreenFlag-Quiz.js"
 

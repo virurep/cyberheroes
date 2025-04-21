@@ -16,7 +16,7 @@ const Lesson = () => {
   console.log("Planet parameter:", planet);
 
   const location = useLocation();
-  pageNum = location.state?.page;
+  pageNum = Math.max(pageNum, location.state?.page);
   console.log("pageNum: ", pageNum);
   const [currentPage, setCurrentPage] = useState(location.state?.page);  // might need to be 1
 
@@ -73,6 +73,7 @@ const Lesson = () => {
       console.log("pressed button ", page);
       pageNum = page;
       setCurrentPage(page);
+      console.log("new pageNum: ", pageNum);
     }
   }
 
