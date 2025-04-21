@@ -48,8 +48,11 @@ const FlagQuiz = () => {
             <Navbar />
             <div className="game-container">
                 <h1>
-                    Click whether the statement is a green or red flag.
+                    Click whether the statement is a green flag or red flag.
                 </h1>
+                <h2>
+                    Green flags are safe and respectful, while red flags are unsafe and disrespectful.
+                </h2>
                 <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                 </div>
