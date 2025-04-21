@@ -27,7 +27,7 @@ const Certificate = () => {
                     DOWNLOAD CERTIFICATE
                 </button>
                 <button onClick={handleContinue}>
-                    Continue
+                    CONTINUE
                 </button>
             </div>
         </div>
