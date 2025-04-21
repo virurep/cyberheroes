@@ -17,8 +17,8 @@ const Quiz = () => {
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
     // Get the current quiz data based on the part
-    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizes
-    const currentQuiz = quizData.quizes.find(quiz => quiz.part === "quiz-1"); 
+    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizzes
+    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === "quiz-1"); 
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
     //for multiple choice and true false questions
