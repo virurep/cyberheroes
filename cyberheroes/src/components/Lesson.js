@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/lesson.css';
 import Navbar from './NavBar';
@@ -8,14 +8,17 @@ import lessonData from '../data/lesson.json';
 
 const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
-let pageNum = 1
+
+let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
   console.log("Planet parameter:", planet);
 
-  const [currentPage, setCurrentPage] = useState(pageNum);  // might need to be 1
-
+  const location = useLocation();
+  pageNum = location.state?.page;
+  console.log("pageNum: ", pageNum);
+  const [currentPage, setCurrentPage] = useState(location.state?.page);  // might need to be 1
 
   const navigate = useNavigate();
 
@@ -67,6 +70,7 @@ const Lesson = () => {
     } else if (wildcardMatch(page, "review*")) {
       navigate(`/${planet}/review`);
     } else {
+      console.log("pressed button ", page);
       pageNum = page;
       setCurrentPage(page);
     }

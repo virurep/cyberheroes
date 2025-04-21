@@ -179,8 +179,8 @@
 
 .lesson-button {
   border: 0.2rem solid #0F746F;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background-color: transparent;
   display: flex;
@@ -204,7 +204,7 @@
 }
 
 .next-button:before {
-  content: "→";
+  content: "▶";
 }
 
 .prev-button {
@@ -212,5 +212,5 @@
 }
 
 .prev-button:before {
-  content: "←";
+  content: "◀";
 }
