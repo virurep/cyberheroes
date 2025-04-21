@@ -11,7 +11,7 @@ import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
 import Arrival from './components/arrival.js';
 import PrivacyIntro from './components/PrivacyIntro';
-
+import Certificate from './components/Certificate.js';
 function App() {
   return (
       <div>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
           <Route path="/:planet/arrival" element={<Arrival />} />
           <Route path="/:planet/lesson" element={<LessonPage />} />
-
+          <Route path="/:planet/certificate" element={<Certificate />} />
         </Routes>
       </div>
   );
