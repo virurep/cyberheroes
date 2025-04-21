@@ -141,15 +141,15 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left-s-1"
+              "style": "character character-s character-left"
             },
             {
               "name": "Allie",
-              "style": "character-left-s-2"
+              "style": "character character-s character-left"
             },
             {
               "name": "Privacy Enemy",
-              "style": "character-right-s"
+              "style": "character character-s character-right"
             }
           ],
           "message": {
@@ -370,7 +370,7 @@
             }
           ],
           "message": {
-            "text": "Phone number and email address:\n\nYour phone number and email is how people can contact you, and it should only be given to trusted adults, family members, or close friends. \n\nIf a stranger gets your phone number or email, they could call or message you, even if you don’t want them to.",
+            "text": "Phone Number and Email Address:\n\nYour phone number and email is how people can contact you, and it should only be given to trusted adults, family members, or close friends. \n\nIf a stranger gets your phone number or email, they could call or message you, even if you don’t want them to.",
             "style": "message-box-right",
             "buttons": {
               "prev": 17,
@@ -383,12 +383,14 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
             "text": "There are many things that people may ask you, but you should not tell everyone about everything. Some information is private and personal and should be kept safe. These are all sensitive data, they can help identify who you are, where you live, and how to find you.",
-            "style": "message-box-right",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
             "buttons": {
               "prev": 18,
               "next": "quiz-1-prompt"
