@@ -8,25 +8,31 @@ import Enemy from '../img/characters/enemy.png';
 const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { selectedAnswer, currentQuestion, questionIndex, part } = location.state || {};
+    const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz } = location.state || {};
 
-    if (!currentQuestion) {
-        return <div>Loading...</div>;
-    }
 
     // Check if the selected answer is correct
-    const isCorrect = Array.isArray(selectedAnswer) 
-        ? selectedAnswer.length === currentQuestion.correctAnswers.length && 
-          currentQuestion.correctAnswers.every(correctIndex => 
+    const isCorrect = Array.isArray(selectedAnswer)
+        ? selectedAnswer.length === currentQuestion.correctAnswers.length &&
+          currentQuestion.correctAnswers.every(correctIndex =>
             selectedAnswer.includes(currentQuestion.answers[correctIndex]))
         : currentQuestion.correctAnswers.includes(currentQuestion.answers.indexOf(selectedAnswer));
 
     const handleNextQuestion = () => {
-        navigate(`/privacy-planet/quiz`, {
-            state: {
-                questionIndex: questionIndex + 1
-            }
-        });
+        if (currentQuiz.quiz.length === questionIndex + 1) {
+            console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
+            navigate(`/privacy-planet/lesson`, {
+                state: {
+                    page: currentQuestion.lessonPage
+                }
+            });
+        } else {
+            navigate(`/privacy-planet/quiz`, {
+                state: {
+                    questionIndex: questionIndex + 1
+                }
+            });
+        }
     };
 
     //correct answer
@@ -70,7 +76,7 @@ const QuizAnswers = () => {
                             {"Incorrect Answer"}
                         </h1>
                         <p className="text-answers-text">
-                            {Array.isArray(selectedAnswer) 
+                            {Array.isArray(selectedAnswer)
                                 ? currentQuestion.incorrectMessages[0]
                                 : currentQuestion.incorrectMessages[currentQuestion.answers.indexOf(selectedAnswer)]}
                         </p>

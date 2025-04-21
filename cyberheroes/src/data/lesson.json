@@ -398,7 +398,49 @@
           }
         },
         {
-          "page_number": 19,
+          "page_number": 20,
+          "characters": [
+            {
+              "name": "Privacy Enemy",
+              "style": "character-center character-l"
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "HAHA I bet they don’t know that one of the biggest reasons sensitive data is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
+            "speaker": "Enemy #2",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": "quiz-1-result",
+              "next": 21
+            }
+          }
+        },
+        {
+          "page_number": 21,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "text": "Imagine that someone used your name to trick a friend into giving them their password! That would make you feel really upset, wouldn’t it? It’s important to keep your information private so others can’t use it against you.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 20,
+              "next": 22
+            }
+          }
+        },
+        {
+          "page_number": 22,
           "characters": [
             {
               "name": "Privacy Enemy",
@@ -410,67 +452,10 @@
             }
           ],
           "message": {
-            "text": "HAHA I bet they don’t know that one of the biggest reasons sensitive data is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
+            "text": "Sometimes, we use sensitive data to trick other people into giving away more private information. This is called “phishing”. Let’s say someone gets access to your email address and sends a message to a friend pretending to be you. If your friend isn’t careful, they might believe the message and share their personal details. This can cause harm not just to you but to your friends and family, too. HAHAHA!",
             "speaker": "Enemy #3",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
-            "buttons": {
-              "prev": "quiz-1-result",
-              "next": 20
-            }
-          }
-        },
-        {
-          "page_number": 20,
-          "characters": [
-            {
-              "name": "Allie",
-              "style": "character-right character-flip"
-            }
-          ],
-          "message": {
-            "text": "Let's get away from these hacking raptors!",
-            "speaker": "Allie",
-            "style": "message-box-bottom",
-            "speaker_style": "speaker-left",
-            "buttons": {
-              "prev": 19,
-              "next": 21
-            }
-          }
-        },
-        {
-          "page_number": 21,
-          "characters": [
-            {
-              "name": "Cyber Hero",
-              "style": "character-left"
-            }
-          ],
-          "message": {
-            "text": "Yeah! Let's get out!",
-            "speaker": "Cyber Hero",
-            "style": "message-box-bottom",
-            "speaker_style": "speaker-right",
-            "buttons": {
-              "prev": 20,
-              "next": "quiz-2-prompt"
-            }
-          }
-        },
-        {
-          "page_number": 22,
-          "characters": [
-            {
-              "name": "Allie",
-              "style": "character-right character-flip"
-            }
-          ],
-          "message": {
-            "text": "Not everyone should have access to your sensitive data. In fact, most of the time, the less you share, the safer you are! Only certain trusted people should know your personal information, and even then, it should only be shared when necessary.",
-            "speaker": "Allie",
-            "style": "message-box-bottom",
-            "speaker_style": "speaker-left",
             "buttons": {
               "prev": 21,
               "next": 23
@@ -486,7 +471,7 @@
             }
           ],
           "message": {
-            "text": "There are a few people who might need to know your personal information, but they should always be adults you trust.",
+            "text": "Let's get away from these hacking raptors!",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -500,16 +485,18 @@
           "page_number": 24,
           "characters": [
             {
-              "name": "Allie",
-              "style": "character-left character-flip"
+              "name": "Cyber Hero",
+              "style": "character-left"
             }
           ],
           "message": {
-            "text": "Parents or guardians\n\nYour parents or guardians are the most important people to share sensitive data with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
-            "style": "message-box-right",
+            "text": "Yeah! Let's get out!",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
             "buttons": {
               "prev": 23,
-              "next": 25
+              "next": "quiz-2-prompt"
             }
           }
         },
@@ -518,14 +505,16 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or emergency contact information. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
-            "style": "message-box-right",
+            "text": "Not everyone should have access to your sensitive data. In fact, most of the time, the less you share, the safer you are! Only certain trusted people should know your personal information, and even then, it should only be shared when necessary.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
             "buttons": {
-              "prev": 24,
+              "prev": "quiz-2-result",
               "next": 26
             }
           }
@@ -535,12 +524,14 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "Doctors / Nurses\n\nYour health information is private, but medical professionals may need to know things like your birth date, allergies, or medical history to take care of you. This is one of the few times when sharing personal details is okay—but only with real doctors or nurses, and only when your parents say it's necessary.",
-            "style": "message-box-right",
+            "text": "There are a few people who might need to know your personal information, but they should always be adults you trust.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
             "buttons": {
               "prev": 25,
               "next": 27
@@ -552,14 +543,12 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-right character-flip"
+              "style": "character-left character-flip"
             }
           ],
           "message": {
-            "text": "However, even if someone seems nice, that doesn’t mean you should trust them with your personal information. Some people pretend to be friendly just to get you to share details about yourself.",
-            "speaker": "Allie",
-            "style": "message-box-bottom",
-            "speaker_style": "speaker-left",
+            "text": "Parents / Guardians\n\nYour parents or guardians are the most important people to share sensitive data with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
+            "style": "message-box-right",
             "buttons": {
               "prev": 26,
               "next": 28
@@ -575,7 +564,7 @@
             }
           ],
           "message": {
-            "text": "Strangers:\n\nYou should never give sensitive data to Strangers\n\nIf you wouldn’t walk up to a random person in a store and tell them where you live, you shouldn’t do it online either! People you don’t know should never have your personal details, even if they seem friendly.",
+            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or emergency contact information. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
             "style": "message-box-right",
             "buttons": {
               "prev": 27,
@@ -592,7 +581,7 @@
             }
           ],
           "message": {
-            "text": "People Online:\n\nYou should never give sensitive data to people online\n\nSome people on the internet pretend to be kids or act nice to trick others into sharing information. They might ask things like, “Where do you live?” or “What’s your phone number?” but you should never answer these questions online. If someone asks, tell a parent immediately.",
+            "text": "Doctors / Nurses\n\nYour health information is private, but medical professionals may need to know things like your birth date, allergies, or medical history to take care of you. This is one of the few times when sharing personal details is okay—but only with real doctors or nurses, and only when your parents say it's necessary.",
             "style": "message-box-right",
             "buttons": {
               "prev": 28,
@@ -605,12 +594,14 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "Friends (passwords)\n\nEven if you trust your best friend, never share your passwords—not even for games! Someone could accidentally share it with the wrong person, or if you ever have a fight, they might use it in a way you don’t want.",
-            "style": "message-box-right",
+            "text": "However, even if someone seems nice, that doesn’t mean you should trust them with your personal information. Some people pretend to be friendly just to get you to share details about yourself.",
+            "speaker": "Allie",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
             "buttons": {
               "prev": 29,
               "next": 31
@@ -619,6 +610,57 @@
         },
         {
           "page_number": 31,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left character-flip"
+            }
+          ],
+          "message": {
+            "text": "Strangers:\n\nYou should never give sensitive data to Strangers\n\nIf you wouldn’t walk up to a random person in a store and tell them where you live, you shouldn’t do it online either! People you don’t know should never have your personal details, even if they seem friendly.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 30,
+              "next": 32
+            }
+          }
+        },
+        {
+          "page_number": 32,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left character-flip"
+            }
+          ],
+          "message": {
+            "text": "People Online:\n\nYou should never give sensitive data to people online\n\nSome people on the internet pretend to be kids or act nice to trick others into sharing information. They might ask things like, “Where do you live?” or “What’s your phone number?” but you should never answer these questions online. If someone asks, tell a parent immediately.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 31,
+              "next": 33
+            }
+          }
+        },
+        {
+          "page_number": 33,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left character-flip"
+            }
+          ],
+          "message": {
+            "text": "Friends (passwords)\n\nEven if you trust your best friend, never share your passwords—not even for games! Someone could accidentally share it with the wrong person, or if you ever have a fight, they might use it in a way you don’t want.",
+            "style": "message-box-right",
+            "buttons": {
+              "prev": 32,
+              "next": 34
+            }
+          }
+        },
+        {
+          "page_number": 34,
           "characters": [
             {
               "name": "Allie",
@@ -631,7 +673,7 @@
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
-              "prev": 30,
+              "prev": 33,
               "next": "quiz-3-prompt"
             }
           }
