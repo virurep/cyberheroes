@@ -1,0 +1,207 @@
+/* background images for different planets */
+.privacy-planet-background {
+  background-image: url('../img/backgrounds/privacy-planet-background.png');
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+
+
+/* styles */
+.lesson-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.lesson-content {
+  position: relative;
+  display: flex;
+}
+
+
+
+/* characters */
+.character-container {
+  position: relative;
+  z-index: 1;
+}
+
+.character {
+  height: 60vh;
+  position: absolute;
+}
+
+.character-left {
+  top: 0;
+  left: 0;
+  transform: translate(0%, 25%);
+}
+
+.character-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+}
+
+.character-right {
+  top: 0;
+  right: 0;
+  transform: translate(0%, 25%);
+}
+
+.character-left-flip {
+  top: 0;
+  left: 0;
+  transform: translate(0%, 25%) scaleX(-1);
+}
+
+.character-right-flip {
+  top: 0;
+  right: 0;
+  transform: translate(0%, 25%) scaleX(-1);
+}
+
+.character-l {
+  height: 75vh;
+  transform: translate(0%, 0%);
+}
+
+/* text / message box */
+/* .text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  background-color: #B8DEFF;
+  color: black;
+  width: 90%;
+  height: 15rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+} */
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  background-color: pink;
+  color: black;
+  width: 90%;
+  height: 15rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.speaker-name {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.speaker-right {
+  top: 0;
+  right: 0;
+  transform: translate(-20px, -20px);
+}
+
+.speaker-left {
+  top: 0;
+  left: 0;
+  transform: translate(20px, -20px);
+}
+
+.message-box {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #B8DEFF;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.message-box-right {
+  width: 50rem;
+  height: 75vh;
+}
+
+.lesson-text{
+  width: 90%;
+}
+
+.alert-header {
+  background-color: transparent;
+}
+
+/* buttons */
+.button-container {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: flex-start;
+  bottom: 0;
+}
+
+.lesson-button {
+  border: 0.2rem solid #0F746F;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  color: #0F746F;
+  text-decoration: none;
+}
+
+.lesson-button:hover {
+  background-color: white;
+}
+
+.next-button {
+  margin-left: auto;
+}
+
+.next-button:before {
+  content: "→";
+}
+
+.prev-button {
+  margin-right: auto;
+}
+
+.prev-button:before {
+  content: "←";
+}

@@ -1,10 +1,19 @@
-import React from 'react';
+import Buttons from './Buttons';
 
-const Message = ({ children }) => {
+const Message = ({ message, onButtonClick }) => {
   return (
-    <button>
-      {children}
-    </button>
+    <div className="text-container">
+      {message.speaker && (
+        <div className={`speaker-name ${message.speaker_style}`}>
+          <p>{message.speaker.toUpperCase()}</p>
+        </div>
+      )}
+      <div className={`message-box ${message.style}`}>
+        <p className="lesson-text">{message.text}</p>
+        <Buttons buttons={message.buttons} onClick={onButtonClick} />
+      </div>
+      {/* <Buttons buttons={message.buttons} onClick={onButtonClick} /> */}
+    </div>
   );
 };
 

@@ -20,7 +20,7 @@ const IntroPage = () => {
                     <div>
                         <h1 className="intro-text">
                             Hi I'm Cyber Hero. I fly around space and protect those in need from online threats.
-                            Let us checkout some new planets and see if anyone needs help.
+                            Let us check out some new planets and see if anyone needs help.
                         </h1>
                         <button className="red-button" onClick={goToMap}>
                             Open Exploration Map
