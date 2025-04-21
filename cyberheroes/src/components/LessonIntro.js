@@ -14,7 +14,7 @@ const LessonIntro = () => {
   const navigate = useNavigate();
 
   const startLesson = () => {
-    navigate(`/${planet}/lesson`);
+    navigate(`/${planet}/arrival`);
   };
 
   const getPlanetData = (planetName) => {

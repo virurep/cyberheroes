@@ -1,11 +1,12 @@
+import PrivacyPlanet from './components/PrivacyPlanet';
 import ExplorationMap from "./components/ExplorationMap";
 import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
 import LessonIntroPage from './components/LessonIntro';
 import LessonPage from './components/Lesson'
-import Quiz from './components/quiz';
-import QuizAnswers from './components/quiz-Answers';
+// import Quiz from './components/quiz';
+// import QuizAnswers from './components/quiz-Answers';
 import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
 import Arrival from './components/arrival.js';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/intro" element={<IntroPage />} />
           <Route path="/exploration-map" element={<ExplorationMap />} />
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
+          <Route path="/:planet/arrival" element={<Arrival />} />
         </Routes>
       </div>
   );

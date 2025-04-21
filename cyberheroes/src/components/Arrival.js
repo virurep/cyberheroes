@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../styles/arrival.css";
 import Navbar from './NavBar';
 import ship from '../img/general/ship.png'
@@ -7,10 +7,11 @@ import hero from '../img/characters/cyber-hero.png'
 import arrow from '../img/general/arrow.png'
 
 const Arrival = () => {
+    const { planet } = useParams();
     const navigate = useNavigate();
-    // const startLesson = () => {
-    //     navigate('/privacy-planet/page1');
-    // };
+    const startLesson = () => {
+        navigate(`/${planet}/lesson`);
+    };
 
     return (
         <div className="arrival-container">
@@ -27,7 +28,7 @@ const Arrival = () => {
                     <div className='arrow-container'>
                         <img src={arrow} alt='arrow' className='arrow' />
                     </div>
-                    <div className='arrival-hero'>
+                    <div className='arrival-hero' onClick={startLesson}>
                         <img src={hero} alt='cyberhero' />
                     </div>
                 </div>
