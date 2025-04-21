@@ -7,6 +7,7 @@ import hero from '../img/characters/cyber-hero.png'
 import arrow from '../img/general/arrow.png'
 
 const Arrival = () => {
+    const navigate = useNavigate();
     // const startLesson = () => {
     //     navigate('/privacy-planet/page1');
     // };

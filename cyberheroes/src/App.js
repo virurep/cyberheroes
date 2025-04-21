@@ -5,8 +5,8 @@ import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-route
 import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
 import LessonIntroPage from './components/LessonIntro';
-import Arrival from './components/Arrival.js';
-
+import Arrival from './components/arrival.js';
+import PrivacyIntro from './components/PrivacyIntro';
 
 function App() {
   return (
@@ -17,10 +17,9 @@ function App() {
           {/* <Route path="/privacy-planet/*" element={<PrivacyPlanet />} /> */}
           <Route path="/exploration-map" element={<ExplorationMap />} />
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
-          <Route path="/arrival" element={<Arrival />} />
+          <Route path="/:planet/arrival" element={<Arrival />} />
         </Routes>
       </div>
-
   );
 }
 
