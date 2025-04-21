@@ -21,6 +21,8 @@ function App() {
           <Route path="/exploration-map" element={<ExplorationMap />} />
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
           <Route path="/:planet/arrival" element={<Arrival />} />
+          <Route path="/:planet/lesson" element={<LessonPage />} />
+
         </Routes>
       </div>
   );
