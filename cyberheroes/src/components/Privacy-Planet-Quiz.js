@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./NavBar";
 import "../styles/quiz.css";
@@ -7,7 +8,6 @@ import square from "../img/shapes/square.png";
 import triangle from "../img/shapes/triangle.png";
 import checkedSquare from "../img/shapes/checked-square.png";
 import quizData from "../data/privacy_planet_quiz.json"
-import React from "react";
 
 const Quiz = () => {
     const navigate = useNavigate();
