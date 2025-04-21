@@ -9,7 +9,7 @@ const PrivacyIntro = () => {
   const navigate = useNavigate();
 
   const enterLesson = () => {
-    // TODO: Enter lesson
+    navigate('/privacy-planet/arrival');
   };
 
   return (

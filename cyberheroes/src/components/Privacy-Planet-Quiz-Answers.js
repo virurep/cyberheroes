@@ -36,6 +36,10 @@ const QuizAnswers = () => {
                 <Navbar />
                 <div className="answers-container">
                     <div className="characters-answers-container">
+                        <p className="health-bar-label">Health Bar</p>
+                        <div className="privacy-planet-health-bar">
+                            <progress className="privacy-planet-health-bar-progress" value={currentQuestion.healthBar} max="1"></progress>
+                        </div>
                         <img src={Enemy} alt={"Enemy"} className="characters-answers-img" />
                     </div>
                     <div className="text-answers-container">

@@ -176,7 +176,7 @@
                     "incorrectMessages": ["Even if this seems harmless, it is still unsafe.", "Passwords should remain private, regardless of trust.",
                                             "", "There are better ways to handle emergencies than sharing passwords."],
                     "healthBar" : 0.5,
-                    "hint" : "💡Hint: think about ... 💡"
+                    "hint" : "💡Hint: There are safer ways to get help in an emergency than giving out your password.💡"
                 },
                 {   "id": 12,
                     "type": "multiple-choice",
@@ -191,7 +191,7 @@
                     "incorrectMessages": ["Online strangers cannot always be trusted.", "Ignoring is not enough; reporting is necessary.",
                                         "Age does not determine trustworthiness.", ""],
                     "healthBar" : 0.33,
-                    "hint" : "💡Hint: think about ...💡"
+                    "hint" : "💡Hint: not responding is a start, but telling an adult helps protect you and others.💡"
                 },
                 {   "id": 13,
                     "type": "multiple-select",
@@ -222,7 +222,7 @@
                                         "These individuals may need your information to help protect your health and safety."],
                     "incorrectMessages": ["Friends should not have access to your sensitive data. Online identities can be deceptive, making it unsafe to share personal details."],
                     "healthBar" : 0,
-                    "hint" : "💡Hint: think about ...💡"
+                    "hint" : "💡Hint: Even good friends can slip up—keep sensitive info between you and trusted adults.💡"
                 }
             ]
         }   
