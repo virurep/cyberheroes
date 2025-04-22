@@ -60,7 +60,9 @@ const QuizAnswers = () => {
                             {currentQuestion.correctMessage[1]}
                         </p>
                         <button className="quiz-next-btn" onClick={handleNextQuestion}>
-                            Next Question
+                            {currentQuestion.healthBar == 0
+                                ? "Return to Lesson"
+                                : "Next Question"}
                         </button>
                     </div>
                 </div>
