@@ -393,7 +393,7 @@
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 18,
-              "next": "quiz-1-prompt"
+              "next": "quiz-1"
             }
           }
         },
@@ -496,7 +496,7 @@
             "speaker_style": "speaker-right",
             "buttons": {
               "prev": 23,
-              "next": "quiz-2-prompt"
+              "next": "quiz-2"
             }
           }
         },
@@ -674,7 +674,7 @@
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 33,
-              "next": "quiz-3-prompt"
+              "next": "quiz-3"
             }
           }
         }

@@ -20,6 +20,9 @@ const QuizAnswers = () => {
 
     const handleNextQuestion = () => {
         if (currentQuiz.quiz.length === questionIndex + 1) {
+            // TODO: might need another one that goes to outro / certificate for part 3
+
+            // quizzes parts 1 and 2
             console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
             navigate(`/privacy-planet/lesson`, {
                 state: {
@@ -29,14 +32,15 @@ const QuizAnswers = () => {
         } else {
             navigate(`/privacy-planet/quiz`, {
                 state: {
-                    questionIndex: questionIndex + 1
+                    questionIndex: questionIndex + 1,
+                    part: part
                 }
             });
         }
     };
 
     //correct answer
-    if(isCorrect){
+    if (isCorrect) {
         return (
             <div className="quiz-background">
                 <Navbar />

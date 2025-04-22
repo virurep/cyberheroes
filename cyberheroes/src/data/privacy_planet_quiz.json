@@ -127,7 +127,8 @@
                                         "Once sensitive data is exposed, it is difficult to remove from the internet or prevent others from using it."],
                     "incorrectMessages": ["Hackers exploit their victim's weaknesses and flaws, not fix them."],
                     "healthBar" : 0,
-                    "hint": "💡Hint: think about what kinds of information someone will have access to if they get your data💡"
+                    "hint": "💡Hint: think about what kinds of information someone will have access to if they get your data💡",
+                    "lessonPage": 25
                 }
             ]
         },

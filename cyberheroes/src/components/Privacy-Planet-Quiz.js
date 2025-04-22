@@ -11,14 +11,15 @@ import quizData from "../data/privacy_planet_quiz.json"
 
 const Quiz = () => {
     const navigate = useNavigate();
-    const { part } = useParams();
+    // const { part } = useParams();
     const location = useLocation();
+    console.log("location: ", location);
     const currentQuestionIndex = location.state?.questionIndex || 0;
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
     // Get the current quiz data based on the part
     //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizzes
-    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === "quiz-1");
+    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === location.state?.part);
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
     //for multiple choice and true false questions
@@ -28,7 +29,7 @@ const Quiz = () => {
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
-                part: part,
+                part: location.state?.part,
                 currentQuiz: currentQuiz
             }
         });
@@ -55,7 +56,7 @@ const Quiz = () => {
                 selectedAnswer: selectedAnswers,
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
-                part: part,
+                part: location.state?.part,
                 currentQuiz: currentQuiz
             }
         });
