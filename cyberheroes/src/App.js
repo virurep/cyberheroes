@@ -7,10 +7,11 @@ import LessonIntroPage from './components/LessonIntro';
 import LessonPage from './components/Lesson'
 import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
-import Arrival from './components/arival.js';
+import Arrival from './components/Arrival.js';
 import PrivacyIntro from './components/PrivacyIntro';
 import RedFlagGreenFlag from "./components/RedFlag-GreenFlag-Quiz.js"
 
+import Certificate from './components/Certificate.js';
 function App() {
   return (
       <div>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
           <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
           <Route path="/privacy-moon/quiz/redflag-greenflag" element={<RedFlagGreenFlag />} />
+          <Route path="/:planet/certificate" element={<Certificate />} />
         </Routes>
       </div>
   );

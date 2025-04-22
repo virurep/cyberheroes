@@ -11,25 +11,27 @@ import quizData from "../data/privacy_planet_quiz.json"
 
 const Quiz = () => {
     const navigate = useNavigate();
-    const { part } = useParams();
+    // const { part } = useParams();
     const location = useLocation();
+    console.log("location: ", location);
     const currentQuestionIndex = location.state?.questionIndex || 0;
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
     // Get the current quiz data based on the part
-    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizes
-    const currentQuiz = quizData.quizes.find(quiz => quiz.part === "quiz-1"); 
+    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizzes
+    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === location.state?.part);
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
     //for multiple choice and true false questions
     const handleAnswerClick = (answer) => {
-        navigate(`/privacy-planet/quiz/quiz-answers`, { 
-            state: { 
+        navigate(`/privacy-planet/quiz/quiz-answers`, {
+            state: {
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
-                part: part
-            } 
+                part: location.state?.part,
+                currentQuiz: currentQuiz
+            }
         });
     };
 
@@ -49,15 +51,17 @@ const Quiz = () => {
 
     const handleSubmitClick = () => {
         console.log("selected answers: " + selectedAnswers)
-        navigate(`/privacy-planet/quiz/quiz-answers`, { 
-            state: { 
+        navigate(`/privacy-planet/quiz/quiz-answers`, {
+            state: {
                 selectedAnswer: selectedAnswers,
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
-                part: part
-            } 
+                part: location.state?.part,
+                currentQuiz: currentQuiz
+            }
         });
     };
+
 
     if (!currentQuestion) {
         return <div>Loading...</div>;
@@ -104,22 +108,22 @@ const Quiz = () => {
                     </div>
                     <div className="quiz-answers-container multiple-select-answer-container">
                         {currentQuestion.answers.map((answer, index) => (
-                            <button 
+                            <button
                                 key={index}
                                 className={`quiz-answer-btn answer-btn-${index + 1}`}
                                 onClick={() => handleMultipleAnswerClick(answer)}
                             >
-                                <img 
-                                    src={selectedAnswers.includes(answer) ? checkedSquare : square} 
-                                    alt="check box" 
-                                    className="quiz-answer-shape" 
+                                <img
+                                    src={selectedAnswers.includes(answer) ? checkedSquare : square}
+                                    alt="check box"
+                                    className="quiz-answer-shape"
                                 />
                                 {answer}
                             </button>
                         ))}
                     </div>
-                    <button 
-                        className="quiz-submit-btn" 
+                    <button
+                        className="quiz-submit-btn"
                         onClick={handleSubmitClick}
                         disabled={selectedAnswers.length === 0}
                     >
