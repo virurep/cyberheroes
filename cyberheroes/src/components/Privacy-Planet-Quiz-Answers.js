@@ -87,7 +87,7 @@ const QuizAnswers = () => {
                         <p className="text-answers-text answer-hint">
                             {currentQuestion.hint}
                         </p>
-                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-planet/quiz`, { state: { questionIndex } })}>
+                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-planet/quiz`, { state: { questionIndex, part: part } })}>
                             Try again
                         </button>
                     </div>

@@ -11,7 +11,7 @@ const Arrival = () => {
     const navigate = useNavigate();
     const startLesson = () => {
         navigate(`/${planet}/lesson`, {
-            state: { page: 19 }
+            state: { page: 1 }
         });
     };
 
