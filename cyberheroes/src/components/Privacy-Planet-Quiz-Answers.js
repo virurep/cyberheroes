@@ -4,7 +4,7 @@ import Navbar from './NavBar';
 import '../styles/quiz.css';
 import Allie from '../img/characters/allie.png';
 import Enemy from '../img/characters/enemy.png';
-
+import DeadEnemy from '../img/characters/privacy-enemy-dead.png';
 const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -50,7 +50,10 @@ const QuizAnswers = () => {
                         <div className="privacy-planet-health-bar">
                             <progress className="privacy-planet-health-bar-progress" value={currentQuestion.healthBar} max="1"></progress>
                         </div>
-                        <img src={Enemy} alt={"Enemy"} className="characters-answers-img" />
+                        <img 
+                            src={currentQuestion.healthBar != 0 ? Enemy : DeadEnemy}    
+                            alt={currentQuestion.healthBar != 0 ? "Enemy" : "Dead Enemy"} 
+                            className="characters-answers-img" />
                     </div>
                     <div className="text-answers-container">
                         <h1 className="text-answers-title">
