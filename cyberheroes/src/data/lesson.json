@@ -149,7 +149,8 @@
             },
             {
               "name": "Privacy Enemy",
-              "style": "character character-s character-right"
+              "style": "character character-s character-right character-flip",
+              "arrow": true
             }
           ],
           "message": {
