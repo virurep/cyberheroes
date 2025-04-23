@@ -1,10 +1,13 @@
 import React from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../styles/transitions.css";
 import Navbar from './NavBar';
 import Transitions from '../data/transitions.json';
 
 const Transition = () => {
     const characterImages = require.context('../img/characters', false, /\.(png|jpe?g|svg)$/);
+    
+    const location = useLocation();
 
     const transitionData = Transitions.privacy_planet;
     console.log(transitionData);
