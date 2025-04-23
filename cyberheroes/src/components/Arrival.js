@@ -10,7 +10,11 @@ const Arrival = () => {
     const { planet } = useParams();
     const navigate = useNavigate();
     const startLesson = () => {
-        navigate(`/${planet}/lesson`);
+        navigate(`/${planet}/lesson`, {
+            state: {
+                page: 1
+            }
+        });
     };
 
     return (
