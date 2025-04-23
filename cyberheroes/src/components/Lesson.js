@@ -67,9 +67,9 @@ const Lesson = () => {
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
     if (wildcardMatch(page, "quiz*")) {
-      navigate(`/${planet}/quiz`, {
+      navigate(`/${planet}/transition`, {
         state: {
-          part: page
+          quizPart: page
         }
       });
     } else if (wildcardMatch(page, "review*")) {
