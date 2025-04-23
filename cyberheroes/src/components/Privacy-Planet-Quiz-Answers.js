@@ -4,33 +4,43 @@ import Navbar from './NavBar';
 import '../styles/quiz.css';
 import Allie from '../img/characters/allie.png';
 import Enemy from '../img/characters/enemy.png';
-
+import DeadEnemy from '../img/characters/privacy-enemy-dead.png';
 const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { selectedAnswer, currentQuestion, questionIndex, part } = location.state || {};
+    const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz } = location.state || {};
 
-    if (!currentQuestion) {
-        return <div>Loading...</div>;
-    }
 
     // Check if the selected answer is correct
-    const isCorrect = Array.isArray(selectedAnswer) 
-        ? selectedAnswer.length === currentQuestion.correctAnswers.length && 
-          currentQuestion.correctAnswers.every(correctIndex => 
+    const isCorrect = Array.isArray(selectedAnswer)
+        ? selectedAnswer.length === currentQuestion.correctAnswers.length &&
+          currentQuestion.correctAnswers.every(correctIndex =>
             selectedAnswer.includes(currentQuestion.answers[correctIndex]))
         : currentQuestion.correctAnswers.includes(currentQuestion.answers.indexOf(selectedAnswer));
 
     const handleNextQuestion = () => {
-        navigate(`/privacy-planet/quiz`, {
-            state: {
-                questionIndex: questionIndex + 1
-            }
-        });
+        if (currentQuiz.quiz.length === questionIndex + 1) {
+            // TODO: might need another one that goes to outro / certificate for part 3
+
+            // quizzes parts 1 and 2
+            console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
+            navigate(`/privacy-planet/lesson`, {
+                state: {
+                    page: currentQuestion.lessonPage
+                }
+            });
+        } else {
+            navigate(`/privacy-planet/quiz`, {
+                state: {
+                    questionIndex: questionIndex + 1,
+                    part: part
+                }
+            });
+        }
     };
 
     //correct answer
-    if(isCorrect){
+    if (isCorrect) {
         return (
             <div className="quiz-background">
                 <Navbar />
@@ -40,7 +50,10 @@ const QuizAnswers = () => {
                         <div className="privacy-planet-health-bar">
                             <progress className="privacy-planet-health-bar-progress" value={currentQuestion.healthBar} max="1"></progress>
                         </div>
-                        <img src={Enemy} alt={"Enemy"} className="characters-answers-img" />
+                        <img 
+                            src={currentQuestion.healthBar != 0 ? Enemy : DeadEnemy}    
+                            alt={currentQuestion.healthBar != 0 ? "Enemy" : "Dead Enemy"} 
+                            className="characters-answers-img" />
                     </div>
                     <div className="text-answers-container">
                         <h1 className="text-answers-title">
@@ -50,7 +63,9 @@ const QuizAnswers = () => {
                             {currentQuestion.correctMessage[1]}
                         </p>
                         <button className="quiz-next-btn" onClick={handleNextQuestion}>
-                            Next Question
+                            {currentQuestion.healthBar == 0
+                                ? "Return to Lesson"
+                                : "Next Question"}
                         </button>
                     </div>
                 </div>
@@ -70,14 +85,14 @@ const QuizAnswers = () => {
                             {"Incorrect Answer"}
                         </h1>
                         <p className="text-answers-text">
-                            {Array.isArray(selectedAnswer) 
+                            {Array.isArray(selectedAnswer)
                                 ? currentQuestion.incorrectMessages[0]
                                 : currentQuestion.incorrectMessages[currentQuestion.answers.indexOf(selectedAnswer)]}
                         </p>
                         <p className="text-answers-text answer-hint">
                             {currentQuestion.hint}
                         </p>
-                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-planet/quiz`, { state: { questionIndex } })}>
+                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-planet/quiz`, { state: { questionIndex, part: part } })}>
                             Try again
                         </button>
                     </div>
