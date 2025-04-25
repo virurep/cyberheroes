@@ -18,7 +18,7 @@ const Characters = ({ characters }) => {
               <div className='arrow-container'>
                   <img src={arrow} alt='arrow' className='arrow' />
               </div>
-              <img src={imagePath} alt={character.name} className={`character ${character.style}`} />
+              <img src={imagePath} alt={character.name} className={`character ${character.style} character-arrow`}  />
             </div>
           );
         }

@@ -141,15 +141,25 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character character-s character-left"
+              "style": "character character-s character-left character-left-1"
             },
             {
               "name": "Allie",
-              "style": "character character-s character-left"
+              "style": "character character-s character-left character-left-2"
             },
             {
               "name": "Privacy Enemy",
-              "style": "character character-s character-right character-flip",
+              "style": "character character-s character-right character-right-1 character-flip",
+              "arrow": true
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character character-s character-right character-right-2 character-flip",
+              "arrow": true
+            },
+            {
+              "name": "Privacy Enemy",
+              "style": "character character-s character-right character-right-3 character-flip",
               "arrow": true
             }
           ],
