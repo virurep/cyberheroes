@@ -145,22 +145,22 @@
             },
             {
               "name": "Allie",
-              "style": "character character-s character-left character-left-2"
+              "style": "character-s character-left character-left-2 character-left-last"
             },
             {
               "name": "Privacy Enemy",
-              "style": "character character-s character-right character-right-1 character-flip",
-              "arrow": true
+              "style": "character-s character-right character-right-1 character-flip",
+              "arrow": 9
             },
             {
               "name": "Privacy Enemy",
-              "style": "character character-s character-right character-right-2 character-flip",
-              "arrow": true
+              "style": "character-s character-right character-right-2 character-flip",
+              "arrow": 9
             },
             {
               "name": "Privacy Enemy",
-              "style": "character character-s character-right character-right-3 character-flip",
-              "arrow": true
+              "style": "character-s character-right character-right-3 character-flip",
+              "arrow": 9
             }
           ],
           "message": {

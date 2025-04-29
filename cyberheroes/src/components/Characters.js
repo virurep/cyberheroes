@@ -14,11 +14,11 @@ const Characters = ({ characters }) => {
         if (character.arrow) {
           console.log("arrow");
           return (
-            <div className='arrow-character'>
+            <div className={`arrow-character ${character.style}`}>
               <div className='arrow-container'>
                   <img src={arrow} alt='arrow' className='arrow' />
               </div>
-              <img src={imagePath} alt={character.name} className={`character ${character.style} character-arrow`}  />
+              <img src={imagePath} alt={character.name} className={`character character-arrow`}  />
             </div>
           );
         }
