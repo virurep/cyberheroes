@@ -87,13 +87,27 @@ const Lesson = () => {
     const regexPattern =
         new RegExp('^' + pattern.replace(/\?/g, '.').replace(/\*/g, '.*') + '$');
     return regexPattern.test(text);
-}
+  }
+
+  // clickable characters (encounter enemies)
+  const handleCharacterClick = (page) => {
+    // goToPage(page);
+    console.log("clicked character", page);
+    console.log(page);
+    goToPage(page);
+  }
 
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
       <div className={`lesson-content ${pageData.message.style}-container`}>
-        <Characters characters={pageData.characters} />
+        {/* <Characters characters={pageData.characters} /> */}
+        <Characters
+          characters={pageData.characters.map(character => ({
+            ...character,
+            onClick: character.arrow ? handleCharacterClick : undefined
+          }))}
+        />
         <Message message={pageData.message} onButtonClick={goToPage} />
       </div>
     </div>

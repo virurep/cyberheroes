@@ -167,10 +167,7 @@
             "text": "!! YOU'VE ENCOUNTERED ENEMIES !!",
             "style": "alert-header",
             "buttons": {
-              "continue": {
-                "next": 9,
-                "style": "privacy-enemies-button lesson-button"
-              }
+              "none": true
             }
           }
         },

@@ -1,6 +1,4 @@
 const Buttons = ({ buttons, onClick }) => {
-  console.log("in Buttons.js");
-  console.log(buttons);
 
   const handleClick = (page) => {
     onClick(page);

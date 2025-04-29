@@ -122,6 +122,11 @@
 
 .arrow-character .character {
   height: 20rem;
+  cursor: pointer;
+}
+
+.arrow-character .character:hover {
+  transform: scale(1.05);
 }
 
 .character-right-1 {
