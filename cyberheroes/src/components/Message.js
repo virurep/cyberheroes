@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import Buttons from './Buttons';
+import VocabPopup from './VocabPopup';
+import vocabData from '../data/vocab.json';
 
 const Message = ({ message, onButtonClick }) => {
+  const [selectedVocab, setSelectedVocab] = useState(null);
+
   const processText = (text) => {
     return text.split('\n').map((paragraph, index) => {
       // Split the paragraph by asterisks to find text to wrap in spans
@@ -10,8 +15,20 @@ const Message = ({ message, onButtonClick }) => {
         <p key={index}>
           {parts.map((part, i) => {
             if (part.startsWith('*') && part.endsWith('*')) {
-              // Remove the asterisks and wrap in span
-              return <span key={i} className="vocab-word">{part.slice(1, -1)}</span>;
+              const word = part.slice(1, -1);
+              const vocab = vocabData.words.find(w => w.word.toLowerCase() === word.toLowerCase());
+              if (vocab) {
+                return (
+                  <span
+                    key={i}
+                    className="highlight vocab-word"
+                    onClick={() => setSelectedVocab(vocab)}
+                  >
+                    {word}
+                  </span>
+                );
+              }
+              return <span key={i} className="highlight">{word}</span>;
             }
             return part;
           })}
@@ -33,7 +50,13 @@ const Message = ({ message, onButtonClick }) => {
         <div className="lesson-text">{paragraphs}</div>
         <Buttons buttons={message.buttons} onClick={onButtonClick} />
       </div>
-      {/* <Buttons buttons={message.buttons} onClick={onButtonClick} /> */}
+      {selectedVocab && (
+        <VocabPopup
+          word={selectedVocab.word}
+          definition={selectedVocab.definition}
+          onClose={() => setSelectedVocab(null)}
+        />
+      )}
     </div>
   );
 };
