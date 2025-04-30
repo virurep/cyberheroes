@@ -1,10 +1,26 @@
 import Buttons from './Buttons';
 
 const Message = ({ message, onButtonClick }) => {
+  const processText = (text) => {
+    return text.split('\n').map((paragraph, index) => {
+      // Split the paragraph by asterisks to find text to wrap in spans
+      const parts = paragraph.split(/(\*[^*]+\*)/g);
 
-  const paragraphs = message.text.split('\n').map((paragraph, index) => (
-    <p key={index}>{paragraph}</p>
-  ));
+      return (
+        <p key={index}>
+          {parts.map((part, i) => {
+            if (part.startsWith('*') && part.endsWith('*')) {
+              // Remove the asterisks and wrap in span
+              return <span key={i} className="vocab-word">{part.slice(1, -1)}</span>;
+            }
+            return part;
+          })}
+        </p>
+      );
+    });
+  };
+
+  const paragraphs = processText(message.text);
 
   return (
     <div className="text-container">

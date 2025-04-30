@@ -157,6 +157,15 @@
   z-index: 2;
 }
 
+.vocab-word {
+  text-decoration: underline;
+}
+
+.vocab-word:hover {
+  cursor: pointer;
+  color: blue;
+}
+
 .speaker-name {
   position: absolute;
   background-color: white;

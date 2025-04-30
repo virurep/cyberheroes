@@ -30,7 +30,7 @@
             }
           ],
           "message": {
-            "text": "Hii! I’m Allie. I lost my sensitive data to Patrick. Can you help me get it back?",
+            "text": "Hii! I’m Allie. I lost my *sensitive data* to Patrick. Can you help me get it back?",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",

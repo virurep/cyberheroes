@@ -13,12 +13,19 @@ let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
-  console.log("Planet parameter:", planet);
 
   const location = useLocation();
-  pageNum = Math.max(pageNum, location.state?.page);
+  // pageNum = Math.max(pageNum, location.state?.page);
+  const [pageNum, setPageNum] = useState(() => {
+    // If we're coming from another page with state.page: 1, use that
+    if (location.state?.page === 1) {
+      return 1;
+    }
+    // Otherwise, use the maximum of current page and stored page
+    return Math.max(1, location.state?.page || 1);
+  });
   console.log("pageNum: ", pageNum);
-  const [currentPage, setCurrentPage] = useState(location.state?.page);  // might need to be 1
+  // const [currentPage, setCurrentPage] = useState(location.state?.page);  // might need to be 1
 
   const navigate = useNavigate();
 
@@ -76,8 +83,9 @@ const Lesson = () => {
       navigate(`/${planet}/review`);
     } else {
       console.log("pressed button ", page);
-      pageNum = page;
-      setCurrentPage(page);
+      // pageNum = page;
+      // setCurrentPage(page);
+      setPageNum(page);
       console.log("new pageNum: ", pageNum);
     }
   }
