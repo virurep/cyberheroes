@@ -38,7 +38,6 @@ const LessonIntro = () => {
   };
 
   const planetData = getPlanetData(planet);
-  console.log("Planet data:", planetData);
 
   // getting the image for the right planet
   const getPlanetImage = (planetName) => {
@@ -64,6 +63,9 @@ const LessonIntro = () => {
   };
 
   const lessonIntroMessage = getLessonIntroMessage(planet);
+  const paragraphs = lessonIntroMessage.split('\n').map((paragraph, index) => (
+    <p key={index}>{paragraph}</p>
+  ))
 
   // getting the image on the computer intro screen
   const getComputerIntroImage = (planetName) => {
@@ -111,7 +113,8 @@ const LessonIntro = () => {
         </div>
         <div className="lesson-intro-message">
           <h1 className="lesson-intro-title">You have arrived at {planetData.planet_name}!</h1>
-          <p>{lessonIntroMessage}</p>
+          {/* <p>{lessonIntroMessage}</p> */}
+          {paragraphs}
           <button className="enter-lesson-btn" onClick={handleEnterLesson}>
             ENTER {planetData.planet_name.toUpperCase()}
           </button>

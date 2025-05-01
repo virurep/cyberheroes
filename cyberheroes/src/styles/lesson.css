@@ -5,6 +5,14 @@
   text-shadow: none;
 }
 
+.privacy-moon-background {
+  background-image: url('../img/backgrounds/privacy-moon-background.png');
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+
+
 
 
 /* styles */
