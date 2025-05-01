@@ -17,8 +17,14 @@ const Arrival = () => {
         });
     };
 
+    // Get the correct background class based on the planet
+    const getBackgroundClass = () => {
+        const planetName = planet.toLowerCase().replace(/-/g, '-');
+        return `${planetName}-arrival`;
+    };
+
     return (
-        <div className="arrival-container">
+        <div className={`arrival-container ${getBackgroundClass()}`}>
             <Navbar />
             <main>
                 <div className='rocket'>

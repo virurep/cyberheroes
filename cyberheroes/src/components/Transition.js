@@ -54,20 +54,11 @@ const Transition = () => {
     const imagePath = characterImages(`./${imageName}.png`);
 
     const handleQuizButtonClick = () => {
-        // Handle different quiz types based on planet and quiz part
-        if (planet === 'privacy-planet') {
-            navigate(`/${planet}/quiz`, {
-                state: {
-                    part: quizPart
-                }
-            });
-        } else if (planet === 'privacy-moon' && quizPart === 'redflag-greenflag') {
-            navigate(`/${planet}/quiz/redflag-greenflag`);
-        } else {
-            console.error(`No quiz route found for planet: ${planet}, quiz part: ${quizPart}`);
-            // Fallback to a default route or show an error
-            navigate(`/${planet}/quiz`);
-        }
+        navigate(`/${planet}/quiz`, {
+            state: {
+                part: quizPart
+            }
+        });
     };
 
     return (

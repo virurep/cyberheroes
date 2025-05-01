@@ -1,5 +1,4 @@
 .arrival-container {
-    background-image: url('../img/backgrounds/privacy-planet-background.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,6 +11,31 @@
     bottom: 0;
     z-index: -1;
 }
+
+/* Background images for different planets */
+.privacy-planet-arrival {
+    background-image: url('../img/backgrounds/privacy-planet-background.png');
+}
+
+.privacy-moon-arrival {
+    background-image: url('../img/backgrounds/privacy-moon-background.png');
+}
+
+/* .phishing-planet-arrival {
+    background-image: url('../img/backgrounds/phishing-planet-background.png');
+}
+
+.malware-arrival {
+    background-image: url('../img/backgrounds/malware-background.png');
+}
+
+.safe-browsing-arrival {
+    background-image: url('../img/backgrounds/safe-browsing-background.png');
+}
+
+.online-sharing-arrival {
+    background-image: url('../img/backgrounds/online-sharing-background.png');
+} */
 
 main {
     position: relative;
