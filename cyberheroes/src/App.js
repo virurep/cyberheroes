@@ -12,6 +12,7 @@ import PrivacyIntro from './components/PrivacyIntro';
 import RedFlagGreenFlag from "./components/RedFlag-GreenFlag-Quiz.js"
 import Transition from './components/Transition';
 import Certificate from './components/Certificate.js';
+import DragDropQuiz from './components/Drag-Drop-Quiz.js';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
           <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
           <Route path="/privacy-moon/quiz/redflag-greenflag" element={<RedFlagGreenFlag />} />
+          <Route path="/privacy-moon/quiz/drag-drop" element={<DragDropQuiz />} />
           <Route path="/:planet/certificate" element={<Certificate />} />
           <Route path="/:planet/transition" element={<Transition />} />
         </Routes>
