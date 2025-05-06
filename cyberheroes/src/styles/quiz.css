@@ -243,12 +243,7 @@
 }
 
 /* redflag green flag */
-
-.privacy-moon-quiz-background {
-
-/* redflag green flag ::grammar-error */
-
-.rf-gf-background{
+.privacy-moon-quiz-background{
     background-image: url("../img/backgrounds/privacy-moon-background.png");
     background-size: cover;
     background-position: center;

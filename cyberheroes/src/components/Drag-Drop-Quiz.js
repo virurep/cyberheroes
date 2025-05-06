@@ -66,7 +66,7 @@ const DragDropQuiz = () => {
     }
 
     return (
-        <div className="rf-gf-background">
+        <div className="privacy-moon-quiz-background">
             <Navbar />
             <div className="game-container">
                 {!showFeedback ? (
