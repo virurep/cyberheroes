@@ -30,7 +30,7 @@
             }
           ],
           "message": {
-            "text": "Hii! I’m Allie. I lost my sensitive data to Patrick. Can you help me get it back?",
+            "text": "Hii! I’m Allie. I lost my *sensitive data* to Patrick. Can you help me get it back?",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -683,6 +683,52 @@
             "buttons": {
               "prev": 33,
               "next": "quiz-3"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "planet_name": "Privacy Moon",
+      "pages": [
+        {
+          "page_number": 1,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            }
+          ],
+          "message": {
+            "text": "I landed on the moon, I must find Alejandro!",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "next": 2
+            }
+          }
+        },
+        {
+          "page_number": 2,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "text": "Hi Alejandro, I'm Cyber Hero. Patrick just arrived. Allie sent me to help you keep the Privacy Planet’s information protected.",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 1,
+              "next": 3
             }
           }
         }

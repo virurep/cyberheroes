@@ -13,12 +13,17 @@ let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
-  console.log("Planet parameter:", planet);
 
   const location = useLocation();
-  pageNum = Math.max(pageNum, location.state?.page);
+  const [pageNum, setPageNum] = useState(() => {
+    // If we're coming from another page with state.page: 1, use that
+    if (location.state?.page === 1) {
+      return 1;
+    }
+    // Otherwise, use the maximum of current page and stored page
+    return Math.max(1, location.state?.page || 1);
+  });
   console.log("pageNum: ", pageNum);
-  const [currentPage, setCurrentPage] = useState(location.state?.page);  // might need to be 1
 
   const navigate = useNavigate();
 
@@ -75,10 +80,7 @@ const Lesson = () => {
     } else if (wildcardMatch(page, "review*")) {
       navigate(`/${planet}/review`);
     } else {
-      console.log("pressed button ", page);
-      pageNum = page;
-      setCurrentPage(page);
-      console.log("new pageNum: ", pageNum);
+      setPageNum(page);
     }
   }
 
@@ -91,9 +93,6 @@ const Lesson = () => {
 
   // clickable characters (encounter enemies)
   const handleCharacterClick = (page) => {
-    // goToPage(page);
-    console.log("clicked character", page);
-    console.log(page);
     goToPage(page);
   }
 
@@ -101,7 +100,6 @@ const Lesson = () => {
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
       <div className={`lesson-content ${pageData.message.style}-container`}>
-        {/* <Characters characters={pageData.characters} /> */}
         <Characters
           characters={pageData.characters.map(character => ({
             ...character,

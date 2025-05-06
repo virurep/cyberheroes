@@ -10,9 +10,9 @@
     {
       "planet_name": "Privacy Moon",
       "lesson_title": "Sharing Online",
-      "intro_text": "Welcome to Privacy Moon...",
+      "intro_text": "Welcome to Privacy Moon. Life here is quiet, but residents have begun to report suspicious behavior nearby. We need your help to find the cause.\n\nWARNING: This lesson is the second part of Privacy Planet. This lesson can be completed on it’s own, but the story or lesson contents may not make sense.",
       "computer_image_name": "patrick-wanted.png",
-      "computer_text": "Hello Cyber Hero! Warning: Privacy Moon is the second part of Privacy Planet. This lesson can be completed without finishing Privacy Planet, but the story or lesson contents may not make sense..."
+      "computer_text": "Hello Cyber Hero! Patrick has escaped from Privacy Planet and is hiding somewhere on the moon. Allie’s brother, Alejandro, should be nearby. Find him and defeat Patrick for good!"
     }
   ]
 }
