@@ -48,6 +48,7 @@ const QuizAnswers = () => {
     };
 
     if(isRevealed){
+        //show safe with letters
         return (
             <div className="privacy-moon-quiz-background">
                 <Navbar />
@@ -66,6 +67,7 @@ const QuizAnswers = () => {
             </div>
         )
     } else if (isCorrect) {
+        //correct answer
         return (
             <div className="privacy-moon-quiz-background">
                 <Navbar />
