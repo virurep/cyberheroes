@@ -2,8 +2,8 @@ import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./NavBar";
 import Al from '../img/characters/al.png';
-import redFlag from '../img/quizes/redFlag.png'
-import greenFlag from '../img/quizes/greenFlag.png'
+import redFlag from '../img/quizzes/redFlag.png'
+import greenFlag from '../img/quizzes/greenFlag.png'
 import "../styles/quiz.css";
 import gameData from "../data/redFlag_greenFlag_quiz.json"
 
@@ -44,7 +44,7 @@ const FlagQuiz = () => {
     }
 
     return (
-       <div className="rf-gf-background">
+       <div className="privacy-moon-quiz-background">
             <Navbar />
             <div className="game-container">
                 <h1>

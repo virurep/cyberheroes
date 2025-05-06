@@ -1,6 +1,6 @@
 /* quiz page */
 
-.quiz-background {
+.privacy-planet-quiz-background {
     background-image: url("../img/backgrounds/privacy-planet-background.png");
     background-size: cover;
     background-position: center;
@@ -140,6 +140,7 @@
     justify-content: center;
     gap: 50px;
     margin-top: 100px;
+    position: relative;
 }
 .health-bar-label{
     color: #fdfdfd; 
@@ -239,11 +240,9 @@
     transform: scale(1.05);
 }
 
+/* redflag green flag */
 
-
-/* redflag green flag ::grammar-error */
-
-.rf-gf-background{
+.privacy-moon-quiz-background {
     background-image: url("../img/backgrounds/privacy-moon-background.png");
     background-size: cover;
     background-position: center;
@@ -321,4 +320,46 @@
     max-height: 60vh;
     position: relative;
     z-index: 1001;
+}
+
+
+/* Final quiz on privacy moon */
+
+.dark-question{
+    background-color: #34303B;
+    color: #E14733;
+    outline: 1px solid #E14733;
+    text-align: center;
+}
+
+/* Final quiz answers on privacy moon */
+.dark-answers-container{
+    background-color: #34303B;
+    color: #E14733;
+    outline: 1px solid #E14733;
+    text-align: center;
+}
+
+.red-text{
+    color: #E14733;
+}
+
+.reveal-letter-btn{
+    background-color: #37a073;
+}
+
+.quiz-next-btn-revealed {
+    position: absolute;
+    bottom: 105px;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: #37a073;
+    padding: 10px 20px;
+}
+
+.quiz-next-btn-revealed:hover {
+    transform: translateX(-50%) scale(1.05);
+    background-color: #43C58C;
+
 }

@@ -70,7 +70,7 @@ const Quiz = () => {
     //multiple choice
     if(currentQuestion.type === "multiple-choice"){
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="quiz-container">
                     <div className="quiz-question">
@@ -100,7 +100,7 @@ const Quiz = () => {
     } else if (currentQuestion.type === "multiple-select"){
         //multiple select
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="quiz-container">
                     <div className="quiz-question">
@@ -135,7 +135,7 @@ const Quiz = () => {
     } else {
         //true or false
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="quiz-container">
                     <div className="quiz-question">

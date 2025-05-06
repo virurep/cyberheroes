@@ -45,7 +45,7 @@ const QuizAnswers = () => {
     //correct answer
     if (isCorrect) {
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="answers-container">
                     <div className="characters-answers-container">
@@ -77,7 +77,7 @@ const QuizAnswers = () => {
     } else {
         //incorrect answer
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="answers-container">
                     <div className="characters-answers-container">
