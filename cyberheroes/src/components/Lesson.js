@@ -4,7 +4,7 @@ import '../styles/lesson.css';
 import Navbar from './NavBar';
 import Characters from './Characters';
 import Message from './Message';
-import lessonData from '../data/lesson.json';
+import lessonData from '../data/lessons/lesson.json';
 
 const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 

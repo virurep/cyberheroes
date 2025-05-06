@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Navbar from './NavBar';
-import '../styles/quiz.css';
-import Alejandro from '../img/characters/alejandro.png';
+import Navbar from '../NavBar';
+import '../../styles/quiz.css';
+import Alejandro from '../../img/characters/alejandro.png';
 
 // Safes for the letter reaveal in the answer
-import letter1 from '../img/quizzes/safes/1-letter.png';
-import letter2 from '../img/quizzes/safes/2-letter.png';
-import letter3 from '../img/quizzes/safes/3-letter.png';
-import letter4 from '../img/quizzes/safes/4-letter.png';
-import letter5 from '../img/quizzes/safes/5-letter.png';
+import letter1 from '../../img/quizzes/safes/1-letter.png';
+import letter2 from '../../img/quizzes/safes/2-letter.png';
+import letter3 from '../../img/quizzes/safes/3-letter.png';
+import letter4 from '../../img/quizzes/safes/4-letter.png';
+import letter5 from '../../img/quizzes/safes/5-letter.png';
 
 const QuizAnswers = () => {
     const navigate = useNavigate();

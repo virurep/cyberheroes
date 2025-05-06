@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Buttons from './Buttons';
 import VocabPopup from './VocabPopup';
-import vocabData from '../data/vocab.json';
+import vocabData from '../data/lessons/vocab.json';
 
 const Message = ({ message, onButtonClick }) => {
   const [selectedVocab, setSelectedVocab] = useState(null);

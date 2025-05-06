@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/intro.css';
-import lessonIntroData from '../data/lesson_intro.json';
+import lessonIntroData from '../data/lessons/lesson_intro.json';
 import rocket from '../img/general/rocket.png';
 import computer from "../img/general/computer.png";
 
@@ -92,10 +92,8 @@ const LessonIntro = () => {
 
   // button that switches from lesson intro to computer intro
   const handleEnterLesson = () => {
-    document.querySelector(".enter-lesson-btn").addEventListener("click", () => {
       document.querySelector(".lesson-intro-background").classList.add("hidden");
       document.querySelector(".computer-container").classList.remove("hidden");
-    });
   };
 
   const handleBackToMap = () => {
@@ -139,14 +137,6 @@ const LessonIntro = () => {
             </button>
           </div>
         </div>
-        {/* <div className="button-content">
-          <button className="to-map-btn" onClick={() => navigate('/exploration-map')}>
-            GO BACK TO MAP
-          </button>
-          <button className="start-lesson-btn" onClick={startLesson}>
-            START YOUR ADVENTURE
-          </button>
-        </div> */}
       </div>
     </>
   );

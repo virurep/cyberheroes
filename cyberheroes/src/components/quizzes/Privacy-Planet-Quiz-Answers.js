@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Navbar from './NavBar';
-import '../styles/quiz.css';
-import Allie from '../img/characters/allie.png';
-import Enemy from '../img/characters/enemy.png';
-import DeadEnemy from '../img/characters/privacy-enemy-dead.png';
+import Navbar from '../NavBar';
+import '../../styles/quiz.css';
+import Allie from '../../img/characters/allie.png';
+import Enemy from '../../img/characters/enemy.png';
+import DeadEnemy from '../../img/characters/privacy-enemy-dead.png';
+
+
 const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();

@@ -1,12 +1,14 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "./NavBar";
-import "../styles/quiz.css";
-import circle from "../img/shapes/circle.png";
-import diamond from "../img/shapes/diamond.png";
-import square from "../img/shapes/square.png";
-import triangle from "../img/shapes/triangle.png";
-import quizData from "../data/privacy_moon_quiz.json"
+import Navbar from "../NavBar";
+import "../../styles/quiz.css";
+import quizData from "../../data/quizzes/privacy_moon_quiz.json"
+
+//shapes included on the answer buttons
+import circle from "../../img/quizzes/shapes/circle.png";
+import diamond from "../../img/quizzes/shapes/diamond.png";
+import square from "../../img/quizzes/shapes/square.png";
+import triangle from "../../img/quizzes/shapes/triangle.png";
 
 const Quiz = () => {
     const navigate = useNavigate();
@@ -16,10 +18,8 @@ const Quiz = () => {
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
     // Get the current quiz data based on the part
-    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizzes
     const currentQuiz = quizData.quizzes.find(quiz => quiz.part === "quiz-1");
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
-   //const currentQuestion = currentQuiz?.quiz[0];
 
     //for multiple choice
     const handleAnswerClick = (answer) => {
@@ -33,10 +33,6 @@ const Quiz = () => {
             }
         });
     };
-
-    if (!currentQuestion) {
-        return <div>Loading...</div>;
-    }
 
     //multiple choice
     return (

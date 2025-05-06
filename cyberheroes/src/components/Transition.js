@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../styles/transitions.css";
 import Navbar from './NavBar';
-import Transitions from '../data/transitions.json';
+import Transitions from '../data/lessons/transitions.json';
 
 const Transition = () => {
     const characterImages = require.context('../img/characters', false, /\.(png|jpe?g|svg)$/);

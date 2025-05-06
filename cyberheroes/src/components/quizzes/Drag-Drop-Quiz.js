@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "./NavBar";
-import "../styles/quiz.css";
-import quizData from "../data/drag_drop_quiz.json";
-import Al from "../img/characters/al.png";
+import Navbar from "../NavBar";
+import "../../styles/quiz.css";
+import quizData from "../../data/quizzes/drag_drop_quiz.json";
+import Al from "../../img/characters/al.png";
 
 const DragDropQuiz = () => {
     const navigate = useNavigate();
@@ -60,10 +60,6 @@ const DragDropQuiz = () => {
         setSelectedBox(null);
         setDraggedItem(null);
     };
-
-    if (!currentQuestion) {
-        return <div>Loading...</div>;
-    }
 
     return (
         <div className="privacy-moon-quiz-background">
