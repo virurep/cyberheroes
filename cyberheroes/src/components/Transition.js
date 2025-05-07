@@ -62,7 +62,7 @@ const Transition = () => {
     };
 
     return (
-        <div className="transition-container">
+        <div className={`transition-container ${planet}-background`}>
             <Navbar />
             <div className="transition-content">
                 <div className="transition-layout">
