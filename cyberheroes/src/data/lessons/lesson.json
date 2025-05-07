@@ -1260,7 +1260,76 @@
               "next": "quiz-2"
             }
           }
-        }
+        },
+        {
+          "page_number": 26,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "What should I do if someone asks me that?",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": "quiz-2-result",
+              "next": 27
+            }
+          }
+        },
+        {
+          "page_number": 27,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "<red>Never respond or give out your information.** Even if the person seems nice or trustworthy, it's important to stay cautious. Strangers online may not be who they say they are, and sharing even small details can put you at risk.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 26,
+              "next": 28
+            }
+          }
+        },
+        {
+          "page_number": 28,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "<red>Tell a trusted adult right away.**\nIf someone makes you feel uncomfortable, asks for personal details, or pressures you to share something, report to a parent, teacher, or guardian. They can help you decide what to do next.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 27,
+              "next": 29
+            }
+          }
+        },
       ]
     }
   ]
