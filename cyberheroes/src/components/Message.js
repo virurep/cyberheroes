@@ -45,6 +45,13 @@ const Message = ({ message, onButtonClick }) => {
                 return <li key={i}>{item}</li>;
               });
             }
+
+            // check if the part should be red
+            if (part.startsWith("<red>") && part.endsWith("**")) {
+              const text = part.slice(5, -2);
+              return <span className="red-text">{text}</span>;
+            }
+
             return part;
           })}
         </p>

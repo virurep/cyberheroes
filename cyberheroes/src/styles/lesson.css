@@ -258,6 +258,14 @@
   text-align: center;
 }
 
+.red-text {
+  color: #E14733;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+
 .alert-header {
   background-color: transparent;
 }
