@@ -52,6 +52,12 @@ const Message = ({ message, onButtonClick }) => {
               return <span className="red-text">{text}</span>;
             }
 
+            // check if the part should be underlined
+            if (part.startsWith("<u>") && part.endsWith("**")) {
+              const text = part.slice(3, -2);
+              return <span className="underline-text">{text}</span>;
+            }
+
             return part;
           })}
         </p>
