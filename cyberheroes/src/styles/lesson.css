@@ -13,8 +13,6 @@
 
 
 
-
-
 /* styles */
 .lesson-container {
   position: absolute;
@@ -64,14 +62,17 @@
   z-index: 1;
 }
 
-.message-box-bottom-container .character {
+.character {
   height: 30rem;
+}
+
+.message-box-bottom-container .character {
   position: absolute;
   bottom: 0;
 }
 
 .message-box-right-container .character {
-  height: 30rem;
+  margin: auto;
 }
 
 .character-left {
@@ -96,7 +97,7 @@
 }
 
 .character-s {
-  height: 20rem;
+  height: 25rem;
   bottom: 10%;
 }
 

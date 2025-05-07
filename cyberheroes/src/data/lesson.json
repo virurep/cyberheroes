@@ -30,7 +30,7 @@
             }
           ],
           "message": {
-            "text": "Hii! I’m Allie. I lost my *sensitive data* to Patrick. Can you help me get it back?",
+            "text": "Hii! I’m Allie. I lost my <v>sensitive data** to Patrick. Can you help me get it back?",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -718,17 +718,178 @@
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip"
+              "style": "character-right character-flip character-s"
             }
           ],
           "message": {
             "text": "Hi Alejandro, I'm Cyber Hero. Patrick just arrived. Allie sent me to help you keep the Privacy Planet’s information protected.",
             "speaker": "Cyber Hero",
             "style": "message-box-bottom",
-            "speaker_style": "speaker-left",
+            "speaker_style": "speaker-right",
             "buttons": {
               "prev": 1,
               "next": 3
+            }
+          }
+        },
+        {
+          "page_number": 3,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "text": "How do I know you are telling the truth? Do you really know Allie?",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 2,
+              "next": 4
+            }
+          }
+        },
+        {
+          "page_number": 4,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "Yeah, and she’s taught me lessons on <v>sensitive data** and information. Ask me anything if you think I'm lying!",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 3,
+              "next": 5
+            }
+          }
+        },
+        {
+          "page_number": 5,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "text": "Hmmm okay! What is <v>public information**?",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 4,
+              "next": 6
+            }
+          }
+        },
+        {
+          "page_number": 6,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "Public information is safe share with anyone. Like:\n<li>Your Favorite Color<ul>Your Hobbies<ul>A Fun Fact About Yourself**",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "prev": 5,
+              "next": 7
+            }
+          }
+        },
+        {
+          "page_number": 7,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "text": "What is private information?",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 6,
+              "next": 8
+            }
+          }
+        },
+        {
+          "page_number": 8,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "Private (or sensitive) information should only be shared with trusted adults because it can be used to identify or contact you.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 7,
+              "next": "quiz-1"
+            }
+          }
+        },
+        {
+          "page_number": 9,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "Wow! Allie has taught you well! I trust you now. Let’s go defeat and get people’s private information back!",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": "quiz-1-result",
+              "next": 10
             }
           }
         }
