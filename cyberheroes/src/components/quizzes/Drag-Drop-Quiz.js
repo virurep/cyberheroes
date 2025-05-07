@@ -39,7 +39,7 @@ const DragDropQuiz = () => {
 
         const isPrivate = boxType === 'private';
         const isCorrectAnswer = isPrivate === (currentQuestion.correctAnswer === 0);
-        
+
         setSelectedBox(boxType);
         setIsCorrect(isCorrectAnswer);
         setShowFeedback(true);
@@ -51,7 +51,11 @@ const DragDropQuiz = () => {
         if (nextIndex < quizData.quiz.length) {
             setQuestionIndex(nextIndex);
         } else {
-            navigate(`/${planet}/certificate`);
+            navigate(`/privacy-moon/lesson`, {
+                state: {
+                    page: currentQuestion.lessonPage
+                }
+            });
         }
     };
 
@@ -68,7 +72,7 @@ const DragDropQuiz = () => {
                 {!showFeedback ? (
                     <>
                         <h1 className="drag-drop-quiz-title">Is this Private or Public Information?</h1>
-                        
+
                         <div className="drag-drop-question-box"
                             draggable
                             onDragStart={(e) => handleDragStart(e, currentQuestion.question)}
@@ -77,15 +81,15 @@ const DragDropQuiz = () => {
                         </div>
 
                         <div className="drag-drop-answer-boxes">
-                            <div 
+                            <div
                                 className={`drag-drop-answer-box private ${selectedBox === 'private' ? (isCorrect ? 'correct' : 'incorrect') : ''}`}
                                 onDragOver={handleDragOver}
                                 onDrop={(e) => handleDrop(e, 'private')}
                             >
                                 <h2>Private Information</h2>
                             </div>
-                            
-                            <div 
+
+                            <div
                                 className={`drag-drop-answer-box public ${selectedBox === 'public' ? (isCorrect ? 'correct' : 'incorrect') : ''}`}
                                 onDragOver={handleDragOver}
                                 onDrop={(e) => handleDrop(e, 'public')}

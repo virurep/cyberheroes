@@ -12,7 +12,7 @@
                             "Share your location but only with them",
                             "Tell a trusted adult right away"],
                     "correctAnswers": [3],
-                    "correctMessage": ["The safest option is to inform a trusted adult, as meeting someone from the internet can be risky."],                
+                    "correctMessage": ["The safest option is to inform a trusted adult, as meeting someone from the internet can be risky."],
                      "incorrectMessages": ["Just because someone seems friendly online doesn't mean they are safe in real life.",
                                         "A picture doesn't guarantee safety; people can fake or manipulate images.",
                                         "Sharing your location with a stranger online is dangerous and can put you and your family at risk.", ""],
@@ -42,9 +42,9 @@
                                 "You should tell them personal details so they continue being nice",
                                 "Trust them completely because they make you feel good"],
                     "correctAnswers": [0],
-                    "correctMessage": ["Some people use kindness as a tactic to gain trust and manipulate others."],                    
+                    "correctMessage": ["Some people use kindness as a tactic to gain trust and manipulate others."],
                     "incorrectMessages" : ["", "Even if someone appears nice, they may have bad intentions. It's important to be cautious.",
-                                        "Sharing personal details makes you vulnerable to scams and manipulation.", 
+                                        "Sharing personal details makes you vulnerable to scams and manipulation.",
                                         "Feelings of trust should be built over time with known and safe people, not strangers online."],
                     "hint" : "💡 Hint: Sometimes people pretend to be nice to get something from you—stay alert.💡"
                 },
@@ -58,7 +58,7 @@
                                 "Keep the conversation going but avoid answering their questions"],
                     "correctAnswers": [2],
                     "correctMessage": ["If someone makes you feel uncomfortable, trust your gut, stop engaging, and get help."],
-                    "incorrectMessages" : ["They may apologize just to gain your trust again and continue inappropriate behavior.", 
+                    "incorrectMessages" : ["They may apologize just to gain your trust again and continue inappropriate behavior.",
                                             "Your discomfort is a warning sign. Never ignore it.", "",
                                             "Staying in contact gives them more chances to manipulate you."],
                     "hint": "💡 Hint: That uneasy feeling is a clue—listen to it and talk to a trusted adult.💡"
@@ -73,11 +73,10 @@
                                 "Share only minor details, like your favorite color"],
                     "correctAnswers": [2],
                     "correctMessage": ["A trusted adult can help you decide the safest way to handle the situation."],
-                    "incorrectMessages": ["It's easy to lie online, and strangers should never have access to personal details.", 
+                    "incorrectMessages": ["It's easy to lie online, and strangers should never have access to personal details.",
                                         "Even if you don't answer, continuing the conversation may lead to manipulation.", "",
                                         "Even small details can be used to build a profile on you and gain your trust."],
-                    "hint" : "💡 Hint: If you wouldn't tell them in real life, check with a trusted adult first.💡",
-                    "lessonPage": 1
+                    "hint" : "💡 Hint: If you wouldn't tell them in real life, check with a trusted adult first.💡"
                 }
             ]
         }

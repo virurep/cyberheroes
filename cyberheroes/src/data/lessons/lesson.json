@@ -1330,6 +1330,75 @@
             }
           }
         },
+        {
+          "page_number": 29,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "<red>Block or report the person if they keep asking questions.**\nMost websites and apps have features that allow you to block or report users who are acting suspiciously. This helps keeping you and the others safe.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 28,
+              "next": 30
+            }
+          }
+        },
+        {
+          "page_number": 30,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "<red>Trust your instincts.**\nIf something feels off about a conversation, listen to that feeling. It's always better to be cautious than to take a risk.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 29,
+              "next": 31
+            }
+          }
+        },
+        {
+          "page_number": 31,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "Remember that even if someone seems nice, they might not be who they say they are.<red>Online, people can pretend to be anyone.**\nThey might use fake pictures, names, or stories to trick others into trusting them.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 30,
+              "next": "quiz-3"
+            }
+          }
+        }
       ]
     }
   ]
