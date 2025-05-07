@@ -3,6 +3,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/privacy_planet_quiz.json"
+import TextReader from "../TextReader";
 
 //shapes included on the answer buttons
 import circle from "../../img/quizzes/shapes/circle.png";
@@ -67,6 +68,7 @@ const Quiz = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="quiz-container">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
@@ -97,6 +99,7 @@ const Quiz = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="quiz-container">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
@@ -132,6 +135,7 @@ const Quiz = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="quiz-container">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>

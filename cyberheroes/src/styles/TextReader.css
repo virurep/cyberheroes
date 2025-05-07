@@ -1,0 +1,55 @@
+.text-reader-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.text-reader-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.play-btn {
+    background-color: #0F746F;
+    color: white;
+}
+
+.play-btn:hover {
+    background-color: #19ada6;
+    transform: scale(1.05);
+}
+
+.pause-btn {
+    background-color: #FFC00A;
+    color: #02101b;
+}
+
+.pause-btn:hover {
+    background-color: #ffd54f;
+    transform: scale(1.05);
+}
+
+.resume-btn {
+    background-color: #33CCCC;
+    color: #02101b;
+}
+
+.resume-btn:hover {
+    background-color: #4dd8d8;
+    transform: scale(1.05);
+}
+
+.stop-btn {
+    background-color: #E14733;
+    color: white;
+}
+
+.stop-btn:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+}
