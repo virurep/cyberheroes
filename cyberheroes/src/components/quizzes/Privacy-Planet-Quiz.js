@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
+import TextReader from "../TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/privacy_planet_quiz.json"
-import TextReader from "../TextReader";
 
 //shapes included on the answer buttons
 import circle from "../../img/quizzes/shapes/circle.png";

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/arrival.css";
 import Navbar from './NavBar';
+import TextReader from "./TextReader";
 import ship from '../img/general/ship.png'
 import hero from '../img/characters/cyber-hero.png'
 import arrow from '../img/general/arrow.png'
@@ -26,6 +27,7 @@ const Arrival = () => {
     return (
         <div className={`arrival-container ${getBackgroundClass()}`}>
             <Navbar />
+            <TextReader />
             <main>
                 <div className='rocket'>
                     <img src={ship} alt='rocket ship' />

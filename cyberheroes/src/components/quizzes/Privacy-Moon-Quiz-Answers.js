@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../NavBar';
+import TextReader from '../TextReader';
 import '../../styles/quiz.css';
 import Alejandro from '../../img/characters/alejandro.png';
 
@@ -52,6 +53,7 @@ const QuizAnswers = () => {
         return (
             <div className="privacy-moon-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="answers-container">
                    <img src={
                     currentQuestion.id === 1 ? letter1 :
@@ -71,6 +73,7 @@ const QuizAnswers = () => {
         return (
             <div className="privacy-moon-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="answers-container privacy-moon-quiz-answers-container">
                     <div className="text-answers-container dark-answers-container">
                         <h1 className="text-answers-title red-text">
@@ -91,6 +94,7 @@ const QuizAnswers = () => {
         return (
             <div className="privacy-moon-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="answers-container">
                     <div className="characters-answers-container">
                         <img src={Alejandro} alt={"Alejandro"} className="characters-answers-img" />

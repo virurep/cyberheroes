@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
+import TextReader from "../TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/drag_drop_quiz.json";
 import Al from "../../img/characters/al.png";
@@ -64,6 +65,7 @@ const DragDropQuiz = () => {
     return (
         <div className="privacy-moon-quiz-background">
             <Navbar />
+            <TextReader />
             <div className="game-container">
                 {!showFeedback ? (
                     <>

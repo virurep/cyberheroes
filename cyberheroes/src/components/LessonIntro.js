@@ -3,6 +3,8 @@ import '../styles/intro.css';
 import lessonIntroData from '../data/lessons/lesson_intro.json';
 import rocket from '../img/general/rocket.png';
 import computer from "../img/general/computer.png";
+import Navbar from './NavBar';
+import TextReader from './TextReader';
 
 const planetImages = require.context('../img/planets', false, /\.(png|jpe?g|svg)$/);
 const introImages = require.context('../img/lesson-intro', false, /\.(png|jpe?g|svg)$/);
