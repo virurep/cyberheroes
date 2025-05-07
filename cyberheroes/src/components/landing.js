@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/landing.css";
 import hero from "../img/characters/cyber-hero.png";
 import Navbar from './NavBar';
-import TextReader from './TextReader';
 
 
 const LandingPage = () => {
@@ -26,7 +25,6 @@ const LandingPage = () => {
     return (
         <div>
             <Navbar />
-            <TextReader />
             <div className="landing-container">
                 <main>
                     <div className="hero">

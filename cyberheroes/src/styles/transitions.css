@@ -1,7 +1,6 @@
 .transition-container {
     width: 100vw;  /* Full viewport width */
     height: 100vh; /* Full viewport height */
-    background-image: url('../img/backgrounds/privacy-planet-background.png');
     background-size: cover;     /* Cover the container while maintaining aspect ratio */
     background-position: center; /* Center the background */
     background-repeat: no-repeat;
@@ -9,6 +8,15 @@
     top: 0;
     left: 0;
     overflow: hidden; /* Prevent scrolling */
+}
+
+/* Planet-specific backgrounds */
+.privacy-planet-background {
+    background-image: url('../img/backgrounds/privacy-planet-background.png');
+}
+
+.privacy-moon-background {
+    background-image: url('../img/backgrounds/privacy-moon-background.png');
 }
 
 .transition-content {

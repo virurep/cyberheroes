@@ -24,14 +24,14 @@
         {
             "id": 4,
             "question": "Your Pet's Name",
-            "correctAnswer": 1, 
+            "correctAnswer": 1,
             "correctMessage": "your pet’s name can be public information and shared with strangers as it does not contain any sensitive data.",
             "incorrectMessages": "💡 Hint:  think about what sensitive data is made up of. does your favorite show contain any personal information about yourself? 💡"
         },
         {
             "id": 5,
             "question": "Your Home Address",
-            "correctAnswer": 0, 
+            "correctAnswer": 0,
             "correctMessage": "your home address is where you live. sharing this online to strangers can be dangerous as it allows them to find exactly where you are.",
             "incorrectMessages": "💡Hint:  think about what people can access with your home address. is this something you would want a stranger to have? 💡"
         },
@@ -47,7 +47,8 @@
             "question": "Your Phone Number",
             "correctAnswer": 0,
             "correctMessage": "if strangers get a hold of your phone number, they will be able to contact you at anytime.  it’s best to keep this private and only share with trusted individuals you know in real life.",
-            "incorrectMessages": "💡Hint:  think about what people can access with your phone number. is this something you would want a stranger to have? 💡"
+            "incorrectMessages": "💡Hint:  think about what people can access with your phone number. is this something you would want a stranger to have? 💡",
+            "lessonPage": 9
         }
     ]
 }

@@ -29,9 +29,21 @@ const FlagQuiz = () => {
         // Hide popup
         document.querySelector(".answer-popup-container").classList.add("hidden");
         // Move to next question
-        navigate(`/privacy-moon/quiz/redflag-greenflag`, {
-            state: { questionIndex: currentQuestionIndex + 1 }
-        });
+        // navigate(`/privacy-moon/quiz/redflag-greenflag`, {
+        //     state: { questionIndex: currentQuestionIndex + 1 }
+        // });
+        const nextIndex = currentQuestionIndex + 1;
+        if (nextIndex < gameData.quiz.length) {
+            navigate(`/privacy-moon/quiz/redflag-greenflag`, {
+                state: { questionIndex: nextIndex }
+            });
+        } else {
+            navigate(`/privacy-moon/lesson`, {
+                state: {
+                    page: currentQuestion.lessonPage
+                }
+            });
+        }
     };
 
     const handleTryAgain = () => {
@@ -68,11 +80,11 @@ const FlagQuiz = () => {
                 <div className="popup-text-container">
                     <div>
                         <h1>{selectedAnswer === currentQuestion.correctAnswer ? "Correct!" : "Incorrect"}</h1>
-                        <p>{selectedAnswer === currentQuestion.correctAnswer 
-                            ? currentQuestion.correctMessage 
+                        <p>{selectedAnswer === currentQuestion.correctAnswer
+                            ? currentQuestion.correctMessage
                             : currentQuestion.incorrectMessages}</p>
                     </div>
-                    
+
                     {selectedAnswer === currentQuestion.correctAnswer ? (
                         <button className="quiz-next-btn" onClick={handleNextClick}>
                             Next
@@ -88,7 +100,7 @@ const FlagQuiz = () => {
 
 
        </div>
-                
+
     )
 }
 

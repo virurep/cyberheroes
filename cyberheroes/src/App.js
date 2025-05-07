@@ -16,6 +16,7 @@ import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/quizzes/Privacy-Planet-Quiz-Answers.js';
 
 //Privacy moon quizzes
+import PrivacyMoonQuizRoute from './components/quizzes/Privacy-Moon-Quiz-Route.js';
 import PrivacyMoonQuiz from './components/quizzes/Privacy-Moon-Quiz.js';
 import PrivacyMoonQuizAnswers from './components/quizzes/Privacy-Moon-Quiz-Answers.js';
 import DragDropQuiz from './components/quizzes/Drag-Drop-Quiz.js';
@@ -41,6 +42,7 @@ function App() {
           {/* Quizzes */}
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
           <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
+          <Route path="/privacy-moon/quiz" element={<PrivacyMoonQuizRoute />} />
           <Route path="/privacy-moon/quiz/redflag-greenflag" element={<RedFlagGreenFlag />} />
           <Route path="/privacy-moon/quiz/final-quiz" element={<PrivacyMoonQuiz />} />
           <Route path="/privacy-moon/quiz/final-quiz/quiz-answers" element={<PrivacyMoonQuizAnswers />} />
