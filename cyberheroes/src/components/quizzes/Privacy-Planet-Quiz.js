@@ -1,24 +1,24 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "./NavBar";
-import "../styles/quiz.css";
-import circle from "../img/shapes/circle.png";
-import diamond from "../img/shapes/diamond.png";
-import square from "../img/shapes/square.png";
-import triangle from "../img/shapes/triangle.png";
-import checkedSquare from "../img/shapes/checked-square.png";
-import quizData from "../data/privacy_planet_quiz.json"
+import Navbar from "../NavBar";
+import "../../styles/quiz.css";
+import quizData from "../../data/quizzes/privacy_planet_quiz.json"
+
+//shapes included on the answer buttons
+import circle from "../../img/quizzes/shapes/circle.png";
+import diamond from "../../img/quizzes/shapes/diamond.png";
+import square from "../../img/quizzes/shapes/square.png";
+import triangle from "../../img/quizzes/shapes/triangle.png";
+import checkedSquare from "../../img/quizzes/shapes/checked-square.png";
 
 const Quiz = () => {
     const navigate = useNavigate();
-    // const { part } = useParams();
     const location = useLocation();
     console.log("location: ", location);
     const currentQuestionIndex = location.state?.questionIndex || 0;
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
     // Get the current quiz data based on the part
-    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizzes
     const currentQuiz = quizData.quizzes.find(quiz => quiz.part === location.state?.part);
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
@@ -62,15 +62,10 @@ const Quiz = () => {
         });
     };
 
-
-    if (!currentQuestion) {
-        return <div>Loading...</div>;
-    }
-
     //multiple choice
     if(currentQuestion.type === "multiple-choice"){
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="quiz-container">
                     <div className="quiz-question">
@@ -100,7 +95,7 @@ const Quiz = () => {
     } else if (currentQuestion.type === "multiple-select"){
         //multiple select
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="quiz-container">
                     <div className="quiz-question">
@@ -135,7 +130,7 @@ const Quiz = () => {
     } else {
         //true or false
         return (
-            <div className="quiz-background">
+            <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <div className="quiz-container">
                     <div className="quiz-question">

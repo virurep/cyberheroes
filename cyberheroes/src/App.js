@@ -1,35 +1,50 @@
-import PrivacyPlanet from './components/PrivacyPlanet';
-import ExplorationMap from "./components/ExplorationMap";
 import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
+// Landing pages
+import ExplorationMap from "./components/ExplorationMap";
 import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
+
+//Lesson pages
 import LessonIntroPage from './components/LessonIntro';
 import LessonPage from './components/Lesson'
-import PrivacyPlanetQuiz from './components/Privacy-Planet-Quiz.js';
-import PrivacyPlanetQuizAnswers from './components/Privacy-Planet-Quiz-Answers.js';
 import Arrival from './components/Arrival.js';
-import PrivacyIntro from './components/PrivacyIntro';
-import RedFlagGreenFlag from "./components/RedFlag-GreenFlag-Quiz.js"
 import Transition from './components/Transition';
 import Certificate from './components/Certificate.js';
+
+//Privacy planet quizzes
+import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';
+import PrivacyPlanetQuizAnswers from './components/quizzes/Privacy-Planet-Quiz-Answers.js';
+
+//Privacy moon quizzes
+import PrivacyMoonQuiz from './components/quizzes/Privacy-Moon-Quiz.js';
+import PrivacyMoonQuizAnswers from './components/quizzes/Privacy-Moon-Quiz-Answers.js';
+import DragDropQuiz from './components/quizzes/Drag-Drop-Quiz.js';
+import RedFlagGreenFlag from "./components/quizzes/RedFlag-GreenFlag-Quiz.js"
+
 
 function App() {
   return (
       <div>
         <Routes>
+          {/* Landing page */}
           <Route index element={<LandingPage />} />
           <Route path="/intro" element={<IntroPage />} />
           <Route path="/exploration-map" element={<ExplorationMap />} />
+
+          {/* Lesson pages */}
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
           <Route path="/:planet/arrival" element={<Arrival />} />
           <Route path="/:planet/lesson" element={<LessonPage />} />
+          <Route path="/:planet/certificate" element={<Certificate />} />
+          <Route path="/:planet/transition" element={<Transition />} />
 
-          {/* change this to rout to the quiz page of a specific planet */}
+          {/* Quizzes */}
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
           <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
           <Route path="/privacy-moon/quiz/redflag-greenflag" element={<RedFlagGreenFlag />} />
-          <Route path="/:planet/certificate" element={<Certificate />} />
-          <Route path="/:planet/transition" element={<Transition />} />
+          <Route path="/privacy-moon/quiz/final-quiz" element={<PrivacyMoonQuiz />} />
+          <Route path="/privacy-moon/quiz/final-quiz/quiz-answers" element={<PrivacyMoonQuizAnswers />} />
+          <Route path="/privacy-moon/quiz/drag-drop" element={<DragDropQuiz />} />
         </Routes>
       </div>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "./NavBar";
-import Al from '../img/characters/al.png';
-import redFlag from '../img/quizes/redFlag.png'
-import greenFlag from '../img/quizes/greenFlag.png'
-import "../styles/quiz.css";
-import gameData from "../data/redFlag_greenFlag_quiz.json"
+import Navbar from "../NavBar";
+import Al from '../../img/characters/al.png';
+import redFlag from '../../img/quizzes/redFlag.png'
+import greenFlag from '../../img/quizzes/greenFlag.png'
+import "../../styles/quiz.css";
+import gameData from "../../data/quizzes/redFlag_greenFlag_quiz.json"
 
 
 const FlagQuiz = () => {
@@ -16,7 +16,6 @@ const FlagQuiz = () => {
     const [selectedAnswer, setSelectedAnswers] = React.useState([]);
 
     // Get the current quiz data based on the part
-    //must change this quiz.part === quiz-1, quiz-2, quiz3 manually for now to see the different quizes
     const currentQuestion = gameData?.quiz[currentQuestionIndex];
 
     const handleAnswerClick = (answer) => {
@@ -44,7 +43,7 @@ const FlagQuiz = () => {
     }
 
     return (
-       <div className="rf-gf-background">
+       <div className="privacy-moon-quiz-background">
             <Navbar />
             <div className="game-container">
                 <h1>
