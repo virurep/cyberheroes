@@ -69,7 +69,7 @@ const Quiz = () => {
             <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="quiz-container">
+                <div className="quiz-container readable-text">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                     </div>
@@ -100,7 +100,7 @@ const Quiz = () => {
             <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="quiz-container">
+                <div className="quiz-container readable-text">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                     </div>
@@ -136,7 +136,7 @@ const Quiz = () => {
             <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="quiz-container">
+                <div className="quiz-container readable-text">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                     </div>

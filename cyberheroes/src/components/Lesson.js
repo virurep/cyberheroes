@@ -101,7 +101,7 @@ const Lesson = () => {
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
       <TextReader />
-      <div className={`lesson-content ${pageData.message.style}-container`}>
+      <div className={`lesson-content ${pageData.message.style}-container readable-text`}>
         <Characters
           characters={pageData.characters.map(character => ({
             ...character,

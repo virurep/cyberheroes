@@ -54,7 +54,7 @@ const QuizAnswers = () => {
             <div className="privacy-moon-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="answers-container">
+                <div className="answers-container readable-text">
                    <img src={
                     currentQuestion.id === 1 ? letter1 :
                     currentQuestion.id === 2 ? letter2 :
@@ -74,7 +74,7 @@ const QuizAnswers = () => {
             <div className="privacy-moon-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="answers-container privacy-moon-quiz-answers-container">
+                <div className="answers-container privacy-moon-quiz-answers-container readable-text">
                     <div className="text-answers-container dark-answers-container">
                         <h1 className="text-answers-title red-text">
                             Correct!
@@ -95,7 +95,7 @@ const QuizAnswers = () => {
             <div className="privacy-moon-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="answers-container">
+                <div className="answers-container readable-text">
                     <div className="characters-answers-container">
                         <img src={Alejandro} alt={"Alejandro"} className="characters-answers-img" />
                     </div>

@@ -59,7 +59,7 @@ const FlagQuiz = () => {
        <div className="privacy-moon-quiz-background">
             <Navbar />
             <TextReader />
-            <div className="game-container">
+            <div className="game-container readable-text">
                 <h1>
                     Click whether the statement is a green flag or red flag.
                 </h1>

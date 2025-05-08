@@ -40,7 +40,7 @@ const Quiz = () => {
         <div className="privacy-moon-quiz-background">
             <Navbar />
             <TextReader />
-            <div className="quiz-container">
+            <div className="quiz-container readable-text">
                 <div className="quiz-question dark-question">
                     <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                 </div>

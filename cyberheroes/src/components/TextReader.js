@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/TextReader.css';
 import speaker from '../img/general/speaker.png';
 import pause from '../img/general/pause.png';
@@ -9,9 +9,33 @@ const TextReader = () => {
     const [isReading, setIsReading] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
 
+    // Stop reading when component unmounts
+    useEffect(() => {
+        return () => {
+            window.speechSynthesis.cancel();
+            setIsReading(false);
+            setIsPaused(false);
+        };
+    }, []);
+
     const handleTextReader = () => {
-        const textToRead = document.body.innerText;
-        const utterance = new SpeechSynthesisUtterance(textToRead);
+        // Get all elements with the readable-text class
+        const readableElements = document.getElementsByClassName('readable-text');
+        let textToRead = '';
+        
+        // Combine text from all readable elements
+        Array.from(readableElements).forEach(element => {
+            textToRead += element.textContent + ' ';
+        });
+
+        const utterance = new SpeechSynthesisUtterance(textToRead.trim());
+        
+        // Hide buttons when speech ends
+        utterance.onend = () => {
+            setIsReading(false);
+            setIsPaused(false);
+        };
+
         window.speechSynthesis.speak(utterance);
         setIsReading(true);
         setIsPaused(false);

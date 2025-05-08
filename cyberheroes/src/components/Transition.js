@@ -68,7 +68,7 @@ const Transition = () => {
         <div className={`transition-container ${planet}-background`}>
             <Navbar />
             <TextReader />
-            <div className="transition-content">
+            <div className="transition-content readable-text">
                 <div className="transition-layout">
                     <div className="message-side">
                         <div className="message-box">

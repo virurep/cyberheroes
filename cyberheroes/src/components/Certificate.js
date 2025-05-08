@@ -26,7 +26,7 @@ const Certificate = () => {
         <div>
             <Navbar />
             <TextReader />
-            <div className="certificate-container">
+            <div className="certificate-container readable-text">
                 <div className="certificate-content">
                     <img src={getCertificateImage()} alt={`${planet} Certificate`} />
                 </div>

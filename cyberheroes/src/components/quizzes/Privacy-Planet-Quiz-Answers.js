@@ -83,7 +83,7 @@ const QuizAnswers = () => {
             <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="answers-container">
+                <div className="answers-container readable-text">
                     <div className="characters-answers-container">
                         <img src={Allie} alt={"Allie"} className="characters-answers-img" />
                     </div>

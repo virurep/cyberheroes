@@ -70,7 +70,7 @@ const DragDropQuiz = () => {
         <div className="privacy-moon-quiz-background">
             <Navbar />
             <TextReader />
-            <div className="game-container">
+            <div className="game-container readable-text">
                 {!showFeedback ? (
                     <>
                         <h1 className="drag-drop-quiz-title">Is this Private or Public Information?</h1>
@@ -101,7 +101,7 @@ const DragDropQuiz = () => {
                         </div>
                     </>
                 ) : (
-                    <div className="drag-drop-feedback-popup">
+                    <div className="drag-drop-feedback-popup readable-text">
                         <div className="popup-text-container">
                             <h2>{isCorrect ? "Correct!" : "Wrong"}</h2>
                             <p className={!isCorrect ? "incorrect-message" : ""}>

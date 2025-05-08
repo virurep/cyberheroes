@@ -28,7 +28,7 @@ const Arrival = () => {
         <div className={`arrival-container ${getBackgroundClass()}`}>
             <Navbar />
             <TextReader />
-            <main>
+            <main className="readable-text">
                 <div className='rocket'>
                     <img src={ship} alt='rocket ship' />
                 </div>

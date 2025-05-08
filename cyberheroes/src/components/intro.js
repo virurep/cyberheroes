@@ -18,7 +18,7 @@ const IntroPage = () => {
         <div>
             <Navbar />
             <TextReader />
-            <div className="intro-container">
+            <div className="intro-container readable-text">
                 <main>
                     <div>
                         <h1 className="intro-text">
