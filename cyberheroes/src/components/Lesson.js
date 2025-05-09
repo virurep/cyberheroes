@@ -5,6 +5,7 @@ import Navbar from './NavBar';
 import Characters from './Characters';
 import Message from './Message';
 import lessonData from '../data/lessons/lesson.json';
+import TextReader from './TextReader';
 
 const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
@@ -99,7 +100,8 @@ const Lesson = () => {
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
-      <div className={`lesson-content ${pageData.message.style}-container`}>
+      <TextReader />
+      <div className={`lesson-content ${pageData.message.style}-container readable-text`}>
         <Characters
           characters={pageData.characters.map(character => ({
             ...character,

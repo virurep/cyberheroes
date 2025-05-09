@@ -16,15 +16,15 @@
 
     "privacy_moon": {
       "quiz-1": {
-        "character": "Al-transition",
+        "character": "Alejandro",
         "message": "What are some examples of these types of information?\n\nHMM... let’s test your knowledge."
       },
       "quiz-2": {
-        "character": "Al-transition",
+        "character": "Alejandro",
         "message": "huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
       },
       "quiz-3": {
-        "character": "Al-transition",
+        "character": "Alejandro",
         "message": "looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!"
       }
     }

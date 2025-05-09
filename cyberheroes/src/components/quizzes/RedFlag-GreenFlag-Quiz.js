@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
+import TextReader from "../TextReader";
 import Al from '../../img/characters/al.png';
 import redFlag from '../../img/quizzes/redFlag.png'
 import greenFlag from '../../img/quizzes/greenFlag.png'
@@ -57,7 +58,8 @@ const FlagQuiz = () => {
     return (
        <div className="privacy-moon-quiz-background">
             <Navbar />
-            <div className="game-container">
+            <TextReader />
+            <div className="game-container readable-text">
                 <h1>
                     Click whether the statement is a green flag or red flag.
                 </h1>

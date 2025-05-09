@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
+import TextReader from "../TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/privacy_moon_quiz.json"
 
@@ -37,8 +38,9 @@ const Quiz = () => {
     //multiple choice
     return (
         <div className="privacy-moon-quiz-background">
-             <Navbar />
-            <div className="quiz-container">
+            <Navbar />
+            <TextReader />
+            <div className="quiz-container readable-text">
                 <div className="quiz-question dark-question">
                     <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                 </div>

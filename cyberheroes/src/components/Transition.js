@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../styles/transitions.css";
 import Navbar from './NavBar';
+import TextReader from "./TextReader";
 import Transitions from '../data/lessons/transitions.json';
 
 const Transition = () => {
@@ -23,6 +24,7 @@ const Transition = () => {
         return (
             <div className="transition-container">
                 <Navbar />
+                <TextReader />
                 <div className="transition-content">
                     <p>Error: Transition data not found</p>
                 </div>
@@ -39,6 +41,7 @@ const Transition = () => {
         return (
             <div className="transition-container">
                 <Navbar />
+                <TextReader />
                 <div className="transition-content">
                     <p>Error: Quiz transition data not found</p>
                 </div>
@@ -61,17 +64,30 @@ const Transition = () => {
         });
     };
 
+    const handleReviewButtonClick = () => {
+        navigate(`/${planet}/review`, {
+            state: {
+                quizPart: quizPart
+            }
+        });
+    };
+
     return (
         <div className={`transition-container ${planet}-background`}>
             <Navbar />
-            <div className="transition-content">
+            <TextReader />
+            <div className="transition-content readable-text">
                 <div className="transition-layout">
                     <div className="message-side">
                         <div className="message-box">
                             <p className="transition-message">
                                 {currMessage}
                             </p>
-                            <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
+                            <div className="button-container">
+                                <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
+                                <span>OR</span>
+                                <button className='review-button' onClick={handleReviewButtonClick}>GO BACK TO REVIEW</button>
+                            </div>
                         </div>
                     </div>
                     <div className="character-side">

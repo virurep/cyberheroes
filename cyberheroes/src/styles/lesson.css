@@ -11,8 +11,6 @@
   text-shadow: none;
 }
 
-
-
 /* styles */
 .lesson-container {
   position: absolute;
@@ -26,11 +24,14 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
 .lesson-content {
   position: relative;
   display: flex;
+  margin-top: 20px;
 }
 
 .message-box-bottom-container {
@@ -342,4 +343,12 @@
 
 .prev-button:before {
   content: "◀";
+}
+
+/* Add styles for TextReader positioning */
+.text-reader-controls {
+  position: relative;
+  z-index: 10;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

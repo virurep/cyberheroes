@@ -5,7 +5,7 @@ import '../../styles/quiz.css';
 import Allie from '../../img/characters/allie.png';
 import Enemy from '../../img/characters/enemy.png';
 import DeadEnemy from '../../img/characters/privacy-enemy-dead.png';
-
+import TextReader from '../TextReader';
 
 const QuizAnswers = () => {
     const navigate = useNavigate();
@@ -49,6 +49,7 @@ const QuizAnswers = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
+                <TextReader />
                 <div className="answers-container">
                     <div className="characters-answers-container">
                         <p className="health-bar-label">Health Bar</p>
@@ -81,7 +82,8 @@ const QuizAnswers = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
-                <div className="answers-container">
+                <TextReader />
+                <div className="answers-container readable-text">
                     <div className="characters-answers-container">
                         <img src={Allie} alt={"Allie"} className="characters-answers-img" />
                     </div>

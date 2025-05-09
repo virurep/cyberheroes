@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/certificate.css";
 import Navbar from "./NavBar";
+import TextReader from "./TextReader";
 
 const Certificate = () => {
     const { planet } = useParams();
@@ -22,18 +23,21 @@ const Certificate = () => {
     };
 
     return (
-        <div className="certificate-container">
+        <div>
             <Navbar />
-            <div className="certificate-content">
-                <img src={getCertificateImage()} alt={`${planet} Certificate`} />
-            </div>
-            <div className="certificate-buttons">
-                <button onClick={handleDownload}>
-                    DOWNLOAD CERTIFICATE
-                </button>
-                <button onClick={handleContinue}>
-                    CONTINUE
-                </button>
+            <TextReader />
+            <div className="certificate-container readable-text">
+                <div className="certificate-content">
+                    <img src={getCertificateImage()} alt={`${planet} Certificate`} />
+                </div>
+                <div className="certificate-buttons">
+                    <button onClick={handleDownload}>
+                        DOWNLOAD CERTIFICATE
+                    </button>
+                    <button onClick={handleContinue}>
+                        CONTINUE
+                    </button>
+                </div>
             </div>
         </div>
     );

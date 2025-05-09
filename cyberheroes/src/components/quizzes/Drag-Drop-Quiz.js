@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
+import TextReader from "../TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/drag_drop_quiz.json";
-import Al from "../../img/characters/al.png";
+import Al from "../../img/characters/alejandro.png";
 
 const DragDropQuiz = () => {
     const navigate = useNavigate();
@@ -68,7 +69,8 @@ const DragDropQuiz = () => {
     return (
         <div className="privacy-moon-quiz-background">
             <Navbar />
-            <div className="game-container">
+            <TextReader />
+            <div className="game-container readable-text">
                 {!showFeedback ? (
                     <>
                         <h1 className="drag-drop-quiz-title">Is this Private or Public Information?</h1>
@@ -99,7 +101,7 @@ const DragDropQuiz = () => {
                         </div>
                     </>
                 ) : (
-                    <div className="drag-drop-feedback-popup">
+                    <div className="drag-drop-feedback-popup readable-text">
                         <div className="popup-text-container">
                             <h2>{isCorrect ? "Correct!" : "Wrong"}</h2>
                             <p className={!isCorrect ? "incorrect-message" : ""}>

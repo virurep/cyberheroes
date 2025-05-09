@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
+import TextReader from "../TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/privacy_planet_quiz.json"
 
@@ -67,7 +68,8 @@ const Quiz = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
-                <div className="quiz-container">
+                <TextReader />
+                <div className="quiz-container readable-text">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                     </div>
@@ -97,7 +99,8 @@ const Quiz = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
-                <div className="quiz-container">
+                <TextReader />
+                <div className="quiz-container readable-text">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                     </div>
@@ -132,7 +135,8 @@ const Quiz = () => {
         return (
             <div className="privacy-planet-quiz-background">
                 <Navbar />
-                <div className="quiz-container">
+                <TextReader />
+                <div className="quiz-container readable-text">
                     <div className="quiz-question">
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                     </div>

@@ -4,6 +4,8 @@ import logo from "../img/general/logo.png";
 import rocket from "../img/general/rocket.png";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
+import TextReader from "./TextReader";
+
 const IntroPage = () => {
     const navigate = useNavigate();
 
@@ -15,7 +17,8 @@ const IntroPage = () => {
     return (
         <div>
             <Navbar />
-            <div className="intro-container">
+            <TextReader />
+            <div className="intro-container readable-text">
                 <main>
                     <div>
                         <h1 className="intro-text">
