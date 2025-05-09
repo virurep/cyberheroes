@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
+import Navbar from '../NavBar';
+import TextReader from '../TextReader';
 
 const ReviewLesson = ({ selectedOption, onClose }) => {
     const { planet } = useParams();
@@ -28,42 +30,46 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
     const currentLesson = selectedOption.review_lesson[currentPage];
 
     return (
-        <div className="computer-screen-review">
-            <div className="computer-content-review">
-                <div className="computer-screen-content-review">
-                    <h2 className="computer-title-review">{selectedOption.title}</h2>
-                    <div className="computer-message-review">
-                        <p>{currentLesson.message}</p>
-                    </div>
-                    
-                    {currentPage < totalPages - 1 ? (
-                        <button 
-                            className="next-button-review"
-                            onClick={handleNextPage}
-                        />
-                    ) : (
-                        <div className="computer-buttons-review">
-                            <button 
-                                className="keep-reviewing-button-review"
-                                onClick={onClose}
-                            >
-                                Keep Reviewing
-                            </button>
-                            <button 
-                                className="take-quiz-button-review"
-                                onClick={handleBackClick}
-                            >
-                                Take The Quiz
-                            </button>
+        <div className={`review-container ${planet}-background`}>
+            <Navbar />
+            <TextReader />
+            <div className="computer-screen-review readable-text">
+                <div className="computer-content-review">
+                    <div className="computer-screen-content-review">
+                        <h2 className="computer-title-review">{selectedOption.title}</h2>
+                        <div className="computer-message-review">
+                            <p>{currentLesson.message}</p>
                         </div>
-                    )}
-                    
-                    {currentPage > 0 && (
-                        <button 
-                            className="prev-button-review"
-                            onClick={handlePrevPage}
-                        />
-                    )}
+                        
+                        {currentPage < totalPages - 1 ? (
+                            <button 
+                                className="next-button-review"
+                                onClick={handleNextPage}
+                            />
+                        ) : (
+                            <div className="computer-buttons-review">
+                                <button 
+                                    className="keep-reviewing-button-review"
+                                    onClick={onClose}
+                                >
+                                    Keep Reviewing
+                                </button>
+                                <button 
+                                    className="take-quiz-button-review"
+                                    onClick={handleBackClick}
+                                >
+                                    Take The Quiz
+                                </button>
+                            </div>
+                        )}
+                        
+                        {currentPage > 0 && (
+                            <button 
+                                className="prev-button-review"
+                                onClick={handlePrevPage}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
