@@ -167,7 +167,7 @@
 }
 
 .vocab-word {
-  text-decoration: underline;
+  text-decoration: dotted underline overline;
 }
 
 .vocab-word:hover {

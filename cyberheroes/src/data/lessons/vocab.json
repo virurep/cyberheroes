@@ -3,6 +3,22 @@
     {
       "word": "Sensitive Data",
       "definition": "Private and personal information that should be kept safe."
+    },
+    {
+      "word": "Identity",
+      "definition": "The unique set of characteristics that make a person who they are."
+    },
+    {
+      "word": "Phishing",
+      "definition": "Methods of tricking people into revealing private information like email addresses and passwords."
+    },
+    {
+      "word": "Scenario",
+      "definition": "An imagined setting that shows a situation tha can possibly happen."
+    },
+    {
+      "word": "Trustworthy",
+      "definition": "Able to be trusted or depended on."
     }
   ]
 }
