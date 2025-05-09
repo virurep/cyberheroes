@@ -61,6 +61,14 @@ const Transition = () => {
         });
     };
 
+    const handleReviewButtonClick = () => {
+        navigate(`/${planet}/review`, {
+            state: {
+                quizPart: quizPart
+            }
+        });
+    };
+
     return (
         <div className={`transition-container ${planet}-background`}>
             <Navbar />
@@ -71,7 +79,11 @@ const Transition = () => {
                             <p className="transition-message">
                                 {currMessage}
                             </p>
-                            <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
+                            <div className="button-container">
+                                <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
+                                <span>OR</span>
+                                <button className='review-button' onClick={handleReviewButtonClick}>GO BACK TO REVIEW</button>
+                            </div>
                         </div>
                     </div>
                     <div className="character-side">

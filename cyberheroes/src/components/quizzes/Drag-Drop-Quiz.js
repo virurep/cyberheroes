@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../NavBar";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/drag_drop_quiz.json";
-import Al from "../../img/characters/al.png";
+import Al from "../../img/characters/alejandro.png";
 
 const DragDropQuiz = () => {
     const navigate = useNavigate();
