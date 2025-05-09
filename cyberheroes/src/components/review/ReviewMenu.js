@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
 import Navbar from '../NavBar';
+import TextReader from '../TextReader';
 
 const ReviewMenu = ({ onOptionSelect, character, options }) => {
     const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
@@ -27,7 +28,8 @@ const ReviewMenu = ({ onOptionSelect, character, options }) => {
     return (
         <div className={`review-container ${planet}-background`}>
             <Navbar />
-            <div className="review-content">
+            <TextReader />
+            <div className="review-content readable-text">
                 <div className="review-layout">
                     <div className="character-side-review">
                         <img 
