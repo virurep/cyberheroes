@@ -60,16 +60,50 @@
     text-transform: uppercase;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .quiz-button {
-    background-color: #D1495B;
+    background-color: #D1495B !important;
     font-size: 20px;
     border: none;
     color: white;
     border-radius: 15px;
-    margin-top: 20px;
     padding: 10px 20px;
     width: 250px;
     height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.quiz-button:hover {
+    transform: scale(1.05);
+    background-color: #b83d4d;
+    box-shadow: 0 6px 12px rgba(209, 73, 91, 0.4);
+}
+
+.review-button {
+    background-color: #B8DEFF;
+    font-size: 20px;
+    border: none;
+    color: #02101b;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 250px;
+    height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-button:hover {
+    transform: scale(1.05);
+    background-color: #9BCDFF;
 }
 
 .character-side {

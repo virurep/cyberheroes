@@ -4,7 +4,7 @@ import Navbar from "../NavBar";
 import TextReader from "../TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/drag_drop_quiz.json";
-import Al from "../../img/characters/al.png";
+import Al from "../../img/characters/alejandro.png";
 
 const DragDropQuiz = () => {
     const navigate = useNavigate();

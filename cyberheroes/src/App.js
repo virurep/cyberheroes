@@ -10,7 +10,7 @@ import LessonPage from './components/Lesson'
 import Arrival from './components/Arrival.js';
 import Transition from './components/Transition';
 import Certificate from './components/Certificate.js';
-
+import Review from './components/review.js';
 //Privacy planet quizzes
 import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/quizzes/Privacy-Planet-Quiz-Answers.js';
@@ -36,6 +36,7 @@ function App() {
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
           <Route path="/:planet/arrival" element={<Arrival />} />
           <Route path="/:planet/lesson" element={<LessonPage />} />
+          <Route path="/:planet/review" element={<Review />} />
           <Route path="/:planet/certificate" element={<Certificate />} />
           <Route path="/:planet/transition" element={<Transition />} />
 
