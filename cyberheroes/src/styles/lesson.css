@@ -259,6 +259,10 @@
   text-align: center;
 }
 
+.message-box-gold {
+  background-color: #EDAE49;
+}
+
 .red-text {
   color: #E14733;
 }

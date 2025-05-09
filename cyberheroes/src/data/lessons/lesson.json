@@ -1391,6 +1391,30 @@
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 30,
+              "next": 32
+            }
+          }
+        },
+        {
+          "page_number": 32,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "header": "⭐ GOLDEN RULE ⭐",
+            "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!** Your safety always comes first, and trusted adults are there to help you make the right decisions.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom message-box-gold",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 31,
               "next": "quiz-3"
             }
           }
