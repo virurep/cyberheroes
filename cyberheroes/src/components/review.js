@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/review.css';
 import Navbar from './NavBar';
+import TextReader from './TextReader';
 import reviewData from '../data/lessons/review.json';
 
 const Review = () => {
@@ -125,6 +126,7 @@ const Review = () => {
     return (
         <div className={`review-container ${planet}-background`}>
             <Navbar />
+            <TextReader />
             <div className="review-content">
                 <div className="review-layout">
                     <div className="character-side-review">
