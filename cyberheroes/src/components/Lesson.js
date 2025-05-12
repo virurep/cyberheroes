@@ -72,6 +72,9 @@ const Lesson = () => {
 
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
+    // Stop any ongoing speech synthesis
+    window.speechSynthesis.cancel();
+
     if (wildcardMatch(page, "quiz*")) {
       navigate(`/${planet}/transition`, {
         state: {
