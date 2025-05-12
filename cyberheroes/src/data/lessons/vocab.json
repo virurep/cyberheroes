@@ -1,6 +1,10 @@
 {
   "words": [
     {
+      "word": "Valuable",
+      "definition": "Of great worth or importance."
+    },
+    {
       "word": "Sensitive Data",
       "definition": "Private and personal information that should be kept safe."
     },
@@ -13,12 +17,24 @@
       "definition": "Methods of tricking people into revealing private information like email addresses and passwords."
     },
     {
+      "word": "Guardian",
+      "definition": "A person who is responsible for the care and upbringing of a child."
+    },
+    {
+      "word": "Emergency",
+      "definition": "A sudden and unexpected situation that requires immediate attention."
+    },
+    {
       "word": "Scenario",
       "definition": "An imagined setting that shows a situation tha can possibly happen."
     },
     {
       "word": "Trustworthy",
       "definition": "Able to be trusted or depended on."
+    },
+    {
+      "word": "Feature",
+      "definition": "A characteristic or ability of something."
     }
   ]
 }

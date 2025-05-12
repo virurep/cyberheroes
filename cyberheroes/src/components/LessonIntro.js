@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/intro.css';
+import '../styles/lesson.css';
 import lessonIntroData from '../data/lessons/lesson_intro.json';
 import rocket from '../img/general/rocket.png';
 import computer from "../img/general/computer.png";
 import Navbar from './NavBar';
 import TextReader from './TextReader';
+import VocabPopup from './VocabPopup';
+import { processText } from './Message';
 
 const planetImages = require.context('../img/planets', false, /\.(png|jpe?g|svg)$/);
 const introImages = require.context('../img/lesson-intro', false, /\.(png|jpe?g|svg)$/);
@@ -14,6 +17,11 @@ const LessonIntro = () => {
   const { planet } = useParams();
   const navigate = useNavigate();
   const [showComputer, setShowComputer] = useState(false);
+  const [selectedVocab, setSelectedVocab] = useState(null);
+
+  const handleVocabClick = (vocab) => {
+    setSelectedVocab(vocab);
+  };
 
   const startLesson = () => {
     navigate(`/${planet}/arrival`);
@@ -55,13 +63,10 @@ const LessonIntro = () => {
     const planetData = lessonIntroData.intros.find(
       planet => planet.planet_name.toLowerCase() === formattedPlanetName
     );
-    return planetData.intro_text;
+    return processText(planetData.intro_text, handleVocabClick);
   };
 
   const lessonIntroMessage = getLessonIntroMessage(planet);
-  const paragraphs = lessonIntroMessage.split('\n').map((paragraph, index) => (
-    <p key={index}>{paragraph}</p>
-  ));
 
   const getComputerIntroImage = (planetName) => {
     const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
@@ -78,7 +83,7 @@ const LessonIntro = () => {
     const planetData = lessonIntroData.intros.find(
       planet => planet.planet_name.toLowerCase() === formattedPlanetName
     );
-    return planetData.computer_text;
+    return processText(planetData.computer_text, handleVocabClick);
   };
 
   const computerIntroMessage = getComputerIntroMessage(planet);
@@ -102,7 +107,7 @@ const LessonIntro = () => {
             <div className="computer-content-top">
               {computerIntroImage && <img src={computerIntroImage} alt="Computer" className="computer-intro-image" />}
               <div className="intro-message">
-                <p>{computerIntroMessage}</p>
+                {computerIntroMessage}
               </div>
             </div>
             <div className="computer-btn-container">
@@ -115,6 +120,13 @@ const LessonIntro = () => {
             </div>
           </div>
         </div>
+        {selectedVocab && (
+        <VocabPopup
+          word={selectedVocab.word}
+          definition={selectedVocab.definition}
+          onClose={() => setSelectedVocab(null)}
+        />
+      )}
       </div>
     );
   }
@@ -130,12 +142,19 @@ const LessonIntro = () => {
         </div>
         <div className="lesson-intro-message">
           <h1 className="lesson-intro-title">You have arrived at {planetData.planet_name}!</h1>
-          {paragraphs}
+          {lessonIntroMessage}
           <button className="enter-lesson-btn" onClick={handleEnterLesson}>
             ENTER {planetData.planet_name.toUpperCase()}
           </button>
         </div>
       </div>
+      {selectedVocab && (
+        <VocabPopup
+          word={selectedVocab.word}
+          definition={selectedVocab.definition}
+          onClose={() => setSelectedVocab(null)}
+        />
+      )}
     </div>
   );
 };
