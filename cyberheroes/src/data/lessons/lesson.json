@@ -87,7 +87,7 @@
             }
           ],
           "message": {
-            "text": "Sharing your sensitive data with the wrong people like Patrick could lead to problems, so it’s important to know what sensitive data is and how to protect it.",
+            "text": "Sharing your <v>sensitive data** with the wrong people like Patrick could lead to problems, so it’s important to know what <v>sensitive data** is and how to protect it.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -395,7 +395,7 @@
             }
           ],
           "message": {
-            "text": "There are many things that people may ask you, but you should not tell everyone about everything. Some information is private and personal and should be kept safe. These are all sensitive data, they can help identify who you are, where you live, and how to find you.",
+            "text": "There are many things that people may ask you, but you should not tell everyone about everything. Some information is private and personal and should be kept safe. These are all <v>sensitive data**, they can help identify who you are, where you live, and how to find you.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -418,7 +418,7 @@
             }
           ],
           "message": {
-            "text": "HAHA! I bet they don’t know that one of the biggest reasons sensitive data is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
+            "text": "HAHA! I bet they don’t know that one of the biggest reasons <v>sensitive data** is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
             "speaker": "Enemy #2",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -459,7 +459,7 @@
             }
           ],
           "message": {
-            "text": "Sometimes, we use sensitive data to trick other people into giving away more private information. This is called <v>phishing**. Let’s say someone gets access to your email address and sends a message to a friend pretending to be you. If your friend isn’t careful, they might believe the message and share their personal details. This can cause harm not just to you but to your friends and family, too. HAHAHA!",
+            "text": "Sometimes, we use <v>sensitive data** to trick other people into giving away more private information. This is called <v>phishing**. Let’s say someone gets access to your email address and sends a message to a friend pretending to be you. If your friend isn’t careful, they might believe the message and share their personal details. This can cause harm not just to you but to your friends and family, too. HAHAHA!",
             "speaker": "Enemy #3",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -516,7 +516,7 @@
             }
           ],
           "message": {
-            "text": "Not everyone should have access to your sensitive data. In fact, most of the time, the less you share, the safer you are! Only certain trusted people should know your personal information, and even then, it should only be shared when necessary.",
+            "text": "Not everyone should have access to your <v>sensitive data**. In fact, most of the time, the less you share, the safer you are! Only certain trusted people should know your personal information, and even then, it should only be shared when necessary.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -553,7 +553,7 @@
             }
           ],
           "message": {
-            "text": "Parents / Guardians\n\nYour parents or guardians are the most important people to share sensitive data with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
+            "text": "Parents / Guardians\n\nYour parents or guardians are the most important people to share <v>sensitive data** with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
             "style": "message-box-right",
             "buttons": {
               "prev": 26,
@@ -623,7 +623,7 @@
             }
           ],
           "message": {
-            "text": "Strangers:\n\nYou should never give sensitive data to strangers.\n\nIf you wouldn’t walk up to a random person in a store and tell them where you live, you shouldn’t do it online either! People you don’t know should never have your personal details, even if they seem friendly.",
+            "text": "Strangers:\n\nYou should never give <v>sensitive data** to strangers.\n\nIf you wouldn’t walk up to a random person in a store and tell them where you live, you shouldn’t do it online either! People you don’t know should never have your personal details, even if they seem friendly.",
             "style": "message-box-right",
             "buttons": {
               "prev": 30,
@@ -640,7 +640,7 @@
             }
           ],
           "message": {
-            "text": "People Online:\n\nYou should never give sensitive data to people online.\n\nSome people on the internet pretend to be kids or act nice to trick others into sharing information. They might ask things like, “Where do you live?” or “What’s your phone number?” but you should never answer these questions online. If someone asks, tell a parent immediately.",
+            "text": "People Online:\n\nYou should never give <v>sensitive data** to people online.\n\nSome people on the internet pretend to be kids or act nice to trick others into sharing information. They might ask things like, “Where do you live?” or “What’s your phone number?” but you should never answer these questions online. If someone asks, tell a parent immediately.",
             "style": "message-box-right",
             "buttons": {
               "prev": 31,

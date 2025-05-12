@@ -22,14 +22,14 @@ const TextReader = () => {
         // Get all elements with the readable-text class
         const readableElements = document.getElementsByClassName('readable-text');
         let textToRead = '';
-        
+
         // Combine text from all readable elements
         Array.from(readableElements).forEach(element => {
             textToRead += element.textContent + ' ';
         });
 
         const utterance = new SpeechSynthesisUtterance(textToRead.trim());
-        
+
         // Hide buttons when speech ends
         utterance.onend = () => {
             setIsReading(false);
@@ -63,6 +63,7 @@ const TextReader = () => {
 
     return (
         <div style={{ position: 'absolute', top: '80px', left: '20px', zIndex: 1000 }}>
+        {/* // <div> */}
             <div className="text-reader-controls">
                 <button className="text-reader-btn speaker-btn" onClick={handleTextReader}>
                     <img src={speaker} alt="Speaker" className="speaker-icon" />

@@ -60,8 +60,9 @@
     text-transform: uppercase;
 }
 
-.button-container {
+.transition-content .button-container {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     align-items: center;
     margin-top: 20px;

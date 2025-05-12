@@ -31,7 +31,7 @@
 .lesson-content {
   position: relative;
   display: flex;
-  margin-top: 20px;
+  transform: translateY(75px);
 }
 
 .message-box-bottom-container {
