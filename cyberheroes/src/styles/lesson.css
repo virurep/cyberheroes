@@ -168,7 +168,7 @@
 }
 
 .vocab-word {
-  text-decoration: dotted underline overline;
+  text-decoration: underline;
 }
 
 .vocab-word:hover {
@@ -224,6 +224,15 @@
   line-height: 1.5;
 }
 
+/* text header */
+.text-header {
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100px);
+}
+
 /* speaker name on text box */
 .speaker-name {
   position: absolute;
@@ -259,7 +268,7 @@
   text-align: center;
 }
 
-.message-box-gold {
+.text-container .message-box-gold {
   background-color: #EDAE49;
 }
 
@@ -267,8 +276,12 @@
   color: #E14733;
 }
 
+.gold-text {
+  color: #EDAE49;
+}
+
 .underline-text {
-  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 .alert-header {

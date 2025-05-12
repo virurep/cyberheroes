@@ -1408,10 +1408,10 @@
             }
           ],
           "message": {
-            "header": "⭐ GOLDEN RULE ⭐",
-            "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!** Your safety always comes first, and trusted adults are there to help you make the right decisions.",
+            "header": "<gold>⭐ GOLDEN RULE ⭐**",
+            "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!**\nYour safety always comes first, and trusted adults are there to help you make the right decisions.",
             "speaker": "Alejandro",
-            "style": "message-box-bottom message-box-gold",
+            "style": "message-box-gold message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 31,
