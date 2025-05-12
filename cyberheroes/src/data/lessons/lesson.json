@@ -553,7 +553,7 @@
             }
           ],
           "message": {
-            "text": "Parents / Guardians\n\nYour parents or guardians are the most important people to share <v>sensitive data** with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
+            "text": "Parents / <v>Guardian**s\n\nYour parents or <v>guardian**s are the most important people to share <v>sensitive data** with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
             "style": "message-box-right",
             "buttons": {
               "prev": 26,
@@ -570,7 +570,7 @@
             }
           ],
           "message": {
-            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or emergency contact information. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
+            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or <v>emergency** contact information**. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
             "style": "message-box-right",
             "buttons": {
               "prev": 27,
@@ -1316,7 +1316,7 @@
             }
           ],
           "message": {
-            "text": "<red>Tell a trusted adult right away.**\nIf someone makes you feel uncomfortable, asks for personal details, or pressures you to share something, report to a parent, teacher, or guardian. They can help you decide what to do next.",
+            "text": "<red>Tell a trusted adult right away.**\nIf someone makes you feel uncomfortable, asks for personal details, or pressures you to share something, report to a parent, teacher, or <v>guardian**. They can help you decide what to do next.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1339,7 +1339,7 @@
             }
           ],
           "message": {
-            "text": "<red>Block or report the person if they keep asking questions.**\nMost websites and apps have features that allow you to block or report users who are acting suspiciously. This helps keeping you and the others safe.",
+            "text": "<red>Block or report the person if they keep asking questions.**\nMost websites and apps have <v>feature**s that allow you to block or report users who are acting suspiciously. This helps keeping you and the others safe.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",

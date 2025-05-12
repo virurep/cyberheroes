@@ -5,7 +5,7 @@
       "lesson_title": "Sensitive Information",
       "intro_text": "Welcome to Privacy Planet. Life here is generally peaceful, and people usually have nothing much to worry about. However, over the last few years, Privacy Planet is becoming less and less private. Investigate the cause for the issue and help the people on the planet.",
       "computer_image_name": "patrick-wanted.png",
-      "computer_text": "Hello Cyber Hero! We are told that Patrick the Predatorus is keeping something very valuable that he stole. We need your help to find what he stole and bring it back to us. This journey will be dangerous, be very careful about ANYONE that you meet on Privacy Planet!"
+      "computer_text": "Hello Cyber Hero! We are told that Patrick the Predatorus is keeping something very <v>valuable** that he stole. We need your help to find what he stole and bring it back to us. This journey will be dangerous, be very careful about ANYONE that you meet on Privacy Planet!"
     },
     {
       "planet_name": "Privacy Moon",
