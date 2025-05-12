@@ -4,11 +4,13 @@
     align-items: center;
     padding: 15px 40px;
     background-color: #B8DEFF;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
     left: 0;
     right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 .navbar-left {

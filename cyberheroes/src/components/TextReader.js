@@ -62,25 +62,27 @@ const TextReader = () => {
     };
 
     return (
-        <div className="text-reader-controls">
-            <button className="text-reader-btn speaker-btn" onClick={handleTextReader}>
-                <img src={speaker} alt="Speaker" className="speaker-icon" />
-            </button>
-            {isReading && !isPaused && (
-                <button className="text-reader-btn pause-btn" onClick={handlePauseReading}>
-                    <img src={pause} alt="Pause" className="pause-icon" />
+        <div style={{ position: 'absolute', top: '80px', left: '20px', zIndex: 1000 }}>
+            <div className="text-reader-controls">
+                <button className="text-reader-btn speaker-btn" onClick={handleTextReader}>
+                    <img src={speaker} alt="Speaker" className="speaker-icon" />
                 </button>
-            )}
-            {isPaused && (
-                <button className="text-reader-btn resume-btn" onClick={handleResumeReading}>
-                    <img src={resume} alt="Resume" className="resume-icon" />
-                </button>
-            )}
-            {(isReading || isPaused) && (
-                <button className="text-reader-btn stop-btn" onClick={handleStopReading}>
-                    <img src={stop} alt="Stop" className="stop-icon" />
-                </button>
-            )}
+                {isReading && !isPaused && (
+                    <button className="text-reader-btn pause-btn" onClick={handlePauseReading}>
+                        <img src={pause} alt="Pause" className="pause-icon" />
+                    </button>
+                )}
+                {isPaused && (
+                    <button className="text-reader-btn resume-btn" onClick={handleResumeReading}>
+                        <img src={resume} alt="Resume" className="resume-icon" />
+                    </button>
+                )}
+                {(isReading || isPaused) && (
+                    <button className="text-reader-btn stop-btn" onClick={handleStopReading}>
+                        <img src={stop} alt="Stop" className="stop-icon" />
+                    </button>
+                )}
+            </div>
         </div>
     );
 }

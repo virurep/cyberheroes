@@ -1,6 +1,5 @@
 body {
   color: #89BFF2 !important;
-  background-image: url('../img/backgrounds/main_background.png');
   display: grid;
   place-content: center;
 }
@@ -72,7 +71,7 @@ body {
   max-width: 1200px;
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -144,7 +143,7 @@ body {
 }
 
 .computer-image {
-  width: 100%;
+  width: 85%;
   height: auto;
   position: relative;
   z-index: 1;

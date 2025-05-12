@@ -10,7 +10,7 @@ import LessonPage from './components/Lesson'
 import Arrival from './components/Arrival.js';
 import Transition from './components/Transition';
 import Certificate from './components/Certificate.js';
-import Review from './components/review.js';
+import Review from './components/review/review.js';
 //Privacy planet quizzes
 import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/quizzes/Privacy-Planet-Quiz-Answers.js';
