@@ -3,12 +3,14 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
 import Navbar from '../NavBar';
 import TextReader from '../TextReader';
+import { processText } from '../Message';
 
 const ReviewLesson = ({ selectedOption, onClose }) => {
     const { planet } = useParams();
     const location = useLocation();
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(0);
+    const [selectedVocab, setSelectedVocab] = useState(null);
 
     const handleBackClick = () => {
         navigate(`/${planet}/transition`, {
@@ -26,6 +28,10 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
         setCurrentPage(prev => prev - 1);
     };
 
+    const handleVocabClick = (vocab) => {
+        setSelectedVocab(vocab);
+    };
+
     const totalPages = selectedOption.review_lesson.length;
     const currentLesson = selectedOption.review_lesson[currentPage];
 
@@ -38,7 +44,7 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
                     <div className="computer-screen-content-review">
                         <h2 className="computer-title-review">{currentLesson.title}</h2>
                         <div className="computer-message-review">
-                            <p>{currentLesson.message}</p>
+                            {processText(currentLesson.message, handleVocabClick)}
                         </div>
                         
                         {currentPage < totalPages - 1 ? (
