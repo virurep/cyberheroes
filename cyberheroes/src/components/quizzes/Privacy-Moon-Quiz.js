@@ -47,19 +47,19 @@ const Quiz = () => {
                 <div className="quiz-answers-container">
                     <button className="quiz-answer-btn answer-btn-1" onClick={() => handleAnswerClick(currentQuestion.answers[0])}>
                         <img src={diamond} alt="diamond" className="quiz-answer-shape" />
-                        {currentQuestion.answers[0]}
+                        <p> {currentQuestion.answers[0]} </p>
                     </button>
                     <button className="quiz-answer-btn answer-btn-2" onClick={() => handleAnswerClick(currentQuestion.answers[1])}>
                         <img src={circle} alt="circle" className="quiz-answer-shape" />
-                        {currentQuestion.answers[1]}
+                        <p> {currentQuestion.answers[1]} </p>
                     </button>
                     <button className="quiz-answer-btn answer-btn-3" onClick={() => handleAnswerClick(currentQuestion.answers[2])}>
                         <img src={triangle} alt="triangle" className="quiz-answer-shape" />
-                        {currentQuestion.answers[2]}
+                        <p> {currentQuestion.answers[2]} </p>
                     </button>
                     <button className="quiz-answer-btn answer-btn-4" onClick={() => handleAnswerClick(currentQuestion.answers[3])}>
                         <img src={square} alt="square" className="quiz-answer-shape" />
-                        {currentQuestion.answers[3]}
+                        <p> {currentQuestion.answers[3]} </p>
                     </button>
                 </div>
             </div>
