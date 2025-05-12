@@ -1,5 +1,5 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import '../styles/lesson.css';
 import Navbar from './NavBar';
 import Characters from './Characters';
@@ -14,7 +14,7 @@ let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
-
+  const textReaderRef = useRef();
   const location = useLocation();
   const [pageNum, setPageNum] = useState(() => {
     // If we're coming from another page with state.page: 1, use that
@@ -72,6 +72,9 @@ const Lesson = () => {
 
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
+    // Stop the text reader when the lesson page changes
+    textReaderRef.current?.stopReading();
+
     if (wildcardMatch(page, "quiz*")) {
       navigate(`/${planet}/transition`, {
         state: {
@@ -100,7 +103,7 @@ const Lesson = () => {
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
-      <TextReader />
+      <TextReader ref={textReaderRef} />
       <div className={`lesson-content ${pageData.message.style}-container readable-text`}>
         <Characters
           characters={pageData.characters.map(character => ({

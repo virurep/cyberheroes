@@ -1,20 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useImperativeHandle, forwardRef } from 'react';
 import '../styles/TextReader.css';
 import speaker from '../img/general/speaker.png';
 import pause from '../img/general/pause.png';
 import resume from '../img/general/play.png';
 import stop from '../img/general/stop.png';
 
-const TextReader = () => {
+const TextReader = forwardRef((props, ref) => {
     const [isReading, setIsReading] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
+
+    const handleStopReading = () => {
+        window.speechSynthesis.cancel();
+        setIsReading(false);
+        setIsPaused(false);
+    };
+
+    // Expose the stop function to parent components
+    useImperativeHandle(ref, () => ({
+        stopReading: handleStopReading
+    }));
 
     // Stop reading when component unmounts
     useEffect(() => {
         return () => {
-            window.speechSynthesis.cancel();
-            setIsReading(false);
-            setIsPaused(false);
+            handleStopReading();
         };
     }, []);
 
@@ -55,12 +64,6 @@ const TextReader = () => {
         }
     };
 
-    const handleStopReading = () => {
-        window.speechSynthesis.cancel();
-        setIsReading(false);
-        setIsPaused(false);
-    };
-
     return (
         <div style={{ position: 'absolute', top: '80px', left: '20px', zIndex: 1000 }}>
             <div className="text-reader-controls">
@@ -85,6 +88,6 @@ const TextReader = () => {
             </div>
         </div>
     );
-}
+});
 
 export default TextReader;
