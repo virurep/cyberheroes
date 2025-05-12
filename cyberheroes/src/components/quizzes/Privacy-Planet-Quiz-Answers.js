@@ -50,7 +50,7 @@ const QuizAnswers = () => {
             <div className="privacy-planet-quiz-background">
                 <Navbar />
                 <TextReader />
-                <div className="answers-container">
+                <div className="answers-container readable-text">
                     <div className="characters-answers-container">
                         <p className="health-bar-label">Health Bar</p>
                         <div className="privacy-planet-health-bar">

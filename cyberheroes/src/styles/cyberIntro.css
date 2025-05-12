@@ -26,6 +26,7 @@ h1 {
     overflow: hidden;
     padding: 50px;
     box-sizing: border-box;
+    margin-top: 100px;
 }
 
 .red-button {
