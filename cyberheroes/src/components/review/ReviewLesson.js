@@ -36,7 +36,7 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
             <div className="computer-screen-review readable-text">
                 <div className="computer-content-review">
                     <div className="computer-screen-content-review">
-                        <h2 className="computer-title-review">{selectedOption.title}</h2>
+                        <h2 className="computer-title-review">{currentLesson.title}</h2>
                         <div className="computer-message-review">
                             <p>{currentLesson.message}</p>
                         </div>

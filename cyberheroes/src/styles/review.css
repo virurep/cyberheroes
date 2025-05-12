@@ -58,11 +58,12 @@
 }
 
 .review-box-review {
-    background-color: #9BCDFF;
+    background-color: #B8DEFF;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 50vh;
+    width: 42vw;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -293,11 +294,11 @@
 }
 
 .next-button-review {
-    right: 5%;
+    right: 10%;
 }
 
 .prev-button-review {
-    left: 5%;
+    left: 10%;
 }
 
 .next-button-review:hover, .prev-button-review:hover {

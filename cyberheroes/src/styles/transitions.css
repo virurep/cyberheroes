@@ -89,6 +89,9 @@
     box-shadow: 0 6px 12px rgba(209, 73, 91, 0.4);
 }
 
+.or-text {
+    color: black;
+}
 .review-button {
     background-color: #B8DEFF;
     font-size: 20px;

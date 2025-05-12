@@ -13,7 +13,7 @@
                     },
                     {
                         "page": 2,
-                        "title": "Sensitive Data",
+                        "title": "Sensitive Data Continued",
                         "message": "Sharing your sensitive data with the wrong people like Patrick could lead to problems, so it’s important to know what sensitive data is and how to protect it."
                     }
                 ]
@@ -26,7 +26,7 @@
                     {
                         "page": 1,
                         "title": "Types of Sensitive Information",
-                        "message": "Full Name\n\nBirthday\n\nHome Address\n\nPhone Number\n\nEmail Address"
+                        "message": " * Full Name\n * Birthday\n * Home Address\n * Phone Number\n * Email Address"
                     }             
                 ]
             }
@@ -42,7 +42,12 @@
                     {
                         "page": 1,
                         "title": "Pretending to be You",
-                        "message": "If someone knows your birthday or password, they might pretend to be you online. They could send fake messages to your friends or try to get their private information. \n\n That would be upsetting, right? That’s why it’s important to keep your information private—so others can’t use it to cause trouble."
+                        "message": "If someone knows your birthday or password, they might pretend to be you online. They could send fake messages to your friends or try to get their private information."
+                    },
+                    {
+                        "page": 2,
+                        "title": "Pretending to be You Continued",
+                        "message": "That would be upsetting, right? That’s why it’s important to keep your information private—so others can’t use it to cause trouble."
                     }
                 ]
 
@@ -54,8 +59,13 @@
                     {
                         "page": 1,
                         "title": "Tricking Others",
-                        "message": "Sometimes, people use your information to trick others. \n\n This is called phishing, and it’s when someone pretends to be you to get private information from your friends or family. \n\nThey might send fake emails or messages that look real but are meant to steal information. Be careful who you share your information with."
-                    }             
+                        "message": "Sometimes, people use your information to trick others. \n This is called phishing, and it’s when someone pretends to be you to get private information from your friends or family."
+                    },
+                    {
+                        "page": 2,
+                        "title": "Tricking Others Continued",
+                        "message": "They might send fake emails or messages that look real but are meant to steal information. Be careful who you share your information with."
+                    }
                 ]
             }
         ],
@@ -70,7 +80,12 @@
                     {
                         "page": 1,
                         "title": "Who Can You Trust With Your Sensitive Data?",
-                        "message": "Not everyone should have your sensitive data. In fact, the less you share, the safer you are. Only certain trusted adults should have access—and only when it’s truly necessary.\n\n Trusted Adults Include: \n\n Parents or Guardians \n\n Teachers or School Staff \n\n Doctors and Nurses \n\n If something feels too personal, talk to your parents right away."
+                        "message": "Not everyone should have your sensitive data. In fact, the less you share, the safer you are. Only certain trusted adults should have access—and only when it’s truly necessary."
+                    },
+                    {
+                        "page": 2,
+                        "title": "Who Can You Trust With Your Sensitive Data Continued",
+                        "message": "Trusted Adults Include: \n * Parents or Guardians \n * Teachers or School Staff \n * Doctors and Nurses \n If something feels too personal, talk to your parents right away."
                     }
                 ]
             },
@@ -81,7 +96,12 @@
                     {
                         "page": 1,
                         "title": "Who Shouldn't Have Your Sensitive Data?",
-                        "message": "Just because someone asks for your information doesn’t mean you should give it. Some people pretend to be friendly to trick you. \n\n Don’t give your sensitive data: \n\n Strangers people online \n\n friends (when it comes to passwords) \n\n When in doubt, ask or alert a trusted adult if someone asks for your sensitive data"
+                        "message": "Just because someone asks for your information doesn’t mean you should give it. Some people pretend to be friendly to trick you."
+                    },
+                    {
+                        "page": 2,
+                        "title": "Who Shouldn't Have Your Sensitive Data Continued",
+                        "message": "Don’t give your sensitive data to: \n * Strangers \n * People online \n  * Friends (when it comes to passwords) \n When in doubt, ask or alert a trusted adult if someone asks for your sensitive data"
                     }
                 ]
             }

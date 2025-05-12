@@ -85,7 +85,7 @@ const Transition = () => {
                             </p>
                             <div className="button-container">
                                 <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
-                                <span>OR</span>
+                                <span className="or-text">OR</span>
                                 <button className='review-button' onClick={handleReviewButtonClick}>GO BACK TO REVIEW</button>
                             </div>
                         </div>
