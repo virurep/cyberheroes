@@ -124,7 +124,10 @@ const TextReader = forwardRef((props, ref) => {
             setIsReading(false);
             setIsPaused(false);
             setCurrentWordIndex(-1);
-            setIsFirstClick(true);
+            // Change to playNext button after first block
+            if (isFirstClick) {
+                setIsFirstClick(false);
+            }
             // Remove all highlights
             wordElements.forEach(el => el.classList.remove('word-highlight'));
         };
