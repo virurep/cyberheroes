@@ -177,7 +177,7 @@
 }
 
 .computer-message-review {
-    color: #333;
+    color: black;
     font-size: 1.8rem;
     line-height: 1.6;
     white-space: pre-line;
@@ -312,5 +312,46 @@
 
 .prev-button-review:before {
     content: "◀";
+}
+
+.vocab-word {
+    color: #0F746F;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.vocab-word:hover {
+    color: #02101b;
+}
+
+.red-text {
+    color: #E14733;
+    font-weight: bold;
+}
+
+.gold-text {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+.computer-message-review li {
+    text-align: left;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.computer-message-review p {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: #333;
 }
 

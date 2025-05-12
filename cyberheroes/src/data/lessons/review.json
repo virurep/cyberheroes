@@ -26,7 +26,7 @@
                     {
                         "page": 1,
                         "title": "Types of Sensitive Information",
-                        "message": " * Full Name\n * Birthday\n * Home Address\n * Phone Number\n * Email Address"
+                        "message": " <li> Full Name<ul>Birthday<ul>Home Address<ul>Phone Number<ul>Email Address**"
                     }             
                 ]
             }
@@ -85,7 +85,7 @@
                     {
                         "page": 2,
                         "title": "Who Can You Trust With Your Sensitive Data Continued",
-                        "message": "Trusted Adults Include: \n * Parents or Guardians \n * Teachers or School Staff \n * Doctors and Nurses \n If something feels too personal, talk to your parents right away."
+                        "message": "You can trust: \n <li>Parents or Guardians<ul> Teachers or School Staff<ul> Doctors and Nurses** \n If something feels too personal, talk to your parents right away."
                     }
                 ]
             },
@@ -101,7 +101,7 @@
                     {
                         "page": 2,
                         "title": "Who Shouldn't Have Your Sensitive Data Continued",
-                        "message": "Don’t give your sensitive data to: \n * Strangers \n * People online \n  * Friends (when it comes to passwords) \n When in doubt, ask or alert a trusted adult if someone asks for your sensitive data"
+                        "message": "Don’t give your sensitive data to: \n <li>Strangers<ul>People online<ul>Friends (when it comes to passwords)** \n When in doubt, ask or alert a trusted adult if someone asks for your sensitive data"
                     }
                 ]
             }
@@ -120,12 +120,12 @@
                     {
                         "page": 1,
                         "title": "Private vs Public Information",
-                        "message": "Some things are safe to share, and others should be kept private. \n\n Public Information (OK to share): \n\n Your favorite color \n\n Your favorite game or show \n\n Your pet’s name"
+                        "message": "Some things are safe to share, and others should be kept private. \n\n Public Information (OK to share): <li>Your favorite color<ul>Your favorite game or show<ul>Your pet’s name**"
                     },
                     {
                         "page": 2,
                         "title": "Private vs Public Information",
-                        "message": "Private Information (Keep safe): \n\n Full name \n\n Home address \n\nPhone number \n\n Birthday \n\n Private information can be used to identify or contact you. Only trusted adults should know it."
+                        "message": "Private Information (Keep safe): <li>Full name<ul>Home address<ul>Phone number<ul>Birthday** \n\n Private information can be used to identify or contact you. Only trusted adults should know it."
                     }
                 ]
 
@@ -137,8 +137,13 @@
                     {
                         "page": 1,
                         "title": "Why Does this Matter",
-                        "message": "Knowing the difference helps you stay safe online. If you share too much private information—even by accident—someone could use it to figure out who you are or where you live. \n\n That’s why you should always ask yourself: \n\n Is this public or private? \n\n Who will see it? \n\n Should I ask a trusted adult first?"
-                    }             
+                        "message": "Knowing the difference helps you stay safe online. If you share too much private information—even by accident—someone could use it to figure out who you are or where you live."
+                    },
+                    {
+                        "page": 2,
+                        "title": "Why Does this Matter Continued",
+                        "message": "That’s why you should always ask yourself: <li>Is this public or private?<ul>Who will see it?<ul>Should I ask a trusted adult first?**"
+                    }
                 ]
             }
         ],
@@ -165,7 +170,7 @@
                     {
                         "page": 1,
                         "title": "Think Before You Share",
-                        "message": "Before posting or sharing anything online, ask yourself these questions: \n\n Is this private information? \n\n Who can see this? \n\n Does this reveal too much? \n\n If you’re ever unsure, always check with a trusted adult before sharing."
+                        "message": "Before posting or sharing anything online, ask yourself these questions: <li>Is this private information?<ul>Who can see this?<ul>Does this reveal too much?** \n\n If you’re ever unsure, always check with a trusted adult before sharing."
                     }             
                 ]
             }
@@ -181,8 +186,8 @@
                     {
                         "page": 1,
                         "title": "Red Flags to Watch Out For",
-                        "message": "Not everyone online is who they say they are. Some people pretend to be friendly to try and get your private information.\n\n  **Watch out for these red flags:** \n\n They ask for your name, school, address, or birthday. \n\n They want to meet you in real life. \n\n They ask for pictures or personal details. \n\n They tell you to keep your conversation a secret. \n\n They offer you gifts or prizes in exchange for information."
-                    }   
+                        "message": "Not everyone online is who they say they are. Some people pretend to be friendly to try and get your private information.\n\n  Watch out for these red flags: <li>They ask for your name, school, address, or birthday. <ul>They want to meet you in real life. <ul>They ask for pictures or personal details. <ul>They tell you to keep your conversation a secret. <ul>They offer you gifts or prizes in exchange for information.**"
+                    }
                 ]
             },
             {
@@ -192,7 +197,12 @@
                     {
                         "page": 1,
                         "title": "What to Do If a Strangers Asks For Information Online",
-                        "message": "If This Happens: \n\n Don’t respond or share anything \n\n Tell a trusted adult right away \n\n Block and report the person if they keep asking \n\n Trust your instincts—if it feels off, it probably is \n\n Golden Rule: If a stranger online asks for personal info, STOP and ASK an adult before you do anything."
+                        "message": "If This Happens: <li>Don’t respond or share anything <ul>Tell a trusted adult right away <ul>Block and report the person if they keep asking <ul>Trust your instincts—if it feels off, it probably is**"
+                    },
+                    {
+                        "page": 2,
+                        "title": "Golden Rule",
+                        "message": "Golden Rule: \n If a stranger online asks for personal info, STOP and ASK an adult before you do anything."
                     }
                 ]
             }
