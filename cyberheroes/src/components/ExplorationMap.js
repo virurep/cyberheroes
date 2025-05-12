@@ -8,7 +8,7 @@ import safeBrowsingPlanet from '../img/planets/safebrowsing.png';
 import onlineSharingPlanet from '../img/planets/onlinesharing.png';
 import malwarePlanet from '../img/planets/malware.png';
 import jet from '../img/general/jet.png';
-import Navbar from './NavBar';
+import Navbar from './util/NavBar';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 

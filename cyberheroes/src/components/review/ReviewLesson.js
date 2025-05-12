@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
-import Navbar from '../NavBar';
-import TextReader from '../TextReader';
+import Navbar from '../util/NavBar';
+import TextReader from '../util/TextReader';
 
 const ReviewLesson = ({ selectedOption, onClose }) => {
     const { planet } = useParams();
@@ -40,21 +40,21 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
                         <div className="computer-message-review">
                             <p>{currentLesson.message}</p>
                         </div>
-                        
+
                         {currentPage < totalPages - 1 ? (
-                            <button 
+                            <button
                                 className="next-button-review"
                                 onClick={handleNextPage}
                             />
                         ) : (
                             <div className="computer-buttons-review">
-                                <button 
+                                <button
                                     className="keep-reviewing-button-review"
                                     onClick={onClose}
                                 >
                                     Keep Reviewing
                                 </button>
-                                <button 
+                                <button
                                     className="take-quiz-button-review"
                                     onClick={handleBackClick}
                                 >
@@ -62,9 +62,9 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
                                 </button>
                             </div>
                         )}
-                        
+
                         {currentPage > 0 && (
-                            <button 
+                            <button
                                 className="prev-button-review"
                                 onClick={handlePrevPage}
                             />
@@ -76,4 +76,4 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
     );
 };
 
-export default ReviewLesson; 
+export default ReviewLesson;

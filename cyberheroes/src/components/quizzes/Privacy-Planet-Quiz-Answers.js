@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Navbar from '../NavBar';
+import Navbar from '../util/NavBar';
 import '../../styles/quiz.css';
 import Allie from '../../img/characters/allie.png';
 import Enemy from '../../img/characters/enemy.png';
 import DeadEnemy from '../../img/characters/privacy-enemy-dead.png';
-import TextReader from '../TextReader';
+import TextReader from '../util/TextReader';
 
 const QuizAnswers = () => {
     const navigate = useNavigate();
@@ -56,9 +56,9 @@ const QuizAnswers = () => {
                         <div className="privacy-planet-health-bar">
                             <progress className="privacy-planet-health-bar-progress" value={currentQuestion.healthBar} max="1"></progress>
                         </div>
-                        <img 
-                            src={currentQuestion.healthBar != 0 ? Enemy : DeadEnemy}    
-                            alt={currentQuestion.healthBar != 0 ? "Enemy" : "Dead Enemy"} 
+                        <img
+                            src={currentQuestion.healthBar != 0 ? Enemy : DeadEnemy}
+                            alt={currentQuestion.healthBar != 0 ? "Enemy" : "Dead Enemy"}
                             className="characters-answers-img" />
                     </div>
                     <div className="text-answers-container">

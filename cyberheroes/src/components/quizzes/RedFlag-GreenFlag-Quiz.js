@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "../NavBar";
-import TextReader from "../TextReader";
+import Navbar from "../util/NavBar";
+import TextReader from "../util/TextReader";
 import Al from '../../img/characters/al.png';
 import redFlag from '../../img/quizzes/redFlag.png'
 import greenFlag from '../../img/quizzes/greenFlag.png'

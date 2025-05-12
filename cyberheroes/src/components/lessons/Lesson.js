@@ -1,13 +1,13 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useRef } from 'react';
-import '../styles/lesson.css';
-import Navbar from './NavBar';
+import '../../styles/lesson.css';
+import Navbar from '../util/NavBar';
 import Characters from './Characters';
 import Message from './Message';
-import lessonData from '../data/lessons/lesson.json';
-import TextReader from './TextReader';
+import lessonData from '../../data/lessons/lesson.json';
+import TextReader from '../util/TextReader';
 
-const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
+const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
 
 let pageNum = 1;

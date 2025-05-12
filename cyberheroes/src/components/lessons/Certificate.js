@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../styles/certificate.css";
-import Navbar from "./NavBar";
-import TextReader from "./TextReader";
+import "../../styles/certificate.css";
+import Navbar from "../util/NavBar";
+import TextReader from "../util/TextReader";
 
 const Certificate = () => {
     const { planet } = useParams();
@@ -11,7 +11,7 @@ const Certificate = () => {
     // Get the correct certificate image based on the planet
     const getCertificateImage = () => {
         const planetName = planet.toLowerCase().replace(/-/g, '-');
-        return require(`../img/certificates/${planetName}-certificate.png`);
+        return require(`../../img/certificates/${planetName}-certificate.png`);
     };
 
     const handleDownload = () => {

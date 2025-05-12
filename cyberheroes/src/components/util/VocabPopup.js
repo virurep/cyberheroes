@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import '../styles/lesson.css';
+import '../../styles/lesson.css';
 
 const VocabPopup = ({ word, definition, onClose }) => {
   const handleOverlayClick = (e) => {

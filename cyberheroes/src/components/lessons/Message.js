@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Buttons from './Buttons';
-import VocabPopup from './VocabPopup';
-import vocabData from '../data/lessons/vocab.json';
+import VocabPopup from '../util/VocabPopup';
+import vocabData from '../../data/lessons/vocab.json';
 
 
 export const processText = (text, onVocabClick) => {
@@ -37,8 +37,6 @@ export const processText = (text, onVocabClick) => {
           if (part.startsWith("<li>") && part.endsWith("**")) {
             const item = part.slice(4, -2);
             const listItems = item.split("<ul>");
-            console.log(item);
-            console.log(listItems);
             return listItems.map((item, i) => {
               return <li key={i}>{item}</li>;
             });
@@ -60,6 +58,12 @@ export const processText = (text, onVocabClick) => {
           if (part.startsWith("<u>") && part.endsWith("**")) {
             const text = part.slice(3, -2);
             return <span className="underline-text">{text}</span>;
+          }
+
+          // check if the part should be bold
+          if (part.startsWith("<b>") && part.endsWith("**")) {
+            const text = part.slice(3, -2);
+            return <span className="bold-text">{text}</span>;
           }
 
           return part;

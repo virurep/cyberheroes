@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "../NavBar";
-import TextReader from "../TextReader";
+import Navbar from "../util/NavBar";
+import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/drag_drop_quiz.json";
 import Al from "../../img/characters/alejandro.png";

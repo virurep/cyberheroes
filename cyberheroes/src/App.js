@@ -5,11 +5,11 @@ import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
 
 //Lesson pages
-import LessonIntroPage from './components/LessonIntro';
-import LessonPage from './components/Lesson'
-import Arrival from './components/Arrival.js';
-import Transition from './components/Transition';
-import Certificate from './components/Certificate.js';
+import LessonIntroPage from './components/lessons/LessonIntro';
+import LessonPage from './components/lessons/Lesson'
+import Arrival from './components/lessons/Arrival.js';
+import Transition from './components/lessons/Transition';
+import Certificate from './components/lessons/Certificate.js';
 import Review from './components/review/review.js';
 //Privacy planet quizzes
 import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';

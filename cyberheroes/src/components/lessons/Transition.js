@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import "../styles/transitions.css";
-import Navbar from './NavBar';
-import TextReader from "./TextReader";
-import Transitions from '../data/lessons/transitions.json';
+import "../../styles/transitions.css";
+import Navbar from '../util/NavBar';
+import TextReader from "../util/TextReader";
+import Transitions from '../../data/lessons/transitions.json';
 
 const Transition = () => {
-    const characterImages = require.context('../img/characters', false, /\.(png|jpe?g|svg)$/);
+    const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
     const { planet } = useParams();
     const location = useLocation();
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Transition = () => {
     // Get the correct transition data based on the planet
     const planetName = planet.toLowerCase().replace(/-/g, '_');
     const transitionData = Transitions[planetName];
-    
+
     if (!transitionData) {
         console.error(`No transition data found for planet: ${planet}`);
         return (
@@ -91,7 +91,7 @@ const Transition = () => {
                         </div>
                     </div>
                     <div className="character-side">
-                        <img 
+                        <img
                             src={imagePath}
                             alt= {characters}
                             className="character-image"

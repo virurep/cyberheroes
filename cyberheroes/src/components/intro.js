@@ -3,8 +3,8 @@ import "../styles/cyberIntro.css";
 import logo from "../img/general/logo.png";
 import rocket from "../img/general/rocket.png";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./NavBar";
-import TextReader from "./TextReader";
+import Navbar from "./util/NavBar";
+import TextReader from "./util/TextReader";
 
 const IntroPage = () => {
     const navigate = useNavigate();

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/landing.css";
 import hero from "../img/characters/cyber-hero.png";
-import Navbar from './NavBar';
+import Navbar from './util/NavBar';
 
 
 const LandingPage = () => {
@@ -11,7 +11,7 @@ const LandingPage = () => {
     useEffect(() => {
         // Add landing-page class to body when component mounts
         document.body.classList.add('landing-page');
-        
+
         // Cleanup function to remove the class when component unmounts
         return () => {
             document.body.classList.remove('landing-page');

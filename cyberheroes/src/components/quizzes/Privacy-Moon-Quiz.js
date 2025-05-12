@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "../NavBar";
-import TextReader from "../TextReader";
+import Navbar from "../util/NavBar";
+import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
 import quizData from "../../data/quizzes/privacy_moon_quiz.json"
 

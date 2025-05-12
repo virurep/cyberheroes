@@ -1,5 +1,5 @@
-import arrow from '../img/general/arrow.png'
-const characterImages = require.context('../img/characters', false, /\.(png|jpe?g|svg)$/);
+import arrow from '../../img/general/arrow.png'
+const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
 
 
 const Characters = ({ characters }) => {

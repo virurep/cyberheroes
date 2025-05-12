@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import '../styles/intro.css';
-import '../styles/lesson.css';
-import lessonIntroData from '../data/lessons/lesson_intro.json';
-import rocket from '../img/general/rocket.png';
-import computer from "../img/general/computer.png";
-import Navbar from './NavBar';
-import TextReader from './TextReader';
-import VocabPopup from './VocabPopup';
+import '../../styles/intro.css';
+import '../../styles/lesson.css';
+import lessonIntroData from '../../data/lessons/lesson_intro.json';
+import rocket from '../../img/general/rocket.png';
+import computer from "../../img/general/computer.png";
+import Navbar from '../util/NavBar';
+import TextReader from '../util/TextReader';
+import VocabPopup from '../util/VocabPopup';
 import { processText } from './Message';
 
-const planetImages = require.context('../img/planets', false, /\.(png|jpe?g|svg)$/);
-const introImages = require.context('../img/lesson-intro', false, /\.(png|jpe?g|svg)$/);
+const planetImages = require.context('../../img/planets', false, /\.(png|jpe?g|svg)$/);
+const introImages = require.context('../../img/lesson-intro', false, /\.(png|jpe?g|svg)$/);
 
 const LessonIntro = () => {
   const { planet } = useParams();

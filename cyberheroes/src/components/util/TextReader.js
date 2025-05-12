@@ -1,9 +1,9 @@
 import { useState, useEffect, useImperativeHandle, forwardRef } from 'react';
-import '../styles/TextReader.css';
-import speaker from '../img/general/speaker.png';
-import pause from '../img/general/pause.png';
-import resume from '../img/general/play.png';
-import stop from '../img/general/stop.png';
+import '../../styles/TextReader.css';
+import speaker from '../../img/general/speaker.png';
+import pause from '../../img/general/pause.png';
+import resume from '../../img/general/play.png';
+import stop from '../../img/general/stop.png';
 
 const TextReader = forwardRef((props, ref) => {
     const [isReading, setIsReading] = useState(false);
