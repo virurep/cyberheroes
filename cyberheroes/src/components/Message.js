@@ -52,6 +52,12 @@ const Message = ({ message, onButtonClick }) => {
               return <span className="red-text">{text}</span>;
             }
 
+            // check if the part should be gold
+            if (part.startsWith("<gold>") && part.endsWith("**")) {
+              const text = part.slice(6, -2);
+              return <span className="gold-text">{text}</span>;
+            }
+
             // check if the part should be underlined
             if (part.startsWith("<u>") && part.endsWith("**")) {
               const text = part.slice(3, -2);
@@ -69,6 +75,9 @@ const Message = ({ message, onButtonClick }) => {
 
   return (
     <div className="text-container">
+      {message.header && (
+        <div className="text-header">{processText(message.header)}</div>
+      )}
       {message.speaker && (
         <div className={`speaker-name ${message.speaker_style}`}>
           <p>{message.speaker.toUpperCase()}</p>

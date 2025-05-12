@@ -49,7 +49,7 @@
             }
           ],
           "message": {
-            "text": "Sensitive data? What is that?",
+            "text": "<v>Sensitive data**? What is that?",
             "speaker": "Cyber Hero",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -68,7 +68,7 @@
             }
           ],
           "message": {
-            "text": "Sensitive data is private and personal information that belongs to you and should be kept safe. This kind of information is important because it helps identify who you are, where you live, or how someone can contact you.",
+            "text": "<v>Sensitive data** is private and personal information that belongs to you and should be kept safe. This kind of information is important because it helps identify who you are, where you live, or how someone can contact you.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -87,7 +87,7 @@
             }
           ],
           "message": {
-            "text": "Sharing your sensitive data with the wrong people like Patrick could lead to problems, so it’s important to know what sensitive data is and how to protect it.",
+            "text": "Sharing your <v>sensitive data** with the wrong people like Patrick could lead to problems, so it’s important to know what <v>sensitive data** is and how to protect it.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -361,7 +361,7 @@
             }
           ],
           "message": {
-            "text": "Birthday:\n\nYour birthday might seem like a fun thing to share—after all, everyone loves birthday parties!\n\nBut did you know that some people can use your birthdate to guess passwords or pretend to be you? Some websites even use your birthday to confirm your identity, so sharing it could make it easier for someone to pretend they’re you online.",
+            "text": "Birthday:\n\nYour birthday might seem like a fun thing to share—after all, everyone loves birthday parties!\n\nBut did you know that some people can use your birthdate to guess passwords or pretend to be you? Some websites even use your birthday to confirm your <v>identity**, so sharing it could make it easier for someone to pretend they’re you online.",
             "style": "message-box-right",
             "buttons": {
               "prev": 16,
@@ -395,7 +395,7 @@
             }
           ],
           "message": {
-            "text": "There are many things that people may ask you, but you should not tell everyone about everything. Some information is private and personal and should be kept safe. These are all sensitive data, they can help identify who you are, where you live, and how to find you.",
+            "text": "There are many things that people may ask you, but you should not tell everyone about everything. Some information is private and personal and should be kept safe. These are all <v>sensitive data**, they can help identify who you are, where you live, and how to find you.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -418,12 +418,11 @@
             }
           ],
           "message": {
-            "text": "HAHA I bet they don’t know that one of the biggest reasons sensitive data is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
+            "text": "HAHA! I bet they don’t know that one of the biggest reasons <v>sensitive data** is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
             "speaker": "Enemy #2",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
             "buttons": {
-              "prev": "quiz-1-result",
               "next": 21
             }
           }
@@ -460,7 +459,7 @@
             }
           ],
           "message": {
-            "text": "Sometimes, we use sensitive data to trick other people into giving away more private information. This is called “phishing”. Let’s say someone gets access to your email address and sends a message to a friend pretending to be you. If your friend isn’t careful, they might believe the message and share their personal details. This can cause harm not just to you but to your friends and family, too. HAHAHA!",
+            "text": "Sometimes, we use <v>sensitive data** to trick other people into giving away more private information. This is called <v>phishing**. Let’s say someone gets access to your email address and sends a message to a friend pretending to be you. If your friend isn’t careful, they might believe the message and share their personal details. This can cause harm not just to you but to your friends and family, too. HAHAHA!",
             "speaker": "Enemy #3",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -517,12 +516,11 @@
             }
           ],
           "message": {
-            "text": "Not everyone should have access to your sensitive data. In fact, most of the time, the less you share, the safer you are! Only certain trusted people should know your personal information, and even then, it should only be shared when necessary.",
+            "text": "Not everyone should have access to your <v>sensitive data**. In fact, most of the time, the less you share, the safer you are! Only certain trusted people should know your personal information, and even then, it should only be shared when necessary.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
-              "prev": "quiz-2-result",
               "next": 26
             }
           }
@@ -555,7 +553,7 @@
             }
           ],
           "message": {
-            "text": "Parents / Guardians\n\nYour parents or guardians are the most important people to share sensitive data with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
+            "text": "Parents / Guardians\n\nYour parents or guardians are the most important people to share <v>sensitive data** with because they are responsible for keeping you safe. They can decide when and how your information should be shared. If someone asks for your personal details, always check with your parents first!",
             "style": "message-box-right",
             "buttons": {
               "prev": 26,
@@ -589,7 +587,7 @@
             }
           ],
           "message": {
-            "text": "Doctors / Nurses\n\nYour health information is private, but medical professionals may need to know things like your birth date, allergies, or medical history to take care of you. This is one of the few times when sharing personal details is okay—but only with real doctors or nurses, and only when your parents say it's necessary.",
+            "text": "Doctors / Nurses\n\nYour health information is private, but medical professionals may need to know things like your birth date, allergies, or medical history to take care of you. This is one of the few times when sharing personal details is okay — but only with trusted doctors or nurses, and only when your parents say it's necessary.",
             "style": "message-box-right",
             "buttons": {
               "prev": 28,
@@ -625,7 +623,7 @@
             }
           ],
           "message": {
-            "text": "Strangers:\n\nYou should never give sensitive data to Strangers\n\nIf you wouldn’t walk up to a random person in a store and tell them where you live, you shouldn’t do it online either! People you don’t know should never have your personal details, even if they seem friendly.",
+            "text": "Strangers:\n\nYou should never give <v>sensitive data** to strangers.\n\nIf you wouldn’t walk up to a random person in a store and tell them where you live, you shouldn’t do it online either! People you don’t know should never have your personal details, even if they seem friendly.",
             "style": "message-box-right",
             "buttons": {
               "prev": 30,
@@ -642,7 +640,7 @@
             }
           ],
           "message": {
-            "text": "People Online:\n\nYou should never give sensitive data to people online\n\nSome people on the internet pretend to be kids or act nice to trick others into sharing information. They might ask things like, “Where do you live?” or “What’s your phone number?” but you should never answer these questions online. If someone asks, tell a parent immediately.",
+            "text": "People Online:\n\nYou should never give <v>sensitive data** to people online.\n\nSome people on the internet pretend to be kids or act nice to trick others into sharing information. They might ask things like, “Where do you live?” or “What’s your phone number?” but you should never answer these questions online. If someone asks, tell a parent immediately.",
             "style": "message-box-right",
             "buttons": {
               "prev": 31,
@@ -659,7 +657,7 @@
             }
           ],
           "message": {
-            "text": "Friends (passwords)\n\nEven if you trust your best friend, never share your passwords—not even for games! Someone could accidentally share it with the wrong person, or if you ever have a fight, they might use it in a way you don’t want.",
+            "text": "Friends (passwords)\n\nEven if you trust your best friend, never share your passwords — not even for games! They can accidentally share it with the wrong person. Also, if you ever have a fight, they might use it in a way that you don’t want.",
             "style": "message-box-right",
             "buttons": {
               "prev": 32,
@@ -676,7 +674,7 @@
             }
           ],
           "message": {
-            "text": "There are a few people who might need to know your personal information, but they should always be adults you trust.",
+            "text": "There are only a few people who might need to know your personal information, and they should always be adults you trust.",
             "speaker": "Allie",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -722,7 +720,7 @@
             }
           ],
           "message": {
-            "text": "Hi Alejandro, I'm Cyber Hero. Patrick just arrived. Allie sent me to help you keep the Privacy Planet’s information protected.",
+            "text": "Hi Alejandro, I'm Cyber Hero. Patrick the Predatoraus just arrived. Allie sent me to help you keep the Privacy Planet’s information protected.",
             "speaker": "Cyber Hero",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -745,7 +743,7 @@
             }
           ],
           "message": {
-            "text": "How do I know you are telling the truth? Do you really know Allie?",
+            "text": "Huh? How do I know you are telling the truth? Do you really know Allie?",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -791,7 +789,7 @@
             }
           ],
           "message": {
-            "text": "Hmmm okay! What is <v>public information**?",
+            "text": "Hmmm okay! What is public information?",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -875,20 +873,19 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "Wow! Allie has taught you well! I trust you now. Let’s go defeat and get people’s private information back!",
+            "text": "Wow! Allie has taught you well! I trust you now. Let’s go defeat Patrick and get people’s private information back!",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
-              "prev": "quiz-1-result",
               "next": 10
             }
           }
@@ -921,11 +918,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -944,11 +941,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -990,11 +987,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1036,11 +1033,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1059,15 +1056,15 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "So Patrick pieced together all these clues and learned about:\n<li>My age<ul>My school<ul>A place I visit often**",
+            "text": "Patrick pieced together all these clues and learned about:\n<li>My age<ul>My school<ul>A place I visit often**",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1105,11 +1102,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1128,11 +1125,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1151,11 +1148,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1174,11 +1171,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1197,11 +1194,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1220,11 +1217,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1243,15 +1240,15 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "They could pretend to be another kid or someone you can trust. Here, I'll give you some scenarios, and you tell me if they're a red flag or green flag.",
+            "text": "They could pretend to be another kid or someone you can trust. Here, I'll give you some <v>scenario**s, and you tell me if they're a red flag or green flag.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1279,7 +1276,6 @@
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
             "buttons": {
-              "prev": "quiz-2-result",
               "next": 27
             }
           }
@@ -1289,15 +1285,15 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "<red>Never respond or give out your information.** Even if the person seems nice or trustworthy, it's important to stay cautious. Strangers online may not be who they say they are, and sharing even small details can put you at risk.",
+            "text": "<red>Never respond or give out your information.** Even if the person seems nice or <v>trustworthy**, it's important to stay cautious. Strangers online may not be who they say they are, and sharing even small details can put you at risk.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1312,11 +1308,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1335,11 +1331,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1358,11 +1354,11 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
@@ -1381,20 +1377,44 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character-left character-s"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "Remember that even if someone seems nice, they might not be who they say they are.<red>Online, people can pretend to be anyone.**\nThey might use fake pictures, names, or stories to trick others into trusting them.",
+            "text": "Remember that even if someone seems nice, they might not be who they say they are. <red>Online, people can pretend to be anyone.**\nThey might use fake pictures, names, or stories to trick others into trusting them.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 30,
+              "next": 32
+            }
+          }
+        },
+        {
+          "page_number": 32,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip"
+            }
+          ],
+          "message": {
+            "header": "<gold>⭐ GOLDEN RULE ⭐**",
+            "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!**\nYour safety always comes first, and trusted adults are there to help you make the right decisions.",
+            "speaker": "Alejandro",
+            "style": "message-box-gold message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 31,
               "next": "quiz-3"
             }
           }

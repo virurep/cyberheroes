@@ -31,7 +31,7 @@
 .lesson-content {
   position: relative;
   display: flex;
-  margin-top: 20px;
+  transform: translateY(75px);
 }
 
 .message-box-bottom-container {
@@ -224,6 +224,15 @@
   line-height: 1.5;
 }
 
+/* text header */
+.text-header {
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100px);
+}
+
 /* speaker name on text box */
 .speaker-name {
   position: absolute;
@@ -259,12 +268,20 @@
   text-align: center;
 }
 
+.text-container .message-box-gold {
+  background-color: #EDAE49;
+}
+
 .red-text {
   color: #E14733;
 }
 
+.gold-text {
+  color: #EDAE49;
+}
+
 .underline-text {
-  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 .alert-header {
