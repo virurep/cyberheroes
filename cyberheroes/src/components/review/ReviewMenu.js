@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
-import Navbar from '../NavBar';
-import TextReader from '../TextReader';
+import Navbar from '../util/NavBar';
+import TextReader from '../util/TextReader';
 
 const ReviewMenu = ({ onOptionSelect, character, options }) => {
     const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
@@ -32,7 +32,7 @@ const ReviewMenu = ({ onOptionSelect, character, options }) => {
             <div className="review-content readable-text">
                 <div className="review-layout">
                     <div className="character-side-review">
-                        <img 
+                        <img
                             src={imagePath}
                             alt={character}
                             className="character-image-review"
@@ -42,7 +42,7 @@ const ReviewMenu = ({ onOptionSelect, character, options }) => {
                         <div className="review-box-review">
                             <div className="review-content-scroll-review">
                                 <h1 className="review-title-review">What Do You Want to Review?</h1>
-                                
+
                                 {/* Options Display */}
                                 <div className="options-container-review">
                                     {options.map((option) => (
@@ -58,7 +58,7 @@ const ReviewMenu = ({ onOptionSelect, character, options }) => {
                             </div>
 
                             {/* Back Link */}
-                            <span 
+                            <span
                                 className="back-link-review"
                                 onClick={handleBackClick}
                             >
@@ -72,4 +72,4 @@ const ReviewMenu = ({ onOptionSelect, character, options }) => {
     );
 };
 
-export default ReviewMenu; 
+export default ReviewMenu;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Navbar from '../NavBar';
-import TextReader from '../TextReader';
+import Navbar from '../util/NavBar';
+import TextReader from '../util/TextReader';
 import '../../styles/quiz.css';
 import Alejandro from '../../img/characters/alejandro.png';
 

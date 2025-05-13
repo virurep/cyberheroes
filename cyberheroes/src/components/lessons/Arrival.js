@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../styles/arrival.css";
-import Navbar from './NavBar';
-import TextReader from "./TextReader";
-import ship from '../img/general/ship.png'
-import hero from '../img/characters/cyber-hero.png'
-import arrow from '../img/general/arrow.png'
+import "../../styles/arrival.css";
+import Navbar from '../util/NavBar';
+import TextReader from "../util/TextReader";
+import ship from '../../img/general/ship.png'
+import hero from '../../img/characters/cyber-hero.png'
+import arrow from '../../img/general/arrow.png'
 
 const Arrival = () => {
     const { planet } = useParams();

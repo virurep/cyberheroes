@@ -1,20 +1,19 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useRef } from 'react';
-import '../styles/lesson.css';
-import Navbar from './NavBar';
+import '../../styles/lesson.css';
+import Navbar from '../util/NavBar';
 import Characters from './Characters';
 import Message from './Message';
-import lessonData from '../data/lessons/lesson.json';
-import TextReader from './TextReader';
+import lessonData from '../../data/lessons/lesson.json';
+import TextReader from '../util/TextReader';
 
-const backgroundImages = require.context('../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
+const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
 
 let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
-  const textReaderRef = useRef();
   const location = useLocation();
   const [pageNum, setPageNum] = useState(() => {
     // If we're coming from another page with state.page: 1, use that
@@ -73,8 +72,8 @@ const Lesson = () => {
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
     // Stop the text reader when the lesson page changes
-    textReaderRef.current?.stopReading();
-
+    window.speechSynthesis.cancel();
+    
     if (wildcardMatch(page, "quiz*")) {
       navigate(`/${planet}/transition`, {
         state: {
@@ -103,7 +102,6 @@ const Lesson = () => {
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
-      <TextReader ref={textReaderRef} />
       <div className={`lesson-content ${pageData.message.style}-container readable-text`}>
         <Characters
           characters={pageData.characters.map(character => ({
