@@ -74,6 +74,8 @@ export const processText = (text, onVocabClick) => {
 };
 
 const Message = ({ message, onButtonClick }) => {
+
+  console.log("in message.js")
   const [selectedVocab, setSelectedVocab] = useState(null);
 
   const handleVocabClick = (vocab) => {
@@ -81,11 +83,15 @@ const Message = ({ message, onButtonClick }) => {
   };
 
   const paragraphs = processText(message.text, handleVocabClick);
+  const processedHeader = message.header ? processText(message.header, handleVocabClick) : null;
 
-  return (
+  console.log("message: ", message)
+  console.log("paragraphs: ", paragraphs)
+
+  const componentOutput = (
     <div className="text-container">
-      {message.header && (
-        <div className="text-header">{processText(message.header, handleVocabClick)}</div>
+      {processedHeader && (
+        <div className="text-header">{processedHeader}</div>
       )}
       {message.speaker && (
         <div className={`speaker-name ${message.speaker_style}`}>
@@ -93,7 +99,7 @@ const Message = ({ message, onButtonClick }) => {
         </div>
       )}
       <div className={`message-box ${message.style}`}>
-        <div className="lesson-text">{paragraphs}</div>
+        <div className="lesson-text readable-text">{paragraphs}</div>
         <Buttons buttons={message.buttons} onClick={onButtonClick} />
       </div>
       {selectedVocab && (
@@ -105,6 +111,10 @@ const Message = ({ message, onButtonClick }) => {
       )}
     </div>
   );
+
+  console.log("Complete Message component output structure (React element):", componentOutput);
+
+  return componentOutput;
 };
 
 export default Message;

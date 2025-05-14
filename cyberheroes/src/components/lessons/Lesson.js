@@ -10,7 +10,7 @@ import TextReader from '../util/TextReader';
 const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
 
-let pageNum = 1;
+// let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
@@ -26,6 +26,7 @@ const Lesson = () => {
   console.log("pageNum: ", pageNum);
 
   const navigate = useNavigate();
+  const textReaderRef = useRef(null);
 
   // getting lesson data for a specific planet / lesson
   const getPlanetData = (planetName) => {
@@ -69,11 +70,18 @@ const Lesson = () => {
   let pageData = getPageData();
   console.log("Page data:", pageData);
 
+  // Log the message prop before rendering Message component
+  if (pageData && pageData.message) {
+    console.log("Props being passed to Message component:", pageData.message);
+  }
+
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
     // Stop the text reader when the lesson page changes
-    window.speechSynthesis.cancel();
-    
+    if (textReaderRef.current && typeof textReaderRef.current.stopReading === 'function') {
+      textReaderRef.current.stopReading();
+    }
+
     if (wildcardMatch(page, "quiz*")) {
       navigate(`/${planet}/transition`, {
         state: {
@@ -102,14 +110,15 @@ const Lesson = () => {
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
-      <div className={`lesson-content ${pageData.message.style}-container readable-text`}>
+      <TextReader ref={textReaderRef} />
+      <div className={`lesson-content ${pageData.message.style}-container`}>
         <Characters
           characters={pageData.characters.map(character => ({
             ...character,
             onClick: character.arrow ? handleCharacterClick : undefined
           }))}
         />
-        <Message message={pageData.message} onButtonClick={goToPage} />
+        <Message key={pageNum} message={pageData.message} onButtonClick={goToPage} />
       </div>
     </div>
   );

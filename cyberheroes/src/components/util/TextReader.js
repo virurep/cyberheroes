@@ -35,6 +35,8 @@ const TextReader = forwardRef((props, ref) => {
         const readableElements = document.getElementsByClassName('readable-text');
         const currentText = Array.from(readableElements).map(el => el.textContent).join('');
 
+        console.log("currentText: ", currentText);
+
         if (currentText !== lastReadableText) {
             handleStopReading();
             setLastReadableText(currentText);
@@ -83,6 +85,7 @@ const TextReader = forwardRef((props, ref) => {
 
                 // Split text into words while preserving whitespace
                 const words = text.split(/(\s+)/);
+                console.log("words: ", words);
                 words.forEach((word, index) => {
                     if (word.trim()) {
                         const span = document.createElement('span');
@@ -96,7 +99,10 @@ const TextReader = forwardRef((props, ref) => {
                         node.parentNode.insertBefore(textNode, node);
                     }
                 });
-                node.parentNode.removeChild(node);
+                if (node) {
+                    console.log(node);
+                    node.parentNode.removeChild(node);
+                }
             }
         });
 
