@@ -3,7 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
-import { processText } from '../Message';
+import { processText } from '../lessons/Message';
 
 const ReviewLesson = ({ selectedOption, onClose }) => {
     const { planet } = useParams();

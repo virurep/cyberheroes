@@ -1,0 +1,183 @@
+.feedback-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #B8DEFF;
+    color: #02101b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    width: 80%;
+    max-width: 500px;
+}
+
+.feedback-popup h2 {
+    color: #02101b;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.feedback-popup p {
+    margin-bottom: 20px;
+    color: #02101b;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.next-button-answers, .try-again-button-answers {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.next-button-answers {
+    background-color: #0F746F;
+    color: white;
+}
+
+.next-button-answers:hover {
+    transform: scale(1.05);
+    background-color: #19ada6;
+}
+
+.try-again-button-answers {
+    background-color: #E14733;
+    color: white;
+}
+
+.try-again-button-answers:hover {
+    transform: scale(1.05);
+    background-color: #ff5252;
+}
+
+/* Additional styles for drag-drop quiz answers */
+.drag-drop-feedback-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.drag-drop-feedback-popup .popup-text-container {
+    background-color: #B8DEFF;
+    color: #02101b;
+    min-height: fit-content;
+    max-height: 75vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 40px;
+    position: relative;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: min(100px, 10vw);
+    overflow-y: auto;
+}
+
+.drag-drop-feedback-popup .popup-Al {
+    position: absolute;
+    right: max(-50px, -8vw);
+    bottom: 50px;
+    height: 50vh;
+    max-width: 30vw;
+    z-index: 1001;
+    transform: scaleX(-1);
+    object-fit: contain;
+}
+
+.drag-drop-feedback-popup .popup-text-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.drag-drop-feedback-popup .popup-text-container p {
+    color: #02101b;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 100%;
+}
+
+.drag-drop-feedback-popup .popup-text-container p.incorrect-message {
+    color: #E14733;
+}
+
+.drag-drop-next-button-answers, .drag-drop-try-again-button-answers {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.drag-drop-next-button-answers {
+    background-color: #0F746F;
+    color: white;
+}
+
+.drag-drop-next-button-answers:hover {
+    transform: scale(1.05);
+    background-color: #19ada6;
+}
+
+.drag-drop-try-again-button-answers {
+    background-color: #E14733;
+    color: white;
+}
+
+.drag-drop-try-again-button-answers:hover {
+    transform: scale(1.05);
+    background-color: #ff5252;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .drag-drop-feedback-popup .popup-text-container {
+        width: 60vw;
+        margin-right: min(50px, 5vw);
+        padding: 35px;
+    }
+    
+    .drag-drop-feedback-popup .popup-Al {
+        right: max(-50px, -5vw);
+        max-width: 25vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .drag-drop-feedback-popup .popup-text-container {
+        width: 90vw;
+        margin-right: 0;
+        padding: 25px;
+    }
+
+    .drag-drop-feedback-popup .popup-Al {
+        display: none;
+    }
+}
