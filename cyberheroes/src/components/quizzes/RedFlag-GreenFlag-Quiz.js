@@ -20,7 +20,7 @@ const FlagQuiz = () => {
 
     const handleAnswerClick = (answer) => {
         const isCorrect = answer === currentQuestion.correctAnswer;
-        navigate(`/privacy-moon/drag-drop-quiz/quiz-answers`, {
+        navigate(`/privacy-moon/drag-drop-quiz/game-answers`, {
             state: {
                 isCorrect,
                 currentQuestion: {

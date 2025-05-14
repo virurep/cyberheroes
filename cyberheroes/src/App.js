@@ -21,7 +21,7 @@ import PrivacyMoonQuiz from './components/quizzes/Privacy-Moon-Quiz.js';
 import PrivacyMoonQuizAnswers from './components/quizzes/Privacy-Moon-Quiz-Answers.js';
 import DragDropQuiz from './components/quizzes/Drag-Drop-Quiz.js';
 import RedFlagGreenFlag from "./components/quizzes/RedFlag-GreenFlag-Quiz.js"
-import QuizAnswers from "./components/quizzes/quiz-answers.js"
+import GameAnswers from "./components/quizzes/game-answers.js"
 
 function App() {
   return (
@@ -42,13 +42,13 @@ function App() {
 
           {/* Quizzes */}
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
-          <Route path="/privacy-planet/quiz/quiz-answers" element={<PrivacyPlanetQuizAnswers />} />
+          <Route path="/privacy-planet/quiz/game-answers" element={<PrivacyPlanetQuizAnswers />} />
           <Route path="/privacy-moon/quiz" element={<PrivacyMoonQuizRoute />} />
           <Route path="/privacy-moon/quiz/redflag-greenflag" element={<RedFlagGreenFlag />} />
           <Route path="/privacy-moon/quiz/final-quiz" element={<PrivacyMoonQuiz />} />
-          <Route path="/privacy-moon/quiz/final-quiz/quiz-answers" element={<PrivacyMoonQuizAnswers />} />
+          <Route path="/privacy-moon/quiz/final-quiz/game-answers" element={<PrivacyMoonQuizAnswers />} />
           <Route path="/privacy-moon/quiz/drag-drop" element={<DragDropQuiz />} />
-          <Route path="/privacy-moon/drag-drop-quiz/quiz-answers" element={<QuizAnswers />} />
+          <Route path="/privacy-moon/drag-drop-quiz/game-answers" element={<GameAnswers />} />
         </Routes>
       </div>
   );

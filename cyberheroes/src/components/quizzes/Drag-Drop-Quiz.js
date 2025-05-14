@@ -42,7 +42,7 @@ const DragDropQuiz = () => {
         setDraggedItem(null);
 
         // Navigate to the answers component instead of showing popup
-        navigate(`/privacy-moon/drag-drop-quiz/quiz-answers`, {
+        navigate(`/privacy-moon/drag-drop-quiz/game-answers`, {
             state: {
                 isCorrect,
                 currentQuestion: {

@@ -3,10 +3,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
 import '../../styles/quiz.css';
-import '../../styles/quiz-answers.css';
+import '../../styles/game-answers.css';
 import Al from '../../img/characters/alejandro.png';
 
-const QuizAnswers = () => {
+const GameAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { isCorrect, currentQuestion, questionIndex, quizType } = location.state || {};
@@ -72,4 +72,4 @@ const QuizAnswers = () => {
     );
 };
 
-export default QuizAnswers; 
+export default GameAnswers; 

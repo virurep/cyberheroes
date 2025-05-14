@@ -25,7 +25,7 @@ const Quiz = () => {
 
     //for multiple choice and true false questions
     const handleAnswerClick = (answer) => {
-        navigate(`/privacy-planet/quiz/quiz-answers`, {
+        navigate(`/privacy-planet/quiz/game-answers`, {
             state: {
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,
@@ -52,7 +52,7 @@ const Quiz = () => {
 
     const handleSubmitClick = () => {
         console.log("selected answers: " + selectedAnswers)
-        navigate(`/privacy-planet/quiz/quiz-answers`, {
+        navigate(`/privacy-planet/quiz/game-answers`, {
             state: {
                 selectedAnswer: selectedAnswers,
                 currentQuestion: currentQuestion,

@@ -24,7 +24,7 @@ const Quiz = () => {
 
     //for multiple choice
     const handleAnswerClick = (answer) => {
-        navigate(`/privacy-moon/quiz/final-quiz/quiz-answers`, {
+        navigate(`/privacy-moon/quiz/final-quiz/game-answers`, {
             state: {
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,
