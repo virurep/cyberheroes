@@ -58,11 +58,12 @@
 }
 
 .review-box-review {
-    background-color: #9BCDFF;
+    background-color: #B8DEFF;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 50vh;
+    width: 42vw;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -176,7 +177,7 @@
 }
 
 .computer-message-review {
-    color: #333;
+    color: black;
     font-size: 1.8rem;
     line-height: 1.6;
     white-space: pre-line;
@@ -293,11 +294,11 @@
 }
 
 .next-button-review {
-    right: 5%;
+    right: 10%;
 }
 
 .prev-button-review {
-    left: 5%;
+    left: 10%;
 }
 
 .next-button-review:hover, .prev-button-review:hover {
@@ -311,5 +312,46 @@
 
 .prev-button-review:before {
     content: "◀";
+}
+
+.vocab-word {
+    color: #0F746F;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.vocab-word:hover {
+    color: #02101b;
+}
+
+.red-text {
+    color: #E14733;
+    font-weight: bold;
+}
+
+.gold-text {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+.computer-message-review li {
+    text-align: left;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: black;
+}
+
+.computer-message-review p {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: black;
 }
 
