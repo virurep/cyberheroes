@@ -1,0 +1,12 @@
+{
+    "planets": {
+        "privacy_planet": {
+            "character": "Allie",
+            "message": " Yay!! You defeated all the enemies and helped me keep my sensitive data safe! Thank you so much Cyber Hero! \n\n As a token of my appreciation, I award you with a cyber hero sensitive data protector certificate."
+        },
+        "privacy_moon": {
+            "character": "Alejandro",
+            "message": "We did it cyber hero! patrick is finally gone and privacy moon is safe! \n\n Pslease take this certificate as an award for all your help!"
+        }
+    }
+}

@@ -22,7 +22,7 @@ import PrivacyMoonQuizAnswers from './components/quizzes/Privacy-Moon-Quiz-Answe
 import DragDropQuiz from './components/quizzes/Drag-Drop-Quiz.js';
 import RedFlagGreenFlag from "./components/quizzes/RedFlag-GreenFlag-Quiz.js"
 import GameAnswers from "./components/quizzes/game-answers.js"
-
+import TransitionCerts from "./components/lessons/Transition_Cert.js"
 function App() {
   return (
       <div>
@@ -37,6 +37,7 @@ function App() {
           <Route path="/:planet/arrival" element={<Arrival />} />
           <Route path="/:planet/lesson" element={<LessonPage />} />
           <Route path="/:planet/review" element={<Review />} />
+          <Route path="/:planet/transition-cert" element={<TransitionCerts />} />
           <Route path="/:planet/certificate" element={<Certificate />} />
           <Route path="/:planet/transition" element={<Transition />} />
 
