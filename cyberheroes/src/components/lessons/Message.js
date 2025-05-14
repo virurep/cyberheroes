@@ -99,7 +99,7 @@ const Message = ({ message, onButtonClick }) => {
         </div>
       )}
       <div className={`message-box ${message.style}`}>
-        <div className="lesson-text readable-text">{paragraphs}</div>
+        <div className="lesson-text">{paragraphs}</div>
         <Buttons buttons={message.buttons} onClick={onButtonClick} />
       </div>
       {selectedVocab && (
