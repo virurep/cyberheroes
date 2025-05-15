@@ -121,15 +121,17 @@ const LessonIntro = () => {
           </div>
         </div>
         {selectedVocab && (
-        <VocabPopup
-          word={selectedVocab.word}
-          definition={selectedVocab.definition}
-          onClose={() => setSelectedVocab(null)}
-        />
-      )}
+          <VocabPopup
+            word={selectedVocab.word}
+            definition={selectedVocab.definition}
+            onClose={() => setSelectedVocab(null)}
+          />
+        )}
       </div>
     );
   }
+
+  const lessonIntroTitle = "You have arrived at " + planetData.planet_name + "!";
 
   return (
     <div>
@@ -141,7 +143,7 @@ const LessonIntro = () => {
           {planetImage && <img src={planetImage} alt={`${planet} Planet`} className="lesson-intro-planet" />}
         </div>
         <div className="lesson-intro-message">
-          <h1 className="lesson-intro-title">You have arrived at {planetData.planet_name}!</h1>
+          <h1 className="lesson-intro-title">{lessonIntroTitle}</h1>
           {lessonIntroMessage}
           <button className="enter-lesson-btn" onClick={handleEnterLesson}>
             ENTER {planetData.planet_name.toUpperCase()}

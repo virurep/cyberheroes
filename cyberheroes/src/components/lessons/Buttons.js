@@ -22,7 +22,9 @@ const Buttons = ({ buttons, onClick }) => {
         <button
           className={buttons.continue.style}
           onClick={() =>handleClick(buttons.continue.next)}
-        />
+        >
+          {buttons.continue.text && buttons.continue.text}
+        </button>
       )}
     </div>
   );

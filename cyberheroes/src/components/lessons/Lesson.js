@@ -90,6 +90,10 @@ const Lesson = () => {
       });
     } else if (wildcardMatch(page, "review*")) {
       navigate(`/${planet}/review`);
+    } else if (wildcardMatch(page, "outro")) {
+      navigate(`/${planet}/outro`);
+    } else if (wildcardMatch(page, "certificate")) {
+      navigate(`/${planet}/certificate`);
     } else {
       setPageNum(page);
     }

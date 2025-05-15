@@ -19,6 +19,7 @@ const Certificate = () => {
     };
 
     const handleContinue = () => {
+        // TODO: handle differently based on planet!
         navigate('/exploration-map');
     };
 

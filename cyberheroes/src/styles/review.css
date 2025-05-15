@@ -314,7 +314,7 @@
     content: "◀";
 }
 
-.vocab-word {
+/* .vocab-word {
     color: #0F746F;
     text-decoration: underline;
     cursor: pointer;
@@ -323,8 +323,8 @@
 
 .vocab-word:hover {
     color: #02101b;
-}
-
+} */
+/*
 .red-text {
     color: #E14733;
     font-weight: bold;
@@ -337,7 +337,7 @@
 
 .underline-text {
     text-decoration: underline;
-}
+} */
 
 .computer-message-review li {
     text-align: left;

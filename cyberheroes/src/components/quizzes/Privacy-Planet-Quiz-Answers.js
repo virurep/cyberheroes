@@ -22,18 +22,12 @@ const QuizAnswers = () => {
 
     const handleNextQuestion = () => {
         if (currentQuiz.quiz.length === questionIndex + 1) {
-            // If this is the last question of quiz-3, go to certificate
-            if (part === 'quiz-3') {
-                navigate(`/privacy-planet/certificate`);
-            } else {
-                // For quizzes parts 1 and 2, go back to lesson
-                console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
-                navigate(`/privacy-planet/lesson`, {
-                    state: {
-                        page: currentQuestion.lessonPage
-                    }
-                });
-            }
+            console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
+            navigate(`/privacy-planet/lesson`, {
+                state: {
+                    page: currentQuestion.lessonPage
+                }
+            });
         } else {
             navigate(`/privacy-planet/quiz`, {
                 state: {

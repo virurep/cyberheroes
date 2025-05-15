@@ -3,6 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles/review.css';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
+import VocabPopup from '../util/VocabPopup';
 import { processText } from '../lessons/Message';
 
 const ReviewLesson = ({ selectedOption, onClose }) => {
@@ -42,7 +43,7 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
             <div className="computer-screen-review readable-text">
                 <div className="computer-content-review">
                     <div className="computer-screen-content-review">
-                        <h2 className="computer-title-review">{currentLesson.title}</h2>
+                        <h2 className="computer-title-review">{processText(currentLesson.title, handleVocabClick)}</h2>
                         <div className="computer-message-review">
                             {processText(currentLesson.message, handleVocabClick)}
                         </div>
@@ -78,6 +79,13 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
                     </div>
                 </div>
             </div>
+            {selectedVocab && (
+                <VocabPopup
+                    word={selectedVocab.word}
+                    definition={selectedVocab.definition}
+                    onClose={() => setSelectedVocab(null)}
+                />
+            )}
         </div>
     );
 };
