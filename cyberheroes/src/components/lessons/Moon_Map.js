@@ -1,13 +1,12 @@
 import React from 'react';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/transitions.css';
 import Allie from '../../img/characters/allie.png';
 import Polaroid from '../../img/characters/al-photo.png';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
 
-const MoonMap = ({}) => {
-    const location = useLocation();
+const MoonMap = () => {
     const navigate = useNavigate();
 
     // Get the quiz part from location state

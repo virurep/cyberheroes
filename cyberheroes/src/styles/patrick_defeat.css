@@ -1,0 +1,180 @@
+.patrick-defeat {
+    background-image: url('../img/backgrounds/privacy-moon-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instruction-text {
+    color: white;
+    -webkit-text-stroke: 1px #E14733;
+    text-stroke: 1px #E14733;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out;
+    text-shadow: 
+        -1px -1px 0 #E14733,
+        1px -1px 0 #E14733,
+        -1px 1px 0 #E14733,
+        1px 1px 0 #E14733;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.instruction-text.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.patrick-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    transform-origin: bottom center;
+}
+
+.patrick-image:hover {
+    transform: scale(1.05);
+}
+
+/* Shake animations for each click */
+.shake-0 {
+    animation: initialAppear 1s ease-out;
+}
+
+.shake-1 {
+    animation: rockShake 0.7s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+
+.shake-2 {
+    animation: violentRockShake 0.4s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+
+.poof-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    animation: poofAppear 0.5s ease-out;
+}
+
+.continue-button {
+    background-color: #0F746F;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    min-width: 250px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out 0.5s both;
+    text-align: center;
+}
+
+.continue-button:hover {
+    transform: scale(1.05);
+    background-color: #43C58C;
+}
+
+@keyframes initialAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rockShake {
+    0%, 100% { 
+        transform: rotate(0deg); 
+    }
+    25% {
+        transform: rotate(-15deg) scale(1.02);
+    }
+    75% {
+        transform: rotate(15deg) scale(1.02);
+    }
+}
+
+@keyframes violentRockShake {
+    0%, 100% { 
+        transform: rotate(0deg) scale(1.05); 
+    }
+    15% {
+        transform: rotate(-20deg) scale(1.1);
+    }
+    30% {
+        transform: rotate(20deg) scale(1.1);
+    }
+    45% {
+        transform: rotate(-25deg) scale(1.15);
+    }
+    60% {
+        transform: rotate(25deg) scale(1.15);
+    }
+    75% {
+        transform: rotate(-30deg) scale(1.2);
+    }
+    90% {
+        transform: rotate(30deg) scale(1.2);
+    }
+}
+
+@keyframes poofAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

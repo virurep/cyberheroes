@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // Landing pages
 import ExplorationMap from "./components/ExplorationMap";
 import LandingPage from './components/landing.js';
@@ -14,6 +14,7 @@ import Review from './components/review/review.js';
 import TransitionCerts from './components/lessons/Transition_Cert.js';
 import PatrickLeaving from './components/lessons/Patrick_leaving.js';
 import MoonMap from './components/lessons/Moon_Map.js';
+import PatrickDefeat from './components/lessons/Patrick_Defeat.js';
 //Privacy planet quizzes
 import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/quizzes/Privacy-Planet-Quiz-Answers.js';
@@ -44,6 +45,7 @@ function App() {
           <Route path="/:planet/transition" element={<Transition />} />
           <Route path="/:planet/patrick-leaving" element={<PatrickLeaving />} />
           <Route path="/:planet/moon-map" element={<MoonMap />} />
+          <Route path="/:planet/patrick-defeat" element={<PatrickDefeat />} />
           {/* Quizzes */}
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
           <Route path="/privacy-planet/quiz/game-answers" element={<PrivacyPlanetQuizAnswers />} />
