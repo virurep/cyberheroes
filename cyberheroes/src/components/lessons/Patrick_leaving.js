@@ -10,7 +10,7 @@ const IntroPage = () => {
     const navigate = useNavigate();
 
     const handleContinue = () => {
-        navigate('/privacy-moon/lesson-intro');
+        navigate('/privacy-moon/moon-map');
     };
 
     return (
