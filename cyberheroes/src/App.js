@@ -11,6 +11,8 @@ import Arrival from './components/lessons/Arrival.js';
 import Transition from './components/lessons/Transition';
 import Certificate from './components/lessons/Certificate.js';
 import Review from './components/review/review.js';
+import TransitionCerts from "./components/lessons/Transition_Cert.js"
+import PatrickLeaving from './components/lessons/Patrick_leaving.js';
 //Privacy planet quizzes
 import PrivacyPlanetQuiz from './components/quizzes/Privacy-Planet-Quiz.js';
 import PrivacyPlanetQuizAnswers from './components/quizzes/Privacy-Planet-Quiz-Answers.js';
@@ -22,7 +24,6 @@ import PrivacyMoonQuizAnswers from './components/quizzes/Privacy-Moon-Quiz-Answe
 import DragDropQuiz from './components/quizzes/Drag-Drop-Quiz.js';
 import RedFlagGreenFlag from "./components/quizzes/RedFlag-GreenFlag-Quiz.js"
 import GameAnswers from "./components/quizzes/game-answers.js"
-import TransitionCerts from "./components/lessons/Transition_Cert.js"
 function App() {
   return (
       <div>
@@ -40,7 +41,7 @@ function App() {
           <Route path="/:planet/transition-cert" element={<TransitionCerts />} />
           <Route path="/:planet/certificate" element={<Certificate />} />
           <Route path="/:planet/transition" element={<Transition />} />
-
+          <Route path="/:planet/patrick-leaving" element={<PatrickLeaving />} />
           {/* Quizzes */}
           <Route path="/privacy-planet/quiz" element={<PrivacyPlanetQuiz />} />
           <Route path="/privacy-planet/quiz/game-answers" element={<PrivacyPlanetQuizAnswers />} />
