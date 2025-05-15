@@ -570,7 +570,7 @@
             }
           ],
           "message": {
-            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or <v>emergency** contact information**. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
+            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or <v>emergency** contact information. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
             "style": "message-box-right",
             "buttons": {
               "prev": 27,
@@ -832,7 +832,7 @@
             }
           ],
           "message": {
-            "text": "Public information is safe share with anyone. Like:\n<li>Your Favorite Color<ul>Your Hobbies<ul>A Fun Fact About Yourself**",
+            "text": "Public information is safe share with anyone. Like:\n<ul>Your Favorite Color<li>Your Hobbies<li>A Fun Fact About Yourself**",
             "speaker": "Cyber Hero",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -1084,7 +1084,7 @@
             }
           ],
           "message": {
-            "text": "Patrick pieced together all these clues and learned about:\n<li>My age<ul>My school<ul>A place I visit often**",
+            "text": "Patrick pieced together all these clues and learned about:\n<ul>My age<li>My school<li>A place I visit often**",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",

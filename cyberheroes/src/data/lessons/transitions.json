@@ -1,32 +1,33 @@
 {
-    "privacy_planet": {
-      "quiz-1": {
-        "character": "Allie",
-        "message": "Use what learned to Defeat Enemy 1 and Help me get back my information!!!"
-      },
-      "quiz-2": {
-        "character": "Allie",
-        "message": "huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
-      },
-      "quiz-3": {
-        "character": "Allie",
-        "message": "looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!"
-      }
-    },
-
-    "privacy_moon": {
-      "quiz-1": {
-        "character": "Alejandro",
-        "message": "What are some examples of these types of information?\n\nHMM... let’s test your knowledge."
-      },
-      "quiz-2": {
-        "character": "Alejandro",
-        "message": "huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
-      },
-      "quiz-3": {
-        "character": "Alejandro",
-        "message": "looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!"
-      }
+    "planets": {
+        "privacy_planet": {
+            "quiz-1": {
+                "character": "Allie",
+                "message": "Use what learned to Defeat Enemy 1 and Help me get back my information!!!"
+            },
+            "quiz-2": {
+                "character": "Allie",
+                "message": "huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
+            },
+            "quiz-3": {
+                "character": "Allie",
+                "message": "looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!"
+            }
+        },
+        "privacy_moon": {
+            "quiz-1": {
+                "character": "Alejandro",
+                "message": "What are some examples of these types of information?\n\nHMM... let's test your knowledge."
+            },
+            "quiz-2": {
+                "character": "Alejandro",
+                "message": "huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
+            },
+            "quiz-3": {
+                "character": "Alejandro",
+                "message": "looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!"
+            }
+        }
     }
-  }
+}
   

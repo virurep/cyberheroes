@@ -33,10 +33,21 @@ export const processText = (text, onVocabClick) => {
             return <span key={i} className="vocab-word">{word}</span>;
           }
 
-          // check if the part is a list item
-          if (part.startsWith("<li>") && part.endsWith("**")) {
+          // check if the part is an unordered list
+          if (part.startsWith("<ul>") && part.endsWith("**")) {
             const item = part.slice(4, -2);
-            const listItems = item.split("<ul>");
+            const listItems = item.split("<li>");
+            return (<ul>
+              {listItems.map((item, i) => {
+                return <li key={i}>{item}</li>;
+              })}
+            </ul>)
+          }
+
+          // check if the part is an ordered list
+          if (part.startsWith("<ol>") && part.endsWith("**")) {
+            const item = part.slice(4, -2);
+            const listItems = item.split("<li>");
             return listItems.map((item, i) => {
               return <li key={i}>{item}</li>;
             });

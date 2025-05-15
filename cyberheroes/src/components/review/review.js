@@ -15,7 +15,7 @@ const Review = () => {
 
     // Get the correct review data based on the planet
     const planetName = planet.toLowerCase().replace(/-/g, '_');
-    const planetData = reviewData[planetName];
+    const planetData = reviewData.planet[planetName];
 
     if (!planetData) {
         return (
