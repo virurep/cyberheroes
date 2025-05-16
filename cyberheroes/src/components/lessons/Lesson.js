@@ -122,7 +122,7 @@ const Lesson = () => {
             onClick: character.arrow ? handleCharacterClick : undefined
           }))}
         />
-        <Message key={pageNum} message={pageData.message} onButtonClick={goToPage} />
+        <Message key={pageNum} message={pageData.message} onButtonClick={goToPage} pageNum={pageNum}/>
       </div>
     </div>
   );

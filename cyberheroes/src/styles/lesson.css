@@ -362,6 +362,19 @@
   content: "◀";
 }
 
+.lesson-page-input {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  align-self: center;
+  display: none;
+}
+
 .default-button {
   background: #0F746F;
   color: #ffffff;

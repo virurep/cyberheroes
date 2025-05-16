@@ -48,9 +48,11 @@ export const processText = (text, onVocabClick) => {
           if (part.startsWith("<ol>") && part.endsWith("**")) {
             const item = part.slice(4, -2);
             const listItems = item.split("<li>");
-            return listItems.map((item, i) => {
-              return <li key={i}>{item}</li>;
-            });
+            return (<ol>
+              {listItems.map((item, i) => {
+                return <li key={i}>{item}</li>;
+              })}
+            </ol>)
           }
 
           // check if the part should be red
@@ -84,7 +86,7 @@ export const processText = (text, onVocabClick) => {
   });
 };
 
-const Message = ({ message, onButtonClick }) => {
+const Message = ({ message, onButtonClick, pageNum }) => {
 
   console.log("in message.js")
   const [selectedVocab, setSelectedVocab] = useState(null);
@@ -111,7 +113,7 @@ const Message = ({ message, onButtonClick }) => {
       )}
       <div className={`message-box ${message.style}`}>
         <div className="lesson-text">{paragraphs}</div>
-        <Buttons buttons={message.buttons} onClick={onButtonClick} />
+        <Buttons buttons={message.buttons} onClick={onButtonClick} pageNum={pageNum}/>
       </div>
       {selectedVocab && (
         <VocabPopup
