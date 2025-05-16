@@ -3,6 +3,7 @@ import PatrickBoom from '../../img/characters/patrick_defeated.png';
 import Poof from '../../img/general/poof.png';
 import '../../styles/patrick_defeat.css';
 import { useState } from 'react';
+import Navbar from '../util/NavBar';
 
 const PatrickDefeat = () => {
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ const PatrickDefeat = () => {
 
     return (
         <div className="patrick-defeat">
+            <Navbar />
             <h1 className={`instruction-text ${showPoof ? 'fade-out' : ''}`}>
                 CLICK ON PATRICK TO DEFEAT HIM FOR GOOD!
             </h1>

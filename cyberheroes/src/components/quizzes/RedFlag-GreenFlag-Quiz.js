@@ -21,7 +21,7 @@ const FlagQuiz = () => {
     const handleAnswerClick = (answer) => {
         const isCorrect = answer === currentQuestion.correctAnswer;
         navigate(`/privacy-moon/drag-drop-quiz/game-answers`, {
-            state: {
+                state: {
                 isCorrect,
                 currentQuestion: {
                     ...currentQuestion,
@@ -29,8 +29,8 @@ const FlagQuiz = () => {
                 },
                 questionIndex: currentQuestionIndex,
                 quizType: 'redflag-greenflag'
-            }
-        });
+                }
+            });
     };
 
     if (!currentQuestion) {
@@ -38,7 +38,7 @@ const FlagQuiz = () => {
     }
 
     return (
-        <div className="privacy-moon-quiz-background">
+       <div className="privacy-moon-quiz-background">
             <Navbar />
             <TextReader />
             <div className="game-container readable-text">
@@ -49,14 +49,14 @@ const FlagQuiz = () => {
                     Green flags are safe and respectful, while red flags are unsafe and disrespectful.
                 </h2>
                 <div className="quiz-question">
-                    <h1 className="quiz-question-text">{currentQuestion.question}</h1>
+                        <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                 </div>
                 <div className="flag-container">
                     <img src={redFlag} alt="Red Flag" className="flags" onClick={() => handleAnswerClick(0)}/>
                     <img src={greenFlag} alt="Green Flag" className="flags" onClick={() => handleAnswerClick(1)}/>
                 </div>
             </div>
-        </div>
+                    </div>
     );
 }
 

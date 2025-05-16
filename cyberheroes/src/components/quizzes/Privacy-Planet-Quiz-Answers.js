@@ -22,9 +22,9 @@ const QuizAnswers = () => {
 
     const handleNextQuestion = () => {
         if (currentQuiz.quiz.length === questionIndex + 1) {
-            // If this is the last question of quiz-3, go to certificate
+            // If this is the last question of quiz-3, go to transition-cert
             if (part === 'quiz-3') {
-                navigate(`/privacy-planet/certificate`);
+                navigate(`/privacy-planet/transition-cert`);
             } else {
                 // For quizzes parts 1 and 2, go back to lesson
                 console.log("last question, nav to lesson page #", currentQuestion.lessonPage);

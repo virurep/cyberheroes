@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/certificate.css";
 import Navbar from "../util/NavBar";
@@ -19,7 +19,11 @@ const Certificate = () => {
     };
 
     const handleContinue = () => {
-        navigate('/exploration-map');
+        if (planet === 'privacy-planet') {
+            navigate(`/privacy-planet/patrick-leaving`);
+        } else {
+            navigate('/exploration-map');
+        }
     };
 
     return (
