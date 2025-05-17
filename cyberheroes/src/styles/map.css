@@ -3,6 +3,8 @@ body {
     background-image: url('../img/backgrounds/main_background.png');
     margin: 0;
     padding: 0;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
 }
 /* exploration map css */
 .exploration-heading {
