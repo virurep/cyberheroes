@@ -122,7 +122,7 @@ const Lesson = () => {
             onClick: character.arrow ? handleCharacterClick : undefined
           }))}
         />
-        <Message key={pageNum} message={pageData.message} onButtonClick={goToPage} pageNum={pageNum}/>
+        <Message key={pageNum} message={pageData.message} onButtonClick={goToPage} pageNum={pageNum} maxPage={planetData.pages.length}/>
       </div>
     </div>
   );

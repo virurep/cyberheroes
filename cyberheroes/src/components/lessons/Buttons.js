@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
-const Buttons = ({ buttons, onClick, pageNum }) => {
+const Buttons = ({ buttons, onClick, pageNum, maxPage }) => {
   const [inputValue, setInputValue] = useState(pageNum);
-
-  console.log(buttons)
-  console.log(pageNum)
+  console.log(maxPage);
 
   const handleClick = (page) => {
     onClick(page);

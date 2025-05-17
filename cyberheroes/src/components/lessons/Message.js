@@ -86,7 +86,7 @@ export const processText = (text, onVocabClick) => {
   });
 };
 
-const Message = ({ message, onButtonClick, pageNum }) => {
+const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
 
   console.log("in message.js")
   const [selectedVocab, setSelectedVocab] = useState(null);
@@ -113,7 +113,7 @@ const Message = ({ message, onButtonClick, pageNum }) => {
       )}
       <div className={`message-box ${message.style}`}>
         <div className="lesson-text">{paragraphs}</div>
-        <Buttons buttons={message.buttons} onClick={onButtonClick} pageNum={pageNum}/>
+        <Buttons buttons={message.buttons} onClick={onButtonClick} pageNum={pageNum} maxPage={maxPage}/>
       </div>
       {selectedVocab && (
         <VocabPopup
