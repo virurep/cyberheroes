@@ -10,7 +10,7 @@ const DragDropQuiz = () => {
     const location = useLocation();
     const [questionIndex] = useState(location.state?.questionIndex || 0);
     const [draggedItem, setDraggedItem] = useState(null);
-    const [setSelectedBox] = useState(null);
+    const [selectedBox, setSelectedBox] = useState(null);
 
     // Get the current question data
     const currentQuestion = quizData.quiz[questionIndex];
