@@ -47,7 +47,7 @@
     object-fit: cover;
 }
 
-.about-person:hover {
+.about-image:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
