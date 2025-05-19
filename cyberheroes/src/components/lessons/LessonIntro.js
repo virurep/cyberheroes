@@ -59,11 +59,13 @@ const LessonIntro = () => {
   const planetImage = getPlanetImage(planet);
 
   const getLessonIntroMessage = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-    return processText(planetData.intro_text, handleVocabClick);
+    if (planetData.active) {
+      const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
+      const planetData = lessonIntroData.intros.find(
+        planet => planet.planet_name.toLowerCase() === formattedPlanetName
+      );
+      return processText(planetData.intro_text, handleVocabClick);
+    }
   };
 
   const lessonIntroMessage = getLessonIntroMessage(planet);
@@ -77,6 +79,7 @@ const LessonIntro = () => {
   };
 
   const computerIntroImage = getComputerIntroImage(planet);
+  console.log(computerIntroImage);
 
   const getComputerIntroMessage = (planetName) => {
     const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
@@ -96,7 +99,7 @@ const LessonIntro = () => {
     navigate('/exploration-map');
   };
 
-  if (showComputer) {
+  if (showComputer && planetData.active) {
     return (
       <div>
         <Navbar />
@@ -129,36 +132,58 @@ const LessonIntro = () => {
         )}
       </div>
     );
-  }
-
-  const lessonIntroTitle = "You have arrived at " + planetData.planet_name + "!";
-
-  return (
+  } else if (!planetData.active) {
+    return (
+      <div>
+        <Navbar />
+      <TextReader />
+      <div className="lesson-intro-background readable-text">
+          <img src={computer} alt="Computer" className="computer-image" />
+          <div className="computer-content">
+            <div className="computer-content-top">
+              <div className="coming-soon-message">
+                <h1>🪐 Coming Soon! 🪐</h1>
+                <p> Oops! Our satellite couldn't reach this planet—it's not ready for visitors yet. </p>
+                <p>This planet is still being built by CyberHeroes. Check back soon for more adventures!</p>
+              </div>
+            </div>
+            <div className="computer-btn-container">
+              <button className="go-back-map-btn" onClick={handleBackToMap}>
+                Go Back to Map
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
     <div>
       <Navbar />
       <TextReader />
       <div className="lesson-intro-background readable-text">
-        <div className="lesson-intro-side">
-          <img src={rocket} alt="Rocket Ship" className="lesson-intro-rocket" />
-          {planetImage && <img src={planetImage} alt={`${planet} Planet`} className="lesson-intro-planet" />}
-        </div>
-        <div className="lesson-intro-message">
-          <h1 className="lesson-intro-title">{lessonIntroTitle}</h1>
-          {lessonIntroMessage}
-          <button className="enter-lesson-btn" onClick={handleEnterLesson}>
-            ENTER {planetData.planet_name.toUpperCase()}
-          </button>
-        </div>
+      <div className="lesson-intro-side">
+        <img src={rocket} alt="Rocket Ship" className="lesson-intro-rocket" />
+        {planetImage && <img src={planetImage} alt={`${planet} Planet`} className="lesson-intro-planet" />}
       </div>
-      {selectedVocab && (
-        <VocabPopup
-          word={selectedVocab.word}
-          definition={selectedVocab.definition}
-          onClose={() => setSelectedVocab(null)}
-        />
+      <div className="lesson-intro-message">
+        <h1 className="lesson-intro-title">You have arrived at {planetData.planet_name}!</h1>
+        {lessonIntroMessage}
+        <button className="enter-lesson-btn" onClick={handleEnterLesson}>
+          ENTER {planetData.planet_name.toUpperCase()}
+        </button>
+      </div>
+    </div>
+    {selectedVocab && (
+      <VocabPopup
+        word={selectedVocab.word}
+        definition={selectedVocab.definition}
+        onClose={() => setSelectedVocab(null)}
+      />
       )}
     </div>
   );
+  }
 };
 
 export default LessonIntro;
