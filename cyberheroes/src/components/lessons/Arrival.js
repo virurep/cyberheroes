@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/arrival.css";
 import Navbar from '../util/NavBar';
+import TableOfContents from "./TableOfContents";
 import TextReader from "../util/TextReader";
 import ship from '../../img/general/ship.png'
 import hero from '../../img/characters/cyber-hero.png'
@@ -44,6 +45,7 @@ const Arrival = () => {
                         <img src={hero} alt='cyberhero' />
                     </div>
                 </div>
+                <TableOfContents />
             </main>
         </div>
     );
