@@ -33,7 +33,7 @@ const QuizAnswers = () => {
         if (currentQuiz.quiz.length === questionIndex + 1) {
             // If this is the last question of quiz-3, go to certificate
             console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
-                navigate(`/privacy-moon/certificate`, { //change to lesson page for final quiz
+                navigate(`/privacy-moon/lesson`, {
                     state: {
                         page: currentQuestion.lessonPage
                     }

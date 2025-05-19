@@ -94,6 +94,8 @@ const Lesson = () => {
       navigate(`/${planet}/outro`);
     } else if (wildcardMatch(page, "certificate")) {
       navigate(`/${planet}/certificate`);
+    } else if (wildcardMatch(page, "patrick-defeat")) {
+      navigate(`/${planet}/patrick-defeat`);
     } else {
       setPageNum(page);
     }
