@@ -1,10 +1,3 @@
-body {
-    color: #89BFF2 !important;
-    background-image: url('../img/backgrounds/main_background.png');
-    -webkit-text-stroke: 0;
-    text-shadow: none;
-}
-
 main {
     display: flex;
     justify-content: flex-start;

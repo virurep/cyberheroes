@@ -1,0 +1,60 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.about-header {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.about-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.about-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.name-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.role-text {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 5px;
+}

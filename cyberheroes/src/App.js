@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import ExplorationMap from "./components/ExplorationMap";
 import LandingPage from './components/landing.js';
 import IntroPage from './components/intro.js';
+import AboutPage from './components/AboutUs.js';
 
 //Lesson pages
 import LessonIntroPage from './components/lessons/LessonIntro';
@@ -34,7 +35,8 @@ function App() {
           <Route index element={<LandingPage />} />
           <Route path="/intro" element={<IntroPage />} />
           <Route path="/exploration-map" element={<ExplorationMap />} />
-
+          <Route path="/about" element={<AboutPage />} />
+          
           {/* Lesson pages */}
           <Route path="/:planet/lesson-intro" element={<LessonIntroPage />} />
           <Route path="/:planet/arrival" element={<Arrival />} />
