@@ -64,6 +64,14 @@ const Transition = () => {
         });
     };
 
+    const handleLessonButtonClick = () => {
+        navigate(`/${planet}/lesson`, {
+            state: {
+                page: currQuiz.end_page
+            }
+        });
+    };
+
     const handleReviewButtonClick = () => {
         navigate(`/${planet}/review`, {
             state: {
@@ -85,7 +93,7 @@ const Transition = () => {
                             </p>
                             <div className="button-container">
                                 <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
-                                <span className="or-text">OR</span>
+                                <button className='quiz-button' onClick={handleLessonButtonClick}>GO BACK TO LESSON</button>
                                 <button className='review-button' onClick={handleReviewButtonClick}>GO BACK TO REVIEW</button>
                             </div>
                         </div>
