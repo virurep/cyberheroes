@@ -58,8 +58,7 @@ const DragDropQuiz = () => {
             <Navbar />
             <TextReader />
             <div className="game-container readable-text">
-                        <h1 className="drag-drop-quiz-title">Is this Private or Public Information?</h1>
-
+                        <h1 className="drag-drop-quiz-title">Click and drag the statement to the correct box</h1>
                         <div className="drag-drop-question-box"
                             draggable
                             onDragStart={(e) => handleDragStart(e, currentQuestion.question)}

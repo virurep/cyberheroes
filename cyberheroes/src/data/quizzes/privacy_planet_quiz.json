@@ -48,8 +48,8 @@
                                 "Phone number",
                                 "Home Address"],
                     "correctAnswers": [0, 2, 4, 5],
-                    "correctMessage": ["another one right!! how?",
-                                        "your full name, birthday, phone number, and home address can be used to identify and track someone, making it crucial to keep them private."],
+                    "correctMessage": ["Another one right!! how?",
+                                        "Your full name, birthday, phone number, and home address can be used to identify and track someone, making it crucial to keep them private."],
                     "incorrectMessages" : ["A favorite color is not considered sensitive data because it does not reveal personal details that could be exploited."],
                     "healthBar" : 0.4,
                     "hint" : "💡Hint: If a stranger shouldn't know it, keep it private!💡"
@@ -63,7 +63,7 @@
                     "correctAnswers": [0],
                     "correctMessage": ["Correct again!",
                                         "If someone knows your home address, they can determine your exact location, which poses a security risk."],
-                    "incorrectMessages" : ["", "think about what a home address provides. your home address is sensitive data that you do not want to share with strangers online."],
+                    "incorrectMessages" : ["", "Think about what a home address provides. Your home address is sensitive data that you do not want to share with strangers online."],
                     "healthBar" : 0.2,
                     "hint": ""
                 },
@@ -76,7 +76,7 @@
                                 "Someone could use it to guess passwords or pretend to be you",
                                 "It makes it harder to buy a cake"],
                     "correctAnswers": [2],
-                    "correctMessage": ["ahhhh you got all of the questions correct!",
+                    "correctMessage": ["Ahhhh you got all of the questions correct!",
                                         "Birthdays are often used as part of security questions or for identity verification, making them valuable to cybercriminals."],
                     "incorrectMessages": ["Security risks have nothing to do with receiving gifts.", "Sharing a birthday can contribute to identity theft.",
                                             "", "This answer has no connection to cybersecurity risks."],
@@ -102,7 +102,7 @@
                     "incorrectMessages": ["Protecting data has nothing to do with digital storage.", "", "Privacy is about safety, not entertainment.",
                                             "Sensitive data should not be shared casually."],
                     "healthBar" : 0.66,
-                    "hint" : "💡Hint: Think about what people can do with your sensitive data💡"
+                    "hint" : "💡Hint: Think about what people can do with your sensitive data.💡"
                 },
                 {   "id": 7,
                     "type": "multiple-select",
@@ -116,7 +116,7 @@
                                         "If someone obtains your data, they can impersonate you, trick others, and take over your accounts."],
                     "incorrectMessages": ["Hackers exploit their victim's weaknesses and flaws, not fix them."],
                     "healthBar" : 0.33,
-                    "hint" : "💡Hint: think about what kinds of information someone will have access to if they get your data 💡"
+                    "hint" : "💡Hint: Think about what kinds of information someone will have access to if they get your data. 💡"
                 },
                 {   "id": 8,
                     "type": "true-false",
@@ -127,7 +127,7 @@
                                         "Once sensitive data is exposed, it is difficult to remove from the internet or prevent others from using it."],
                     "incorrectMessages": ["Hackers exploit their victim's weaknesses and flaws, not fix them."],
                     "healthBar" : 0,
-                    "hint": "💡Hint: think about what kinds of information someone will have access to if they get your data💡",
+                    "hint": "💡Hint: Think about what kinds of information someone will have access to if they get your data.💡",
                     "lessonPage": 25
                 }
             ]
@@ -147,7 +147,7 @@
                                         "Keeping data secure involves limiting who has access to it and being cautious about online interactions."],
                     "incorrectMessages": ["There is no completely 'safe' website for posting personal information."],
                     "healthBar" : 0.833,
-                    "hint": "💡Hint: think about who/what should have access to your data💡"
+                    "hint": "💡Hint: Think about who/what should have access to your data.💡"
                 },
                 {   "id": 10,
                     "type": "multiple-choice",
@@ -157,13 +157,13 @@
                             "Your home address",
                             "Your school grades"],
                     "correctAnswers": [1],
-                    "correctMessage": ["correct again!",
+                    "correctMessage": ["Correct again!",
                                         "Medical professionals need details about your birthdate, allergies, or medical history to provide appropriate care."],
                     "incorrectMessages" : ["Healthcare providers do not need access to personal accounts.", "",
                                             "While sometimes relevant for medical records, it is not always necessary.",
                                             "Academic performance is not relevant to medical treatment."],
                     "healthBar" : 0.66,
-                    "hint" : "💡Hint: think about things that are important to your health.💡"
+                    "hint" : "💡Hint: Think about things that are important to your health.💡"
                 },
                 {   "id": 11,
                     "type":"multiple-choice",
@@ -193,7 +193,7 @@
                     "incorrectMessages": ["Online strangers cannot always be trusted.", "Ignoring is not enough; reporting is necessary.",
                                         "Age does not determine trustworthiness.", ""],
                     "healthBar" : 0.33,
-                    "hint" : "💡Hint: not responding is a start, but telling an adult helps protect you and others.💡"
+                    "hint" : "💡Hint: Not responding is a start, but telling an adult helps protect you and others.💡"
                 },
                 {   "id": 13,
                     "type": "multiple-select",
@@ -205,7 +205,7 @@
                     "correctAnswers": [0, 2, 3],
                     "correctMessage": ["Correct! oh no you've almost defeated me!",
                                         "Sensitive data should be kept private unless it is necessary to share it with a trusted adult."],
-                    "incorrectMessages": ["Parents are responsible for keeping you safe and should have access to necessary information"],
+                    "incorrectMessages": ["Parents are responsible for keeping you safe and should have access to necessary information."],
                     "healthBar" : 0.16,
                     "hint" : "💡Hint: Remember sensitive data is important private information about you.💡"
                 },
