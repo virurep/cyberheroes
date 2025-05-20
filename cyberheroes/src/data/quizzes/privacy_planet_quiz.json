@@ -224,7 +224,8 @@
                                         "These individuals may need your information to help protect your health and safety."],
                     "incorrectMessages": ["Friends should not have access to your sensitive data. Online identities can be deceptive, making it unsafe to share personal details."],
                     "healthBar" : 0,
-                    "hint" : "💡Hint: Even good friends can slip up—keep sensitive info between you and trusted adults.💡"
+                    "hint" : "💡Hint: Even good friends can slip up—keep sensitive info between you and trusted adults.💡",
+                    "lessonPage": 35
                 }
             ]
         }

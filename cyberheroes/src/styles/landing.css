@@ -22,6 +22,7 @@ body.landing-page {
     text-align: center;
     -webkit-text-stroke: 0;
     text-shadow: none;
+    margin-top: 100px;
 }
 
 main {

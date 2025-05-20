@@ -362,6 +362,39 @@
   content: "◀";
 }
 
+.lesson-page-input {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  align-self: center;
+}
+
+.default-button {
+  background: #0F746F;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(70, 134, 181, 0.3);
+  margin: 0 auto;
+  display: block;
+}
+
+.default-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
+  background: #19ada6;
+}
+
 /* Add styles for TextReader positioning */
 .text-reader-controls {
   position: relative;

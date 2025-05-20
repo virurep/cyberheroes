@@ -10,7 +10,7 @@ import TextReader from '../util/TextReader';
 const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
 
-let pageNum = 1;
+// let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
@@ -26,6 +26,7 @@ const Lesson = () => {
   console.log("pageNum: ", pageNum);
 
   const navigate = useNavigate();
+  const textReaderRef = useRef(null);
 
   // getting lesson data for a specific planet / lesson
   const getPlanetData = (planetName) => {
@@ -69,11 +70,18 @@ const Lesson = () => {
   let pageData = getPageData();
   console.log("Page data:", pageData);
 
+  // Log the message prop before rendering Message component
+  if (pageData && pageData.message) {
+    console.log("Props being passed to Message component:", pageData.message);
+  }
+
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
     // Stop the text reader when the lesson page changes
-    window.speechSynthesis.cancel();
-    
+    if (textReaderRef.current && typeof textReaderRef.current.stopReading === 'function') {
+      textReaderRef.current.stopReading();
+    }
+
     if (wildcardMatch(page, "quiz*")) {
       navigate(`/${planet}/transition`, {
         state: {
@@ -82,6 +90,12 @@ const Lesson = () => {
       });
     } else if (wildcardMatch(page, "review*")) {
       navigate(`/${planet}/review`);
+    } else if (wildcardMatch(page, "outro")) {
+      navigate(`/${planet}/outro`);
+    } else if (wildcardMatch(page, "certificate")) {
+      navigate(`/${planet}/certificate`);
+    } else if (wildcardMatch(page, "patrick-defeat")) {
+      navigate(`/${planet}/patrick-defeat`);
     } else {
       setPageNum(page);
     }
@@ -102,6 +116,7 @@ const Lesson = () => {
   return (
     <div className={`lesson-container ${planet}-background`}>
       <Navbar />
+      <TextReader ref={textReaderRef} />
       <div className={`lesson-content ${pageData.message.style}-container readable-text`}>
         <Characters
           characters={pageData.characters.map(character => ({
@@ -109,7 +124,7 @@ const Lesson = () => {
             onClick: character.arrow ? handleCharacterClick : undefined
           }))}
         />
-        <Message message={pageData.message} onButtonClick={goToPage} />
+        <Message key={pageNum} message={pageData.message} onButtonClick={goToPage} pageNum={pageNum} maxPage={planetData.pages.length}/>
       </div>
     </div>
   );

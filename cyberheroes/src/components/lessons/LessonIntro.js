@@ -124,12 +124,12 @@ const LessonIntro = () => {
           </div>
         </div>
         {selectedVocab && (
-        <VocabPopup
-          word={selectedVocab.word}
-          definition={selectedVocab.definition}
-          onClose={() => setSelectedVocab(null)}
-        />
-      )}
+          <VocabPopup
+            word={selectedVocab.word}
+            definition={selectedVocab.definition}
+            onClose={() => setSelectedVocab(null)}
+          />
+        )}
       </div>
     );
   } else if (!planetData.active) {

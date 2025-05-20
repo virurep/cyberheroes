@@ -35,6 +35,7 @@ const TextReader = forwardRef((props, ref) => {
         const readableElements = document.getElementsByClassName('readable-text');
         const currentText = Array.from(readableElements).map(el => el.textContent).join('');
 
+
         if (currentText !== lastReadableText) {
             handleStopReading();
             setLastReadableText(currentText);
@@ -96,7 +97,9 @@ const TextReader = forwardRef((props, ref) => {
                         node.parentNode.insertBefore(textNode, node);
                     }
                 });
-                node.parentNode.removeChild(node);
+                if (node) {
+                    node.parentNode.removeChild(node);
+                }
             }
         });
 

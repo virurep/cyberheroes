@@ -418,7 +418,7 @@
             }
           ],
           "message": {
-            "text": "HAHA! I bet they don’t know that one of the biggest reasons <v>sensitive data** is important is because if patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
+            "text": "HAHA! I bet they don’t know that one of the biggest reasons <v>sensitive data** is important is because if Patrick gets his hands on your information, he could pretend to be you. For example, if he finds out your password or birthday, he might be able to access your online accounts. He could even use your name to send messages to your friends, asking them for private information or trying to trick them into sharing things they shouldn't.",
             "speaker": "Enemy #2",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -570,7 +570,7 @@
             }
           ],
           "message": {
-            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or <v>emergency** contact information**. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
+            "text": "Teachers / School Staff\n\nSometimes, you might need to share certain details with teachers or school staff, like your name or <v>emergency** contact information. However, this should only happen if your parents approve. A teacher will never ask for things like your passwords or private accounts, so if someone at school asks for something that feels too personal, talk to your parents right away.",
             "style": "message-box-right",
             "buttons": {
               "prev": 27,
@@ -681,6 +681,26 @@
             "buttons": {
               "prev": 33,
               "next": "quiz-3"
+            }
+          }
+        },
+        {
+          "page_number": 35,
+          "characters": [
+            {
+              "name": "Allie",
+              "style": "character-left character-flip"
+            }
+          ],
+          "message": {
+            "text": "Yay!! You defeated all the enemies and helped me keep my <v>sensitive data** safe! Thank you so much Cyber Hero!\nAs a token of my appreciation and <v>gratitude**, I award you with a Cyber Hero Sensitive Data Protector Certificate!",
+            "style": "message-box-right",
+            "buttons": {
+              "continue": {
+                "next": "certificate",
+                "style": "default-button",
+                "text": "View Certificate"
+              }
             }
           }
         }
@@ -812,7 +832,7 @@
             }
           ],
           "message": {
-            "text": "Public information is safe share with anyone. Like:\n<li>Your Favorite Color<ul>Your Hobbies<ul>A Fun Fact About Yourself**",
+            "text": "Public information is safe share with anyone. Like:\n<ul>Your Favorite Color<li>Your Hobbies<li>A Fun Fact About Yourself**",
             "speaker": "Cyber Hero",
             "style": "message-box-bottom",
             "speaker_style": "speaker-right",
@@ -1064,7 +1084,7 @@
             }
           ],
           "message": {
-            "text": "Patrick pieced together all these clues and learned about:\n<li>My age<ul>My school<ul>A place I visit often**",
+            "text": "Patrick pieced together all these clues and learned about:\n<ul>My age<li>My school<li>A place I visit often**",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1179,7 +1199,7 @@
             }
           ],
           "message": {
-            "text": "Finally, think: Does this reveal too much? A fun picture of you in a school t-shirt might seem okay, but if it shows your school's name, it could tell strangers where you go every day.",
+            "text": "<u>Finally, think:** Does this reveal too much? A fun picture of you in a school t-shirt might seem okay, but if it shows your school's name, it could tell strangers where you go every day.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1293,7 +1313,7 @@
             }
           ],
           "message": {
-            "text": "<red>Never respond or give out your information.** Even if the person seems nice or <v>trustworthy**, it's important to stay cautious. Strangers online may not be who they say they are, and sharing even small details can put you at risk.",
+            "text": "<red>Never respond or give out your information.**\nEven if the person seems nice or <v>trustworthy**, it's important to stay cautious. Strangers online may not be who they say they are, and sharing even small details can put you at risk.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1385,7 +1405,7 @@
             }
           ],
           "message": {
-            "text": "Remember that even if someone seems nice, they might not be who they say they are. <red>Online, people can pretend to be anyone.**\nThey might use fake pictures, names, or stories to trick others into trusting them.",
+            "text": "Remember that even if someone seems nice, they might not be who they say they are.\n<red>Online, people can pretend to be anyone.**\nThey might use fake pictures, names, or stories to trick others into trusting them.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
@@ -1416,6 +1436,109 @@
             "buttons": {
               "prev": 31,
               "next": "quiz-3"
+            }
+          }
+        },
+        {
+          "page_number": 33,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "We did it! The safe is open!.",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
+              "next": 34
+            }
+          }
+        },
+        {
+          "page_number": 34,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-center character-s"
+            },
+            {
+              "name": "Patrick",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "Not so fast! You may have opened the safe, but kids will keep oversharing. I'll just collect more information!",
+            "speaker": "Patrick",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 33,
+              "next": 35
+            }
+          }
+        },
+        {
+          "page_number": 35,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-center"
+            },
+            {
+              "name": "Patrick",
+              "style": "character-right character-s"
+            }
+          ],
+          "message": {
+            "text": "Not anymore! We've learned how to protext our information - and we're teaching the others too.\nYour tricks don't work when people know the signs.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 34,
+              "next": 36
+            }
+          }
+        },
+        {
+          "page_number": 36,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-center character-s"
+            },
+            {
+              "name": "Patrick",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "ARGH! No way!\nOh no, I feel my powers fading!",
+            "speaker": "Patrick",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 35,
+              "next": "patrick-defeat"
             }
           }
         }

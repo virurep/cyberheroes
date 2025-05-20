@@ -33,13 +33,26 @@ export const processText = (text, onVocabClick) => {
             return <span key={i} className="vocab-word">{word}</span>;
           }
 
-          // check if the part is a list item
-          if (part.startsWith("<li>") && part.endsWith("**")) {
+          // check if the part is an unordered list
+          if (part.startsWith("<ul>") && part.endsWith("**")) {
             const item = part.slice(4, -2);
-            const listItems = item.split("<ul>");
-            return listItems.map((item, i) => {
-              return <li key={i}>{item}</li>;
-            });
+            const listItems = item.split("<li>");
+            return (<ul>
+              {listItems.map((item, i) => {
+                return <li key={i}>{item}</li>;
+              })}
+            </ul>)
+          }
+
+          // check if the part is an ordered list
+          if (part.startsWith("<ol>") && part.endsWith("**")) {
+            const item = part.slice(4, -2);
+            const listItems = item.split("<li>");
+            return (<ol>
+              {listItems.map((item, i) => {
+                return <li key={i}>{item}</li>;
+              })}
+            </ol>)
           }
 
           // check if the part should be red
@@ -73,7 +86,9 @@ export const processText = (text, onVocabClick) => {
   });
 };
 
-const Message = ({ message, onButtonClick }) => {
+const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
+
+  console.log("in message.js")
   const [selectedVocab, setSelectedVocab] = useState(null);
 
   const handleVocabClick = (vocab) => {
@@ -81,11 +96,15 @@ const Message = ({ message, onButtonClick }) => {
   };
 
   const paragraphs = processText(message.text, handleVocabClick);
+  const processedHeader = message.header ? processText(message.header, handleVocabClick) : null;
 
-  return (
+  console.log("message: ", message)
+  console.log("paragraphs: ", paragraphs)
+
+  const componentOutput = (
     <div className="text-container">
-      {message.header && (
-        <div className="text-header">{processText(message.header, handleVocabClick)}</div>
+      {processedHeader && (
+        <div className="text-header">{processedHeader}</div>
       )}
       {message.speaker && (
         <div className={`speaker-name ${message.speaker_style}`}>
@@ -94,7 +113,7 @@ const Message = ({ message, onButtonClick }) => {
       )}
       <div className={`message-box ${message.style}`}>
         <div className="lesson-text">{paragraphs}</div>
-        <Buttons buttons={message.buttons} onClick={onButtonClick} />
+        <Buttons buttons={message.buttons} onClick={onButtonClick} pageNum={pageNum} maxPage={maxPage}/>
       </div>
       {selectedVocab && (
         <VocabPopup
@@ -105,6 +124,10 @@ const Message = ({ message, onButtonClick }) => {
       )}
     </div>
   );
+
+  console.log("Complete Message component output structure (React element):", componentOutput);
+
+  return componentOutput;
 };
 
 export default Message;

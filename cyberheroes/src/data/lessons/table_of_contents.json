@@ -1,0 +1,88 @@
+{
+  "table_of_contents": [
+    {
+      "planet_name": "Privacy Planet",
+      "lesson_title": "Sensitive Information",
+      "parts": [
+        {
+          "part_name": "What is Sensitive Data?",
+          "start_page": 1,
+          "part_type": "lesson",
+          "part_style": "lesson-1"
+        },
+        {
+          "part_name": "Sensitive Data Quiz 1",
+          "quiz_part": 1,
+          "part_type": "quiz",
+          "part_style": "quiz-1"
+        },
+        {
+          "part_name": "Why is Sensitive Data Important?",
+          "start_page": 20,
+          "part_type": "lesson",
+          "part_style": "lesson-2"
+        },
+        {
+          "part_name": "Sensitive Data Quiz 2",
+          "quiz_part": 2,
+          "part_type": "quiz",
+          "part_style": "quiz-2"
+        },
+        {
+          "part_name": "Who Should Sensitive Data Be Shared With?",
+          "start_page": 25,
+          "part_type": "lesson",
+          "part_style": "lesson-3"
+        },
+        {
+          "part_name": "Sensitive Data Quiz 3",
+          "quiz_part": 3,
+          "part_type": "quiz",
+          "part_style": "quiz-3"
+        }
+      ]
+    },
+    {
+      "planet_name": "Privacy Moon",
+      "lesson_title": "Sharing Online",
+      "parts": [
+        {
+          "part_name": "Private vs Public Information",
+          "start_page": 1,
+          "part_type": "lesson",
+          "part_style": "lesson-1"
+        },
+        {
+          "part_name": "Sharing Online Quiz 1",
+          "quiz_part": 1,
+          "part_type": "quiz",
+          "part_style": "quiz-1"
+        },
+        {
+          "part_name": "Being Smart About What You Share",
+          "start_page": 9,
+          "part_type": "lesson",
+          "part_style": "lesson-2"
+        },
+        {
+          "part_name": "Sharing Online Quiz 2",
+          "quiz_part": 2,
+          "part_type": "quiz",
+          "part_style": "quiz-2"
+        },
+        {
+          "part_name": "What To Do When People Ask For Information?",
+          "start_page": 26,
+          "part_type": "lesson",
+          "part_style": "lesson-3"
+        },
+        {
+          "part_name": "Sharing Online Quiz 3",
+          "quiz_part": 3,
+          "part_type": "quiz",
+          "part_style": "quiz-3"
+        }
+      ]
+    }
+  ]
+}
