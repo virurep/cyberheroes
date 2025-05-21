@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useLayoutEffect, useState } from 'react';
 import Buttons from './Buttons';
 import VocabPopup from '../util/VocabPopup';
 import vocabData from '../../data/lessons/vocab.json';
@@ -87,8 +87,16 @@ export const processText = (text, onVocabClick) => {
 };
 
 const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
+  const messageRef = useRef(null);
+  const [offset, setOffset] = useState(0);
 
-  console.log("in message.js")
+  useLayoutEffect(() => {
+    if (messageRef.current) {
+      const height = messageRef.current.offsetHeight;
+      setOffset(height);
+    }
+  }, [message]);
+
   const [selectedVocab, setSelectedVocab] = useState(null);
 
   const handleVocabClick = (vocab) => {
@@ -98,20 +106,26 @@ const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
   const paragraphs = processText(message.text, handleVocabClick);
   const processedHeader = message.header ? processText(message.header, handleVocabClick) : null;
 
-  console.log("message: ", message)
-  console.log("paragraphs: ", paragraphs)
-
   const componentOutput = (
     <div className="text-container">
       {processedHeader && (
         <div className="text-header">{processedHeader}</div>
       )}
       {message.speaker && (
-        <div className={`speaker-name ${message.speaker_style}`}>
+        <div
+          className={`speaker-name ${message.speaker_style}`}
+          style={{
+            position: "absolute",
+            bottom: `${offset}px`,
+          }}
+        >
           <p>{message.speaker.toUpperCase()}</p>
         </div>
       )}
-      <div className={`message-box ${message.style}`}>
+      <div
+        ref={messageRef}
+        className={`message-box ${message.style}`}
+      >
         <div className="lesson-text">{paragraphs}</div>
         <Buttons buttons={message.buttons} onClick={onButtonClick} pageNum={pageNum} maxPage={maxPage}/>
       </div>
