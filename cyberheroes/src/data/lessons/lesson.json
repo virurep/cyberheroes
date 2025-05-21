@@ -323,7 +323,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -340,7 +340,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -357,7 +357,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -374,7 +374,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -549,7 +549,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -566,7 +566,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -583,7 +583,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -619,7 +619,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -636,7 +636,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -653,7 +653,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -689,7 +689,7 @@
           "characters": [
             {
               "name": "Allie",
-              "style": "character-left character-flip"
+              "style": "character-left"
             }
           ],
           "message": {
@@ -1429,13 +1429,13 @@
           ],
           "message": {
             "header": "<gold>⭐ GOLDEN RULE ⭐**",
-            "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!**\nYour safety always comes first, and trusted adults are there to help you make the right decisions.",
+            "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!**",
             "speaker": "Alejandro",
             "style": "message-box-gold message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 31,
-              "next": "quiz-3"
+              "next": 33
             }
           }
         },
@@ -1444,20 +1444,23 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left"
+              "style": "character character-s character-left character-left-1"
             },
             {
               "name": "Alejandro",
-              "style": "character-right character-flip character-s"
+              "style": "character-s character-left character-left-2 character-left-last"
+            },
+            {
+              "name": "Safe",
+              "style": "character-s character-right character-right-2",
+              "arrow": 34
             }
           ],
           "message": {
-            "text": "We did it! The safe is open!.",
-            "speaker": "Cyber Hero",
-            "style": "message-box-bottom",
-            "speaker_style": "speaker-right",
+            "text": "!! YOU'VE FOUND PATRICK'S SAFE !!",
+            "style": "alert-header",
             "buttons": {
-              "next": 34
+              "none": true
             }
           }
         },
@@ -1470,18 +1473,14 @@
             },
             {
               "name": "Alejandro",
-              "style": "character-center character-s"
-            },
-            {
-              "name": "Patrick",
-              "style": "character-right"
+              "style": "character-right character-flip"
             }
           ],
           "message": {
-            "text": "Not so fast! You may have opened the safe, but kids will keep oversharing. I'll just collect more information!",
-            "speaker": "Patrick",
+            "text": "Looks like Patrick is keeping everyone's sensitive data locked inside this safe.\nThere's a secret code to unlock it, but I don't know what it is.",
+            "speaker": "Alejandro",
             "style": "message-box-bottom",
-            "speaker_style": "speaker-left",
+            "speaker_style": "speaker-right",
             "buttons": {
               "prev": 33,
               "next": 35
@@ -1493,24 +1492,42 @@
           "characters": [
             {
               "name": "Cyber Hero",
-              "style": "character-left character-s"
+              "style": "character-left"
             },
             {
               "name": "Alejandro",
-              "style": "character-center"
-            },
-            {
-              "name": "Patrick",
-              "style": "character-right character-s"
+              "style": "character-right character-flip character-s"
             }
           ],
           "message": {
-            "text": "Not anymore! We've learned how to protext our information - and we're teaching the others too.\nYour tricks don't work when people know the signs.",
-            "speaker": "Alejandro",
+            "text": "Wait! It looks like we can unlock the safe by answering some questions.\nLet's take a closer look!",
+            "speaker": "Cyber Hero",
             "style": "message-box-bottom",
-            "speaker_style": "speaker-left",
+            "speaker_style": "speaker-right",
             "buttons": {
               "prev": 34,
+              "next": "quiz-3"
+            }
+          }
+        },
+        {
+          "page_number": 35,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-right character-flip character-s"
+            }
+          ],
+          "message": {
+            "text": "We did it! The safe is open!",
+            "speaker": "Cyber Hero",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-right",
+            "buttons": {
               "next": 36
             }
           }
@@ -1532,12 +1549,66 @@
             }
           ],
           "message": {
-            "text": "ARGH! No way!\nOh no, I feel my powers fading!",
+            "text": "Not so fast! You may have opened the safe, but kids will keep oversharing. I'll just collect more information!",
             "speaker": "Patrick",
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
               "prev": 35,
+              "next": 37
+            }
+          }
+        },
+        {
+          "page_number": 37,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-center"
+            },
+            {
+              "name": "Patrick",
+              "style": "character-right character-s"
+            }
+          ],
+          "message": {
+            "text": "Not anymore! We've learned how to protext our information - and we're teaching the others too.\nYour tricks don't work when people know the signs.",
+            "speaker": "Alejandro",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 36,
+              "next": 38
+            }
+          }
+        },
+        {
+          "page_number": 38,
+          "characters": [
+            {
+              "name": "Cyber Hero",
+              "style": "character-left character-s"
+            },
+            {
+              "name": "Alejandro",
+              "style": "character-center character-s"
+            },
+            {
+              "name": "Patrick",
+              "style": "character-right"
+            }
+          ],
+          "message": {
+            "text": "ARGH! No way!\nOh no, I feel my powers fading!",
+            "speaker": "Patrick",
+            "style": "message-box-bottom",
+            "speaker_style": "speaker-left",
+            "buttons": {
+              "prev": 37,
               "next": "patrick-defeat"
             }
           }
