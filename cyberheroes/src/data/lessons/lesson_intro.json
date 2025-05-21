@@ -1,0 +1,52 @@
+{
+  "intros": [
+    {
+      "planet_name": "Privacy Planet",
+      "lesson_title": "Sensitive Information",
+      "intro_text": "Welcome to Privacy Planet. Life here is generally peaceful, and people usually have nothing much to worry about. However, over the last few years, Privacy Planet is becoming less and less private. Investigate the cause for the issue and help the people on the planet.",
+      "computer_image_name": "patrick-wanted.png",
+      "computer_text": "Hello Cyber Hero! We are told that Patrick the Predatorus is keeping something very <v>valuable** that he stole. We need your help to find what he stole and bring it back to us. This journey will be dangerous, be very careful about ANYONE that you meet on Privacy Planet!",
+      "active": true
+    },
+    {
+      "planet_name": "Privacy Moon",
+      "lesson_title": "Sharing Online",
+      "intro_text": "Welcome to Privacy Moon. Life here is quiet, but residents have begun to report suspicious behavior nearby. We need your help to find the cause.\n\nWARNING: This lesson is the second part of Privacy Planet. This lesson can be completed on it’s own, but the story or lesson contents may not make sense.",
+      "computer_image_name": "patrick-wanted.png",
+      "computer_text": "Hello Cyber Hero! Patrick has escaped from Privacy Planet and is hiding somewhere on the moon. Allie’s brother, Alejandro, should be nearby. Find him and defeat Patrick for good!",
+      "active": true
+    },
+    {
+      "planet_name": "Phishing Planet",
+      "lesson_title": "",
+      "intro_text": "",
+      "computer_image_name": "patrick-wanted.png",
+      "computer_text": "",
+      "active": false
+    },
+    {
+      "planet_name": "Malware",
+      "lesson_title": "",
+      "intro_text": "",
+      "computer_image_name": "patrick-wanted.png",
+      "computer_text": "",
+      "active": false
+    },
+    {
+      "planet_name": "Safe Browsing",
+      "lesson_title": "",
+      "intro_text": "",
+      "computer_image_name": "patrick-wanted.png",
+      "computer_text": "",
+      "active": false
+    },
+    {
+      "planet_name": "Online Sharing",
+      "lesson_title": "",
+      "intro_text": "",
+      "computer_image_name": "patrick-wanted.png",
+      "computer_text": "",
+      "active": false
+    }
+  ]
+}

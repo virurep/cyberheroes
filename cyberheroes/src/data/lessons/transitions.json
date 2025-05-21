@@ -1,0 +1,39 @@
+{
+    "planets": {
+        "privacy_planet": {
+            "quiz-1": {
+                "character": "Allie",
+                "message": "Use what you learned to Defeat Enemy 1 and help me get back my information!!!",
+                "end_page": 19
+            },
+            "quiz-2": {
+                "character": "Allie",
+                "message": "Huh looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!",
+                "end_page": 24
+            },
+            "quiz-3": {
+                "character": "Allie",
+                "message": "Looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!",
+                "end_page": 34
+            }
+        },
+        "privacy_moon": {
+            "quiz-1": {
+                "character": "Alejandro",
+                "message": "What are some examples of these types of information?\n\nHMM... let's test your knowledge.",
+                "end_page": 8
+            },
+            "quiz-2": {
+                "character": "Alejandro",
+                "message": "Huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!",
+                "end_page": 25
+            },
+            "quiz-3": {
+                "character": "Alejandro",
+                "message": "Looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data back!",
+                "end_page": 32
+            }
+        }
+    }
+}
+  

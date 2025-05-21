@@ -1,0 +1,106 @@
+.table-of-contents-container {
+  color: white;
+  align-self: flex-start;
+  margin-top: 50px;
+}
+
+.parts-container {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  user-select: none;
+  margin: 10px;
+  background-color: rgb(106, 106, 106);
+  border-radius: 30px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.toc-icon {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.3s ease;
+}
+
+.toc-header:hover {
+  background-color: rgb(163, 163, 163);
+}
+
+.dropdown-arrow {
+  height: 36px;
+  width: 36px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.right-arrow {
+  transform: rotate(90deg);
+}
+
+.toc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.toc-body.open {
+  max-height: 800px;
+  transition: max-height 0.5s ease-in;
+}
+
+.part-item {
+  padding: 24px 40px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin: 10px;
+  border-radius: 30px;
+}
+
+.part-item:last-child {
+  border-bottom: none;
+}
+
+.part-name {
+  font-size: 20px;
+  color: black;
+}
+
+.lesson-1, .quiz-1 {
+  background-color: #5EA3D4;
+}
+
+.lesson-1:hover, .quiz-1:hover {
+  background-color: #6cbbf4;
+}
+
+.lesson-2, .quiz-2 {
+  background-color: #967EAB;
+}
+
+.lesson-2:hover, .quiz-2:hover {
+  background-color: #c0a3d9;
+}
+
+.lesson-3, .quiz-3 {
+  background-color: #D170B3;
+}
+
+.lesson-3:hover, .quiz-3:hover {
+  background-color: #f990d7;
+}
+
+

@@ -1,0 +1,210 @@
+{
+    "planet": {
+        "privacy_planet": {
+            "quiz-1": {
+                "options": [
+                    {
+                        "id": 1,
+                        "title": "What is Sensitive Data?",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Sensitive Data",
+                                "message": "Is private and personal information that belongs to you and should be kept safe. This kind of information is important because it helps identify who you are, where you live, or how someone can contact you."
+                            },
+                            {
+                                "page": 2,
+                                "title": "Sensitive Data Continued",
+                                "message": "Sharing your <v>sensitive data** with the wrong people like Patrick could lead to problems, so it's important to know what <v>sensitive data** is and how to protect it."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Types of Sensitive Information",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Types of Sensitive Information",
+                                "message": "<ul>Full Name<li>Birthday<li>Home Address<li>Phone Number<li>Email Address**"
+                            }
+                        ]
+                    }
+                ],
+                "character": "Allie"
+            },
+            "quiz-2": {
+                "options": [
+                    {
+                        "id": 1,
+                        "title": "People Can Pretend to Be You",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Pretending to be You",
+                                "message": "If someone knows your birthday or password, they might pretend to be you online. They could send fake messages to your friends or try to get their private information."
+                            },
+                            {
+                                "page": 2,
+                                "title": "Pretending to be You Continued",
+                                "message": "That would be upsetting, right? That's why it's important to keep your information private—so others can't use it to cause trouble."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "People Can Use Your Info to Trick Others",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Tricking Others",
+                                "message": "Sometimes, people use your information to trick others.\nThis is called <v>phishing**, and it's when someone pretends to be you to get private information from your friends or family."
+                            },
+                            {
+                                "page": 2,
+                                "title": "Tricking Others Continued",
+                                "message": "They might send fake emails or messages that look real but are meant to steal information. Be careful who you share your information with."
+                            }
+                        ]
+                    }
+                ],
+                "character": "Allie"
+            },
+            "quiz-3": {
+                "options": [
+                    {
+                        "id": 1,
+                        "title": "Who Can You Trust With Your Sensitive Data?",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Who Can You Trust With Your Sensitive Data?",
+                                "message": "Not everyone should have your <v>sensitive data**. In fact, the less you share, the safer you are. Only certain <v>trustworthy** adults should have access—and only when it's truly necessary."
+                            },
+                            {
+                                "page": 2,
+                                "title": "Who Can You Trust With Your Sensitive Data Continued",
+                                "message": "You can trust:\n<li>Parents or <v>Guardian**s<ul>Teachers or School Staff<ul>Doctors and Nurses**\nIf something feels too personal, talk to your parents right away."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Who Shouldn't Have Your Sensitive Data?",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Who Shouldn't Have Your Sensitive Data?",
+                                "message": "Just because someone asks for your information doesn't mean you should give it. Some people pretend to be friendly to trick you."
+                            },
+                            {
+                                "page": 2,
+                                "title": "Who Shouldn't Have Your Sensitive Data Continued",
+                                "message": "Don't give your <v>sensitive data** to:\n<li>Strangers<ul>People online<ul>Friends (when it comes to passwords)**\nWhen in doubt, ask or alert a <v>trustworthy** adult if someone asks for your <v>sensitive data**"
+                            }
+                        ]
+                    }
+                ],
+                "character": "Allie"
+            }
+        },
+        "privacy_moon": {
+            "quiz-1": {
+                "options": [
+                    {
+                        "id": 1,
+                        "title": "Private vs Public Information",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Private vs Public Information",
+                                "message": "Some things are safe to share, and others should be kept private.\n\nPublic Information (OK to share):\n<ul>Your favorite color<li>Your favorite game or show<li>Your pet's name**"
+                            },
+                            {
+                                "page": 2,
+                                "title": "Private vs Public Information",
+                                "message": "Private Information (keep safe):\n<ul>Full name<li>Home address<li>Phone number<li>Birthday**\n\nPrivate information can be used to identify or contact you. Only <v>trustworthy** adults should know it."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Why Does this Matter?",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Why Does this Matter",
+                                "message": "Knowing the difference helps you stay safe online. If you share too much private information—even by accident—someone could use it to figure out who you are or where you live."
+                            },
+                            {
+                                "page": 2,
+                                "title": "Why Does this Matter Continued",
+                                "message": "That's why you should always ask yourself:\n<ul>Is this public or private?<li>Who will see it?<li>Should I ask a <v>trustworthy** adult first?**"
+                            }
+                        ]
+                    }
+                ],
+                "character": "Alejandro"
+            },
+            "quiz-2": {
+                "options": [
+                    {
+                        "id": 1,
+                        "title": "How Small Details Add Up",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "How Small Details Add Up",
+                                "message": "Even if you don't share your full name or address, small pieces of information can still reveal a lot about you.\n\nFor example: Saying 'I just turned 10' tells others your age or mentioning your soccer team and school name tells others where you go to school.\n\nWhen someone puts all these clues together, they can learn private things about you without you realizing it."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Think Before You Share",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Think Before You Share",
+                                "message": "Before posting or sharing anything online, ask yourself these questions:\n<ul>Is this private information?<li>Who can see this?<li>Does this reveal too much?**\n\nIf you're ever unsure, always check with a <v>trustworthy** adult before sharing."
+                            }             
+                        ]
+                    }
+                ],
+                "character": "Alejandro"
+            },
+            "quiz-3": {
+                "options": [
+                    {
+                        "id": 1,
+                        "title": "Red Flags to Watch Out For",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "Red Flags to Watch Out For",
+                                "message": "Not everyone online is who they say they are. Some people pretend to be friendly to try and get your private information.\n\n<b>Watch out for these red flags:**\n<ul>They ask for your name, school, address, or birthday.<li>They want to meet you in real life.<li>They ask for pictures or personal details.<li>They tell you to keep your conversation a secret.<li>They offer you gifts or prizes in exchange for information.**"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "What to Do If a Strangers Asks For Information Online",
+                        "review_lesson": [
+                            {
+                                "page": 1,
+                                "title": "What to Do If a Strangers Asks For Information Online",
+                                "message": "If This Happens:\n<ul>Don't respond or share anything<li>Tell a <v>trustworthy** adult right away<li>Block and report the person if they keep asking<li>Trust your instincts—if it feels off, it probably is**"
+                            },
+                            {
+                                "page": 2,
+                                "title": "Golden Rule",
+                                "message": "Golden Rule:\nIf a stranger online asks for personal info, STOP and ASK a <v>trustworthy** adult before you do anything."
+                            }
+                        ]
+                    }
+                ],
+                "character": "Alejandro"
+            }
+        }
+    }
+}

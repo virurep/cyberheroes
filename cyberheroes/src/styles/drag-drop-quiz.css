@@ -1,0 +1,106 @@
+.drag-drop-quiz-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f0f8ff;
+    padding: 20px;
+    background-image: url("../img/backgrounds/privacy-planet-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.quiz-content {
+    max-width: 800px;
+    margin: 150px auto 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.quiz-title {
+    text-align: center;
+    color: #02101b;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.question-box {
+    width: 70vw;
+    background-color: #B8DEFF;
+    color: #02101b;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: move;
+    transition: transform 0.2s;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-box:hover {
+    transform: scale(1.02);
+}
+
+.question-text {
+    font-size: 1.5rem;
+    color: #02101b;
+    margin: 0;
+}
+
+.answer-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.answer-box {
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.answer-box.private {
+    background-color: #FF3355;
+    color: white;
+}
+
+.answer-box.public {
+    background-color: #33CCCC;
+    color: white;
+}
+
+.answer-box.correct {
+    background-color: #66BF39;
+    color: white;
+}
+
+.answer-box.incorrect {
+    background-color: #E14733;
+    color: white;
+}
+
+.answer-box h2 {
+    color: inherit;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

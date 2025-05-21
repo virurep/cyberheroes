@@ -1,0 +1,271 @@
+.transition-container {
+    width: 100vw;  /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-size: cover;     /* Cover the container while maintaining aspect ratio */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat;
+    position: fixed; /* Fix the container to viewport */
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Planet-specific backgrounds */
+.privacy-planet-background {
+    background-image: url('../img/backgrounds/privacy-planet-background.png');
+}
+
+.privacy-moon-background {
+    background-image: url('../img/backgrounds/privacy-moon-background.png');
+}
+
+.transition-content {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.transition-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.message-side-transition {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Pushes message box towards Allie */
+    padding-top: 100px;
+    padding-right: 40px;
+}
+
+.transition-message-box {
+    background-color: #B8DEFF;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 80%;
+}
+
+.transition-message {
+    color: black;
+    font-size: 2rem;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.transition-content .button-container-transition {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.quiz-button {
+    background-color: #D1495B !important;
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 250px;
+    height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.quiz-button:hover {
+    transform: scale(1.05);
+    background-color: #b83d4d;
+    box-shadow: 0 6px 12px rgba(209, 73, 91, 0.4);
+}
+
+.or-text {
+    color: black;
+}
+.review-button {
+    background-color: #B8DEFF;
+    font-size: 19px;
+    text-decoration: underline;
+    border: none;
+    color: #02101b;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 250px;
+    height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-button:hover {
+    transform: scale(1.05);
+    background-color: #9BCDFF;
+}
+
+.character-side-transition {
+    position: fixed;
+    bottom: -25%;
+    right: -10%;
+    z-index: 2;
+}
+
+
+.character-image-transition {
+    height: 80vh;
+    width: auto;
+    object-fit: contain;
+    transform: scaleX(-1);
+}
+
+.certificate-button {
+    background-color: #0F746F !important;
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 250px;
+    height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+/* patrick leaving styles */
+.patrick-leaving {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-image: url('../img/backgrounds/main_background.png');
+    background-size: cover;
+}
+
+.patrick-leaving .bottom-content {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 2.5s;
+}
+
+.patrick-leaving .leaving-text {
+    color: white;
+    font-size: 10vh;
+    margin-bottom: 20px;
+}
+
+.patrick-leaving .continue-button-leaving {
+    background-color: #0F746F !important;
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 250px;
+    height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.patrick-leaving .continue-button-leaving:hover {
+    transform: scale(1.05);
+}
+
+.patrick-leaving #moon {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 200px;
+    height: auto;
+}
+
+.patrick-leaving #rocket-flying {
+    position: fixed;
+    height: auto;
+    animation: rocketFlight 2.75s forwards;
+}
+
+@keyframes rocketFlight {
+    0% {
+        bottom: 100%;
+        right: 10%;
+        transform: rotate(0deg) scale(1);
+        width: 600px;
+    }
+    100% {
+        top: 15%;
+        left: 65%;
+        transform: rotate(0deg) scale(0.6);
+        width: 400px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* moon or map page */
+
+.moon-button {
+    background-color: #0F746F!important;
+    font-size: 23px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 250px;
+    height: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.moon-button:hover {
+    transform: scale(1.05);
+    background-color: #9BCDFF;
+}
+
+.polaroid {
+    position: fixed;
+    width: 250px;
+    height: 300px;
+    top: 60%;
+    left: 2%;
+    transform: rotate(-40deg);
+    z-index: 2;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+

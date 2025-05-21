@@ -1,0 +1,421 @@
+/* background images for different planets */
+.privacy-planet-background {
+  background-image: url('../img/backgrounds/privacy-planet-background.png');
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.privacy-moon-background {
+  background-image: url('../img/backgrounds/privacy-moon-background.png');
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+/* styles */
+.lesson-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-content {
+  position: relative;
+  display: flex;
+  transform: translateY(75px);
+}
+
+.message-box-bottom-container {
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+}
+
+.message-box-right-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+}
+
+.alert-header-container {
+  position: relative;
+  height: 85%;
+  flex-direction: column-reverse;
+  align-self: center;
+}
+
+/* characters */
+.message-box-bottom-container .character-container {
+  position: absolute;
+  bottom: 25vh;
+  width: 100%;
+  z-index: 1;
+}
+
+.character {
+  height: 30rem;
+}
+
+.message-box-bottom-container .character {
+  position: absolute;
+  bottom: 0;
+}
+
+.message-box-right-container .character {
+  margin: auto;
+}
+
+.character-left {
+  left: 5%;
+}
+
+.character-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.character-right {
+  right: 5%;
+}
+
+.character-flip {
+  transform: scaleX(-1);
+}
+
+.message-box-bottom-container .character-l {
+  height: 40rem;
+}
+
+.character-s {
+  height: 25rem;
+  bottom: 10%;
+}
+
+/* encounter enemy characters */
+.alert-header-container .character-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.character-left-1 {
+  position: relative;
+  top: 10vh;
+}
+
+.character-left-last {
+  margin-right: 200px;
+}
+
+.arrow-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 50px; */
+
+  position: relative;
+  top: -10vh;
+}
+
+.arrow-character .character {
+  height: 20rem;
+  cursor: pointer;
+}
+
+.arrow-character .character:hover {
+  transform: scale(1.05);
+}
+
+.character-right-1 {
+  top: -5vh;
+}
+
+.character-right-2 {
+  top: -10vh;
+}
+
+.character-right-3 {
+  top: -15vh;
+}
+
+/* text / message box */
+.text-container {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.message-box-bottom-container .text-container {
+  position: absolute;
+  left: 50%;
+  bottom: 15vh;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 17.5rem;
+  z-index: 2;
+}
+
+.vocab-word {
+  text-decoration: underline;
+}
+
+.vocab-word:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+/* vocab popup */
+.vocab-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.vocab-popup {
+  background-color: #B8DEFF;
+  color: #02101b;
+  min-height: 15vh;
+  max-height: 40vh;
+  min-width: 15vw;
+  max-width: 50vw;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.vocab-popup h3 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.vocab-popup p {
+  line-height: 1.5;
+}
+
+/* text header */
+.text-header {
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100px);
+}
+
+/* speaker name on text box */
+.speaker-name {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 2;
+}
+
+.speaker-right {
+  right: 0;
+  transform: translate(-20px, 50px);
+}
+
+.speaker-left {
+  left: 0;
+  transform: translate(20px, 50px);
+}
+
+.message-box {
+  width: 100%;
+  /* height: 100%; */
+  text-align: center;
+  background-color: #B8DEFF;
+  border-radius: 20px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.message-box-bottom {
+  margin-top: auto;
+  max-height: 90%;
+  position: absolute;
+  bottom: 0;
+}
+
+.message-box-right {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.text-container .message-box-gold {
+  background-color: #EDAE49;
+}
+
+.red-text {
+  color: #E14733;
+}
+
+.gold-text {
+  color: #EDAE49;
+}
+
+.underline-text {
+  text-decoration: underline dotted;
+}
+
+.alert-header {
+  background-color: transparent;
+}
+
+.message-box-right-container {
+  height: 70%;
+  margin-top: 2rem;
+}
+
+.message-box-bottom-container .lesson-text, .message-box-right-container .lesson-text {
+  width: 90%;
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #386F95 #f1f1f1;
+  margin-bottom: 10px;
+  margin-top: 15px;  /* TODO: multiline texts feel too low */
+}
+
+.alert-header-container .text-container {
+  position: relative;
+  top: -10vh;
+}
+
+.alert-header .lesson-text {
+  font-size: 4rem;
+  color: #E0EBF7;
+  -webkit-text-stroke: 3px #D1495B;
+}
+
+/* buttons */
+.button-container {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  justify-self: flex-end;
+}
+
+.lesson-button {
+  border: 0.2rem solid #0F746F;
+  min-width: 8rem;
+  height: 3rem;
+  border-radius: 20px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0;
+  color: #0F746F;
+  text-decoration: none;
+  padding: 0 1.5rem;
+}
+
+.lesson-button:hover {
+  background-color: #0F746F;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(15, 116, 111, 0.3);
+}
+
+.next-button {
+  margin-left: auto;
+}
+
+.next-button:before {
+  content: "NEXT";
+}
+
+.prev-button {
+  margin-right: auto;
+}
+
+.prev-button:before {
+  content: "BACK";
+}
+
+.lesson-page-input {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  align-self: center;
+  display: none;  /* TODO: remove for dev */
+}
+
+.default-button {
+  background: #0F746F;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(70, 134, 181, 0.3);
+  margin: 0 auto;
+  display: block;
+}
+
+.default-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
+  background: #19ada6;
+}
+
+/* Add styles for TextReader positioning */
+.text-reader-controls {
+  position: relative;
+  z-index: 10;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

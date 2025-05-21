@@ -1,0 +1,539 @@
+/* quiz page */
+
+.privacy-planet-quiz-background {
+    background-image: url("../img/backgrounds/privacy-planet-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+}
+
+.quiz-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.quiz-question {
+    background-color: #B8DEFF;
+    color: #02101b;
+    min-height: 15vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.quiz-answers-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.multiple-select-answer-container {
+    display: grid;
+    gap: 20px;
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* When there are 4 answer choices (2x2 grid) */
+.multiple-select-answer-container:has(button:nth-child(4):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* When there are 6 answer choices (3x2 grid) */
+.multiple-select-answer-container:has(button:nth-child(6):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.quiz-answer-btn {
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    border: none;
+    color: #02101b;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 25vw;
+    justify-content: flex-start;
+}
+
+.answer-btn-1 {
+    background-color: #FF3355;
+}
+
+.answer-btn-2 {
+    background-color: #33CCCC;
+}
+
+.answer-btn-3 {
+    background-color: #FFC00A;
+}
+
+.answer-btn-4 {
+    background-color: #66BF39;
+}
+
+.answer-btn-5 {
+    background-color: #9B61D4;
+}
+
+.answer-btn-6 {
+    background-color: #45A3E5;
+}
+
+.quiz-answer-btn:hover {
+    transform: scale(1.05);
+}
+
+.quiz-answer-shape {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.quiz-submit-btn {
+    margin-top: 20px;
+    background-color: #0F746F;
+    color: #ffffff;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-submit-btn:hover{
+    transform: scale(1.05);
+}
+
+
+
+/* quiz answers page */
+
+.answers-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 150px;
+    position: relative;
+}
+.health-bar-label{
+    color: #fdfdfd; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+.privacy-planet-health-bar {
+    width: 100%;
+    height: 40px;
+    padding: 3px; /* adds some padding around the green progress */
+}
+
+.privacy-planet-health-bar-progress {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #E14733; 
+    position: relative;
+    overflow: hidden;
+}
+
+.characters-answers-img {
+    height: 500px;
+    margin-top: 20px;
+}
+
+.text-answers-container {
+    background-color: #B8DEFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 10px;
+    max-width: 700px;
+    min-width: 100px;
+    margin: 60px;
+    text-align: center;
+}
+
+.text-answers-title{
+    color: #02101b;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.text-answers-text{
+    color: #02101b;
+    font-size: 1.5rem;
+}
+
+.answer-hint{
+    color: #E14733;
+    font-size: 1.5rem;
+}   
+
+.quiz-try-again-btn{
+    background-color: #E14733;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.quiz-try-again-btn:hover{
+    transform: scale(1.05);
+}
+
+.quiz-next-btn{
+    background-color: #0F746F;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.quiz-next-btn:hover{
+    transform: scale(1.05);
+}
+
+/* redflag green flag */
+.privacy-moon-quiz-background{
+    background-image: url("../img/backgrounds/privacy-moon-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+}
+.game-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flag-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.flags{
+    max-width: 400px;
+}
+
+.flags:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* red flag green flag answer popup */
+
+.answer-popup-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background overlay */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.popup-text-container{
+    background-color: #B8DEFF;
+    color: #02101b;
+    min-height: 15vh;
+    max-height: 40vh;
+    min-width: 15vw;
+    max-width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1001;
+
+}
+
+.popup-Al{
+    max-height: 60vh;
+    position: relative;
+    z-index: 1001;
+}
+
+
+/* Final quiz on privacy moon */
+
+.dark-question{
+    background-color: #34303B;
+    color: #E14733;
+    outline: 1px solid #E14733;
+    text-align: center;
+}
+
+/* Final quiz answers on privacy moon */
+.dark-answers-container{
+    background-color: #34303B;
+    color: #E14733;
+    outline: 1px solid #E14733;
+    text-align: center;
+}
+
+.red-text{
+    color: #E14733;
+}
+
+.reveal-letter-btn{
+    background-color: #37a073;
+}
+
+.quiz-next-btn-revealed {
+    position: absolute;
+    bottom: 105px;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: #37a073;
+    padding: 10px 20px;
+}
+
+.quiz-next-btn-revealed:hover {
+    transform: translateX(-50%) scale(1.05);
+    background-color: #43C58C;
+
+}
+
+/* Drag and Drop Quiz Styles */
+
+.drag-drop-quiz-title {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.drag-drop-question-box {
+    width: 300px;
+    height: 150px;
+    background-color: #B8DEFF;
+    color: #02101b;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: move;
+    transition: transform 0.2s;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-drop-question-box:hover {
+    transform: scale(1.02);
+}
+
+.drag-drop-question-text {
+    font-size: 1.5rem;
+    color: #02101b;
+    margin: 0;
+}
+
+.drag-drop-answer-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.drag-drop-answer-box {
+    min-height: 200px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.drag-drop-answer-box h2 {
+    color: inherit;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+.drag-drop-answer-box.private {
+    background-color: #FF3355;
+    color: white;
+}
+
+.drag-drop-answer-box.public {
+    background-color: #33CCCC;
+    color: white;
+}
+
+.drag-drop-answer-box.correct {
+    background-color: #66BF39;
+    color: white;
+}
+
+.drag-drop-answer-box.incorrect {
+    background-color: #E14733;
+    color: white;
+}
+
+.drag-drop-feedback-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+}
+
+.drag-drop-feedback-popup .popup-text-container {
+    background-color: #B8DEFF;
+    color: #02101b;
+    min-height: 20vh;
+    max-height: 40vh;
+    min-width: 30vw;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 200px;
+}
+
+.drag-drop-feedback-popup .popup-Al {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    max-height: 60vh;
+    z-index: 1001;
+}
+
+.drag-drop-next-button, .drag-drop-try-again-button {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.drag-drop-next-button {
+    background-color: #0F746F;
+    color: white;
+}
+
+.drag-drop-next-button:hover {
+    transform: scale(1.05);
+    background-color: #19ada6;
+}
+
+.drag-drop-try-again-button {
+    background-color: #E14733;
+    color: white;
+}
+
+.drag-drop-try-again-button:hover {
+    transform: scale(1.05);
+    background-color: #ff5252;
+}
+
+.drag-drop-feedback-popup .popup-text-container p {
+    color: #02101b;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.drag-drop-feedback-popup .popup-text-container p.incorrect-message {
+    color: #E14733;
+}

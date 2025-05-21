@@ -1,0 +1,85 @@
+{
+    "quizzes": [
+        {
+            "part": "quiz-1",
+            "quiz": [
+                {
+                    "id": 1,
+                    "type" : "multiple-choice",
+                    "question": "A person online wants to meet you in real life. What is the safest action?",
+                    "answers": ["Agree to meet them if they seem friendly",
+                            "Ask for a picture to make sure they're real",
+                            "Share your location but only with them",
+                            "Tell a trusted adult right away"],
+                    "correctAnswers": [3],
+                    "correctMessage": ["The safest option is to inform a trusted adult, as meeting someone from the internet can be risky."],
+                     "incorrectMessages": ["Just because someone seems friendly online doesn't mean they are safe in real life.",
+                                        "A picture doesn't guarantee safety; people can fake or manipulate images.",
+                                        "Sharing your location with a stranger online is dangerous and can put you and your family at risk.", ""],
+                    "hint" : "💡 Hint: If something makes you unsure or feels risky, talk to someone you trust first.💡"
+                },
+                {
+                    "id": 2,
+                    "type" : "multiple-choice",
+                    "question": "Someone online asks for pictures or personal details you wouldn't share with a stranger in person. What should you do?",
+                    "answers": ["Send them only if they promise not to share them",
+                                "Block and report the person",
+                                "Ask your friends if they think it's okay",
+                                "Keep talking to them but avoid sharing too much"],
+                    "correctAnswers": [1],
+                    "correctMessage": ["If someone is asking for private information, they likely have bad intentions. Blocking and reporting them keeps you safe."],
+                    "incorrectMessages": ["Once something is shared online, you lose control over it. Promises don't guarantee safety.", "",
+                                        "Your friends may not always have the best judgment on online safety.",
+                                        "Continuing the conversation still puts you at risk of manipulation or pressure."],
+                    "hint" : "💡 Hint: If it feels wrong or too personal, it's time to stop and get help.💡"
+                },
+                {
+                    "id": 3,
+                    "type" : "multiple-choice",
+                    "question": "Someone online is being really nice to you, giving you compliments, and making you feel special. What should you be aware of?",
+                    "answers": ["They could be trying to gain your trust for the wrong reasons, remain cautious",
+                                "If they seem nice, there's no reason to worry",
+                                "You should tell them personal details so they continue being nice",
+                                "Trust them completely because they make you feel good"],
+                    "correctAnswers": [0],
+                    "correctMessage": ["Some people use kindness as a tactic to gain trust and manipulate others."],
+                    "incorrectMessages" : ["", "Even if someone appears nice, they may have bad intentions. It's important to be cautious.",
+                                        "Sharing personal details makes you vulnerable to scams and manipulation.",
+                                        "Feelings of trust should be built over time with known and safe people, not strangers online."],
+                    "hint" : "💡 Hint: Sometimes people pretend to be nice to get something from you—stay alert.💡"
+                },
+                {
+                    "id": 4,
+                    "type": "multiple-choice",
+                    "question": "Someone online is making you feel uncomfortable by asking weird questions or being too persistent. What should you do?",
+                    "answers": ["Tell them to stop, but keep talking if they apologize",
+                                "Ignore the feeling because they might not mean any harm",
+                                "Trust your instincts, stop talking to them, and tell a trusted adult",
+                                "Keep the conversation going but avoid answering their questions"],
+                    "correctAnswers": [2],
+                    "correctMessage": ["If someone makes you feel uncomfortable, trust your gut, stop engaging, and get help."],
+                    "incorrectMessages" : ["They may apologize just to gain your trust again and continue inappropriate behavior.",
+                                            "Your discomfort is a warning sign. Never ignore it.", "",
+                                            "Staying in contact gives them more chances to manipulate you."],
+                    "hint": "💡 Hint: That uneasy feeling is a clue—listen to it and talk to a trusted adult.💡"
+                },
+                {
+                    "id": 5,
+                    "type" : "multiple-choice",
+                    "question": "What should you do if a stranger online asks you for personal information?",
+                    "answers": ["Answer if they seem trustworthy",
+                                "Ignore them and keep chatting",
+                                "Stop and ask a trusted adult before responding",
+                                "Share only minor details, like your favorite color"],
+                    "correctAnswers": [2],
+                    "correctMessage": ["A trusted adult can help you decide the safest way to handle the situation."],
+                    "incorrectMessages": ["It's easy to lie online, and strangers should never have access to personal details.",
+                                        "Even if you don't answer, continuing the conversation may lead to manipulation.", "",
+                                        "Even small details can be used to build a profile on you and gain your trust."],
+                    "hint" : "💡 Hint: If you wouldn't tell them in real life, check with a trusted adult first.💡",
+                    "lessonPage": 35
+                }
+            ]
+        }
+    ]
+}

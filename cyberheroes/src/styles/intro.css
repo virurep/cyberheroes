@@ -1,0 +1,240 @@
+body {
+  color: #89BFF2 !important;
+  display: grid;
+  place-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+.lesson-intro-background p {
+  color: #752a2a;
+}
+
+.lesson-intro-title {
+  color: #E14733;
+}
+
+.enter-lesson-btn {
+  background: #0F746F;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(70, 134, 181, 0.3);
+  margin: 0 auto;
+  display: block;
+}
+
+.enter-lesson-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
+  background: #19ada6;
+}
+
+.start-lesson-btn {
+  background-color: #BF3B27;
+  color: #ffffff;
+  border: none;
+  padding: 1.0rem 2.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 35px;
+}
+
+.start-lesson-btn:hover {
+  background-color: #E14733;
+  transform: scale(1.05);
+}
+
+.enter-lesson-btn:active {
+  transform: translateY(0);
+}
+
+/* lesson intro page */
+.lesson-intro-background {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lesson-intro-side {
+  height: 100%;
+  width: 50%;
+}
+
+.lesson-intro-message {
+  width: 80%;
+  background-color: #C5E0EF;
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+.lesson-intro-message h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.lesson-intro-message p {
+  font-size: 2.0rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.lesson-intro-rocket {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, 25%) rotate(10deg);
+  max-width: 180px;
+}
+
+.lesson-intro-planet {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-125%, -25%);
+  width: 240px;
+}
+
+
+/* Computer intro page */
+.computer {
+  background-image: url('../img/general/computer.png');
+  background-repeat: no-repeat;
+  display: flex;
+
+}
+
+.privacy-intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.computer-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.computer-image {
+  width: 85%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.computer-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 65%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.computer-content-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.computer-intro-image {
+  max-width: 300px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.computer-content .intro-message {
+  color: #000000;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.computer-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 250px;
+}
+
+.go-back-map-btn {
+  background-color: #386F95;
+  color: #ffffff;
+  border: none;
+  padding: 1.0rem 2.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 35px;
+}
+
+.go-back-map-btn:hover {
+  background-color: #2f6084;
+  transform: scale(1.05);
+}
+
+.start-lesson-btn:hover {
+  background-color: #E14733;
+  transform: scale(1.05);
+}
+
+.to-map-btn {
+  background-color: #386F95;
+}
+
+.to-map-btn:hover {
+  background-color: #57A2D8;
+  transform: scale(1.05);
+}
+
+.coming-soon-message {
+  color: #000000;
+  font-size: 1.5rem;
+  text-align: center;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
