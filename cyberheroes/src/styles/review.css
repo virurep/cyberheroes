@@ -60,7 +60,7 @@
 .review-box-review {
     background-color: #B8DEFF;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 50vh;
     width: 42vw;
@@ -83,7 +83,8 @@
     color: #02101b;
     font-size: 1.6rem;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 .options-container-review {
@@ -91,7 +92,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     width: 100%;
 }
 
@@ -160,11 +161,12 @@
     transform: translate(-50%, -50%);
     overflow-y: auto;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 0;
 }
 
 .computer-title-review {
@@ -172,29 +174,29 @@
     font-size: 2.2rem;
     font-weight: bold;
     text-align: center;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding: 0;
+    margin: 0;
     width: 100%;
 }
 
 .computer-message-review {
     color: black;
     font-size: 1.8rem;
-    line-height: 1.6;
+    line-height: 1.4;
     white-space: pre-line;
     text-align: center;
-    margin-bottom: 30px;
-    flex-grow: 1;
-    overflow-y: auto;
+    margin: 0;
     padding: 0 20px;
     width: 80%;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .computer-buttons-review {
     display: flex;
     gap: 30px;
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 85px;
     width: 100%;
     justify-content: center;
 }
@@ -274,23 +276,22 @@
 
 .next-button-review, .prev-button-review {
     border: 0.2rem solid #0F746F;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+    min-width: 4rem;
+    height: 2rem;
+    border-radius: 20px;
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: normal;
+    font-size: 1.0rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
     margin: 0;
     color: #0F746F;
     text-decoration: none;
     position: absolute;
     bottom: 10%;
-    transform: translateY(0);
     z-index: 20;
 }
 
@@ -303,56 +304,17 @@
 }
 
 .next-button-review:hover, .prev-button-review:hover {
-    background-color: white;
-    transform: scale(1.1);
+    background-color: #0F746F;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(15, 116, 111, 0.3);
 }
 
 .next-button-review:before {
-    content: "▶";
+    content: "NEXT";
 }
 
 .prev-button-review:before {
-    content: "◀";
-}
-
-/* .vocab-word {
-    color: #0F746F;
-    text-decoration: underline;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.vocab-word:hover {
-    color: #02101b;
-} */
-/*
-.red-text {
-    color: #E14733;
-    font-weight: bold;
-}
-
-.gold-text {
-    color: #FFD700;
-    font-weight: bold;
-}
-
-.underline-text {
-    text-decoration: underline;
-} */
-
-.computer-message-review li {
-    text-align: left;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    color: black;
-}
-
-.computer-message-review p {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    color: black;
+    content: "BACK";
 }
 
