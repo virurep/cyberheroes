@@ -86,23 +86,23 @@ const Transition = () => {
             <TextReader />
             <div className="transition-content readable-text">
                 <div className="transition-layout">
-                    <div className="message-side">
-                        <div className="message-box">
+                    <div className="message-side-transition">
+                        <div className="transition-message-box">
                             <p className="transition-message">
                                 {currMessage}
                             </p>
-                            <div className="button-container">
+                            <div className="button-container-transition">
                                 <button className='quiz-button' onClick={handleQuizButtonClick}>TAKE THE QUIZ</button>
                                 <button className='quiz-button' onClick={handleLessonButtonClick}>GO BACK TO LESSON</button>
                                 <button className='review-button' onClick={handleReviewButtonClick}>GO BACK TO REVIEW</button>
                             </div>
                         </div>
                     </div>
-                    <div className="character-side">
+                    <div className="character-side-transition">
                         <img
                             src={imagePath}
                             alt={characters}
-                            className="character-image"
+                            className="character-image-transition"
                         />
                     </div>
                 </div>

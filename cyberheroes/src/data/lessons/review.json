@@ -5,27 +5,27 @@
                 "options": [
                     {
                         "id": 1,
-                        "title": "What is <v>Sensitive Data**?",
+                        "title": "What is Sensitive Data?",
                         "review_lesson": [
                             {
                                 "page": 1,
-                                "title": "<v>Sensitive Data**",
+                                "title": "Sensitive Data",
                                 "message": "Is private and personal information that belongs to you and should be kept safe. This kind of information is important because it helps identify who you are, where you live, or how someone can contact you."
                             },
                             {
                                 "page": 2,
-                                "title": "<v>Sensitive Data** Continued",
+                                "title": "Sensitive Data Continued",
                                 "message": "Sharing your <v>sensitive data** with the wrong people like Patrick could lead to problems, so it's important to know what <v>sensitive data** is and how to protect it."
                             }
                         ]
                     },
                     {
                         "id": 2,
-                        "title": "Types of <v>Sensitive Data**",
+                        "title": "Types of Sensitive Information",
                         "review_lesson": [
                             {
                                 "page": 1,
-                                "title": "Types of <v>Sensitive Data**",
+                                "title": "Types of Sensitive Information",
                                 "message": "<ul>Full Name<li>Birthday<li>Home Address<li>Phone Number<li>Email Address**"
                             }
                         ]
@@ -74,32 +74,32 @@
                 "options": [
                     {
                         "id": 1,
-                        "title": "Who Can You Trust With Your <v>Sensitive Data**?",
+                        "title": "Who Can You Trust With Your Sensitive Data?",
                         "review_lesson": [
                             {
                                 "page": 1,
-                                "title": "Who Can You Trust With Your <v>Sensitive Data**?",
+                                "title": "Who Can You Trust With Your Sensitive Data?",
                                 "message": "Not everyone should have your <v>sensitive data**. In fact, the less you share, the safer you are. Only certain <v>trustworthy** adults should have access—and only when it's truly necessary."
                             },
                             {
                                 "page": 2,
-                                "title": "Who Can You Trust With Your <v>Sensitive Data** Continued",
+                                "title": "Who Can You Trust With Your Sensitive Data Continued",
                                 "message": "You can trust:\n<li>Parents or <v>Guardian**s<ul>Teachers or School Staff<ul>Doctors and Nurses**\nIf something feels too personal, talk to your parents right away."
                             }
                         ]
                     },
                     {
                         "id": 2,
-                        "title": "Who Shouldn't Have Your <v>Sensitive Data**?",
+                        "title": "Who Shouldn't Have Your Sensitive Data?",
                         "review_lesson": [
                             {
                                 "page": 1,
-                                "title": "Who Shouldn't Have Your <v>Sensitive Data**?",
+                                "title": "Who Shouldn't Have Your Sensitive Data?",
                                 "message": "Just because someone asks for your information doesn't mean you should give it. Some people pretend to be friendly to trick you."
                             },
                             {
                                 "page": 2,
-                                "title": "Who Shouldn't Have Your <v>Sensitive Data** Continued",
+                                "title": "Who Shouldn't Have Your Sensitive Data Continued",
                                 "message": "Don't give your <v>sensitive data** to:\n<li>Strangers<ul>People online<ul>Friends (when it comes to passwords)**\nWhen in doubt, ask or alert a <v>trustworthy** adult if someone asks for your <v>sensitive data**"
                             }
                         ]
@@ -166,7 +166,7 @@
                             {
                                 "page": 1,
                                 "title": "Think Before You Share",
-                                "message": "Before posting or sharing anything online, ask yourself these questions:\n <ul>Is this private information?<li>Who can see this?<li>Does this reveal too much?**\n\nIf you're ever unsure, always check with a <v>trustworthy** adult before sharing."
+                                "message": "Before posting or sharing anything online, ask yourself these questions:\n<ul>Is this private information?<li>Who can see this?<li>Does this reveal too much?**\n\nIf you're ever unsure, always check with a <v>trustworthy** adult before sharing."
                             }             
                         ]
                     }
