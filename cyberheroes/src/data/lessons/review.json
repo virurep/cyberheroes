@@ -84,7 +84,7 @@
                             {
                                 "page": 2,
                                 "title": "Who Can You Trust With Your Sensitive Data Continued",
-                                "message": "You can trust:\n<li>Parents or <v>Guardian**s<ul>Teachers or School Staff<ul>Doctors and Nurses**\nIf something feels too personal, talk to your parents right away."
+                                "message": "You can trust:\n <li>Parents or <v>Guardian**s <li>Teachers or School Staff <li>Doctors and Nurses** \nIf something feels too personal, talk to your parents right away."
                             }
                         ]
                     },
