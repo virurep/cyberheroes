@@ -283,6 +283,10 @@
   background-color: #EDAE49;
 }
 
+ul, ol {
+  list-style-position: inside;
+}
+
 .red-text {
   color: #E14733;
 }
