@@ -213,11 +213,11 @@
                     "type": "multiple-select",
                     "question": "WHO is it generally SAFE to share your sensitive data, given the appropriate circumstances and approval? (Select all that apply)",
                     "answers": ["Your parents or guardians",
-                            "Teachers or school staff, with parental approval",
+                            "Teachers or school staff",
                             "People online who seem friendly",
-                            "Friends if they promise to keep it a secret",
+                            "Friends if they keep it a secret",
                             "Someone you just met",
-                            "Doctors and nurses, when necessary and with parental consent"
+                            "Doctors and nurses"
                         ],
                     "correctAnswers": [0, 1, 5],
                     "correctMessage": ["You got everything correct and defeated me!",
@@ -225,7 +225,7 @@
                     "incorrectMessages": ["Friends should not have access to your sensitive data. Online identities can be deceptive, making it unsafe to share personal details."],
                     "healthBar" : 0,
                     "hint" : "💡Hint: Even good friends can slip up—keep sensitive info between you and trusted adults.💡",
-                    "lessonPage": 35
+                    "lessonPage": 36
                 }
             ]
         }

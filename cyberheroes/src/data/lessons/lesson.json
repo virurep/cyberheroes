@@ -1480,7 +1480,7 @@
             "text": "Looks like Patrick is keeping everyone's sensitive data locked inside this safe.\nThere's a secret code to unlock it, but I don't know what it is.",
             "speaker": "Alejandro",
             "style": "message-box-bottom",
-            "speaker_style": "speaker-right",
+            "speaker_style": "speaker-left",
             "buttons": {
               "prev": 33,
               "next": 35
@@ -1511,7 +1511,7 @@
           }
         },
         {
-          "page_number": 35,
+          "page_number": 36,
           "characters": [
             {
               "name": "Cyber Hero",
@@ -1526,14 +1526,14 @@
             "text": "We did it! The safe is open!",
             "speaker": "Cyber Hero",
             "style": "message-box-bottom",
-            "speaker_style": "speaker-right",
+            "speaker_style": "speaker-left",
             "buttons": {
-              "next": 36
+              "next": 37
             }
           }
         },
         {
-          "page_number": 36,
+          "page_number": 37,
           "characters": [
             {
               "name": "Cyber Hero",
@@ -1554,13 +1554,13 @@
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
-              "prev": 35,
-              "next": 37
+              "prev": 36,
+              "next": 38
             }
           }
         },
         {
-          "page_number": 37,
+          "page_number": 38,
           "characters": [
             {
               "name": "Cyber Hero",
@@ -1581,13 +1581,13 @@
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
-              "prev": 36,
-              "next": 38
+              "prev": 37,
+              "next": 39
             }
           }
         },
         {
-          "page_number": 38,
+          "page_number": 39,
           "characters": [
             {
               "name": "Cyber Hero",
@@ -1608,7 +1608,7 @@
             "style": "message-box-bottom",
             "speaker_style": "speaker-left",
             "buttons": {
-              "prev": 37,
+              "prev": 38,
               "next": "patrick-defeat"
             }
           }

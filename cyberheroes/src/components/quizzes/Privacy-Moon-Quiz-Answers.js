@@ -63,7 +63,9 @@ const QuizAnswers = () => {
                     letter5
                    } alt={"Safe With Password"} className="characters-answers-img" />
                    <button className="quiz-next-btn quiz-next-btn-revealed" onClick={handleNextQuestion}>
-                            Next Question
+                            {currentQuestion.id === 5
+                                ? "Return to Lesson"
+                                : "Next Question"}
                     </button>
                 </div>
             </div>
@@ -75,11 +77,11 @@ const QuizAnswers = () => {
                 <Navbar />
                 <TextReader />
                 <div className="answers-container privacy-moon-quiz-answers-container readable-text">
-                    <div className="text-answers-container dark-answers-container">
-                        <h1 className="text-answers-title red-text">
+                    <div className="text-answers-container dark-answers-container green-outline">
+                        <h1 className="text-answers-title green-text">
                             Correct!
                         </h1>
-                        <p className="text-answers-text red-text">
+                        <p className="text-answers-text green-text">
                             {currentQuestion.correctMessage[0]}
                         </p>
                         <button className="quiz-next-btn reveal-letter-btn" onClick={handleRevealLetter}>
@@ -99,7 +101,7 @@ const QuizAnswers = () => {
                     <div className="characters-answers-container">
                         <img src={Alejandro} alt={"Alejandro"} className="characters-answers-img" />
                     </div>
-                    <div className="text-answers-container dark-answers-container">
+                    <div className="text-answers-container dark-answers-container red-outline">
                         <h1 className="text-answers-title red-text">
                             Incorrect
                         </h1>
