@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 
+// maxPage used if page change input is in use, error checkng for invalid page num
 const Buttons = ({ buttons, onClick, pageNum, maxPage }) => {
   const [inputValue, setInputValue] = useState(pageNum);
-  console.log(maxPage);
 
   const handleClick = (page) => {
     onClick(page);
   }
 
+  // input for page number
+  // not in use, but could be used to navigate to a specific page during dev
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   }
 
+  // same as ^^
   const handleInputKeyPress = (e) => {
-    console.log(parseInt(inputValue));
     if (e.key === 'Enter') {
       handleClick(parseInt(inputValue));
     }
@@ -27,6 +29,7 @@ const Buttons = ({ buttons, onClick, pageNum, maxPage }) => {
           onClick={() => handleClick(buttons.prev)}
         />
       )}
+      {/* input for page number (NOT IN USE) */}
       {!buttons.none && <input
         className="lesson-page-input"
         type="text"

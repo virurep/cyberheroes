@@ -139,8 +139,6 @@ const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
     </div>
   );
 
-  console.log("Complete Message component output structure (React element):", componentOutput);
-
   return componentOutput;
 };
 

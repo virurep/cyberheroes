@@ -10,7 +10,6 @@ import TextReader from '../util/TextReader';
 const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
 
 
-// let pageNum = 1;
 
 const Lesson = () => {
   const { planet } = useParams();
@@ -23,7 +22,6 @@ const Lesson = () => {
     // Otherwise, use the maximum of current page and stored page
     return Math.max(1, location.state?.page || 1);
   });
-  console.log("pageNum: ", pageNum);
 
   const navigate = useNavigate();
   const textReaderRef = useRef(null);
@@ -48,7 +46,6 @@ const Lesson = () => {
   };
 
   const planetData = getPlanetData(planet);
-  console.log("Planet data:", planetData);
 
   // getting data for each specific lesson page
   const getPageData = () => {
@@ -68,12 +65,7 @@ const Lesson = () => {
   };
 
   let pageData = getPageData();
-  console.log("Page data:", pageData);
 
-  // Log the message prop before rendering Message component
-  if (pageData && pageData.message) {
-    console.log("Props being passed to Message component:", pageData.message);
-  }
 
   // go to the next lesson page, or quiz prompt
   const goToPage = (page) => {
@@ -108,7 +100,7 @@ const Lesson = () => {
     return regexPattern.test(text);
   }
 
-  // clickable characters (encounter enemies)
+  // clickable characters (nav to next page)
   const handleCharacterClick = (page) => {
     goToPage(page);
   }
