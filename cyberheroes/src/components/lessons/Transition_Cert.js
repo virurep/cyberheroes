@@ -45,23 +45,23 @@ const TransitionCerts = () => {
             <TextReader />
             <div className="transition-content readable-text">
                 <div className="transition-layout">
-                    <div className="message-side">
-                        <div className="message-box">
+                    <div className="message-side-transition">
+                        <div className="transition-message-box">
                             <p className="transition-message">
                                 {currMessage}
                             </p>
-                            <div className="button-container">
+                            <div className="button-container-transition">
                                 <button className="certificate-button" onClick={handleCertificate}>
                                     VIEW CERTIFICATE
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className="character-side">
+                    <div className="character-side-transition">
                         <img
                             src={imagePath}
                             alt={characters}
-                            className="character-image"
+                            className="character-image-transition"
                         />
                     </div>
                 </div>
