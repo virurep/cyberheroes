@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cyberheroes/static/css/main.03de0f27.css",
-    "main.js": "/cyberheroes/static/js/main.9637467c.js",
+    "main.js": "/cyberheroes/static/js/main.7e68f1f3.js",
     "static/media/rocket.png": "/cyberheroes/static/media/rocket.449206a6a5f0bc5b236b.png",
     "static/media/enemy.png": "/cyberheroes/static/media/enemy.0e1b569504ffc2a9b093.png",
     "static/media/patrick.png": "/cyberheroes/static/media/patrick.b0dd598826f6f7869667.png",
@@ -47,10 +47,10 @@
     "static/media/safebrowsing.png": "/cyberheroes/static/media/safebrowsing.43af0ff5aeacdb0fbbb6.png",
     "index.html": "/cyberheroes/index.html",
     "main.03de0f27.css.map": "/cyberheroes/static/css/main.03de0f27.css.map",
-    "main.9637467c.js.map": "/cyberheroes/static/js/main.9637467c.js.map"
+    "main.7e68f1f3.js.map": "/cyberheroes/static/js/main.7e68f1f3.js.map"
   },
   "entrypoints": [
     "static/css/main.03de0f27.css",
-    "static/js/main.9637467c.js"
+    "static/js/main.7e68f1f3.js"
   ]
 }
