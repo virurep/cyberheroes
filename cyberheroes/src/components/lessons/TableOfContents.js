@@ -30,7 +30,6 @@ const TableOfContents = () => {
   };
 
   const planetData = getPlanetData(planet);
-  console.log("Table of Contents data:", planetData);
 
   const handlePartClick = (part) => {
     if (part.part_type === "quiz") {
