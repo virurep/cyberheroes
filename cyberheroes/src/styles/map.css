@@ -1,3 +1,5 @@
+/* Cursor AI was used for some stylistic css choices to speed up development */
+
 body {
     color: #89BFF2 !important;
     background-image: url('../img/backgrounds/main_background.png');
@@ -6,6 +8,7 @@ body {
     -webkit-text-stroke: 0;
     text-shadow: none;
 }
+
 /* exploration map css */
 .exploration-heading {
     font-size: 48px;
@@ -182,7 +185,7 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .planet-connector {
         width: 2px;
         height: 50px;

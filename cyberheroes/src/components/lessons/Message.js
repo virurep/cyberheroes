@@ -1,3 +1,5 @@
+/* CursorAI was used to help with the processText function and the export of it */
+
 import { useRef, useLayoutEffect, useState } from 'react';
 import Buttons from './Buttons';
 import VocabPopup from '../util/VocabPopup';
@@ -6,8 +8,6 @@ import vocabData from '../../data/lessons/vocab.json';
 
 export const processText = (text, onVocabClick) => {
   return text.split('\n').map((paragraph, index) => {
-    // Split the paragraph by asterisks to find text to wrap in spans
-    // const parts = paragraph.split(/(\*[^*]+\*)/g);
 
     const parts = paragraph.split(/(<[^*]+>[^*]+\*\*)/g);
 

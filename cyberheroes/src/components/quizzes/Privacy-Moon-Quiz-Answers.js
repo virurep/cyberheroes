@@ -1,3 +1,5 @@
+/* Cursor AI was used to add the safe transition to the multiple choice quiz */
+
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../util/NavBar';

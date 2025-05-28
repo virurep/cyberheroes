@@ -1,3 +1,5 @@
+/* Cursor AI was used to help with the text reader functionality */
+
 import { useState, useEffect, useImperativeHandle, forwardRef } from 'react';
 import '../../styles/TextReader.css';
 import speaker from '../../img/general/speaker.png';

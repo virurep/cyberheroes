@@ -1,3 +1,5 @@
+/* Cursor AI was used for some stylistic css choices to speed up development */
+
 .patrick-defeat {
     background-image: url('../img/backgrounds/privacy-moon-background.png');
     background-size: cover;
@@ -27,7 +29,7 @@
     text-align: center;
     margin-bottom: 30px;
     animation: fadeIn 1s ease-out;
-    text-shadow: 
+    text-shadow:
         -1px -1px 0 #E14733,
         1px -1px 0 #E14733,
         -1px 1px 0 #E14733,
@@ -107,8 +109,8 @@
 }
 
 @keyframes rockShake {
-    0%, 100% { 
-        transform: rotate(0deg); 
+    0%, 100% {
+        transform: rotate(0deg);
     }
     25% {
         transform: rotate(-5deg) scale(1.005);
@@ -119,8 +121,8 @@
 }
 
 @keyframes violentRockShake {
-    0%, 100% { 
-        transform: rotate(0deg) scale(1.01); 
+    0%, 100% {
+        transform: rotate(0deg) scale(1.01);
     }
     15% {
         transform: rotate(-8deg) scale(1.02);

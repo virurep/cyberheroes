@@ -1,3 +1,5 @@
+/* Cursor AI was used to ensure that we are in the right state */
+
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../util/NavBar';
@@ -14,7 +16,7 @@ const GameAnswers = () => {
     const handleNextQuestion = () => {
         const nextIndex = questionIndex + 1;
         if (nextIndex < currentQuestion.quiz.length) {
-            navigate(quizType === 'drag-drop' 
+            navigate(quizType === 'drag-drop'
                 ? `/privacy-moon/quiz/drag-drop`
                 : `/privacy-moon/quiz/redflag-greenflag`, {
                 state: {
@@ -72,4 +74,4 @@ const GameAnswers = () => {
     );
 };
 
-export default GameAnswers; 
+export default GameAnswers;

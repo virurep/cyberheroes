@@ -1,3 +1,5 @@
+/* Cursor AI was used to help with the poof effect */
+
 import {useNavigate} from 'react-router-dom';
 import PatrickBoom from '../../img/characters/patrick_defeated.png';
 import Poof from '../../img/general/poof.png';
@@ -32,19 +34,19 @@ const PatrickDefeat = () => {
                 CLICK ON PATRICK TO DEFEAT HIM FOR GOOD!
             </h1>
             {!showPoof && (
-                <img 
+                <img
                     key={key}
-                    src={PatrickBoom} 
-                    alt="Patrick Defeat" 
+                    src={PatrickBoom}
+                    alt="Patrick Defeat"
                     onClick={handlePatrickClick}
                     className={`patrick-image shake-${clickCount}`}
                 />
             )}
             {showPoof && (
                 <>
-                    <img 
-                        src={Poof} 
-                        alt="Poof" 
+                    <img
+                        src={Poof}
+                        alt="Poof"
                         className="poof-image"
                     />
                     <button onClick={handleClick} className="continue-button">

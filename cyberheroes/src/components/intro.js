@@ -10,7 +10,6 @@ const IntroPage = () => {
     const navigate = useNavigate();
 
     const goToMap = () => {
-        // TODO: Implement navigation to the game
         navigate('/exploration-map');
     };
 

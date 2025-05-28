@@ -1,3 +1,5 @@
+/* Cursor AI was used to guide the decision making in having 2 frames for the lesson intro */
+
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/intro.css';

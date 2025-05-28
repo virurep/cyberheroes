@@ -1,3 +1,5 @@
+/* Cursor AI was used in this file to help debug going to the correct lesson page */
+
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import '../../styles/lesson.css';
@@ -8,7 +10,6 @@ import lessonData from '../../data/lessons/lesson.json';
 import TextReader from '../util/TextReader';
 
 const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
-
 
 
 const Lesson = () => {

@@ -1,3 +1,5 @@
+/* Cursor AI was used to help properly navigate to the numerous correct pages */
+
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../../styles/transitions.css";
@@ -13,7 +15,6 @@ const Transition = () => {
 
     // Get the quiz part from location state
     const quizPart = location.state?.quizPart;
-    console.log("Quiz part:", quizPart);
 
     // Get the correct transition data based on the planet
     const planetName = planet.toLowerCase().replace(/-/g, '_');
@@ -34,7 +35,6 @@ const Transition = () => {
 
     // Get the specific quiz transition data
     const currQuiz = transitionData[quizPart];
-    console.log("Current quiz data:", currQuiz);
 
     if (!currQuiz) {
         console.error(`No transition data found for quiz part: ${quizPart}`);
@@ -51,7 +51,6 @@ const Transition = () => {
 
     const currMessage = currQuiz.message;
     const characters = currQuiz.character;
-    console.log("Characters:", characters);
 
     const imageName = characters.toLowerCase().replace(/\s+/g, '-');
     const imagePath = characterImages(`./${imageName}.png`);

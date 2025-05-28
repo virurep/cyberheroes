@@ -1,3 +1,5 @@
+/* Cursor AI was used to resolve minor bugs when dropdown menu was open */
+
 import "../../styles/table-of-contents.css";
 import { useParams, useNavigate } from "react-router-dom";
 import tableOfContentsData from "../../data/lessons/table_of_contents.json"
