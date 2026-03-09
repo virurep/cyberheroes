@@ -1,3 +1,5 @@
+/* Cursor AI was used to keep the many states of the quiz tp be correct and consistent*/
+
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
@@ -15,7 +17,6 @@ import checkedSquare from "../../img/quizzes/shapes/checked-square.png";
 const Quiz = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    console.log("location: ", location);
     const currentQuestionIndex = location.state?.questionIndex || 0;
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
@@ -39,7 +40,6 @@ const Quiz = () => {
     //for multiple select questions
     const handleMultipleAnswerClick = (answer) => {
         setSelectedAnswers(prev => {
-            console.log("answer clicked " + answer)
             if (prev.includes(answer)) {
                 // If answer is already selected, remove it
                 return prev.filter(a => a !== answer);
@@ -51,7 +51,6 @@ const Quiz = () => {
     };
 
     const handleSubmitClick = () => {
-        console.log("selected answers: " + selectedAnswers)
         navigate(`/privacy-planet/quiz/game-answers`, {
             state: {
                 selectedAnswer: selectedAnswers,

@@ -1,3 +1,5 @@
+/* Cursor AI was used to validate the state that is passed in */
+
 import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import '../../styles/review.css';
@@ -46,7 +48,7 @@ const Review = () => {
 
     if (selectedOption) {
         return (
-            <ReviewLesson 
+            <ReviewLesson
                 selectedOption={selectedOption}
                 onClose={handleCloseLesson}
             />
@@ -54,7 +56,7 @@ const Review = () => {
     }
 
     return (
-        <ReviewMenu 
+        <ReviewMenu
             onOptionSelect={handleOptionSelect}
             character={currentQuiz.character}
             options={currentQuiz.options}

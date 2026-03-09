@@ -1,3 +1,5 @@
+/* Cursor AI was used for some stylistic css choices to speed up development */
+
 .feedback-popup {
     position: fixed;
     top: 50%;
@@ -163,7 +165,7 @@
         margin-right: min(50px, 5vw);
         padding: 35px;
     }
-    
+
     .drag-drop-feedback-popup .popup-Al {
         right: max(-50px, -5vw);
         max-width: 25vw;

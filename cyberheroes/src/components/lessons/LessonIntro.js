@@ -1,3 +1,5 @@
+/* Cursor AI was used to guide the decision making in having 2 frames for the lesson intro */
+
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/intro.css';
@@ -27,6 +29,7 @@ const LessonIntro = () => {
     navigate(`/${planet}/arrival`);
   };
 
+  // Get the planet data from the lessonIntroData.intros array
   const getPlanetData = (planetName) => {
     const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
     const planetData = lessonIntroData.intros.find(
@@ -46,6 +49,7 @@ const LessonIntro = () => {
 
   const planetData = getPlanetData(planet);
 
+  // Get the planet's image on first intro screen
   const getPlanetImage = (planetName) => {
     try {
       const imageName = planetName.toLowerCase().replace(/\s+/g, '-');
@@ -58,6 +62,7 @@ const LessonIntro = () => {
 
   const planetImage = getPlanetImage(planet);
 
+  // Get the intro message on the first intro screen
   const getLessonIntroMessage = (planetName) => {
     if (planetData.active) {
       const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
@@ -70,6 +75,7 @@ const LessonIntro = () => {
 
   const lessonIntroMessage = getLessonIntroMessage(planet);
 
+  // Get the computer intro image on the second intro screen
   const getComputerIntroImage = (planetName) => {
     const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
     const planetData = lessonIntroData.intros.find(
@@ -79,8 +85,8 @@ const LessonIntro = () => {
   };
 
   const computerIntroImage = getComputerIntroImage(planet);
-  console.log(computerIntroImage);
 
+  // Get the computer intro message on the second intro screen
   const getComputerIntroMessage = (planetName) => {
     const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
     const planetData = lessonIntroData.intros.find(
@@ -99,6 +105,7 @@ const LessonIntro = () => {
     navigate('/exploration-map');
   };
 
+  // if else renders either the first or second intro screen
   if (showComputer && planetData.active) {
     return (
       <div>

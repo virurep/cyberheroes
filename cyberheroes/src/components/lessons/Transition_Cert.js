@@ -13,7 +13,6 @@ const TransitionCerts = () => {
     // Get the correct transition data based on the planet
     const planetName = planet.toLowerCase().replace(/-/g, '_');
     const transitionData = TransitionCertsData.planets[planetName];
-    console.log("Transition data:", transitionData);
 
     if (!transitionData) {
         console.error(`No transition data found for planet: ${planet}`);
@@ -30,7 +29,6 @@ const TransitionCerts = () => {
 
     const currMessage = transitionData.message;
     const characters = transitionData.character;
-    console.log("Characters:", characters);
 
     const imageName = characters.toLowerCase().replace(/\s+/g, '-');
     const imagePath = characterImages(`./${imageName}.png`);

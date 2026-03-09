@@ -1,3 +1,5 @@
+/* Cursor AI was used to debug checking for correctness of answer */
+
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../util/NavBar';

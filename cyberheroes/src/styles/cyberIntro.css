@@ -1,3 +1,5 @@
+/* Cursor AI was used for some stylistic css choices to speed up development */
+
 main {
     display: flex;
     justify-content: flex-start;
@@ -72,10 +74,10 @@ h1 {
 }
 
 @keyframes fly {
-    0% { 
+    0% {
         transform: translateX(0) translateY(0);
     }
-    100% { 
+    100% {
         transform: translateX(300vw) translateY(-320vh);
     }
 }

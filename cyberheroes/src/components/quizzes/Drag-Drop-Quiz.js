@@ -1,3 +1,5 @@
+/* Cursor AI was used to smooth out the dragging and dropping functionalities */
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
