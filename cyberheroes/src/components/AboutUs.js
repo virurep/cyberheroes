@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/about.css";
-import { useNavigate } from "react-router-dom";
 import Navbar from "./util/NavBar";
 import TextReader from "./util/TextReader";
 import Matthew from "../img/about-us/Matthew-Chung.png";
@@ -11,8 +10,6 @@ import Olivia from "../img/about-us/Olivia-Sapp.png";
 import Viru from "../img/about-us/Viru-Repalle.png";
 
 const AboutPage = () => {
-    const navigate = useNavigate();
-
     return (
         <div>
             <Navbar />

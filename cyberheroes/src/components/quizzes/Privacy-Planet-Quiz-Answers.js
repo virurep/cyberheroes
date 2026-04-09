@@ -29,7 +29,6 @@ const QuizAnswers = () => {
                 navigate(`/privacy-planet/transition-cert`);
             } else {
                 // For quizzes parts 1 and 2, go back to lesson
-                console.log("last question, nav to lesson page #", currentQuestion.lessonPage);
                 navigate(`/privacy-planet/lesson`, {
                     state: {
                         page: currentQuestion.lessonPage
@@ -59,8 +58,8 @@ const QuizAnswers = () => {
                             <progress className="privacy-planet-health-bar-progress" value={currentQuestion.healthBar} max="1"></progress>
                         </div>
                         <img
-                            src={currentQuestion.healthBar != 0 ? Enemy : DeadEnemy}
-                            alt={currentQuestion.healthBar != 0 ? "Enemy" : "Dead Enemy"}
+                            src={currentQuestion.healthBar !== 0 ? Enemy : DeadEnemy}
+                            alt={currentQuestion.healthBar !== 0 ? "Enemy" : "Dead Enemy"}
                             className="characters-answers-img" />
                     </div>
                     <div className="text-answers-container">
@@ -71,7 +70,7 @@ const QuizAnswers = () => {
                             {currentQuestion.correctMessage[1]}
                         </p>
                         <button className="quiz-next-btn" onClick={handleNextQuestion}>
-                            {currentQuestion.healthBar == 0
+                            {currentQuestion.healthBar === 0
                                 ? "Return to Lesson"
                                 : "Next Question"}
                         </button>

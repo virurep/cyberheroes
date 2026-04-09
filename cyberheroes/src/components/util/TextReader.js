@@ -42,7 +42,7 @@ const TextReader = forwardRef((props, ref) => {
             handleStopReading();
             setLastReadableText(currentText);
         }
-    });
+    }, [lastReadableText]);
 
     // Stop reading when component unmounts
     useEffect(() => {

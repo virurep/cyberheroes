@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import Al from '../../img/characters/al.png';
@@ -11,7 +11,6 @@ import gameData from "../../data/quizzes/redFlag_greenFlag_quiz.json"
 
 const FlagQuiz = () => {
     const navigate = useNavigate();
-    const { part } = useParams();
     const location = useLocation();
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
@@ -52,8 +51,24 @@ const FlagQuiz = () => {
                         <h1 className="quiz-question-text">{currentQuestion.question}</h1>
                 </div>
                 <div className="flag-container">
-                    <img src={redFlag} alt="Red Flag" className="flags" onClick={() => handleAnswerClick(0)}/>
-                    <img src={greenFlag} alt="Green Flag" className="flags" onClick={() => handleAnswerClick(1)}/>
+                    <img
+                        src={redFlag}
+                        alt="Red Flag"
+                        className="flags"
+                        onClick={() => handleAnswerClick(0)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleAnswerClick(0); }}
+                    />
+                    <img
+                        src={greenFlag}
+                        alt="Green Flag"
+                        className="flags"
+                        onClick={() => handleAnswerClick(1)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleAnswerClick(1); }}
+                    />
                 </div>
             </div>
                     </div>

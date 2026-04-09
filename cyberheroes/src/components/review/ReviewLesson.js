@@ -52,6 +52,7 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
                             <button
                                 className="next-button-review"
                                 onClick={handleNextPage}
+                                aria-label="Next page"
                             />
                         ) : (
                             <div className="computer-buttons-review">
@@ -74,6 +75,7 @@ const ReviewLesson = ({ selectedOption, onClose }) => {
                             <button
                                 className="prev-button-review"
                                 onClick={handlePrevPage}
+                                aria-label="Previous page"
                             />
                         )}
                     </div>

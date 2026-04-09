@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 
-const IntroPage = () => {
+const PatrickLeaving = () => {
     const navigate = useNavigate();
 
     const handleContinue = () => {
@@ -31,4 +31,4 @@ const IntroPage = () => {
     );
 };
 
-export default IntroPage;
+export default PatrickLeaving;

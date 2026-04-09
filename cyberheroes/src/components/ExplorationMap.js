@@ -75,13 +75,25 @@ const ExplorationMap = () => {
           </div>
           {planets.map((planet, index) => (
             <div key={planet.name} className="planet-container">
-              <div className="planet" onClick={() => handlePlanetClick(planet.route)}>
+              <div
+                className="planet"
+                onClick={() => handlePlanetClick(planet.route)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handlePlanetClick(planet.route); }}
+              >
                 <img src={planet.image} alt={planet.name} className="planet-image" />
                 <span className="planet-name">{planet.name}</span>
               </div>
               {planet.moon && (
                 <div className="moon-container">
-                  <div className="moon" onClick={() => handlePlanetClick(planet.moon.route)}>
+                  <div
+                    className="moon"
+                    onClick={() => handlePlanetClick(planet.moon.route)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handlePlanetClick(planet.moon.route); }}
+                  >
                     <img src={planet.moon.image} alt={planet.moon.name} className="moon-image" />
                     <span className="moon-name">{planet.moon.name}</span>
                   </div>

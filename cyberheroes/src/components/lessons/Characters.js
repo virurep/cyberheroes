@@ -16,18 +16,31 @@ const Characters = ({ characters }) => {
           const handleClick = (page) => {
             character.onClick(page);
           }
+          const handleKeyDown = (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleClick(character.arrow);
+            }
+          };
           return (
-            <div className={`arrow-character ${character.style}`}>
+            <div key={character.name} className={`arrow-character ${character.style}`}>
               <div className='arrow-container'>
                   <img src={arrow} alt='arrow' className='arrow' />
               </div>
-              <img src={imagePath} alt={character.name} className={`character character-arrow`} onClick={() =>handleClick(character.arrow)}  />
+              <img
+                src={imagePath}
+                alt={character.name}
+                className={`character character-arrow`}
+                onClick={() => handleClick(character.arrow)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={handleKeyDown}
+              />
             </div>
           );
         }
 
         return (
-          <img src={imagePath} alt={character.name} className={`character ${character.style}`} />
+          <img key={character.name} src={imagePath} alt={character.name} className={`character ${character.style}`} />
         );
       })}
     </div>

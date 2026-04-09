@@ -41,7 +41,13 @@ const Arrival = () => {
                     <div className='arrow-container'>
                         <img src={arrow} alt='arrow' className='arrow' />
                     </div>
-                    <div className='arrival-hero' onClick={startLesson}>
+                    <div
+                        className='arrival-hero'
+                        onClick={startLesson}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') startLesson(); }}
+                    >
                         <img src={hero} alt='cyberhero' />
                     </div>
                 </div>

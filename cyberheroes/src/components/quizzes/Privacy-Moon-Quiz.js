@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
@@ -13,9 +13,7 @@ import triangle from "../../img/quizzes/shapes/triangle.png";
 
 const Quiz = () => {
     const navigate = useNavigate();
-    // const { part } = useParams();
     const location = useLocation();
-    console.log("location: ", location);
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
     // Get the current quiz data based on the part
