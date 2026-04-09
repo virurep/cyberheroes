@@ -1,0 +1,86 @@
+{
+  "slug": "privacy-moon",
+  "name": "Privacy Moon",
+  "title": "Sharing Online",
+  "order": 2,
+  "active": true,
+  "parent_planet_slug": "privacy-planet",
+  "theme": {
+    "primary": "#7B68D9",
+    "secondary": "#4A3F8A",
+    "background": "#F0EEFF",
+    "accent": "#E8A0D4"
+  },
+  "icon": "privacy-moon-icon.png",
+  "intro": {
+    "intro_text": "Welcome to Privacy Moon. Life here is quiet, but residents have begun to report suspicious behavior nearby. We need your help to find the cause.\n\nWARNING: This lesson is the second part of Privacy Planet. This lesson can be completed on it’s own, but the story or lesson contents may not make sense.",
+    "computer_image_name": "patrick-wanted.png",
+    "computer_text": "Hello Cyber Hero! Patrick has escaped from Privacy Planet and is hiding somewhere on the moon. Allie’s brother, Alejandro, should be nearby. Find him and defeat Patrick for good!"
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Private vs Public Information",
+      "part_style": "lesson-1",
+      "lesson_page_range": {
+        "start": 1,
+        "end": 8
+      }
+    },
+    {
+      "id": "part-1-quiz",
+      "title": "Sharing Online Quiz 1",
+      "part_style": "quiz-1",
+      "quiz_slugs": [
+        "sharing-online-quiz-1",
+        "sharing-online-rfgf"
+      ],
+      "transition": {
+        "character": "Alejandro",
+        "message": "What are some examples of these types of information?\n\nHMM... let's test your knowledge."
+      }
+    },
+    {
+      "id": "part-2",
+      "title": "Being Smart About What You Share",
+      "part_style": "lesson-2",
+      "lesson_page_range": {
+        "start": 9,
+        "end": 25
+      }
+    },
+    {
+      "id": "part-2-quiz",
+      "title": "Sharing Online Quiz 2",
+      "part_style": "quiz-2",
+      "quiz_slugs": [
+        "sharing-online-quiz-2"
+      ],
+      "transition": {
+        "character": "Alejandro",
+        "message": "Huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
+      }
+    },
+    {
+      "id": "part-3",
+      "title": "What To Do When People Ask For Information?",
+      "part_style": "lesson-3",
+      "lesson_page_range": {
+        "start": 26,
+        "end": 35
+      }
+    },
+    {
+      "id": "part-3-quiz",
+      "title": "Sharing Online Quiz 3",
+      "part_style": "quiz-3",
+      "quiz_slugs": [
+        "sharing-online-quiz-3"
+      ],
+      "transition": {
+        "character": "Alejandro",
+        "message": "Looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data back!"
+      }
+    }
+  ]
+}

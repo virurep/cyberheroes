@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Planet Manifest Schema",
+  "description": "Validates the manifest.json file for a CyberHeroes planet or moon module. The manifest is the authoritative index describing a planet's metadata, theme, intro story content, and the ordered sequence of curriculum parts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "name", "title", "order", "active", "theme", "icon", "intro", "parts"],
+  "examples": [
+    {
+      "slug": "privacy-planet",
+      "name": "Privacy Planet",
+      "title": "Sensitive Information",
+      "order": 1,
+      "active": true,
+      "theme": {
+        "primary": "#4A90D9",
+        "secondary": "#2C5F8A",
+        "background": "#EAF4FF",
+        "accent": "#F5A623"
+      },
+      "icon": "privacy-planet-icon.png",
+      "intro": {
+        "intro_text": "Welcome to Privacy Planet...",
+        "computer_image_name": "patrick-wanted.png",
+        "computer_text": "Hello Cyber Hero! We need your help..."
+      },
+      "parts": [
+        {
+          "id": "part-1",
+          "title": "What is Sensitive Data?",
+          "part_style": "lesson-1",
+          "lesson_page_range": { "start": 1, "end": 19 }
+        },
+        {
+          "id": "part-1-quiz",
+          "title": "Sensitive Data Quiz 1",
+          "part_style": "quiz-1",
+          "quiz_slugs": ["sensitive-data-quiz-1"],
+          "transition": {
+            "character": "Allie",
+            "message": "Use what you learned to defeat the enemy!"
+          }
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "slug": {
+      "description": "Kebab-case unique identifier for this planet. Must exactly match the directory name under src/data/planets/. Example: 'privacy-planet'.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "examples": ["privacy-planet", "privacy-moon", "phishing-planet"]
+    },
+    "name": {
+      "description": "Short human-readable planet name shown in navigation menus and headers. Example: 'Privacy Planet'.",
+      "type": "string",
+      "minLength": 1,
+      "examples": ["Privacy Planet", "Privacy Moon", "Phishing Planet"]
+    },
+    "title": {
+      "description": "Full display title for the lesson module shown on the planet's intro and table of contents screens. Example: 'Sensitive Information'.",
+      "type": "string",
+      "minLength": 1,
+      "examples": ["Sensitive Information", "Sharing Online", "Phishing Awareness"]
+    },
+    "order": {
+      "description": "Curriculum sequence position. Planets and moons are displayed in ascending order. Must be a positive integer starting at 1.",
+      "type": "integer",
+      "minimum": 1,
+      "examples": [1, 2, 3]
+    },
+    "active": {
+      "description": "Whether this planet is published and accessible to students. Set to false for planned but not-yet-released planets.",
+      "type": "boolean",
+      "examples": [true, false]
+    },
+    "parent_planet_slug": {
+      "description": "For companion moons only: the slug of the parent planet this moon extends. Omit this field entirely for primary planets. A moon with this field set is treated as a sequel/companion to the referenced planet.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "examples": ["privacy-planet"]
+    },
+    "theme": {
+      "description": "Color token map defining the visual palette for rendering this planet's UI. All four color fields are required.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "secondary", "background", "accent"],
+      "properties": {
+        "primary": {
+          "description": "Primary brand color used for headings, buttons, and key UI elements. Accepts any valid CSS color value (hex, rgb, named color).",
+          "type": "string",
+          "minLength": 1,
+          "examples": ["#4A90D9", "rgb(74, 144, 217)", "steelblue"]
+        },
+        "secondary": {
+          "description": "Secondary color used for supporting UI elements, borders, and hover states.",
+          "type": "string",
+          "minLength": 1,
+          "examples": ["#2C5F8A", "#7B68D9"]
+        },
+        "background": {
+          "description": "Page background color applied to the planet's lesson and quiz screens.",
+          "type": "string",
+          "minLength": 1,
+          "examples": ["#EAF4FF", "#F0EEFF"]
+        },
+        "accent": {
+          "description": "Highlight and call-to-action color used for correct answer indicators, progress bars, and interactive elements.",
+          "type": "string",
+          "minLength": 1,
+          "examples": ["#F5A623", "#E8A0D4"]
+        }
+      }
+    },
+    "icon": {
+      "description": "Filename or path to the planet icon asset, relative to the planet's asset directory. Used in the planet selection screen and navigation.",
+      "type": "string",
+      "minLength": 1,
+      "examples": ["privacy-planet-icon.png", "privacy-moon-icon.png"]
+    },
+    "intro": {
+      "description": "Story intro content shown on the mission briefing screen before the lesson begins. Contains the narrative setup and mission computer text.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intro_text", "computer_image_name", "computer_text"],
+      "properties": {
+        "intro_text": {
+          "description": "Narrative intro paragraph shown on the mission briefing screen, setting the story context for the planet's lesson. Supports newline characters (\\n).",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Welcome to Privacy Planet. Life here is generally peaceful, and people usually have nothing much to worry about."
+          ]
+        },
+        "computer_image_name": {
+          "description": "Filename of the image displayed in the mission computer panel on the briefing screen, relative to the shared assets directory.",
+          "type": "string",
+          "minLength": 1,
+          "examples": ["patrick-wanted.png"]
+        },
+        "computer_text": {
+          "description": "Text displayed alongside the computer image in the mission briefing. Provides the specific mission objective in the voice of mission control.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Hello Cyber Hero! We are told that Patrick the Predatorus is keeping something very valuable that he stole."
+          ]
+        }
+      }
+    },
+    "parts": {
+      "description": "Ordered array of curriculum parts that make up this planet's lesson sequence. Parts alternate between lesson content (with lesson_page_range) and quiz content (with quiz_slugs). Must contain at least one part.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "description": "A single curriculum part, which is either a lesson section or a quiz section. Lesson parts have lesson_page_range; quiz parts have quiz_slugs. A part must have at least one of these two fields.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "part_style"],
+        "anyOf": [
+          {
+            "required": ["lesson_page_range"],
+            "description": "A lesson part must include lesson_page_range."
+          },
+          {
+            "required": ["quiz_slugs"],
+            "description": "A quiz part must include quiz_slugs."
+          }
+        ],
+        "properties": {
+          "id": {
+            "description": "Kebab-case identifier for this part, unique within the planet. Convention: 'part-1', 'part-1-quiz', 'part-2', 'part-2-quiz', etc.",
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "examples": ["part-1", "part-1-quiz", "part-2", "part-2-quiz", "part-3"]
+          },
+          "title": {
+            "description": "Human-readable display title for this curriculum part, shown in the table of contents.",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "What is Sensitive Data?",
+              "Sensitive Data Quiz 1",
+              "Why is Sensitive Data Important?"
+            ]
+          },
+          "part_style": {
+            "description": "CSS style class applied to this part's table of contents entry. Convention: 'lesson-N' for lesson parts and 'quiz-N' for quiz parts, where N is the part number.",
+            "type": "string",
+            "pattern": "^(lesson|quiz)-[0-9]+$",
+            "examples": ["lesson-1", "quiz-1", "lesson-2", "quiz-2", "lesson-3", "quiz-3"]
+          },
+          "lesson_page_range": {
+            "description": "Planet-local page range for this lesson section. Present only on lesson parts (not quiz parts). Page numbers are always planet-local: they restart at 1 for each planet regardless of curriculum position.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["start", "end"],
+            "properties": {
+              "start": {
+                "description": "First planet-local page number of this lesson section. Must be a positive integer. The first lesson part of any planet must have start: 1.",
+                "type": "integer",
+                "minimum": 1,
+                "examples": [1, 20, 25]
+              },
+              "end": {
+                "description": "Last planet-local page number of this lesson section. Must be greater than or equal to start.",
+                "type": "integer",
+                "minimum": 1,
+                "examples": [19, 24, 34]
+              }
+            },
+            "if": {
+              "properties": {
+                "start": { "type": "integer" },
+                "end": { "type": "integer" }
+              },
+              "required": ["start", "end"]
+            },
+            "then": {
+              "properties": {
+                "end": {
+                  "description": "end must be greater than or equal to start. Validated at runtime since JSON Schema draft-07 cannot cross-reference sibling properties in a constraint.",
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          },
+          "quiz_slugs": {
+            "description": "Ordered list of quiz slug strings belonging to this quiz part. Each slug must match the filename (without .json) of a file under this planet's quizzes/ directory. Multiple slugs allow a part to contain several quiz types presented in sequence.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "description": "A kebab-case quiz slug matching a file at quizzes/<slug>.json within this planet's directory.",
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+              "examples": [
+                "sensitive-data-quiz-1",
+                "sensitive-data-drag-drop",
+                "sharing-online-rfgf"
+              ]
+            },
+            "examples": [
+              ["sensitive-data-quiz-1"],
+              ["sensitive-data-quiz-1", "sensitive-data-drag-drop"],
+              ["sharing-online-rfgf"]
+            ]
+          },
+          "transition": {
+            "description": "Optional story transition shown to the student just before the quiz begins. Present on quiz parts only. Contains the character who speaks and the motivational message.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["character", "message"],
+            "properties": {
+              "character": {
+                "description": "Display name of the character delivering the transition message. Must match a character name used in the planet's lesson pages.",
+                "type": "string",
+                "minLength": 1,
+                "examples": ["Allie", "Alejandro", "Cyber Hero"]
+              },
+              "message": {
+                "description": "Story message shown to the student to set up the quiz narrative. Supports newline characters (\\n).",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "Use what you learned to Defeat Enemy 1 and help me get back my information!!!",
+                  "Huh looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

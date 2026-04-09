@@ -1,0 +1,85 @@
+{
+  "slug": "privacy-planet",
+  "name": "Privacy Planet",
+  "title": "Sensitive Information",
+  "order": 1,
+  "active": true,
+  "theme": {
+    "primary": "#4A90D9",
+    "secondary": "#2C5F8A",
+    "background": "#EAF4FF",
+    "accent": "#F5A623"
+  },
+  "icon": "privacy-planet-icon.png",
+  "intro": {
+    "intro_text": "Welcome to Privacy Planet. Life here is generally peaceful, and people usually have nothing much to worry about. However, over the last few years, Privacy Planet is becoming less and less private. <v>Investigate** the cause for the issue and help the people on the planet.",
+    "computer_image_name": "patrick-wanted.png",
+    "computer_text": "Hello Cyber Hero! We are told that Patrick the Predatorus is keeping something very <v>valuable** that he stole. We need your help to find what he stole and bring it back to us. This journey will be dangerous, be very careful about ANYONE that you meet on Privacy Planet!"
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "What is Sensitive Data?",
+      "part_style": "lesson-1",
+      "lesson_page_range": {
+        "start": 1,
+        "end": 19
+      }
+    },
+    {
+      "id": "part-1-quiz",
+      "title": "Sensitive Data Quiz 1",
+      "part_style": "quiz-1",
+      "quiz_slugs": [
+        "sensitive-data-quiz-1",
+        "sensitive-data-drag-drop"
+      ],
+      "transition": {
+        "character": "Allie",
+        "message": "Use what you learned to Defeat Enemy 1 and help me get back my information!!!"
+      }
+    },
+    {
+      "id": "part-2",
+      "title": "Why is Sensitive Data Important?",
+      "part_style": "lesson-2",
+      "lesson_page_range": {
+        "start": 20,
+        "end": 24
+      }
+    },
+    {
+      "id": "part-2-quiz",
+      "title": "Sensitive Data Quiz 2",
+      "part_style": "quiz-2",
+      "quiz_slugs": [
+        "sensitive-data-quiz-2"
+      ],
+      "transition": {
+        "character": "Allie",
+        "message": "Huh looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!"
+      }
+    },
+    {
+      "id": "part-3",
+      "title": "Who Should Sensitive Data Be Shared With?",
+      "part_style": "lesson-3",
+      "lesson_page_range": {
+        "start": 25,
+        "end": 34
+      }
+    },
+    {
+      "id": "part-3-quiz",
+      "title": "Sensitive Data Quiz 3",
+      "part_style": "quiz-3",
+      "quiz_slugs": [
+        "sensitive-data-quiz-3"
+      ],
+      "transition": {
+        "character": "Allie",
+        "message": "Looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data Back!"
+      }
+    }
+  ]
+}

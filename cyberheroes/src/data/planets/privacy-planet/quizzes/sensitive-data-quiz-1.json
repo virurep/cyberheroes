@@ -1,0 +1,137 @@
+{
+  "slug": "sensitive-data-quiz-1",
+  "planet_slug": "privacy-planet",
+  "type": "multiple-choice",
+  "part": "quiz-1",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is Sensitive Data?",
+      "answers": [
+        "Information that is private and personal to you",
+        "Details that only your friends need to know",
+        "A type of public information anyone can access",
+        "Information that has no impact on  your safety"
+      ],
+      "correctAnswers": [
+        0
+      ],
+      "correctMessage": [
+        "AHHHH! You got it correct!",
+        "Sensitive data is private and personal to you, like your name, address, or phone number."
+      ],
+      "incorrectMessages": [
+        "",
+        "Sensitive data is not just for friends; it should only be shared with trusted adults when necessary.",
+        "Public information is meant to be widely available, while sensitive data should be restricted.",
+        "Sensitive data, if exposed, can have serious consequences, such as identity theft or fraud."
+      ],
+      "healthBar": 0.8,
+      "hint": "💡Hint: Sensitive data is something you want to protect💡"
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "Why is it important to keep sensitive data safe?",
+      "answers": [
+        "Because sharing it with more people makes you more popular",
+        "To prevent others from stealing your identity or personal information",
+        "So that strangers can help you with your personal details",
+        "It is not important to keep sensitive data safe"
+      ],
+      "correctAnswers": [
+        1
+      ],
+      "correctMessage": [
+        "Correct! How did you know?",
+        "Protecting sensitive data helps prevent identity theft, fraud, and unauthorized access to personal accounts."
+      ],
+      "incorrectMessages": [
+        "Popularity is not linked to sharing personal data; it is about maintaining trust and safety.",
+        "",
+        "Strangers should never have access to your personal details, as they could misuse them.",
+        "Keeping data safe is essential for protecting your identity and personal security."
+      ],
+      "healthBar": 0.6,
+      "hint": "💡Hint: You wouldn't share your password with a stranger, right? Keeping your information safe protects you!💡"
+    },
+    {
+      "id": 3,
+      "type": "multiple-select",
+      "question": "What information should you keep private from strangers? (Select all that apply)",
+      "answers": [
+        "Full name",
+        "Favorite food",
+        "Birthday",
+        "Favorite color",
+        "Phone number",
+        "Home Address"
+      ],
+      "correctAnswers": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "correctMessage": [
+        "Another one right!! how?",
+        "Your full name, birthday, phone number, and home address can be used to identify and track someone, making it crucial to keep them private."
+      ],
+      "incorrectMessages": [
+        "A favorite color is not considered sensitive data because it does not reveal personal details that could be exploited."
+      ],
+      "healthBar": 0.4,
+      "hint": "💡Hint: If a stranger shouldn't know it, keep it private!💡"
+    },
+    {
+      "id": 4,
+      "type": "true-false",
+      "question": "A stranger can use your home address to find out where you live.",
+      "answers": [
+        "True",
+        "False"
+      ],
+      "correctAnswers": [
+        0
+      ],
+      "correctMessage": [
+        "Correct again!",
+        "If someone knows your home address, they can determine your exact location, which poses a security risk."
+      ],
+      "incorrectMessages": [
+        "",
+        "Think about what a home address provides. Your home address is sensitive data that you do not want to share with strangers online."
+      ],
+      "healthBar": 0.2,
+      "hint": ""
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "Why is it risky to share your birthday online?",
+      "answers": [
+        "People might forget to send you a gift",
+        "It's not risky at all",
+        "Someone could use it to guess passwords or pretend to be you",
+        "It makes it harder to buy a cake"
+      ],
+      "correctAnswers": [
+        2
+      ],
+      "correctMessage": [
+        "Ahhhh you got all of the questions correct!",
+        "Birthdays are often used as part of security questions or for identity verification, making them valuable to cybercriminals."
+      ],
+      "incorrectMessages": [
+        "Security risks have nothing to do with receiving gifts.",
+        "Sharing a birthday can contribute to identity theft.",
+        "",
+        "This answer has no connection to cybersecurity risks."
+      ],
+      "healthBar": 0,
+      "hint": "💡Hint: Birthdays are fun to celebrate, but you also use your birthdate to set up online accounts.💡",
+      "lessonPage": 20
+    }
+  ]
+}

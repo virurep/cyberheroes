@@ -1,0 +1,164 @@
+{
+  "slug": "sensitive-data-quiz-3",
+  "planet_slug": "privacy-planet",
+  "type": "multiple-choice",
+  "part": "quiz-3",
+  "questions": [
+    {
+      "id": 9,
+      "type": "multiple-select",
+      "question": "What should you do to protect sensitive data? (Select all that apply)",
+      "answers": [
+        "Post your address only on safe websites",
+        "Be careful about who you give your phone number to",
+        "Keep your information private online",
+        "Only share it with trusted adults"
+      ],
+      "correctAnswers": [
+        1,
+        2,
+        3
+      ],
+      "correctMessage": [
+        "That's correct! Oh no, you're getting rid of my power!",
+        "Keeping data secure involves limiting who has access to it and being cautious about online interactions."
+      ],
+      "incorrectMessages": [
+        "There is no completely 'safe' website for posting personal information."
+      ],
+      "healthBar": 0.833,
+      "hint": "💡Hint: Think about who/what should have access to your data.💡"
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "What kind of information might doctors or nurses need from you?",
+      "answers": [
+        "Your online passwords",
+        "Your birthdate, allergies, or medical history",
+        "Your home address",
+        "Your school grades"
+      ],
+      "correctAnswers": [
+        1
+      ],
+      "correctMessage": [
+        "Correct again!",
+        "Medical professionals need details about your birthdate, allergies, or medical history to provide appropriate care."
+      ],
+      "incorrectMessages": [
+        "Healthcare providers do not need access to personal accounts.",
+        "",
+        "While sometimes relevant for medical records, it is not always necessary.",
+        "Academic performance is not relevant to medical treatment."
+      ],
+      "healthBar": 0.66,
+      "hint": "💡Hint: Think about things that are important to your health.💡"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Why shouldn't you share your passwords with friends, even if you trust them?",
+      "answers": [
+        "They might use your passwords to play your games",
+        "It's okay to share passwords with friends if they promise not to tell",
+        "They might accidentally share it with the wrong person",
+        "They might need it for an emergency"
+      ],
+      "correctAnswers": [
+        2
+      ],
+      "correctMessage": [
+        "Another correct answer!",
+        "Even trusted friends can mistakenly reveal sensitive information, leading to security breaches."
+      ],
+      "incorrectMessages": [
+        "Even if this seems harmless, it is still unsafe.",
+        "Passwords should remain private, regardless of trust.",
+        "",
+        "There are better ways to handle emergencies than sharing passwords."
+      ],
+      "healthBar": 0.5,
+      "hint": "💡Hint: There are safer ways to get help in an emergency than giving out your password.💡"
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "question": "What should you do if someone online asks for your personal information?",
+      "answers": [
+        "Give it to them if they seem friendly",
+        "Ignore the request",
+        "Share the information only if they are the same age as you",
+        "Tell a parent or trusted adult immediately"
+      ],
+      "correctAnswers": [
+        3
+      ],
+      "correctMessage": [
+        "correct once again!",
+        "Reporting suspicious behavior helps prevent identity theft and online exploitation."
+      ],
+      "incorrectMessages": [
+        "Online strangers cannot always be trusted.",
+        "Ignoring is not enough; reporting is necessary.",
+        "Age does not determine trustworthiness.",
+        ""
+      ],
+      "healthBar": 0.33,
+      "hint": "💡Hint: Not responding is a start, but telling an adult helps protect you and others.💡"
+    },
+    {
+      "id": 13,
+      "type": "multiple-select",
+      "question": "Which of the following groups should you NEVER give your sensitive data to? (Select all that apply)",
+      "answers": [
+        "Strangers",
+        "Your parents",
+        "People online",
+        "Teachers at your school for non-emergency details"
+      ],
+      "correctAnswers": [
+        0,
+        2,
+        3
+      ],
+      "correctMessage": [
+        "Correct! oh no you've almost defeated me!",
+        "Sensitive data should be kept private unless it is necessary to share it with a trusted adult."
+      ],
+      "incorrectMessages": [
+        "Parents are responsible for keeping you safe and should have access to necessary information."
+      ],
+      "healthBar": 0.16,
+      "hint": "💡Hint: Remember sensitive data is important private information about you.💡"
+    },
+    {
+      "id": 14,
+      "type": "multiple-select",
+      "question": "WHO is it generally SAFE to share your sensitive data, given the appropriate circumstances and approval? (Select all that apply)",
+      "answers": [
+        "Your parents or guardians",
+        "Teachers or school staff",
+        "People online who seem friendly",
+        "Friends if they keep it a secret",
+        "Someone you just met",
+        "Doctors and nurses"
+      ],
+      "correctAnswers": [
+        0,
+        1,
+        5
+      ],
+      "correctMessage": [
+        "You got everything correct and defeated me!",
+        "These individuals may need your information to help protect your health and safety."
+      ],
+      "incorrectMessages": [
+        "Friends should not have access to your sensitive data. Online identities can be deceptive, making it unsafe to share personal details."
+      ],
+      "healthBar": 0,
+      "hint": "💡Hint: Even good friends can slip up—keep sensitive info between you and trusted adults.💡",
+      "lessonPage": 36
+    }
+  ]
+}
