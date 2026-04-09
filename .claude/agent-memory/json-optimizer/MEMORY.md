@@ -1,0 +1,1 @@
+- [cyberheroes JSON data patterns](project_json_patterns.md) — Schema conventions, known typos, quiz type divergence, and healthBar/lessonPage field patterns across all 11 data files
