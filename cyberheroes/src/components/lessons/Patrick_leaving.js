@@ -2,15 +2,22 @@ import React from "react";
 import "../../styles/transitions.css";
 import rocket from "../../img/characters/patrick_leaving.png";
 import moon from "../../img/planets/privacy-moon.png";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
+import { getNextPlanet } from '../../content/loader';
 
 const PatrickLeaving = () => {
+    const { planet } = useParams();
     const navigate = useNavigate();
+    const nextPlanet = getNextPlanet(planet);
 
     const handleContinue = () => {
-        navigate('/privacy-moon/moon-map');
+        if (nextPlanet) {
+            navigate(`/${nextPlanet.slug}/moon-map`);
+        } else {
+            navigate('/exploration-map');
+        }
     };
 
     return (

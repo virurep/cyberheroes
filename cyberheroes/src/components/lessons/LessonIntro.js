@@ -4,13 +4,14 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/intro.css';
 import '../../styles/lesson.css';
-import lessonIntroData from '../../data/lessons/lesson_intro.json';
+import { getPlanet } from '../../content/loader';
 import rocket from '../../img/general/rocket.png';
 import computer from "../../img/general/computer.png";
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
 import VocabPopup from '../util/VocabPopup';
-import { processText } from './Message';
+import { processTextWithVocab } from './Message';
+import { getVocab } from '../../content/loader';
 
 const planetImages = require.context('../../img/planets', false, /\.(png|jpe?g|svg)$/);
 const introImages = require.context('../../img/lesson-intro', false, /\.(png|jpe?g|svg)$/);
@@ -20,6 +21,8 @@ const LessonIntro = () => {
   const navigate = useNavigate();
   const [showComputer, setShowComputer] = useState(false);
   const [selectedVocab, setSelectedVocab] = useState(null);
+  const vocabData = getVocab(planet);
+  const vocabWords = vocabData?.words || [];
 
   const handleVocabClick = (vocab) => {
     setSelectedVocab(vocab);
@@ -29,25 +32,15 @@ const LessonIntro = () => {
     navigate(`/${planet}/arrival`);
   };
 
-  // Get the planet data from the lessonIntroData.intros array
-  const getPlanetData = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
+  // Get planet data from the content loader (manifest)
+  const manifest = getPlanet(planet);
+  const planetData = manifest
+    ? { planet_name: manifest.name, active: manifest.active, ...manifest.intro }
+    : { planet_name: "Planet Not Found", active: false };
 
-    if (!planetData) {
-      console.error(`No data found for planet: ${planetName}`);
-      return {
-        title: "Planet Not Found",
-        description: "This planet's data could not be loaded."
-      };
-    }
-
-    return planetData;
-  };
-
-  const planetData = getPlanetData(planet);
+  if (!manifest) {
+    console.error(`No data found for planet: ${planet}`);
+  }
 
   // Get the planet's image on first intro screen
   const getPlanetImage = (planetName) => {
@@ -63,39 +56,24 @@ const LessonIntro = () => {
   const planetImage = getPlanetImage(planet);
 
   // Get the intro message on the first intro screen
-  const getLessonIntroMessage = (planetName) => {
-    if (planetData.active) {
-      const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-      const planetData = lessonIntroData.intros.find(
-        planet => planet.planet_name.toLowerCase() === formattedPlanetName
-      );
-      return processText(planetData.intro_text, handleVocabClick);
-    }
-  };
-
-  const lessonIntroMessage = getLessonIntroMessage(planet);
+  const lessonIntroMessage = planetData.active && planetData.intro_text
+    ? processTextWithVocab(planetData.intro_text, handleVocabClick, vocabWords)
+    : null;
 
   // Get the computer intro image on the second intro screen
-  const getComputerIntroImage = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-    return introImages(`./${planetData.computer_image_name}`);
-  };
-
-  const computerIntroImage = getComputerIntroImage(planet);
+  let computerIntroImage = null;
+  try {
+    if (planetData.computer_image_name) {
+      computerIntroImage = introImages(`./${planetData.computer_image_name}`);
+    }
+  } catch (err) {
+    console.error('Computer intro image not found:', err);
+  }
 
   // Get the computer intro message on the second intro screen
-  const getComputerIntroMessage = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-    return processText(planetData.computer_text, handleVocabClick);
-  };
-
-  const computerIntroMessage = getComputerIntroMessage(planet);
+  const computerIntroMessage = planetData.computer_text
+    ? processTextWithVocab(planetData.computer_text, handleVocabClick, vocabWords)
+    : null;
 
   const handleEnterLesson = () => {
     setShowComputer(true);

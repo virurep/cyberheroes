@@ -5,7 +5,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../../styles/transitions.css";
 import Navbar from '../util/NavBar';
 import TextReader from "../util/TextReader";
-import Transitions from '../../data/lessons/transitions.json';
+import { getTransition, getQuizEndPage } from '../../content/loader';
 
 const Transition = () => {
     const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
@@ -16,12 +16,12 @@ const Transition = () => {
     // Get the quiz part from location state
     const quizPart = location.state?.quizPart;
 
-    // Get the correct transition data based on the planet
-    const planetName = planet.toLowerCase().replace(/-/g, '_');
-    const transitionData = Transitions.planets[planetName];
+    // Get the transition data from the planet manifest
+    const transitionData = getTransition(planet, quizPart);
+    const endPage = getQuizEndPage(planet, quizPart);
 
     if (!transitionData) {
-        console.error(`No transition data found for planet: ${planet}`);
+        console.error(`No transition data found for planet: ${planet}, part: ${quizPart}`);
         return (
             <div className="transition-container">
                 <Navbar />
@@ -33,24 +33,8 @@ const Transition = () => {
         );
     }
 
-    // Get the specific quiz transition data
-    const currQuiz = transitionData[quizPart];
-
-    if (!currQuiz) {
-        console.error(`No transition data found for quiz part: ${quizPart}`);
-        return (
-            <div className="transition-container">
-                <Navbar />
-                <TextReader />
-                <div className="transition-content">
-                    <p>Error: Quiz transition data not found</p>
-                </div>
-            </div>
-        );
-    }
-
-    const currMessage = currQuiz.message;
-    const characters = currQuiz.character;
+    const currMessage = transitionData.message;
+    const characters = transitionData.character;
 
     const imageName = characters.toLowerCase().replace(/\s+/g, '-');
     const imagePath = characterImages(`./${imageName}.png`);
@@ -66,7 +50,7 @@ const Transition = () => {
     const handleLessonButtonClick = () => {
         navigate(`/${planet}/lesson`, {
             state: {
-                page: currQuiz.end_page
+                page: endPage
             }
         });
     };

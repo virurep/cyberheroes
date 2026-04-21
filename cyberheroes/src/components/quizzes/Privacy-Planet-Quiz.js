@@ -1,11 +1,11 @@
 /* Cursor AI was used to keep the many states of the quiz tp be correct and consistent*/
 
 import React from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
-import quizData from "../../data/quizzes/privacy_planet_quiz.json"
+import { getQuiz, getQuizSlugsForPart } from '../../content/loader';
 
 //shapes included on the answer buttons
 import circle from "../../img/quizzes/shapes/circle.png";
@@ -15,18 +15,28 @@ import triangle from "../../img/quizzes/shapes/triangle.png";
 import checkedSquare from "../../img/quizzes/shapes/checked-square.png";
 
 const Quiz = () => {
+    const { planetSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const currentQuestionIndex = location.state?.questionIndex || 0;
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
-    // Get the current quiz data based on the part
-    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === location.state?.part);
+    // Get the current quiz data based on the part from the content loader
+    const part = location.state?.part;
+    const quizSlugs = getQuizSlugsForPart(planetSlug, part);
+    // Find the multiple-choice quiz for this part
+    const mcSlug = quizSlugs.find(slug => {
+      const q = getQuiz(planetSlug, slug);
+      return q && q.type === 'multiple-choice';
+    });
+    const quizData = mcSlug ? getQuiz(planetSlug, mcSlug) : null;
+    // Normalize: new schema uses "questions", provide backward-compatible "quiz" alias
+    const currentQuiz = quizData ? { ...quizData, quiz: quizData.questions } : null;
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
     //for multiple choice and true false questions
     const handleAnswerClick = (answer) => {
-        navigate(`/privacy-planet/quiz/game-answers`, {
+        navigate(`/${planetSlug}/quiz/game-answers`, {
             state: {
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,
@@ -51,7 +61,7 @@ const Quiz = () => {
     };
 
     const handleSubmitClick = () => {
-        navigate(`/privacy-planet/quiz/game-answers`, {
+        navigate(`/${planetSlug}/quiz/game-answers`, {
             state: {
                 selectedAnswer: selectedAnswers,
                 currentQuestion: currentQuestion,

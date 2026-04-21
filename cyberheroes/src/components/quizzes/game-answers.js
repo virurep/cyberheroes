@@ -1,7 +1,7 @@
 /* Cursor AI was used to ensure that we are in the right state */
 
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
 import '../../styles/quiz.css';
@@ -9,6 +9,7 @@ import '../../styles/game-answers.css';
 import Al from '../../img/characters/alejandro.png';
 
 const GameAnswers = () => {
+    const { planetSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const { isCorrect, currentQuestion, questionIndex, quizType } = location.state || {};
@@ -17,14 +18,14 @@ const GameAnswers = () => {
         const nextIndex = questionIndex + 1;
         if (nextIndex < currentQuestion.quiz.length) {
             navigate(quizType === 'drag-drop'
-                ? `/privacy-moon/quiz/drag-drop`
-                : `/privacy-moon/quiz/redflag-greenflag`, {
+                ? `/${planetSlug}/quiz/drag-drop`
+                : `/${planetSlug}/quiz/redflag-greenflag`, {
                 state: {
                     questionIndex: nextIndex
                 }
             });
         } else {
-            navigate(`/privacy-moon/lesson`, {
+            navigate(`/${planetSlug}/lesson`, {
                 state: {
                     page: currentQuestion.lessonPage
                 }
@@ -34,8 +35,8 @@ const GameAnswers = () => {
 
     const handleTryAgain = () => {
         navigate(quizType === 'drag-drop'
-            ? `/privacy-moon/quiz/drag-drop`
-            : `/privacy-moon/quiz/redflag-greenflag`, {
+            ? `/${planetSlug}/quiz/drag-drop`
+            : `/${planetSlug}/quiz/redflag-greenflag`, {
             state: {
                 questionIndex: questionIndex
             }

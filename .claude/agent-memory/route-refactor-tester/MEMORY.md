@@ -1,0 +1,1 @@
+- [Quiz route dynamic refactor](project_route_refactor.md) — hardcoded quiz routes replaced with :planetSlug params; QuizRouter dispatches by slug

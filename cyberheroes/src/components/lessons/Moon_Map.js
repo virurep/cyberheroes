@@ -1,22 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/transitions.css';
 import Allie from '../../img/characters/allie.png';
 import Polaroid from '../../img/characters/al-photo.png';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
-
 const MoonMap = () => {
+    const { planet } = useParams();
     const navigate = useNavigate();
-
-    // Get the quiz part from location state
 
     const handleToMap = () => {
         navigate(`/exploration-map`);
     };
 
     const onToMoon = () => {
-        navigate(`/privacy-moon/lesson-intro`);
+        navigate(`/${planet}/lesson-intro`);
     };
 
 

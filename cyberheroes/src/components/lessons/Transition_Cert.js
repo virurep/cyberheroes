@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/transitions.css";
 import Navbar from '../util/NavBar';
 import TextReader from "../util/TextReader";
-import TransitionCertsData from '../../data/lessons/transition_cert.json';
+import TransitionCertsData from '../../data/_archive/lessons/transition_cert.json';
 
 const TransitionCerts = () => {
     const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);

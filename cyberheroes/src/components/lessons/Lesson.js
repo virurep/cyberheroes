@@ -6,7 +6,7 @@ import '../../styles/lesson.css';
 import Navbar from '../util/NavBar';
 import Characters from './Characters';
 import Message from './Message';
-import lessonData from '../../data/lessons/lesson.json';
+import { getLessonPages } from '../../content/loader';
 import TextReader from '../util/TextReader';
 
 const backgroundImages = require.context('../../img/backgrounds', false, /\.(png|jpe?g|svg)$/);
@@ -27,26 +27,13 @@ const Lesson = () => {
   const navigate = useNavigate();
   const textReaderRef = useRef(null);
 
-  // getting lesson data for a specific planet / lesson
-  const getPlanetData = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
+  // getting lesson data for a specific planet / lesson via content loader
+  const lessonData = getLessonPages(planet);
+  const planetData = lessonData || { pages: [] };
 
-    const planetData = lessonData.planets.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-
-    if (!planetData) {
-      console.error(`No data found for planet: ${planetName}`);
-      return {
-        title: "Planet Not Found",
-        description: "This planet's data could not be loaded."
-      };
-    }
-
-    return planetData;
-  };
-
-  const planetData = getPlanetData(planet);
+  if (!lessonData) {
+    console.error(`No data found for planet: ${planet}`);
+  }
 
   // getting data for each specific lesson page
   const getPageData = () => {

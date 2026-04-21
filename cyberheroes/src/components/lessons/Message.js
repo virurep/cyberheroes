@@ -1,12 +1,19 @@
 /* CursorAI was used to help with the processText function and the export of it */
 
 import { useRef, useLayoutEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Buttons from './Buttons';
 import VocabPopup from '../util/VocabPopup';
-import vocabData from '../../data/lessons/vocab.json';
+import { getVocab } from '../../content/loader';
 
+// Global fallback vocab used when processText is called outside a component context
+// (e.g., from LessonIntro). Callers should prefer processTextWithVocab when possible.
+let _fallbackVocab = null;
 
-export const processText = (text, onVocabClick) => {
+/**
+ * Process text with an explicit vocab list (no dependency on useParams).
+ */
+export const processTextWithVocab = (text, onVocabClick, vocabWords) => {
   return text.split('\n').map((paragraph, index) => {
 
     const parts = paragraph.split(/(<[^*]+>[^*]+\*\*)/g);
@@ -18,7 +25,9 @@ export const processText = (text, onVocabClick) => {
           // check if the part is a vocab word
           if (part.startsWith("<v>") && part.endsWith("**")) {
             const word = part.slice(3, -2);
-            const vocab = vocabData.words.find(w => w.word.toLowerCase() === word.toLowerCase());
+            const vocab = vocabWords
+              ? vocabWords.find(w => w.word.toLowerCase() === word.toLowerCase())
+              : null;
             if (vocab) {
               return (
                 <span
@@ -86,7 +95,30 @@ export const processText = (text, onVocabClick) => {
   });
 };
 
+/**
+ * Backward-compatible processText that uses the fallback vocab.
+ * Callers that need planet-specific vocab should use processTextWithVocab directly.
+ */
+export const processText = (text, onVocabClick) => {
+  return processTextWithVocab(text, onVocabClick, _fallbackVocab);
+};
+
+/**
+ * Set the fallback vocab words for processText calls outside of component context.
+ * Called by Message component with planet-specific vocab.
+ */
+export const setFallbackVocab = (words) => {
+  _fallbackVocab = words;
+};
+
 const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
+  const { planet } = useParams();
+  const vocabData = getVocab(planet);
+  const vocabWords = vocabData?.words || [];
+
+  // Update fallback vocab so processText calls from other components use this planet's vocab
+  _fallbackVocab = vocabWords;
+
   const messageRef = useRef(null);
   const [offset, setOffset] = useState(0);
 
@@ -103,8 +135,8 @@ const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
     setSelectedVocab(vocab);
   };
 
-  const paragraphs = processText(message.text, handleVocabClick);
-  const processedHeader = message.header ? processText(message.header, handleVocabClick) : null;
+  const paragraphs = processTextWithVocab(message.text, handleVocabClick, vocabWords);
+  const processedHeader = message.header ? processTextWithVocab(message.header, handleVocabClick, vocabWords) : null;
 
   const componentOutput = (
     <div className="text-container">

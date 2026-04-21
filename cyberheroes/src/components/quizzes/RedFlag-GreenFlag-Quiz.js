@@ -1,30 +1,38 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import Al from '../../img/characters/al.png';
 import redFlag from '../../img/quizzes/redFlag.png'
 import greenFlag from '../../img/quizzes/greenFlag.png'
 import "../../styles/quiz.css";
-import gameData from "../../data/quizzes/redFlag_greenFlag_quiz.json"
+import { getQuiz, getQuizSlugsForPart } from '../../content/loader';
 
 
 const FlagQuiz = () => {
+    const { planetSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
-    // Get the current quiz data based on the part
-    const currentQuestion = gameData?.quiz[currentQuestionIndex];
+    // Get the red-flag-green-flag quiz data from the content loader
+    const part = location.state?.part || 'quiz-1';
+    const quizSlugs = getQuizSlugsForPart(planetSlug, part);
+    const rfgfSlug = quizSlugs.find(slug => {
+      const q = getQuiz(planetSlug, slug);
+      return q && q.type === 'red-flag-green-flag';
+    });
+    const gameData = rfgfSlug ? getQuiz(planetSlug, rfgfSlug) : null;
+    const currentQuestion = gameData?.questions[currentQuestionIndex];
 
     const handleAnswerClick = (answer) => {
         const isCorrect = answer === currentQuestion.correctAnswer;
-        navigate(`/privacy-moon/drag-drop-quiz/game-answers`, {
+        navigate(`/${planetSlug}/drag-drop-quiz/game-answers`, {
                 state: {
                 isCorrect,
                 currentQuestion: {
                     ...currentQuestion,
-                    quiz: gameData.quiz
+                    quiz: gameData.questions
                 },
                 questionIndex: currentQuestionIndex,
                 quizType: 'redflag-greenflag'

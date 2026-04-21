@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
-import quizData from "../../data/quizzes/privacy_moon_quiz.json"
+import { getQuiz, getQuizSlugsForPart } from '../../content/loader';
 
 //shapes included on the answer buttons
 import circle from "../../img/quizzes/shapes/circle.png";
@@ -12,17 +12,25 @@ import square from "../../img/quizzes/shapes/square.png";
 import triangle from "../../img/quizzes/shapes/triangle.png";
 
 const Quiz = () => {
+    const { planetSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
-    // Get the current quiz data based on the part
-    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === "quiz-1");
+    // Get the current quiz data based on the part from the content loader
+    const part = location.state?.part || 'quiz-1';
+    const quizSlugs = getQuizSlugsForPart(planetSlug, part);
+    const mcSlug = quizSlugs.find(slug => {
+      const q = getQuiz(planetSlug, slug);
+      return q && q.type === 'multiple-choice';
+    });
+    const quizDataLoaded = mcSlug ? getQuiz(planetSlug, mcSlug) : null;
+    const currentQuiz = quizDataLoaded ? { ...quizDataLoaded, quiz: quizDataLoaded.questions } : null;
     const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
 
     //for multiple choice
     const handleAnswerClick = (answer) => {
-        navigate(`/privacy-moon/quiz/final-quiz/game-answers`, {
+        navigate(`/${planetSlug}/quiz/final-quiz/game-answers`, {
             state: {
                 selectedAnswer: answer,
                 currentQuestion: currentQuestion,

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 const PrivacyMoonQuizRoute = () => {
+  const { planetSlug } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
   const quizPart = location.state?.part;
@@ -14,18 +15,18 @@ const PrivacyMoonQuizRoute = () => {
 
     switch (quizPart) {
       case 'quiz-1':
-        navigate('/privacy-moon/quiz/drag-drop');
+        navigate(`/${planetSlug}/quiz/drag-drop`);
         break;
       case 'quiz-2':
-        navigate('/privacy-moon/quiz/redflag-greenflag');
+        navigate(`/${planetSlug}/quiz/redflag-greenflag`);
         break;
       case 'quiz-3':
-        navigate('/privacy-moon/quiz/final-quiz');
+        navigate(`/${planetSlug}/quiz/final-quiz`);
         break;
       default:
         console.error("Invalid quiz part:", quizPart);
     }
-  }, [quizPart, navigate]);
+  }, [quizPart, navigate, planetSlug]);
 
   if (!quizPart) {
     return <div>Error: No quiz part provided</div>;

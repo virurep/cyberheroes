@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import '../../styles/review.css';
-import reviewData from '../../data/lessons/review.json';
+import reviewData from '../../data/_archive/lessons/review.json';
 import ReviewMenu from './ReviewMenu';
 import ReviewLesson from './ReviewLesson';
 

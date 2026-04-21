@@ -1,21 +1,29 @@
 /* Cursor AI was used to smooth out the dragging and dropping functionalities */
 
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
-import quizData from "../../data/quizzes/drag_drop_quiz.json";
+import { getQuiz, getQuizSlugsForPart } from '../../content/loader';
 
 const DragDropQuiz = () => {
+    const { planetSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const [questionIndex] = useState(location.state?.questionIndex || 0);
     const [draggedItem, setDraggedItem] = useState(null);
     const [selectedBox, setSelectedBox] = useState(null);
 
-    // Get the current question data
-    const currentQuestion = quizData.quiz[questionIndex];
+    // Get the drag-drop quiz data from the content loader
+    const part = location.state?.part || 'quiz-1';
+    const quizSlugs = getQuizSlugsForPart(planetSlug, part);
+    const ddSlug = quizSlugs.find(slug => {
+      const q = getQuiz(planetSlug, slug);
+      return q && q.type === 'drag-drop';
+    });
+    const quizData = ddSlug ? getQuiz(planetSlug, ddSlug) : null;
+    const currentQuestion = quizData?.questions[questionIndex];
 
     useEffect(() => {
         // Reset states when question index changes
@@ -42,12 +50,12 @@ const DragDropQuiz = () => {
         setDraggedItem(null);
 
         // Navigate to the answers component instead of showing popup
-        navigate(`/privacy-moon/drag-drop-quiz/game-answers`, {
+        navigate(`/${planetSlug}/drag-drop-quiz/game-answers`, {
                 state: {
                 isCorrect,
                 currentQuestion: {
                     ...currentQuestion,
-                    quiz: quizData.quiz // Add the full quiz array for length checking
+                    quiz: quizData.questions // Add the full quiz array for length checking
                 },
                 questionIndex,
                 quizType: 'drag-drop'

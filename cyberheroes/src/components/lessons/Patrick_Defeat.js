@@ -1,6 +1,6 @@
 /* Cursor AI was used to help with the poof effect */
 
-import {useNavigate} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import PatrickBoom from '../../img/characters/patrick_defeated.png';
 import Poof from '../../img/general/poof.png';
 import '../../styles/patrick_defeat.css';
@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Navbar from '../util/NavBar';
 
 const PatrickDefeat = () => {
+    const { planet } = useParams();
     const navigate = useNavigate();
     const [clickCount, setClickCount] = useState(0);
     const [showPoof, setShowPoof] = useState(false);
@@ -24,7 +25,7 @@ const PatrickDefeat = () => {
     };
 
     const handleClick = () => {
-        navigate('/privacy-moon/certificate');
+        navigate(`/${planet}/certificate`);
     }
 
     return (

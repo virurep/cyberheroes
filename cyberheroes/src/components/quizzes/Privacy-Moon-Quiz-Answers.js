@@ -1,7 +1,7 @@
 /* Cursor AI was used to add the safe transition to the multiple choice quiz */
 
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
 import '../../styles/quiz.css';
@@ -15,6 +15,7 @@ import letter4 from '../../img/quizzes/safes/4-letter.png';
 import letter5 from '../../img/quizzes/safes/5-letter.png';
 
 const QuizAnswers = () => {
+    const { planetSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz } = location.state || {};
@@ -34,13 +35,13 @@ const QuizAnswers = () => {
     const handleNextQuestion = () => {
         if (currentQuiz.quiz.length === questionIndex + 1) {
             // If this is the last question of quiz-3, go to certificate
-                navigate(`/privacy-moon/lesson`, {
+                navigate(`/${planetSlug}/lesson`, {
                     state: {
                         page: currentQuestion.lessonPage
                     }
                 });
         } else {
-            navigate(`/privacy-moon/quiz/final-quiz`, {
+            navigate(`/${planetSlug}/quiz/final-quiz`, {
                 state: {
                     questionIndex: questionIndex + 1,
                     part: part
@@ -114,7 +115,7 @@ const QuizAnswers = () => {
                         <p className="text-answers-text answer-hint">
                             {currentQuestion.hint}
                         </p>
-                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-moon/quiz/final-quiz`, { state: { questionIndex, part: part } })}>
+                        <button className="quiz-try-again-btn" onClick={() => navigate(`/${planetSlug}/quiz/final-quiz`, { state: { questionIndex, part: part } })}>
                             Try again
                         </button>
                     </div>

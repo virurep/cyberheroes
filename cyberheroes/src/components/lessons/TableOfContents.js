@@ -2,7 +2,7 @@
 
 import "../../styles/table-of-contents.css";
 import { useParams, useNavigate } from "react-router-dom";
-import tableOfContentsData from "../../data/lessons/table_of_contents.json"
+import { getPlanet } from '../../content/loader';
 import { useState } from 'react';
 import tocClose from '../../img/general/toc_close.png';
 import tocOpen from '../../img/general/toc_open.png';
@@ -13,23 +13,27 @@ const TableOfContents = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
-  const getPlanetData = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = tableOfContentsData.table_of_contents.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
+  // Get planet manifest from the content loader
+  const manifest = getPlanet(planet);
 
-    if (!planetData) {
-      console.error(`No data found for planet: ${planetName}`);
+  // Transform manifest parts into the table-of-contents format
+  const planetData = manifest ? {
+    planet_name: manifest.name,
+    lesson_title: manifest.title,
+    parts: manifest.parts.map((part) => {
+      const isQuiz = part.quiz_slugs && part.quiz_slugs.length > 0;
       return {
-        title: "Planet Not Found",
-        description: "This planet's data could not be loaded."
+        part_name: part.title,
+        part_style: part.part_style,
+        part_type: isQuiz ? 'quiz' : 'lesson',
+        start_page: part.lesson_page_range?.start,
       };
-    }
-    return planetData;
-  };
+    })
+  } : null;
 
-  const planetData = getPlanetData(planet);
+  if (!manifest) {
+    console.error(`No data found for planet: ${planet}`);
+  }
 
   const handlePartClick = (part) => {
     if (part.part_type === "quiz") {

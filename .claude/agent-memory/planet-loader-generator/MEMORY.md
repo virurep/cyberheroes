@@ -1,0 +1,1 @@
+- [Planet manifest schema](project_planet_schema.md) — actual manifest fields differ from initial assumptions (name not display_name, no planet_id)

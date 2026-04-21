@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/certificate.css";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
+import { getNextPlanet } from '../../content/loader';
 
 const Certificate = () => {
     const { planet } = useParams();
@@ -18,9 +19,12 @@ const Certificate = () => {
         window.print();
     };
 
+    const nextPlanet = getNextPlanet(planet);
+
     const handleContinue = () => {
-        if (planet === 'privacy-planet') {
-            navigate(`/privacy-planet/patrick-leaving`);
+        if (nextPlanet) {
+            // There is a next planet/moon — go to the transition (e.g., patrick-leaving)
+            navigate(`/${planet}/patrick-leaving`);
         } else {
             navigate('/exploration-map');
         }
