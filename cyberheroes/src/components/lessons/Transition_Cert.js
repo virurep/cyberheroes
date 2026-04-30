@@ -3,19 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/transitions.css";
 import Navbar from '../util/NavBar';
 import TextReader from "../util/TextReader";
-import TransitionCertsData from '../../data/lessons/transition_cert.json';
+import { lessonData } from '../../data/planets';
 
 const TransitionCerts = () => {
     const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
     const { planet } = useParams();
     const navigate = useNavigate();
 
-    // Get the correct transition data based on the planet
-    const planetName = planet.toLowerCase().replace(/-/g, '_');
-    const transitionData = TransitionCertsData.planets[planetName];
+    const transitionData = lessonData[planet]?.cert_transition;
 
     if (!transitionData) {
-        console.error(`No transition data found for planet: ${planet}`);
         return (
             <div className="transition-container">
                 <Navbar />
@@ -43,23 +40,23 @@ const TransitionCerts = () => {
             <TextReader />
             <div className="transition-content readable-text">
                 <div className="transition-layout">
-                    <div className="message-side-transition">
-                        <div className="transition-message-box">
+                    <div className="message-side">
+                        <div className="message-box">
                             <p className="transition-message">
                                 {currMessage}
                             </p>
-                            <div className="button-container-transition">
+                            <div className="button-container">
                                 <button className="certificate-button" onClick={handleCertificate}>
                                     VIEW CERTIFICATE
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className="character-side-transition">
+                    <div className="character-side">
                         <img
                             src={imagePath}
                             alt={characters}
-                            className="character-image-transition"
+                            className="character-image"
                         />
                     </div>
                 </div>
