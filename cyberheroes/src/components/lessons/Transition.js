@@ -58,7 +58,8 @@ const Transition = () => {
     const handleQuizButtonClick = () => {
         navigate(`/${planet}/quiz`, {
             state: {
-                part: quizPart
+                part: quizPart,
+                resumeIndex
             }
         });
     };
