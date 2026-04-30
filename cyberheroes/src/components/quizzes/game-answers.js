@@ -11,7 +11,7 @@ import Al from '../../img/characters/alejandro.png';
 const GameAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { isCorrect, currentQuestion, questionIndex, quizType } = location.state || {};
+    const { isCorrect, currentQuestion, questionIndex, quizType, resumeIndex } = location.state || {};
 
     const handleNextQuestion = () => {
         const nextIndex = questionIndex + 1;
@@ -20,13 +20,14 @@ const GameAnswers = () => {
                 ? `/privacy-moon/quiz/drag-drop`
                 : `/privacy-moon/quiz/redflag-greenflag`, {
                 state: {
-                    questionIndex: nextIndex
+                    questionIndex: nextIndex,
+                    resumeIndex: resumeIndex
                 }
             });
         } else {
             navigate(`/privacy-moon/lesson`, {
                 state: {
-                    page: currentQuestion.lessonPage
+                    page: resumeIndex
                 }
             });
         }
@@ -37,7 +38,8 @@ const GameAnswers = () => {
             ? `/privacy-moon/quiz/drag-drop`
             : `/privacy-moon/quiz/redflag-greenflag`, {
             state: {
-                questionIndex: questionIndex
+                questionIndex: questionIndex,
+                resumeIndex: resumeIndex
             }
         });
     };
