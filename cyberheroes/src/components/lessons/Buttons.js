@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// maxPage used if page change input is in use, error checkng for invalid page num
-const Buttons = ({ buttons, onClick, pageNum, maxPage }) => {
-  const handleClick = (page) => {
-    onClick(page);
-  }
+const Buttons = ({ noButtons, button, onNext, onPrev, onNavigate, pageNum, maxPage }) => {
+  const [inputValue, setInputValue] = useState(pageNum + 1);
+
+  if (noButtons) return <div className="button-container" />;
+
+  const handleInputKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      const target = parseInt(inputValue);
+      if (!isNaN(target)) onNavigate(target - 1);
+    }
+  };
 
   return (
     <div className="button-container">
-      {buttons.prev && (
-        <button
-          className="lesson-button prev-button"
-          onClick={() => handleClick(buttons.prev)}
-        />
+      {pageNum > 0 && (
+        <button className="lesson-button prev-button" onClick={onPrev} />
       )}
-      {buttons.next && (
-        <button
-          className="lesson-button next-button"
-          onClick={() =>handleClick(buttons.next)}
-        />
-      )}
-      {buttons.continue && (
-        <button
-          className={buttons.continue.style}
-          onClick={() =>handleClick(buttons.continue.next)}
-        >
-          {buttons.continue.text && buttons.continue.text}
+      <input
+        className="lesson-page-input"
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        onKeyPress={handleInputKeyPress}
+      />
+      {button ? (
+        <button className={button.style} onClick={() => onNavigate(button.to)}>
+          {button.text}
         </button>
+      ) : (
+        pageNum < maxPage - 1 && (
+          <button className="lesson-button next-button" onClick={onNext} />
+        )
       )}
     </div>
   );
