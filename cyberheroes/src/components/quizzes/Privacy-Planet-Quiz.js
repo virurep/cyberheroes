@@ -1,7 +1,7 @@
 /* Cursor AI was used to keep the many states of the quiz tp be correct and consistent*/
 
 import React from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
@@ -64,7 +64,8 @@ const Quiz = () => {
         });
     };
 
-    //multiple choice
+    if (!currentQuiz || !currentQuestion) return null;
+
     if(currentQuestion.type === "multiple-choice"){
         return (
             <div className="privacy-planet-quiz-background">

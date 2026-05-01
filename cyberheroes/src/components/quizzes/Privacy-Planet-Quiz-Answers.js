@@ -11,6 +11,9 @@ const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz, resumeIndex } = location.state || {};
+
+    if (!currentQuiz || !currentQuestion) return null;
+
     const healthBar = (currentQuiz.questions.length - 1 - questionIndex) / currentQuiz.questions.length;
 
 
@@ -28,7 +31,6 @@ const QuizAnswers = () => {
                 navigate(`/privacy-planet/transition-cert`);
             } else {
                 // For quizzes parts 1 and 2, go back to lesson
-                console.log("last question, nav to lesson page #", resumeIndex);
                 navigate(`/privacy-planet/lesson`, {
                     state: {
                         page: resumeIndex

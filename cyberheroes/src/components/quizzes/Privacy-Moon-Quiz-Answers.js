@@ -18,6 +18,8 @@ const QuizAnswers = () => {
     const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz, resumeIndex } = location.state || {};
     const [isRevealed, setIsRevealed] = useState(false);
 
+    if (!currentQuiz || !currentQuestion) return null;
+
     // Check if the selected answer is correct
     const isCorrect = Array.isArray(selectedAnswer)
         ? selectedAnswer.length === currentQuestion.correctAnswers.length &&
@@ -31,9 +33,7 @@ const QuizAnswers = () => {
 
     const handleNextQuestion = () => {
         if (currentQuiz.questions.length === questionIndex + 1) {
-            // If this is the last question of quiz-3, go to certificate
-            console.log("last question, nav to lesson page #", resumeIndex);
-                navigate(`/privacy-moon/lesson`, {
+            navigate(`/privacy-moon/lesson`, {
                     state: {
                         page: resumeIndex
                     }
