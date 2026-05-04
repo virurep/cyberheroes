@@ -1,8 +1,6 @@
-/* Cursor AI was used to resolve minor bugs when dropdown menu was open */
-
 import "../../styles/table-of-contents.css";
 import { useParams, useNavigate } from "react-router-dom";
-import tableOfContentsData from "../../data/lessons/table_of_contents.json"
+import { lessonData } from "../../data/planets";
 import { useState } from 'react';
 import tocClose from '../../img/general/toc_close.png';
 import tocOpen from '../../img/general/toc_open.png';
@@ -13,36 +11,17 @@ const TableOfContents = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
-  const getPlanetData = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = tableOfContentsData.table_of_contents.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-
-    if (!planetData) {
-      console.error(`No data found for planet: ${planetName}`);
-      return {
-        title: "Planet Not Found",
-        description: "This planet's data could not be loaded."
-      };
-    }
-    return planetData;
-  };
-
-  const planetData = getPlanetData(planet);
+  const planetData = lessonData[planet];
+  const toc = planetData?.table_of_contents;
 
   const handlePartClick = (part) => {
     if (part.part_type === "quiz") {
       navigate(`/${planet}/transition`, {
-        state: {
-          quizPart: part.part_style
-        }
+        state: { quizPart: part.part_style }
       });
     } else {
       navigate(`/${planet}/lesson`, {
-        state: {
-          page: part.start_page
-        }
+        state: { page: part.start_page }
       });
     }
   };
@@ -52,7 +31,7 @@ const TableOfContents = () => {
   };
 
   return (
-    planetData && (
+    toc && (
       <div className="table-of-contents-container">
         <div className="parts-container">
           <div className="toc-header" onClick={toggleDropdown}>
@@ -71,7 +50,7 @@ const TableOfContents = () => {
             </div>
           </div>
           <div className={`toc-body ${isOpen ? 'open' : ''}`}>
-            {planetData.parts.map((part, index) => (
+            {toc.parts.map((part, index) => (
               <div
                 key={index}
                 className={`part-item ${part.part_style}`}

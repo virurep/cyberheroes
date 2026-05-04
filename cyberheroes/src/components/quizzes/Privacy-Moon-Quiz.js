@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
-import quizData from "../../data/quizzes/privacy_moon_quiz.json"
+import { quizData } from "../../data/planets"
 
 //shapes included on the answer buttons
 import circle from "../../img/quizzes/shapes/circle.png";
@@ -17,8 +17,8 @@ const Quiz = () => {
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
     // Get the current quiz data based on the part
-    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === "quiz-1");
-    const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
+    const currentQuiz = quizData['privacy-moon']?.parts.find(part => part.id === "quiz-3");
+    const currentQuestion = currentQuiz?.questions[currentQuestionIndex];
 
     //for multiple choice
     const handleAnswerClick = (answer) => {
@@ -28,7 +28,8 @@ const Quiz = () => {
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
                 part: location.state?.part,
-                currentQuiz: currentQuiz
+                currentQuiz: currentQuiz,
+                resumeIndex: location.state?.resumeIndex
             }
         });
     };

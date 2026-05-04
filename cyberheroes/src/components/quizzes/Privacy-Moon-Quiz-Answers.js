@@ -1,5 +1,3 @@
-/* Cursor AI was used to add the safe transition to the multiple choice quiz */
-
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../util/NavBar';
@@ -17,8 +15,10 @@ import letter5 from '../../img/quizzes/safes/5-letter.png';
 const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz } = location.state || {};
+    const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz, resumeIndex } = location.state || {};
     const [isRevealed, setIsRevealed] = useState(false);
+
+    if (!currentQuiz || !currentQuestion) return null;
 
     // Check if the selected answer is correct
     const isCorrect = Array.isArray(selectedAnswer)
@@ -32,18 +32,18 @@ const QuizAnswers = () => {
     }
 
     const handleNextQuestion = () => {
-        if (currentQuiz.quiz.length === questionIndex + 1) {
-            // If this is the last question of quiz-3, go to certificate
-                navigate(`/privacy-moon/lesson`, {
+        if (currentQuiz.questions.length === questionIndex + 1) {
+            navigate(`/privacy-moon/lesson`, {
                     state: {
-                        page: currentQuestion.lessonPage
+                        page: resumeIndex
                     }
                 });
         } else {
             navigate(`/privacy-moon/quiz/final-quiz`, {
                 state: {
                     questionIndex: questionIndex + 1,
-                    part: part
+                    part: part,
+                    resumeIndex: resumeIndex
                 }
             });
         }
@@ -56,15 +56,9 @@ const QuizAnswers = () => {
                 <Navbar />
                 <TextReader />
                 <div className="answers-container readable-text">
-                   <img src={
-                    currentQuestion.id === 1 ? letter1 :
-                    currentQuestion.id === 2 ? letter2 :
-                    currentQuestion.id === 3 ? letter3 :
-                    currentQuestion.id === 4 ? letter4 :
-                    letter5
-                   } alt={"Safe With Password"} className="characters-answers-img" />
+                   <img src={[letter1, letter2, letter3, letter4, letter5][questionIndex]} alt={"Safe With Password"} className="characters-answers-img" />
                    <button className="quiz-next-btn quiz-next-btn-revealed" onClick={handleNextQuestion}>
-                            {currentQuestion.id === 5
+                            {questionIndex === currentQuiz.questions.length - 1
                                 ? "Return to Lesson"
                                 : "Next Question"}
                     </button>
@@ -114,7 +108,7 @@ const QuizAnswers = () => {
                         <p className="text-answers-text answer-hint">
                             {currentQuestion.hint}
                         </p>
-                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-moon/quiz/final-quiz`, { state: { questionIndex, part: part } })}>
+                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-moon/quiz/final-quiz`, { state: { questionIndex, part: part, resumeIndex } })}>
                             Try again
                         </button>
                     </div>

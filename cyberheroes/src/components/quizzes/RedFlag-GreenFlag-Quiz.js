@@ -6,7 +6,7 @@ import Al from '../../img/characters/al.png';
 import redFlag from '../../img/quizzes/redFlag.png'
 import greenFlag from '../../img/quizzes/greenFlag.png'
 import "../../styles/quiz.css";
-import gameData from "../../data/quizzes/redFlag_greenFlag_quiz.json"
+import { redFlagData } from "../../data/planets"
 
 
 const FlagQuiz = () => {
@@ -15,7 +15,7 @@ const FlagQuiz = () => {
     const currentQuestionIndex = location.state?.questionIndex || 0;
 
     // Get the current quiz data based on the part
-    const currentQuestion = gameData?.quiz[currentQuestionIndex];
+    const currentQuestion = redFlagData?.quiz[currentQuestionIndex];
 
     const handleAnswerClick = (answer) => {
         const isCorrect = answer === currentQuestion.correctAnswer;
@@ -24,10 +24,11 @@ const FlagQuiz = () => {
                 isCorrect,
                 currentQuestion: {
                     ...currentQuestion,
-                    quiz: gameData.quiz
+                    quiz: redFlagData.quiz
                 },
                 questionIndex: currentQuestionIndex,
-                quizType: 'redflag-greenflag'
+                quizType: 'redflag-greenflag',
+                resumeIndex: location.state?.resumeIndex
                 }
             });
     };

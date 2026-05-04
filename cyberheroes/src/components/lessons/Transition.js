@@ -1,11 +1,9 @@
-/* Cursor AI was used to help properly navigate to the numerous correct pages */
-
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../../styles/transitions.css";
 import Navbar from '../util/NavBar';
 import TextReader from "../util/TextReader";
-import Transitions from '../../data/lessons/transitions.json';
+import { lessonData } from '../../data/planets';
 
 const Transition = () => {
     const characterImages = require.context('../../img/characters', false, /\.(png|jpe?g|svg)$/);
@@ -13,15 +11,12 @@ const Transition = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Get the quiz part from location state
     const quizPart = location.state?.quizPart;
 
-    // Get the correct transition data based on the planet
-    const planetName = planet.toLowerCase().replace(/-/g, '_');
-    const transitionData = Transitions.planets[planetName];
+    const planetData = lessonData[planet];
+    const transitionData = planetData?.quiz_transitions?.[quizPart];
 
     if (!transitionData) {
-        console.error(`No transition data found for planet: ${planet}`);
         return (
             <div className="transition-container">
                 <Navbar />
@@ -33,49 +28,31 @@ const Transition = () => {
         );
     }
 
-    // Get the specific quiz transition data
-    const currQuiz = transitionData[quizPart];
-
-    if (!currQuiz) {
-        console.error(`No transition data found for quiz part: ${quizPart}`);
-        return (
-            <div className="transition-container">
-                <Navbar />
-                <TextReader />
-                <div className="transition-content">
-                    <p>Error: Quiz transition data not found</p>
-                </div>
-            </div>
-        );
-    }
-
-    const currMessage = currQuiz.message;
-    const characters = currQuiz.character;
+    const currMessage = transitionData.message;
+    const characters = transitionData.character;
 
     const imageName = characters.toLowerCase().replace(/\s+/g, '-');
     const imagePath = characterImages(`./${imageName}.png`);
 
+    const pages = planetData?.pages ?? [];
+    const triggerIndex = pages.findIndex(p => p.message?.to === quizPart);
+    const resumeIndex = triggerIndex >= 0 ? triggerIndex + 1 : 0;
+
     const handleQuizButtonClick = () => {
         navigate(`/${planet}/quiz`, {
-            state: {
-                part: quizPart
-            }
+            state: { part: quizPart, resumeIndex }
         });
     };
 
     const handleLessonButtonClick = () => {
         navigate(`/${planet}/lesson`, {
-            state: {
-                page: currQuiz.end_page
-            }
+            state: { page: resumeIndex }
         });
     };
 
     const handleReviewButtonClick = () => {
         navigate(`/${planet}/review`, {
-            state: {
-                quizPart: quizPart
-            }
+            state: { quizPart: quizPart }
         });
     };
 

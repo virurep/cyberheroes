@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
-import quizData from "../../data/quizzes/drag_drop_quiz.json";
+import { dragDropData } from "../../data/planets";
 
 const DragDropQuiz = () => {
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ const DragDropQuiz = () => {
     const [selectedBox, setSelectedBox] = useState(null);
 
     // Get the current question data
-    const currentQuestion = quizData.quiz[questionIndex];
+    const currentQuestion = dragDropData.quiz[questionIndex];
 
     useEffect(() => {
         // Reset states when question index changes
@@ -47,10 +47,11 @@ const DragDropQuiz = () => {
                 isCorrect,
                 currentQuestion: {
                     ...currentQuestion,
-                    quiz: quizData.quiz // Add the full quiz array for length checking
+                    quiz: dragDropData.quiz // Add the full quiz array for length checking
                 },
                 questionIndex,
-                quizType: 'drag-drop'
+                quizType: 'drag-drop',
+                resumeIndex: location.state?.resumeIndex
             }
         });
     };

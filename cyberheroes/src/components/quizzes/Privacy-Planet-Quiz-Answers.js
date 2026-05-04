@@ -1,5 +1,3 @@
-/* Cursor AI was used to debug checking for correctness of answer */
-
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../util/NavBar';
@@ -12,7 +10,11 @@ import TextReader from '../util/TextReader';
 const QuizAnswers = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz } = location.state || {};
+    const { selectedAnswer, currentQuestion, questionIndex, part, currentQuiz, resumeIndex } = location.state || {};
+
+    if (!currentQuiz || !currentQuestion) return null;
+
+    const healthBar = (currentQuiz.questions.length - 1 - questionIndex) / currentQuiz.questions.length;
 
 
     // Check if the selected answer is correct
@@ -23,7 +25,7 @@ const QuizAnswers = () => {
         : currentQuestion.correctAnswers.includes(currentQuestion.answers.indexOf(selectedAnswer));
 
     const handleNextQuestion = () => {
-        if (currentQuiz.quiz.length === questionIndex + 1) {
+        if (currentQuiz.questions.length === questionIndex + 1) {
             // If this is the last question of quiz-3, go to transition-cert
             if (part === 'quiz-3') {
                 navigate(`/privacy-planet/transition-cert`);
@@ -31,7 +33,7 @@ const QuizAnswers = () => {
                 // For quizzes parts 1 and 2, go back to lesson
                 navigate(`/privacy-planet/lesson`, {
                     state: {
-                        page: currentQuestion.lessonPage
+                        page: resumeIndex
                     }
                 });
             }
@@ -39,7 +41,8 @@ const QuizAnswers = () => {
             navigate(`/privacy-planet/quiz`, {
                 state: {
                     questionIndex: questionIndex + 1,
-                    part: part
+                    part: part,
+                    resumeIndex: resumeIndex
                 }
             });
         }
@@ -55,11 +58,11 @@ const QuizAnswers = () => {
                     <div className="characters-answers-container">
                         <p className="health-bar-label">Health Bar</p>
                         <div className="privacy-planet-health-bar">
-                            <progress className="privacy-planet-health-bar-progress" value={currentQuestion.healthBar} max="1"></progress>
+                            <progress className="privacy-planet-health-bar-progress" value={healthBar} max="1"></progress>
                         </div>
                         <img
-                            src={currentQuestion.healthBar !== 0 ? Enemy : DeadEnemy}
-                            alt={currentQuestion.healthBar !== 0 ? "Enemy" : "Dead Enemy"}
+                            src={healthBar != 0 ? Enemy : DeadEnemy}
+                            alt={healthBar != 0 ? "Enemy" : "Dead Enemy"}
                             className="characters-answers-img" />
                     </div>
                     <div className="text-answers-container">
@@ -70,7 +73,7 @@ const QuizAnswers = () => {
                             {currentQuestion.correctMessage[1]}
                         </p>
                         <button className="quiz-next-btn" onClick={handleNextQuestion}>
-                            {currentQuestion.healthBar === 0
+                            {healthBar == 0
                                 ? "Return to Lesson"
                                 : "Next Question"}
                         </button>
@@ -100,7 +103,7 @@ const QuizAnswers = () => {
                         <p className="text-answers-text answer-hint">
                             {currentQuestion.hint}
                         </p>
-                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-planet/quiz`, { state: { questionIndex, part: part } })}>
+                        <button className="quiz-try-again-btn" onClick={() => navigate(`/privacy-planet/quiz`, { state: { questionIndex, part: part, resumeIndex } })}>
                             Try again
                         </button>
                     </div>

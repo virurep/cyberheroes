@@ -86,7 +86,7 @@ export const processText = (text, onVocabClick) => {
   });
 };
 
-const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
+const Message = ({ message, onNext, onPrev, onNavigate, pageNum, maxPage }) => {
   const messageRef = useRef(null);
   const [offset, setOffset] = useState(0);
 
@@ -127,7 +127,15 @@ const Message = ({ message, onButtonClick, pageNum, maxPage }) => {
         className={`message-box ${message.style}`}
       >
         <div className="lesson-text">{paragraphs}</div>
-        <Buttons buttons={message.buttons} onClick={onButtonClick} pageNum={pageNum} maxPage={maxPage}/>
+        <Buttons
+          noButtons={message.no_buttons}
+          button={message.button}
+          onNext={onNext}
+          onPrev={onPrev}
+          onNavigate={onNavigate}
+          pageNum={pageNum}
+          maxPage={maxPage}
+        />
       </div>
       {selectedVocab && (
         <VocabPopup

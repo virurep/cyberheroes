@@ -1,11 +1,11 @@
 /* Cursor AI was used to keep the many states of the quiz tp be correct and consistent*/
 
 import React from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../util/NavBar";
 import TextReader from "../util/TextReader";
 import "../../styles/quiz.css";
-import quizData from "../../data/quizzes/privacy_planet_quiz.json"
+import { quizData } from "../../data/planets"
 
 //shapes included on the answer buttons
 import circle from "../../img/quizzes/shapes/circle.png";
@@ -21,8 +21,8 @@ const Quiz = () => {
     const [selectedAnswers, setSelectedAnswers] = React.useState([]);
 
     // Get the current quiz data based on the part
-    const currentQuiz = quizData.quizzes.find(quiz => quiz.part === location.state?.part);
-    const currentQuestion = currentQuiz?.quiz[currentQuestionIndex];
+    const currentQuiz = quizData['privacy-planet']?.parts.find(part => part.id === location.state?.part);
+    const currentQuestion = currentQuiz?.questions[currentQuestionIndex];
 
     //for multiple choice and true false questions
     const handleAnswerClick = (answer) => {
@@ -32,7 +32,8 @@ const Quiz = () => {
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
                 part: location.state?.part,
-                currentQuiz: currentQuiz
+                currentQuiz: currentQuiz,
+                resumeIndex: location.state?.resumeIndex
             }
         });
     };
@@ -57,12 +58,14 @@ const Quiz = () => {
                 currentQuestion: currentQuestion,
                 questionIndex: currentQuestionIndex,
                 part: location.state?.part,
-                currentQuiz: currentQuiz
+                currentQuiz: currentQuiz,
+                resumeIndex: location.state?.resumeIndex
             }
         });
     };
 
-    //multiple choice
+    if (!currentQuiz || !currentQuestion) return null;
+
     if(currentQuestion.type === "multiple-choice"){
         return (
             <div className="privacy-planet-quiz-background">
