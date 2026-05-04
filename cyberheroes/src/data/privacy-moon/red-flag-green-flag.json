@@ -1,0 +1,75 @@
+{
+    "quiz": [
+        {
+            "id": 1,
+            "question": "You're playing Roblox and another player says, 'Want to build something cool?'",
+            "correctAnswer": 1,
+            "correctMessage": "They're keeping the conversation inside the game and talking about game activities it's not personal or inappropriate.",
+            "incorrectMessages": "They're not asking for your real name, where you live, or trying to meet in real life."
+        },
+        {
+            "id": 2,
+            "question": "Someone online asks you a question and you don't want to answer, so you don't answer.",
+            "correctAnswer": 1,
+            "correctMessage": "When you say no, they don't push or make you feel bad they respect your boundaries.",
+            "incorrectMessages": "Red flags happen when someone ignores your 'no,' pressures you, or makes you uncomfortable. This person doesn't respect your boundaries."
+        },
+        {
+            "id": 3,
+            "question": "People online ask for pictures or personal details you wouldn't share with a stranger in person.",
+            "correctAnswer": 0,
+            "correctMessage": "They're crossing a line asking for things that should be private. That's not safe or respectful.",
+            "incorrectMessages": "Green flag behavior respects your privacy and doesn't ask for photos or personal info."
+        },
+        {
+            "id": 4,
+            "question": "They try to make you feel special or tell you to keep your conversation a secret.",
+            "correctAnswer": 0,
+            "correctMessage": "Telling you to keep secrets from trusted adults is a big warning sign. Safe people don't do that.",
+            "incorrectMessages": "Green flag conversations are honest, open, and never ask you to hide things."
+        },
+        {
+            "id": 5,
+            "question": "A friend from school wants to play a game with you online.",
+            "correctAnswer": 1,
+            "correctMessage": "You know this person in real life, and it's just for fun. Nothing secret, nothing unsafe.",
+            "incorrectMessages": "They're not a stranger, and they're not asking you to share anything personal or weird."
+        },
+        {
+            "id": 6,
+            "question": "They offer gifts, money, or prizes in exchange for personal information.",
+            "correctAnswer": 0,
+            "correctMessage": "No one should trade presents for your private details that's a trick to get unsafe access to you.",
+            "incorrectMessages": "A green flag person would never bribe you or ask for your address, phone number, or anything personal."
+        },
+        {
+            "id": 7,
+            "question": "Your friend from school sends you a silly meme or video.",
+            "correctAnswer": 1,
+            "correctMessage": "It's someone you know, and the content is fun and friendly nothing private or strange.",
+            "incorrectMessages": "There's no secretive talk, no pressure, and no risky sharing going on."
+        },
+        {
+            "id": 8,
+            "question": "A person online wants to meet you in real life.",
+            "correctAnswer": 0,
+            "correctMessage": "Meeting someone from the internet can be dangerous especially if you don't really know who they are.",
+            "incorrectMessages": "Green flag people don't ask kids to meet up — it's not safe."
+        },
+        {
+            "id": 9,
+            "question": "You report something suspicious online and a grown-up listens and helps.",
+            "correctAnswer": 1,
+            "correctMessage": "You're doing the right thing, and the adult is helping you stay safe that's a big win!",
+            "incorrectMessages": "There's no danger here just support, action, and smart choices."
+        },
+        {
+            "id": 10,
+            "question": "Someone you don't know asks for your name, school, or address.",
+            "correctAnswer": 0,
+            "correctMessage": "Strangers should never ask for that kind of personal information. It's private for your safety.",
+            "incorrectMessages": "A green flag person wouldn't ask you where you go to school or live, especially if they don't know you.",
+            "lessonPage": 26
+        }
+    ]
+}

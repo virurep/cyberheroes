@@ -1,0 +1,850 @@
+{
+  "id": "privacy-moon",
+  "name": "Privacy Moon",
+  "active": true,
+  "intro": {
+    "lesson_title": "Sharing Online",
+    "text": "Welcome to Privacy Moon. Life here is quiet, but residents have begun to report suspicious behavior nearby. We need your help to find the cause.\n\nWARNING: This lesson is the second part of Privacy Planet. This lesson can be completed on it's own, but the story or lesson contents may not make sense.",
+    "computer_image": "patrick-wanted.png",
+    "computer_text": "Hello Cyber Hero! Patrick has escaped from Privacy Planet and is hiding somewhere on the moon. Allie's brother, Alejandro, should be nearby. Find him and defeat Patrick for good!"
+  },
+  "quiz_transitions": {
+    "quiz-1": { "character": "Alejandro", "message": "What are some examples of these types of information?\n\nHMM... let's test your knowledge." },
+    "quiz-2": { "character": "Alejandro", "message": "Huh Looks like an enemy is trying to follow us! Quick let's defeat them with our knowledge!" },
+    "quiz-3": { "character": "Alejandro", "message": "Looks like we have everything we need to finish this planet! Let's defeat the last enemy to get my sensitive data back!" }
+  },
+  "cert_transition": {
+    "character": "Alejandro",
+    "message": "We did it cyber hero! patrick is finally gone and privacy moon is safe! \n\n Pslease take this certificate as an award for all your help!"
+  },
+  "table_of_contents": {
+    "lesson_title": "Sharing Online",
+    "parts": [
+      { "part_name": "Private vs Public Information", "start_page": 0, "part_type": "lesson", "part_style": "lesson-1" },
+      { "part_name": "Sharing Online Quiz 1", "quiz_part": 1, "part_type": "quiz", "part_style": "quiz-1" },
+      { "part_name": "Being Smart About What You Share", "start_page": 8, "part_type": "lesson", "part_style": "lesson-2" },
+      { "part_name": "Sharing Online Quiz 2", "quiz_part": 2, "part_type": "quiz", "part_style": "quiz-2" },
+      { "part_name": "What To Do When People Ask For Information?", "start_page": 25, "part_type": "lesson", "part_style": "lesson-3" },
+      { "part_name": "Sharing Online Quiz 3", "quiz_part": 3, "part_type": "quiz", "part_style": "quiz-3" }
+    ]
+  },
+  "review": {
+    "quiz-1": {
+      "character": "Alejandro",
+      "options": [
+        {
+          "id": 1,
+          "title": "Private vs Public Information",
+          "review_lesson": [
+            {
+              "page": 1,
+              "title": "Private vs Public Information",
+              "message": "Some things are safe to share, and others should be kept private.\n\nPublic Information (OK to share):\n<ul>Your favorite color<li>Your favorite game or show<li>Your pet's name**"
+            },
+            {
+              "page": 2,
+              "title": "Private vs Public Information",
+              "message": "Private Information (keep safe):\n<ul>Full name<li>Home address<li>Phone number<li>Birthday**\n\nPrivate information can be used to identify or contact you. Only <v>trustworthy** adults should know it."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Why Does this Matter?",
+          "review_lesson": [
+            {
+              "page": 1,
+              "title": "Why Does this Matter",
+              "message": "Knowing the difference helps you stay safe online. If you share too much private information—even by accident—someone could use it to figure out who you are or where you live."
+            },
+            {
+              "page": 2,
+              "title": "Why Does this Matter Continued",
+              "message": "That's why you should always ask yourself:\n<ul>Is this public or private?<li>Who will see it?<li>Should I ask a <v>trustworthy** adult first?**"
+            }
+          ]
+        }
+      ]
+    },
+    "quiz-2": {
+      "character": "Alejandro",
+      "options": [
+        {
+          "id": 1,
+          "title": "How Small Details Add Up",
+          "review_lesson": [
+            {
+              "page": 1,
+              "title": "How Small Details Add Up",
+              "message": "Even if you don't share your full name or address, small pieces of information can still reveal a lot about you.\n\nFor example: Saying 'I just turned 10' tells others your age or mentioning your soccer team and school name tells others where you go to school.\n\nWhen someone puts all these clues together, they can learn private things about you without you realizing it."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Think Before You Share",
+          "review_lesson": [
+            {
+              "page": 1,
+              "title": "Think Before You Share",
+              "message": "Before posting or sharing anything online, ask yourself these questions:\n<ul>Is this private information?<li>Who can see this?<li>Does this reveal too much?**\n\nIf you're ever unsure, always check with a <v>trustworthy** adult before sharing."
+            }
+          ]
+        }
+      ]
+    },
+    "quiz-3": {
+      "character": "Alejandro",
+      "options": [
+        {
+          "id": 1,
+          "title": "Red Flags to Watch Out For",
+          "review_lesson": [
+            {
+              "page": 1,
+              "title": "Red Flags to Watch Out For",
+              "message": "Not everyone online is who they say they are. Some people pretend to be friendly to try and get your private information.\n\n<b>Watch out for these red flags:**\n<ul>They ask for your name, school, address, or birthday.<li>They want to meet you in real life.<li>They ask for pictures or personal details.<li>They tell you to keep your conversation a secret.<li>They offer you gifts or prizes in exchange for information.**"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "What to Do If a Strangers Asks For Information Online",
+          "review_lesson": [
+            {
+              "page": 1,
+              "title": "What to Do If a Strangers Asks For Information Online",
+              "message": "If This Happens:\n<ul>Don't respond or share anything<li>Tell a <v>trustworthy** adult right away<li>Block and report the person if they keep asking<li>Trust your instincts—if it feels off, it probably is**"
+            },
+            {
+              "page": 2,
+              "title": "Golden Rule",
+              "message": "Golden Rule:\nIf a stranger online asks for personal info, STOP and ASK a <v>trustworthy** adult before you do anything."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        }
+      ],
+      "message": {
+        "text": "I landed on the moon, I must find Alejandro!",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "Hi Alejandro, I'm Cyber Hero. Patrick the Predatoraus just arrived. Allie sent me to help you keep the Privacy Planet's information protected.",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Huh? How do I know you are telling the truth? Do you really know Allie?",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "Yeah, and she's taught me lessons on <v>sensitive data** and information. Ask me anything if you think I'm lying!",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Hmmm okay! What is public information?",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "Public information is safe share with anyone. Like:\n<ul>Your Favorite Color<li>Your Hobbies<li>A Fun Fact About Yourself**",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "What is private information?",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "Private (or sensitive) information should only be shared with trusted adults because it can be used to identify or contact you.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left",
+        "to": "quiz-1"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Wow! Allie has taught you well! I trust you now. Let's go defeat Patrick and get people's private information back!",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "I don't understand. How did Patrick manage to get everyone's private information? Surely you guys didn't just freely share them.",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Patrick is smart. He can find out information about you just with little details like pieces of a puzzle.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<red>Small details add up!!**\n\nPatrick got my information because a few weeks ago, I decorated my Roblox avatar with a birthday hat and typed in the chat: \"It's my birthday! I just turned 10!\"",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "So now he knows your age!",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Yup! And then a few weeks later, I made a post about my soccer game and mentioned my school's name in the chat.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "And that's how he learned where you go to school?",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Yeah! Then I also left a comment on a friend's game saying: \"Let's play after school at the park near the red slide.\" So now Patrick even knows where I hang out.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Patrick pieced together all these clues and learned about:\n<ul>My age<li>My school<li>A place I visit often**",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "Even though you never shared your full name or address, they now still know a lot about you?",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Yes! That's why it's important to think before you post.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<u>Ask yourself:** Is this information private? If it includes your name, location, or contact details:\n<red>DON'T SHARE IT!**",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<u>Then ask yourself:** Who can see this? Some things are public like gamertags, usernames, and profile pictures. This means that anyone can see them - even people you don't know.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<u>Finally, think:** Does this reveal too much? A fun picture of you in a school t-shirt might seem okay, but if it shows your school's name, it could tell strangers where you go every day.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "If you are still unsure, it is always a good idea to check with a trusted adult.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Sometimes, people online might ask you for personal details. Do not share even if they seem friendly or nice.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "They could pretend to be another kid or someone you can trust. Here, I'll give you some <v>scenario**s, and you tell me if they're a red flag or green flag.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left",
+        "to": "quiz-2"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "What should I do if someone asks me that?",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<red>Never respond or give out your information.**\nEven if the person seems nice or <v>trustworthy**, it's important to stay cautious. Strangers online may not be who they say they are, and sharing even small details can put you at risk.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<red>Tell a trusted adult right away.**\nIf someone makes you feel uncomfortable, asks for personal details, or pressures you to share something, report to a parent, teacher, or <v>guardian**. They can help you decide what to do next.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<red>Block or report the person if they keep asking questions.**\nMost websites and apps have <v>feature**s that allow you to block or report users who are acting suspiciously. This helps keeping you and the others safe.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "<red>Trust your instincts.**\nIf something feels off about a conversation, listen to that feeling. It's always better to be cautious than to take a risk.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Remember that even if someone seems nice, they might not be who they say they are.\n<red>Online, people can pretend to be anyone.**\nThey might use fake pictures, names, or stories to trick others into trusting them.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "header": "<gold>\u2b50 GOLDEN RULE \u2b50**",
+        "text": "If a stranger online asks you anything personal -\n<red>STOP and ask an adult before responding!**",
+        "speaker": "Alejandro",
+        "style": "message-box-gold message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character character-s character-left character-left-1"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-s character-left character-left-2 character-left-last"
+        },
+        {
+          "name": "Safe",
+          "style": "character-s character-right character-right-2",
+          "arrow": 33
+        }
+      ],
+      "message": {
+        "text": "!! YOU'VE FOUND PATRICK'S SAFE !!",
+        "style": "alert-header",
+        "no_buttons": true
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip"
+        }
+      ],
+      "message": {
+        "text": "Looks like Patrick is keeping everyone's sensitive data locked inside this safe.\nThere's a secret code to unlock it, but I don't know what it is.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "Wait! It looks like we can unlock the safe by answering some questions.\nLet's take a closer look!",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-right",
+        "to": "quiz-3"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-right character-flip character-s"
+        }
+      ],
+      "message": {
+        "text": "We did it! The safe is open!",
+        "speaker": "Cyber Hero",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-center character-s"
+        },
+        {
+          "name": "Patrick",
+          "style": "character-right"
+        }
+      ],
+      "message": {
+        "text": "Not so fast! You may have opened the safe, but kids will keep oversharing. I'll just collect more information!",
+        "speaker": "Patrick",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-center"
+        },
+        {
+          "name": "Patrick",
+          "style": "character-right character-s"
+        }
+      ],
+      "message": {
+        "text": "Not anymore! We've learned how to protext our information - and we're teaching the others too.\nYour tricks don't work when people know the signs.",
+        "speaker": "Alejandro",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left"
+      }
+    },
+    {
+      "characters": [
+        {
+          "name": "Cyber Hero",
+          "style": "character-left character-s"
+        },
+        {
+          "name": "Alejandro",
+          "style": "character-center character-s"
+        },
+        {
+          "name": "Patrick",
+          "style": "character-right"
+        }
+      ],
+      "message": {
+        "text": "ARGH! No way!\nOh no, I feel my powers fading!",
+        "speaker": "Patrick",
+        "style": "message-box-bottom",
+        "speaker_style": "speaker-left",
+        "to": "patrick-defeat"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ const PrivacyMoonQuizRoute = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const quizPart = location.state?.part;
+  const resumeIndex = location.state?.resumeIndex;
 
   useEffect(() => {
     if (!quizPart) {
@@ -14,13 +15,13 @@ const PrivacyMoonQuizRoute = () => {
 
     switch (quizPart) {
       case 'quiz-1':
-        navigate('/privacy-moon/quiz/drag-drop');
+        navigate('/privacy-moon/quiz/drag-drop', { state: { resumeIndex } });
         break;
       case 'quiz-2':
-        navigate('/privacy-moon/quiz/redflag-greenflag');
+        navigate('/privacy-moon/quiz/redflag-greenflag', { state: { resumeIndex } });
         break;
       case 'quiz-3':
-        navigate('/privacy-moon/quiz/final-quiz');
+        navigate('/privacy-moon/quiz/final-quiz', { state: { part: quizPart, resumeIndex } });
         break;
       default:
         console.error("Invalid quiz part:", quizPart);

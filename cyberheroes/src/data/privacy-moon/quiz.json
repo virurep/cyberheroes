@@ -1,10 +1,9 @@
 {
-  "quizzes": [
+  "parts": [
     {
-      "part": "quiz-1",
-      "quiz": [
+      "id": "quiz-3",
+      "questions": [
         {
-          "id": 1,
           "type": "multiple-choice",
           "question": "A person online wants to meet you in real life. What is the safest action?",
           "answers": [
@@ -13,9 +12,7 @@
             "Share your location but only with them",
             "Tell a trusted adult right away"
           ],
-          "correctAnswers": [
-            3
-          ],
+          "correctAnswers": [3],
           "correctMessage": [
             "The safest option is to inform a trusted adult, as meeting someone from the internet can be risky."
           ],
@@ -28,7 +25,6 @@
           "hint": "💡 Hint: If something makes you unsure or feels risky, talk to someone you trust first.💡"
         },
         {
-          "id": 2,
           "type": "multiple-choice",
           "question": "Someone online asks for pictures or personal details you wouldn't share with a stranger in person. What should you do?",
           "answers": [
@@ -37,9 +33,7 @@
             "Ask your friends if they think it's okay",
             "Keep talking to them but avoid sharing too much"
           ],
-          "correctAnswers": [
-            1
-          ],
+          "correctAnswers": [1],
           "correctMessage": [
             "If someone is asking for private information, they likely have bad intentions. Blocking and reporting them keeps you safe."
           ],
@@ -52,7 +46,6 @@
           "hint": "💡 Hint: If it feels wrong or too personal, it's time to stop and get help.💡"
         },
         {
-          "id": 3,
           "type": "multiple-choice",
           "question": "Someone online is being really nice to you, giving you compliments, and making you feel special. What should you be aware of?",
           "answers": [
@@ -61,9 +54,7 @@
             "You should tell them personal details so they continue being nice",
             "Trust them completely because they make you feel good"
           ],
-          "correctAnswers": [
-            0
-          ],
+          "correctAnswers": [0],
           "correctMessage": [
             "Some people use kindness as a tactic to gain trust and manipulate others."
           ],
@@ -76,7 +67,6 @@
           "hint": "💡 Hint: Sometimes people pretend to be nice to get something from you—stay alert.💡"
         },
         {
-          "id": 4,
           "type": "multiple-choice",
           "question": "Someone online is making you feel uncomfortable by asking weird questions or being too persistent. What should you do?",
           "answers": [
@@ -85,9 +75,7 @@
             "Trust your instincts, stop talking to them, and tell a trusted adult",
             "Keep the conversation going but avoid answering their questions"
           ],
-          "correctAnswers": [
-            2
-          ],
+          "correctAnswers": [2],
           "correctMessage": [
             "If someone makes you feel uncomfortable, trust your gut, stop engaging, and get help."
           ],
@@ -100,7 +88,6 @@
           "hint": "💡 Hint: That uneasy feeling is a clue—listen to it and talk to a trusted adult.💡"
         },
         {
-          "id": 5,
           "type": "multiple-choice",
           "question": "What should you do if a stranger online asks you for personal information?",
           "answers": [
@@ -109,9 +96,7 @@
             "Stop and ask a trusted adult before responding",
             "Share only minor details, like your favorite color"
           ],
-          "correctAnswers": [
-            2
-          ],
+          "correctAnswers": [2],
           "correctMessage": [
             "A trusted adult can help you decide the safest way to handle the situation."
           ],
@@ -121,8 +106,7 @@
             "",
             "Even small details can be used to build a profile on you and gain your trust."
           ],
-          "hint": "💡 Hint: If you wouldn't tell them in real life, check with a trusted adult first.💡",
-          "lessonPage": 36
+          "hint": "💡 Hint: If you wouldn't tell them in real life, check with a trusted adult first.💡"
         }
       ]
     }

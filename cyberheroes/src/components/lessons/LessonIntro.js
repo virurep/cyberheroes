@@ -1,16 +1,14 @@
-/* Cursor AI was used to guide the decision making in having 2 frames for the lesson intro */
-
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/intro.css';
 import '../../styles/lesson.css';
-import lessonIntroData from '../../data/lessons/lesson_intro.json';
 import rocket from '../../img/general/rocket.png';
 import computer from "../../img/general/computer.png";
 import Navbar from '../util/NavBar';
 import TextReader from '../util/TextReader';
 import VocabPopup from '../util/VocabPopup';
 import { processText } from './Message';
+import { lessonData } from '../../data/planets';
 
 const planetImages = require.context('../../img/planets', false, /\.(png|jpe?g|svg)$/);
 const introImages = require.context('../../img/lesson-intro', false, /\.(png|jpe?g|svg)$/);
@@ -29,84 +27,52 @@ const LessonIntro = () => {
     navigate(`/${planet}/arrival`);
   };
 
-  // Get the planet data from the lessonIntroData.intros array
-  const getPlanetData = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-
-    if (!planetData) {
-      console.error(`No data found for planet: ${planetName}`);
-      return {
-        title: "Planet Not Found",
-        description: "This planet's data could not be loaded."
-      };
-    }
-
-    return planetData;
+  const handleBackToMap = () => {
+    navigate('/exploration-map');
   };
-
-  const planetData = getPlanetData(planet);
-
-  // Get the planet's image on first intro screen
-  const getPlanetImage = (planetName) => {
-    try {
-      const imageName = planetName.toLowerCase().replace(/\s+/g, '-');
-      return planetImages(`./${imageName}.png`);
-    } catch (err) {
-      console.error('Image not found:', err);
-      return null;
-    }
-  };
-
-  const planetImage = getPlanetImage(planet);
-
-  // Get the intro message on the first intro screen
-  const getLessonIntroMessage = (planetName) => {
-    if (planetData.active) {
-      const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-      const planetData = lessonIntroData.intros.find(
-        planet => planet.planet_name.toLowerCase() === formattedPlanetName
-      );
-      return processText(planetData.intro_text, handleVocabClick);
-    }
-  };
-
-  const lessonIntroMessage = getLessonIntroMessage(planet);
-
-  // Get the computer intro image on the second intro screen
-  const getComputerIntroImage = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-    return introImages(`./${planetData.computer_image_name}`);
-  };
-
-  const computerIntroImage = getComputerIntroImage(planet);
-
-  // Get the computer intro message on the second intro screen
-  const getComputerIntroMessage = (planetName) => {
-    const formattedPlanetName = planetName.toLowerCase().replace(/-/g, ' ');
-    const planetData = lessonIntroData.intros.find(
-      planet => planet.planet_name.toLowerCase() === formattedPlanetName
-    );
-    return processText(planetData.computer_text, handleVocabClick);
-  };
-
-  const computerIntroMessage = getComputerIntroMessage(planet);
 
   const handleEnterLesson = () => {
     setShowComputer(true);
   };
 
-  const handleBackToMap = () => {
-    navigate('/exploration-map');
+  const planetData = lessonData[planet];
+
+  if (!planetData) {
+    return (
+      <div>
+        <Navbar />
+        <TextReader />
+        <div className="lesson-intro-background readable-text">
+          <p>Error: Planet data not found</p>
+        </div>
+      </div>
+    );
+  }
+
+  const { name, active, intro } = planetData;
+
+  const getPlanetImage = () => {
+    try {
+      return planetImages(`./${planet}.png`);
+    } catch (err) {
+      return null;
+    }
   };
 
-  // if else renders either the first or second intro screen
-  if (showComputer && planetData.active) {
+  const getComputerIntroImage = () => {
+    try {
+      return introImages(`./${intro.computer_image}`);
+    } catch (err) {
+      return null;
+    }
+  };
+
+  const planetImage = getPlanetImage();
+  const computerIntroImage = getComputerIntroImage();
+  const lessonIntroMessage = processText(intro.text, handleVocabClick);
+  const computerIntroMessage = processText(intro.computer_text, handleVocabClick);
+
+  if (showComputer && active) {
     return (
       <div>
         <Navbar />
@@ -139,12 +105,12 @@ const LessonIntro = () => {
         )}
       </div>
     );
-  } else if (!planetData.active) {
+  } else if (!active) {
     return (
       <div>
         <Navbar />
-      <TextReader />
-      <div className="lesson-intro-background readable-text">
+        <TextReader />
+        <div className="lesson-intro-background readable-text">
           <img src={computer} alt="Computer" className="computer-image" />
           <div className="computer-content">
             <div className="computer-content-top">
@@ -165,31 +131,31 @@ const LessonIntro = () => {
     );
   } else {
     return (
-    <div>
-      <Navbar />
-      <TextReader />
-      <div className="lesson-intro-background readable-text">
-      <div className="lesson-intro-side">
-        <img src={rocket} alt="Rocket Ship" className="lesson-intro-rocket" />
-        {planetImage && <img src={planetImage} alt={`${planet} Planet`} className="lesson-intro-planet" />}
+      <div>
+        <Navbar />
+        <TextReader />
+        <div className="lesson-intro-background readable-text">
+          <div className="lesson-intro-side">
+            <img src={rocket} alt="Rocket Ship" className="lesson-intro-rocket" />
+            {planetImage && <img src={planetImage} alt={`${planet} Planet`} className="lesson-intro-planet" />}
+          </div>
+          <div className="lesson-intro-message">
+            <h1 className="lesson-intro-title">You have arrived at {name}!</h1>
+            {lessonIntroMessage}
+            <button className="enter-lesson-btn" onClick={handleEnterLesson}>
+              ENTER {name.toUpperCase()}
+            </button>
+          </div>
+        </div>
+        {selectedVocab && (
+          <VocabPopup
+            word={selectedVocab.word}
+            definition={selectedVocab.definition}
+            onClose={() => setSelectedVocab(null)}
+          />
+        )}
       </div>
-      <div className="lesson-intro-message">
-        <h1 className="lesson-intro-title">You have arrived at {planetData.planet_name}!</h1>
-        {lessonIntroMessage}
-        <button className="enter-lesson-btn" onClick={handleEnterLesson}>
-          ENTER {planetData.planet_name.toUpperCase()}
-        </button>
-      </div>
-    </div>
-    {selectedVocab && (
-      <VocabPopup
-        word={selectedVocab.word}
-        definition={selectedVocab.definition}
-        onClose={() => setSelectedVocab(null)}
-      />
-      )}
-    </div>
-  );
+    );
   }
 };
 
