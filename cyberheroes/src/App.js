@@ -27,9 +27,21 @@ import PrivacyMoonQuizAnswers from './components/quizzes/Privacy-Moon-Quiz-Answe
 import DragDropQuiz from './components/quizzes/Drag-Drop-Quiz.js';
 import RedFlagGreenFlag from "./components/quizzes/RedFlag-GreenFlag-Quiz.js"
 import GameAnswers from "./components/quizzes/game-answers.js"
+
+const scanLine = {
+  position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 998,
+  background: 'repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,212,255,.022) 3px,rgba(0,212,255,.022) 4px)',
+};
+const vignette = {
+  position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 999,
+  background: 'radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.55) 100%)',
+};
+
 function App() {
   return (
       <div>
+        <div style={scanLine} aria-hidden="true" />
+        <div style={vignette} aria-hidden="true" />
         <Routes>
           {/* Landing page */}
           <Route index element={<LandingPage />} />
