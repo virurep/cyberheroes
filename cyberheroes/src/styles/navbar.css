@@ -1,66 +1,69 @@
-/* Cursor AI was used for some stylistic css choices to speed up development */
-
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: #B8DEFF;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background: rgba(2,11,24,.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .navbar-logo {
-    width: 71.41px;
-    height: 45px;
-    object-fit: contain;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .navbar-title {
-    color: #386F95;
-    font-size: 1.8rem;
-    font-weight: bold;
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-decoration: none;
 }
+
+.navbar-title .cyber { color: var(--cyan); }
+.navbar-title .heroes { color: var(--gold); }
 
 .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
-.home-button {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    font-size: 1.1rem;
-    background-color: #FFD700;
+.nav-link {
+  color: var(--dim);
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 2px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
 }
 
-.home-button:hover {
-    background-color: #FFC000;
+.nav-link:hover,
+.nav-link.active {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
 }
 
-.logo-link, .title-link {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.logo-link:hover, .title-link:hover {
-    opacity: 0.9;
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
