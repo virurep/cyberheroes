@@ -1,14 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/* Global styles — tokens.css is loaded before this in index.js */
 
-
-body {
-    font-family: 'Fredoka One', 'Arial', sans-serif;
-}
-
-/* h1{
-    font-family: 'Fredoka One', 'Arial', sans-serif;
-} */
-
-button {
-    font-family: 'Fredoka One', 'Arial', sans-serif;
+/* Preserve readable-text override used by TextReader accessibility feature */
+.readable-text {
+  /* intentionally empty — TextReader.css manages this class */
 }
