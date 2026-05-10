@@ -1,131 +1,107 @@
-/* Cursor AI was used for some stylistic css choices to speed up development */
-
-body {
-  color: #89BFF2 !important;
-  display: grid;
-  place-content: center;
-}
-
-.hidden {
-  display: none !important;
-}
-
-
-.lesson-intro-background p {
-  color: #752a2a;
-}
-
-.lesson-intro-title {
-  color: #E14733;
-}
-
-.enter-lesson-btn {
-  background: #0F746F;
-  color: #ffffff;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(70, 134, 181, 0.3);
-  margin: 0 auto;
-  display: block;
-}
-
-.enter-lesson-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
-  background: #19ada6;
-}
-
-.start-lesson-btn {
-  background-color: #BF3B27;
-  color: #ffffff;
-  border: none;
-  padding: 1.0rem 2.2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 35px;
-}
-
-.start-lesson-btn:hover {
-  background-color: #E14733;
-  transform: scale(1.05);
-}
-
-.enter-lesson-btn:active {
-  transform: translateY(0);
-}
-
-/* lesson intro page */
 .lesson-intro-background {
-  flex: 1;
+  min-height: 100vh;
+  background: var(--bg);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding: calc(80px + var(--sp-7)) var(--sp-6) var(--sp-7);
+  gap: var(--sp-7);
 }
 
+/* Left side — planet art */
 .lesson-intro-side {
-  height: 100%;
-  width: 50%;
-}
-
-.lesson-intro-message {
-  width: 80%;
-  background-color: #C5E0EF;
-  padding: 3rem;
-  border-radius: 20px;
-}
-
-.lesson-intro-message h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.lesson-intro-message p {
-  font-size: 1.8rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-5);
+  flex-shrink: 0;
 }
 
 .lesson-intro-rocket {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-150%, 25%) rotate(10deg);
-  max-width: 180px;
+  width: 80px;
+  height: auto;
+  filter: brightness(1.4) drop-shadow(0 0 8px rgba(0,212,255,.5));
+  animation: float 3s ease-in-out infinite;
 }
 
 .lesson-intro-planet {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-125%, -25%);
-  width: 240px;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(0,212,255,.3));
 }
 
-
-/* Computer intro page */
-.computer {
-  background-image: url('../img/general/computer.png');
-  background-repeat: no-repeat;
-  display: flex;
-
+/* Right side — message panel */
+.lesson-intro-message {
+  background: var(--surf);
+  border: 2px solid var(--border);
+  padding: var(--sp-7);
+  max-width: 560px;
+  animation: up-in .5s ease both;
 }
 
+.lesson-intro-title {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  line-height: 1.8;
+  margin-bottom: var(--sp-5);
+}
+
+.lesson-intro-message p {
+  font-family: var(--font);
+  font-size: 10px;
+  color: var(--text);
+  line-height: 2.2;
+  margin-bottom: var(--sp-4);
+}
+
+/* Buttons */
+.enter-lesson-btn {
+  background: var(--cyan);
+  color: #000;
+  border: none;
+  padding: 14px 28px;
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #006080;
+  margin-top: var(--sp-5);
+  transition: all .12s;
+}
+.enter-lesson-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #006080, var(--glow-cyan); }
+.enter-lesson-btn:active { transform: translateY(2px); }
+
+.start-lesson-btn {
+  background: var(--cyan);
+  color: #000;
+  border: none;
+  padding: 14px 28px;
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #006080;
+  transition: all .12s;
+}
+.start-lesson-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #006080, var(--glow-cyan); }
+
+.go-back-map-btn {
+  background: transparent;
+  color: var(--dim);
+  border: 2px solid var(--border);
+  padding: 10px 20px;
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all .12s;
+}
+.go-back-map-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+/* Computer overlay panel */
 .privacy-intro-container {
   display: flex;
   justify-content: center;
@@ -149,6 +125,7 @@ body {
   height: auto;
   position: relative;
   z-index: 1;
+  filter: brightness(.8) hue-rotate(180deg) drop-shadow(0 0 20px rgba(0,212,255,.2));
 }
 
 .computer-content {
@@ -174,15 +151,16 @@ body {
 }
 
 .computer-intro-image {
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
 .computer-content .intro-message {
-  color: #000000;
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-family: var(--font);
+  font-size: 9px;
+  color: var(--text);
+  line-height: 2;
   text-align: left;
   max-width: 50%;
   display: flex;
@@ -195,48 +173,23 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 250px;
+  gap: 48px;
+  margin-top: var(--sp-5);
 }
 
-.go-back-map-btn {
-  background-color: #386F95;
-  color: #ffffff;
-  border: none;
-  padding: 1.0rem 2.2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 35px;
-}
-
-.go-back-map-btn:hover {
-  background-color: #2f6084;
-  transform: scale(1.05);
-}
-
-.start-lesson-btn:hover {
-  background-color: #E14733;
-  transform: scale(1.05);
-}
-
-.to-map-btn {
-  background-color: #386F95;
-}
-
-.to-map-btn:hover {
-  background-color: #57A2D8;
-  transform: scale(1.05);
-}
-
+/* Coming soon */
 .coming-soon-message {
-  color: #000000;
-  font-size: 1.5rem;
+  font-family: var(--font);
+  font-size: 10px;
+  color: var(--text);
   text-align: center;
   max-width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: var(--sp-4);
+  line-height: 2;
 }
+
+.hidden { display: none !important; }
