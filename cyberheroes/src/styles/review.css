@@ -1,322 +1,128 @@
-/* Cursor AI was used for some stylistic css choices to speed up development */
+/* Remove planet background images */
+.privacy-planet-background,
+.privacy-moon-background { background: var(--bg); }
 
 .review-container {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--bg);
+  position: fixed;
+  top: 0; left: 0;
+  overflow-y: auto;
 }
 
-/* Planet-specific backgrounds */
-.privacy-planet-background {
-    background-image: url('../img/backgrounds/privacy-planet-background.png');
-}
+.review-content { max-width: 100%; margin: 80px auto 0; padding: var(--sp-5); }
+.review-layout { display: flex; width: 100%; height: 100%; padding: var(--sp-5); position: relative; }
 
-.privacy-moon-background {
-    background-image: url('../img/backgrounds/privacy-moon-background.png');
-}
+/* Character side */
+.character-side-review { position: fixed; bottom: -25%; left: -5%; z-index: 1; }
+.character-image-review { height: 80vh; width: auto; object-fit: contain; }
 
-.review-content {
-    max-width: 100%;
-    margin: 80px auto 0;
-    padding: 20px;
-}
-
-.review-layout {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    position: relative;
-}
-
-.character-side-review {
-    position: fixed;
-    bottom: -25%;
-    left: -5%;
-    z-index: 1;
-}
-
-.character-image-review {
-    height: 80vh;
-    width: auto;
-    object-fit: contain;
-}
-
+/* Review menu box */
 .review-main-review {
-    width: 40%;
-    height: 40%;
-    position: fixed;
-    right: 5%;
-    top: 100px;
-    z-index: 2;
-    margin-top: 100px;
-
+  width: 40%; height: 40%;
+  position: fixed; right: 5%; top: 100px;
+  z-index: 2; margin-top: 100px;
 }
-
 .review-box-review {
-    background-color: #B8DEFF;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 50vh;
-    width: 42vw;
-    margin-left: -100px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 2;
+  background: var(--surf);
+  border: 2px solid var(--border);
+  padding: var(--sp-4);
+  height: 50vh; width: 42vw;
+  margin-left: -100px;
+  display: flex; flex-direction: column;
+  position: relative; z-index: 2;
 }
+.review-content-scroll-review { overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: var(--sp-2); }
+.review-title-review { font-family: var(--font); font-size: 11px; color: var(--cyan); text-align: center; margin-bottom: var(--sp-3); letter-spacing: 2px; }
 
-.review-content-scroll-review {
-    overflow-y: auto;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.review-title-review {
-    color: #02101b;
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-}
-
-.options-container-review {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 0.5rem 0;
-    width: 100%;
-}
-
+.options-container-review { display: flex; flex-direction: column; align-items: center; gap: var(--sp-3); margin: var(--sp-3) 0; width: 100%; }
 .option-button-review {
-    background-color: #E14733;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 1.2rem 3.4rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 90%;
-    max-width: 350px;
+  background: var(--surf2);
+  border: 2px solid var(--border);
+  color: var(--text);
+  padding: 12px 20px;
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  width: 90%; max-width: 350px;
 }
+.option-button-review:hover { border-color: var(--cyan); box-shadow: var(--glow-cyan); }
+.option-button-review.selected { background: rgba(0,212,255,.1); border-color: var(--cyan); }
 
-.option-button-review:hover {
-    transform: scale(1.02);
-    background-color: #b33d4d;
-}
-
-.option-button-review.selected {
-    background-color: #b33d4d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Computer overlay */
 .computer-screen-review {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    height: 90vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    margin-top: 60px; /* Add space for navbar */
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw; height: 90vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 10; margin-top: 60px;
 }
-
 .computer-content-review {
-    width: 90%;
-    height: 90%;
-    position: relative;
-    background-image: url('../img/general/computer.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+  width: 90%; height: 90%;
+  position: relative;
+  background-image: url('../img/general/computer.png');
+  background-size: contain; background-position: center; background-repeat: no-repeat;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  margin: 0 auto;
+  filter: brightness(.8) hue-rotate(180deg);
 }
-
 .computer-screen-content-review {
-    position: absolute;
-    width: 70%;
-    height: 70%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-y: auto;
-    text-align: center;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
+  position: absolute;
+  width: 70%; height: 70%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto; text-align: center; padding: 5px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 0;
 }
+.computer-title-review { font-family: var(--font); font-size: 11px; color: var(--cyan); text-align: center; margin: 0; width: 100%; }
+.computer-message-review { font-family: var(--font); font-size: 9px; color: var(--text); line-height: 2; white-space: pre-line; text-align: center; margin: 0; padding: 0 var(--sp-5); width: 80%; flex-grow: 1; overflow-y: auto; }
 
-.computer-title-review {
-    color: #02101b;
-    font-size: 2.2rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.computer-message-review {
-    color: black;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    white-space: pre-line;
-    text-align: center;
-    margin: 0;
-    padding: 0 20px;
-    width: 80%;
-    flex-grow: 1;
-    overflow-y: auto;
-}
-
-.computer-buttons-review {
-    display: flex;
-    gap: 30px;
-    margin-top: 20px;
-    padding-bottom: 85px;
-    width: 100%;
-    justify-content: center;
-}
-
+.computer-buttons-review { display: flex; gap: var(--sp-5); margin-top: var(--sp-5); padding-bottom: 85px; width: 100%; justify-content: center; }
 .keep-reviewing-button-review {
-    background-color: #02101b;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: var(--surf2); color: var(--text); border: 2px solid var(--border);
+  padding: 12px 24px; font-family: var(--font); font-size: 8px; letter-spacing: 2px; cursor: pointer; transition: all .12s;
 }
-
+.keep-reviewing-button-review:hover { border-color: var(--cyan); color: var(--cyan); }
 .take-quiz-button-review {
-    background-color: #D1495B;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: var(--cyan); color: #000; border: none;
+  padding: 12px 24px; font-family: var(--font); font-size: 8px; letter-spacing: 2px;
+  cursor: pointer; box-shadow: 0 4px 0 #006080; transition: all .12s;
 }
+.take-quiz-button-review:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #006080, var(--glow-cyan); }
 
 .close-button-review {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #D1495B;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 11;
+  position: absolute; top: 20px; right: 20px;
+  background: var(--red); color: #fff; border: none;
+  width: 36px; height: 36px; font-size: 14px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all .12s; z-index: 11;
 }
-
-.close-button-review:hover {
-    transform: scale(1.1);
-    background-color: #b33d4d;
-}
+.close-button-review:hover { filter: brightness(1.15); }
 
 .back-link-review {
-    color: #02101b;
-    text-decoration: underline;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 1rem auto;
-    display: block;
-    text-align: center;
-    position: relative;
-    z-index: 10;
+  font-family: var(--font); font-size: 9px; color: var(--dim);
+  text-decoration: underline; cursor: pointer; transition: color .15s;
+  margin: var(--sp-4) auto; display: block; text-align: center; position: relative; z-index: 10;
 }
+.back-link-review:hover { color: var(--cyan); }
 
-.back-link-review:hover {
-    color: #0F746F;
-}
+.overlay-review { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 5; }
 
-.overlay-review {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 5;
-}
-
+/* Prev/Next buttons inside review lesson */
 .next-button-review, .prev-button-review {
-    border: 0.2rem solid #0F746F;
-    min-width: 4rem;
-    height: 2rem;
-    border-radius: 20px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.0rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0;
-    color: #0F746F;
-    text-decoration: none;
-    position: absolute;
-    bottom: 10%;
-    z-index: 20;
+  border: 2px solid var(--border); min-width: 4rem; height: 2.2rem;
+  background: transparent; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font); font-size: 8px; letter-spacing: 2px; cursor: pointer;
+  transition: all .15s; color: var(--dim); text-decoration: none;
+  position: absolute; bottom: 10%; z-index: 20;
 }
-
-.next-button-review {
-    right: 10%;
-}
-
-.prev-button-review {
-    left: 10%;
-}
-
-.next-button-review:hover, .prev-button-review:hover {
-    background-color: #0F746F;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(15, 116, 111, 0.3);
-}
-
-.next-button-review:before {
-    content: "NEXT";
-}
-
-.prev-button-review:before {
-    content: "BACK";
-}
-
+.next-button-review { right: 10%; }
+.prev-button-review { left: 10%; }
+.next-button-review:hover, .prev-button-review:hover { border-color: var(--cyan); color: var(--cyan); }
+.next-button-review::before { content: "NEXT ▶"; }
+.prev-button-review::before { content: "◀ BACK"; }
