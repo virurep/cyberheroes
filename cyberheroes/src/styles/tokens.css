@@ -1,0 +1,141 @@
+/* cyberheroes/src/styles/tokens.css */
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── TOKENS ── */
+:root {
+  /* Surfaces */
+  --bg:     #020b18;
+  --surf:   #071525;
+  --surf2:  #0d1f35;
+  --border: #0f2a45;
+
+  /* Brand */
+  --cyan:   #00d4ff;
+  --purple: #7c3aed;
+  --gold:   #ffd700;
+  --green:  #00ff88;
+  --red:    #ff4055;
+  --orange: #ff8c00;
+
+  /* Text */
+  --text: #dde8f5;
+  --dim:  #4a6080;
+
+  /* Typography */
+  --font: 'Press Start 2P', monospace;
+
+  /* Spacing */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+
+  /* Glows */
+  --glow-cyan:   0 0 16px rgba(0,212,255,.45);
+  --glow-purple: 0 0 16px rgba(124,58,237,.45);
+  --glow-gold:   0 0 16px rgba(255,215,0,.45);
+  --glow-green:  0 0 16px rgba(0,255,136,.45);
+  --glow-red:    0 0 16px rgba(255,64,85,.45);
+}
+
+/* ── GLOBAL ── */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100vh;
+}
+
+button { font-family: var(--font); }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--surf); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+/* ── PIXEL BUTTONS ── */
+.px-btn {
+  font-family: var(--font);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all .12s;
+  display: inline-block;
+}
+.px-btn:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.15); }
+.px-btn:active:not(:disabled) { transform: translateY(2px); }
+.px-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+.btn-primary {
+  background: var(--cyan); color: #000;
+  padding: 14px 24px; font-size: 10px;
+  box-shadow: 0 4px 0 #006080;
+}
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 6px 0 #006080, var(--glow-cyan);
+}
+
+.btn-gold {
+  background: var(--gold); color: #000;
+  padding: 14px 24px; font-size: 10px;
+  box-shadow: 0 4px 0 #806000;
+}
+.btn-gold:hover:not(:disabled) {
+  box-shadow: 0 6px 0 #806000, var(--glow-gold);
+}
+
+.btn-danger {
+  background: var(--red); color: #fff;
+  padding: 14px 24px; font-size: 10px;
+  box-shadow: 0 4px 0 #801020;
+}
+
+.btn-success {
+  background: var(--green); color: #000;
+  padding: 14px 24px; font-size: 10px;
+  box-shadow: 0 4px 0 #006840;
+}
+
+.btn-ghost {
+  background: transparent; color: var(--dim);
+  border: 2px solid var(--border);
+  padding: 10px 20px; font-size: 8px;
+}
+.btn-ghost:hover:not(:disabled) { border-color: var(--cyan); color: var(--cyan); }
+
+.btn-sm { padding: 8px 16px; font-size: 7px; }
+
+/* ── PIXEL FRAME ── */
+.px-frame {
+  position: relative;
+  border: 2px solid var(--cyan);
+}
+.px-frame::before, .px-frame::after {
+  content: '';
+  position: absolute;
+  width: 7px; height: 7px;
+  background: var(--cyan);
+}
+.px-frame::before { top: -2px; left: -2px; }
+.px-frame::after  { top: -2px; right: -2px; }
+
+/* ── ANIMATIONS ── */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@keyframes up-in {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes glow-pulse {
+  0%,100% { box-shadow: 0 0 8px currentColor; }
+  50%      { box-shadow: 0 0 24px currentColor; }
+}
+@keyframes pop-in {
+  0%  { transform: scale(.7); opacity: 0; }
+  80% { transform: scale(1.06); }
+  100%{ transform: scale(1);   opacity: 1; }
+}
