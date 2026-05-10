@@ -1,31 +1,14 @@
-/* Cursor AI was used for some stylistic css choices to speed up development */
+/* Remove planet background image classes — now use flat --bg */
+.privacy-planet-background,
+.privacy-moon-background { background: var(--bg); }
 
-/* background images for different planets */
-.privacy-planet-background {
-  background-image: url('../img/backgrounds/privacy-planet-background.png');
-  -webkit-text-stroke: 0;
-  text-shadow: none;
-}
-
-.privacy-moon-background {
-  background-image: url('../img/backgrounds/privacy-moon-background.png');
-  -webkit-text-stroke: 0;
-  text-shadow: none;
-}
-
-/* styles */
+/* ── Layout ── */
 .lesson-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  top: 0; left: 0; bottom: 0; right: 0;
   height: 100%;
   overflow: hidden;
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
 }
@@ -36,6 +19,7 @@
   transform: translateY(75px);
 }
 
+/* ── Message containers ── */
 .message-box-bottom-container {
   position: relative;
   height: 100%;
@@ -48,6 +32,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 95%;
+  height: 70%;
+  margin-top: 2rem;
 }
 
 .alert-header-container {
@@ -57,7 +43,7 @@
   align-self: center;
 }
 
-/* characters */
+/* ── Characters ── */
 .message-box-bottom-container .character-container {
   position: absolute;
   bottom: 25vh;
@@ -65,100 +51,60 @@
   z-index: 1;
 }
 
-.character {
-  height: 30rem;
-}
+.character { height: 30rem; }
+.message-box-bottom-container .character { position: absolute; bottom: 0; }
+.message-box-right-container .character { margin: auto; }
+.character-left  { left: 5%; }
+.character-center { left: 50%; transform: translateX(-50%); }
+.character-right { right: 5%; }
+.character-flip  { transform: scaleX(-1); }
+.message-box-bottom-container .character-l { height: 40rem; }
+.character-s { height: 25rem; bottom: 10%; }
 
-.message-box-bottom-container .character {
-  position: absolute;
-  bottom: 0;
-}
-
-.message-box-right-container .character {
-  margin: auto;
-}
-
-.character-left {
-  left: 5%;
-}
-
-.character-center {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.character-right {
-  right: 5%;
-}
-
-.character-flip {
-  transform: scaleX(-1);
-}
-
-.message-box-bottom-container .character-l {
-  height: 40rem;
-}
-
-.character-s {
-  height: 25rem;
-  bottom: 10%;
-}
-
-/* encounter enemy characters */
 .alert-header-container .character-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
-.character-left-1 {
-  position: relative;
-  top: 10vh;
-}
-
-.character-left-last {
-  margin-right: 200px;
-}
+.character-left-1 { position: relative; top: 10vh; }
+.character-left-last { margin-right: 200px; }
+.character-right-1 { top: -5vh; }
+.character-right-2 { top: -10vh; }
+.character-right-3 { top: -15vh; }
 
 .arrow-character {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 50px; */
-
   position: relative;
   top: -10vh;
 }
+.arrow-character .character { height: 20rem; cursor: pointer; }
+.arrow-character .character:hover { transform: scale(1.05); }
 
-.arrow-character .character {
-  height: 20rem;
-  cursor: pointer;
+/* ── Message box ── */
+.message-box {
+  width: 100%;
+  text-align: center;
+  background: var(--surf);
+  border: 2px solid var(--cyan);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.message-box-gold { background: var(--surf); border-color: var(--gold); }
+.message-box-bottom { margin-top: auto; max-height: 90%; position: absolute; bottom: 0; }
+.message-box-right { width: 90%; margin: 0 auto; }
 
-.arrow-character .character:hover {
-  transform: scale(1.05);
-}
-
-.character-right-1 {
-  top: -5vh;
-}
-
-.character-right-2 {
-  top: -10vh;
-}
-
-.character-right-3 {
-  top: -15vh;
-}
-
-/* text / message box */
+/* ── Text ── */
 .text-container {
-  font-size: 1.5rem;
-  color: black;
+  font-family: var(--font);
+  font-size: 10px;
+  color: var(--text);
 }
-
 .message-box-bottom-container .text-container {
   position: absolute;
   left: 50%;
@@ -168,170 +114,87 @@
   height: 17.5rem;
   z-index: 2;
 }
-
-.vocab-word {
-  text-decoration: underline;
+.message-box-bottom-container .lesson-text,
+.message-box-right-container .lesson-text {
+  width: 90%;
+  font-size: clamp(9px, 1.4vw, 11px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.alert-header-container .text-container { position: relative; top: -10vh; }
+.alert-header { background: transparent; }
+.alert-header .lesson-text {
+  font-size: 2.5rem;
+  color: var(--red);
+  -webkit-text-stroke: 2px var(--red);
 }
 
-.vocab-word:hover {
-  cursor: pointer;
-  color: blue;
-}
-
-/* vocab popup */
-.vocab-popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.vocab-popup {
-  background-color: #B8DEFF;
-  color: #02101b;
-  min-height: 15vh;
-  max-height: 40vh;
-  min-width: 15vw;
-  max-width: 50vw;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  font-size: 1.5rem;
-}
-
-.close-button {
+/* ── Speaker name ── */
+.speaker-name {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #666;
+  background: var(--surf2);
+  border: 2px solid var(--cyan);
+  padding: 4px 16px;
+  font-family: var(--font);
+  font-size: 7px;
+  color: var(--cyan);
+  z-index: 2;
 }
+.speaker-right { right: 0; transform: translate(-20px, 50px); }
+.speaker-left  { left: 0;  transform: translate(20px, 50px); }
 
-.vocab-popup h3 {
-  margin-top: 0;
-  font-size: 2rem;
-}
-
-.vocab-popup p {
-  line-height: 1.5;
-}
-
-/* text header */
 .text-header {
-  font-size: 2rem;
+  font-family: var(--font);
+  font-size: 12px;
+  color: var(--gold);
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -100px);
 }
 
-/* speaker name on text box */
-.speaker-name {
-  position: absolute;
-  background-color: white;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  z-index: 2;
-}
+/* ── Vocab ── */
+.vocab-word { text-decoration: underline dotted var(--cyan); cursor: pointer; }
+.vocab-word:hover { color: var(--cyan); }
 
-.speaker-right {
-  right: 0;
-  transform: translate(-20px, 50px);
-}
-
-.speaker-left {
-  left: 0;
-  transform: translate(20px, 50px);
-}
-
-.message-box {
-  width: 100%;
-  /* height: 100%; */
-  text-align: center;
-  background-color: #B8DEFF;
-  border-radius: 20px;
-  padding-top: 30px;
+.vocab-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  z-index: 1000;
 }
-
-.message-box-bottom {
-  margin-top: auto;
-  max-height: 90%;
-  position: absolute;
-  bottom: 0;
-}
-
-.message-box-right {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.text-container .message-box-gold {
-  background-color: #EDAE49;
-}
-
-ul, ol {
-  list-style-position: inside;
-}
-
-.red-text {
-  color: #E14733;
-}
-
-.gold-text {
-  color: #EDAE49;
-}
-
-.underline-text {
-  text-decoration: underline dotted;
-}
-
-.alert-header {
-  background-color: transparent;
-}
-
-.message-box-right-container {
-  height: 70%;
-  margin-top: 2rem;
-}
-
-.message-box-bottom-container .lesson-text, .message-box-right-container .lesson-text {
-  width: 90%;
-  font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #386F95 #f1f1f1;
-  margin-bottom: 10px;
-  margin-top: 15px;  /* TODO: multiline texts feel too low */
-}
-
-.alert-header-container .text-container {
+.vocab-popup {
+  background: var(--surf);
+  border: 2px solid var(--cyan);
+  color: var(--text);
+  min-height: 15vh;
+  max-height: 40vh;
+  min-width: 15vw;
+  max-width: 50vw;
+  padding: var(--sp-5);
   position: relative;
-  top: -10vh;
+  font-family: var(--font);
+  font-size: 9px;
+  line-height: 2;
 }
-
-.alert-header .lesson-text {
-  font-size: 4rem;
-  color: #E0EBF7;
-  -webkit-text-stroke: 3px #D1495B;
+.vocab-popup h3 { font-size: 11px; color: var(--cyan); margin-bottom: var(--sp-3); }
+.close-button {
+  position: absolute;
+  top: 8px; right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--dim);
 }
+.close-button:hover { color: var(--cyan); }
 
-/* buttons */
+/* ── Buttons ── */
 .button-container {
   display: flex;
   width: 90%;
@@ -339,89 +202,65 @@ ul, ol {
   justify-content: flex-start;
   padding-top: 10px;
   margin-bottom: 20px;
-  justify-self: flex-end;
 }
 
 .lesson-button {
-  border: 0.2rem solid #0F746F;
-  min-width: 8rem;
-  height: 3rem;
-  border-radius: 20px;
-  background-color: transparent;
+  border: 2px solid var(--border);
+  min-width: 6rem;
+  height: 2.5rem;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 2px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0;
-  color: #0F746F;
+  transition: all .15s;
+  color: var(--dim);
   text-decoration: none;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
-
-.lesson-button:hover {
-  background-color: #0F746F;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(15, 116, 111, 0.3);
-}
-
-.next-button {
-  margin-left: auto;
-}
-
-.next-button:before {
-  content: "NEXT";
-}
-
-.prev-button {
-  margin-right: auto;
-}
-
-.prev-button:before {
-  content: "BACK";
-}
+.lesson-button:hover { border-color: var(--cyan); color: var(--cyan); }
+.next-button { margin-left: auto; }
+.next-button::before { content: "NEXT ▶"; }
+.prev-button { margin-right: auto; }
+.prev-button::before { content: "◀ BACK"; }
 
 .lesson-page-input {
-  width: 5rem;
+  width: 4rem;
   height: 2rem;
-  border-radius: 5px;
-  border: none;
+  background: var(--surf2);
+  border: 2px solid var(--border);
+  color: var(--text);
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
+  font-family: var(--font);
+  font-size: 9px;
   align-self: center;
-  display: none;  /* TODO: remove for dev */
 }
+.lesson-page-input:focus { outline: none; border-color: var(--cyan); }
 
 .default-button {
-  background: #0F746F;
-  color: #ffffff;
+  background: var(--cyan);
+  color: #000;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-  border-radius: 50px;
+  padding: 14px 28px;
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 2px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(70, 134, 181, 0.3);
-  margin: 0 auto;
+  box-shadow: 0 4px 0 #006080;
+  transition: all .12s;
   display: block;
+  margin: 0 auto;
 }
+.default-button:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #006080, var(--glow-cyan); }
 
-.default-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(70, 134, 181, 0.4);
-  background: #19ada6;
-}
+/* ── Inline color helpers ── */
+.red-text  { color: var(--red); }
+.gold-text { color: var(--gold); }
+.underline-text { text-decoration: underline dotted; }
 
-/* Add styles for TextReader positioning */
-.text-reader-controls {
-  position: relative;
-  z-index: 10;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+ul, ol { list-style-position: inside; }
+
+.text-reader-controls { position: relative; z-index: 10; margin: 5px 0; }
