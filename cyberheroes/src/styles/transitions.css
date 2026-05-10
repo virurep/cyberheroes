@@ -1,272 +1,219 @@
-/* Cursor AI was used for some stylistic css choices to speed up development */
+/* Remove planet background images — use flat --bg */
+.privacy-planet-background,
+.privacy-moon-background { background: var(--bg); }
 
+/* ── Transition layout ── */
 .transition-container {
-    width: 100vw;  /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-size: cover;     /* Cover the container while maintaining aspect ratio */
-    background-position: center; /* Center the background */
-    background-repeat: no-repeat;
-    position: fixed; /* Fix the container to viewport */
-    top: 0;
-    left: 0;
-    overflow: hidden; /* Prevent scrolling */
-}
-
-/* Planet-specific backgrounds */
-.privacy-planet-background {
-    background-image: url('../img/backgrounds/privacy-planet-background.png');
-}
-
-.privacy-moon-background {
-    background-image: url('../img/backgrounds/privacy-moon-background.png');
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  position: fixed;
+  top: 0; left: 0;
+  overflow: hidden;
 }
 
 .transition-content {
-    width: 100%;
-    height: calc(100vh - 60px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .transition-layout {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: var(--sp-5);
 }
 
 .message-side-transition {
-    width: 60%;
-    height: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Pushes message box towards Allie */
-    padding-top: 100px;
-    padding-right: 40px;
+  width: 60%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 100px;
+  padding-right: 40px;
 }
 
+/* ── Message box ── */
 .transition-message-box {
-    background-color: #B8DEFF;
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 80%;
+  background: var(--surf);
+  border: 2px solid var(--purple);
+  padding: var(--sp-6);
+  max-width: 80%;
+  animation: up-in .5s ease both;
 }
 
 .transition-message {
-    color: black;
-    font-size: 2rem;
-    line-height: 1.4;
-    margin: 0;
-    text-align: center;
+  font-family: var(--font);
+  font-size: 10px;
+  color: var(--text);
+  line-height: 2.2;
+  margin: 0;
+  text-align: center;
 }
 
+/* ── Buttons ── */
 .transition-content .button-container-transition {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  align-items: center;
+  margin-top: var(--sp-5);
 }
 
 .quiz-button {
-    background-color: #D1495B !important;
-    font-size: 20px;
-    border: none;
-    color: white;
-    border-radius: 15px;
-    padding: 10px 20px;
-    width: 250px;
-    height: 68px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
+  background: var(--cyan) !important;
+  color: #000;
+  border: none;
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 14px 24px;
+  width: 250px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #006080;
+  transition: all .12s;
 }
-
-.quiz-button:hover {
-    transform: scale(1.05);
-    background-color: #b83d4d;
-    box-shadow: 0 6px 12px rgba(209, 73, 91, 0.4);
-}
-
-.or-text {
-    color: black;
-}
-.review-button {
-    background-color: #B8DEFF;
-    font-size: 19px;
-    text-decoration: underline;
-    border: none;
-    color: #02101b;
-    border-radius: 15px;
-    padding: 10px 20px;
-    width: 250px;
-    height: 68px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.review-button:hover {
-    transform: scale(1.05);
-    background-color: #9BCDFF;
-}
-
-.character-side-transition {
-    position: fixed;
-    bottom: -25%;
-    right: -10%;
-    z-index: 2;
-}
-
-
-.character-image-transition {
-    height: 80vh;
-    width: auto;
-    object-fit: contain;
-    transform: scaleX(-1);
-}
+.quiz-button:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #006080, var(--glow-cyan); }
 
 .certificate-button {
-    background-color: #0F746F !important;
-    font-size: 20px;
-    border: none;
-    color: white;
-    border-radius: 15px;
-    padding: 10px 20px;
-    width: 250px;
-    height: 68px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: var(--gold) !important;
+  color: #000;
+  border: none;
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 14px 24px;
+  width: 250px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #806000;
+  transition: all .12s;
 }
+.certificate-button:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #806000, var(--glow-gold); }
 
-main {
-    width: 100%;
-    height: 100%;
+.review-button {
+  background: transparent;
+  color: var(--dim);
+  border: 2px solid var(--border);
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 2px;
+  padding: 10px 24px;
+  width: 250px;
+  cursor: pointer;
+  transition: all .12s;
 }
-
-/* patrick leaving styles */
-.patrick-leaving {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    background-image: url('../img/backgrounds/main_background.png');
-    background-size: cover;
-}
-
-.patrick-leaving .bottom-content {
-    position: fixed;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-    animation-delay: 2.5s;
-}
-
-.patrick-leaving .leaving-text {
-    color: white;
-    font-size: 10vh;
-    margin-bottom: 20px;
-}
-
-.patrick-leaving .continue-button-leaving {
-    background-color: #0F746F !important;
-    font-size: 20px;
-    border: none;
-    color: white;
-    border-radius: 15px;
-    padding: 10px 20px;
-    width: 250px;
-    height: 68px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-}
-
-.patrick-leaving .continue-button-leaving:hover {
-    transform: scale(1.05);
-}
-
-.patrick-leaving #moon {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    width: 200px;
-    height: auto;
-}
-
-.patrick-leaving #rocket-flying {
-    position: fixed;
-    height: auto;
-    animation: rocketFlight 2.75s forwards;
-}
-
-@keyframes rocketFlight {
-    0% {
-        bottom: 100%;
-        right: 10%;
-        transform: rotate(0deg) scale(1);
-        width: 600px;
-    }
-    100% {
-        top: 15%;
-        left: 65%;
-        transform: rotate(0deg) scale(0.6);
-        width: 400px;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* moon or map page */
+.review-button:hover { border-color: var(--cyan); color: var(--cyan); }
 
 .moon-button {
-    background-color: #0F746F!important;
-    font-size: 23px;
-    border: none;
-    color: white;
-    border-radius: 15px;
-    padding: 10px 20px;
-    width: 250px;
-    height: 68px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
+  background: var(--purple) !important;
+  color: #fff;
+  border: none;
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 14px 24px;
+  width: 250px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #3d1a7a;
+  transition: all .12s;
+}
+.moon-button:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #3d1a7a, var(--glow-purple); }
+
+.or-text {
+  font-family: var(--font);
+  font-size: 7px;
+  color: var(--dim);
+  letter-spacing: 3px;
 }
 
-.moon-button:hover {
-    transform: scale(1.05);
-    background-color: #9BCDFF;
+/* ── Character side ── */
+.character-side-transition {
+  position: fixed;
+  bottom: -25%;
+  right: -10%;
+  z-index: 2;
+}
+.character-image-transition {
+  height: 80vh;
+  width: auto;
+  object-fit: contain;
+  transform: scaleX(-1);
 }
 
+/* ── Patrick leaving ── */
+.patrick-leaving {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+.patrick-leaving .bottom-content {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn .5s forwards;
+  animation-delay: 2.5s;
+}
+.patrick-leaving .leaving-text {
+  font-family: var(--font);
+  font-size: clamp(24px, 6vw, 48px);
+  color: var(--red);
+  margin-bottom: var(--sp-5);
+}
+.patrick-leaving .continue-button-leaving {
+  background: var(--cyan) !important;
+  color: #000;
+  border: none;
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #006080;
+  transition: all .12s;
+}
+.patrick-leaving .continue-button-leaving:hover { transform: translateY(-2px); }
+
+.patrick-leaving #moon {
+  position: fixed;
+  top: 100px; right: 20px;
+  width: 200px; height: auto;
+}
+.patrick-leaving #rocket-flying {
+  position: fixed;
+  height: auto;
+  animation: rocketFlight 2.75s forwards;
+}
+
+/* ── Moon map ── */
 .polaroid {
-    position: fixed;
-    width: 250px;
-    height: 300px;
-    top: 60%;
-    left: 2%;
-    transform: rotate(-40deg);
-    z-index: 2;
+  position: fixed;
+  width: 250px;
+  height: 300px;
+  top: 60%; left: 2%;
+  transform: rotate(-40deg);
+  z-index: 2;
 }
+.polaroid img { width: 100%; height: 100%; object-fit: cover; }
 
-.polaroid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+main { width: 100%; height: 100%; }
+
+/* ── Keyframes ── */
+@keyframes rocketFlight {
+  0%   { bottom: 100%; right: 10%; transform: rotate(0deg) scale(1); width: 600px; }
+  100% { top: 15%; left: 65%; transform: rotate(0deg) scale(0.6); width: 400px; }
 }
-
-
+@keyframes fadeIn {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
