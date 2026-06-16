@@ -1,0 +1,325 @@
+- generic [ref=e2]:
+  - navigation [ref=e81]:
+    - generic [ref=e82]: CYBERHEROES
+    - link "FOUNDATION" [ref=e83] [cursor=pointer]:
+      - /url: "#foundation"
+    - link "PRIMITIVES" [ref=e84] [cursor=pointer]:
+      - /url: "#primitives"
+    - link "TEXT BOXES" [ref=e85] [cursor=pointer]:
+      - /url: "#textboxes"
+    - link "LESSON PAGE" [ref=e86] [cursor=pointer]:
+      - /url: "#lesson"
+    - link "CONVO LESSON" [ref=e87] [cursor=pointer]:
+      - /url: "#convo"
+    - link "QUIZ" [ref=e88] [cursor=pointer]:
+      - /url: "#quiz"
+    - link "DRAG & DROP" [ref=e89] [cursor=pointer]:
+      - /url: "#dragdrop"
+  - main [ref=e90]:
+    - generic [ref=e91]:
+      - generic [ref=e92]: 01 / FOUNDATION
+      - generic [ref=e93]: DESIGN TOKENS
+      - generic [ref=e95]: The full CSS-variable palette and the Press Start 2P type system every component pulls from. No hardcoded hex values anywhere downstream.
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e99]: BG
+          - generic [ref=e100]: "#020b18"
+        - generic [ref=e101]:
+          - generic [ref=e103]: SURF
+          - generic [ref=e104]: "#071525"
+        - generic [ref=e105]:
+          - generic [ref=e107]: SURF2
+          - generic [ref=e108]: "#0d1f35"
+        - generic [ref=e109]:
+          - generic [ref=e111]: CYAN
+          - generic [ref=e112]: "#00d4ff"
+        - generic [ref=e113]:
+          - generic [ref=e115]: PURPLE
+          - generic [ref=e116]: "#7c3aed"
+        - generic [ref=e117]:
+          - generic [ref=e119]: GOLD
+          - generic [ref=e120]: "#ffd700"
+        - generic [ref=e121]:
+          - generic [ref=e123]: GREEN
+          - generic [ref=e124]: "#00ff88"
+        - generic [ref=e125]:
+          - generic [ref=e127]: RED
+          - generic [ref=e128]: "#ff4055"
+        - generic [ref=e129]:
+          - generic [ref=e131]: ORANGE
+          - generic [ref=e132]: "#ff8c00"
+      - generic [ref=e133]:
+        - generic [ref=e134]: TYPE — PRESS START 2P
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - generic [ref=e137]: DATA PROTECTOR
+            - generic [ref=e138]: 9px
+          - generic [ref=e139]:
+            - generic [ref=e140]: DATA PROTECTOR
+            - generic [ref=e141]: 11px
+          - generic [ref=e142]:
+            - generic [ref=e143]: DATA PROTECTOR
+            - generic [ref=e144]: 14px
+          - generic [ref=e145]:
+            - generic [ref=e146]: DATA PROTECTOR
+            - generic [ref=e147]: 18px
+    - generic [ref=e148]:
+      - generic [ref=e149]: 02 / PRIMITIVES
+      - generic [ref=e150]: ATOMS & PRIMITIVES
+      - generic [ref=e152]:
+        - generic [ref=e154]: KNIGHT — ALL COLORS
+        - generic [ref=e157]:
+          - generic [ref=e158]: PXFRAME
+          - generic [ref=e170]: 8-BIT BEVEL
+        - generic [ref=e171]:
+          - generic [ref=e172]: XP BADGE
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]: ★
+              - generic [ref=e177]: +5 XP
+            - generic [ref=e178]:
+              - generic [ref=e179]: ★
+              - generic [ref=e180]: +10 XP
+            - generic [ref=e181]:
+              - generic [ref=e182]: ★
+              - generic [ref=e183]: +15 XP
+        - generic [ref=e184]:
+          - generic [ref=e185]: PROGRESS BAR
+          - generic [ref=e188]:
+            - generic [ref=e189]: QUEST PROGRESS
+            - generic [ref=e190]: 65%
+        - generic [ref=e193]:
+          - generic [ref=e194]: STAT ROW
+          - generic [ref=e196]:
+            - generic [ref=e197]: ♥
+            - generic [ref=e198]: HP
+            - generic [ref=e203]: 7/10
+        - generic [ref=e204]:
+          - generic [ref=e205]: CHIP
+          - generic [ref=e207]:
+            - generic [ref=e208]: CYAN
+            - generic [ref=e209]: GOLD
+            - generic [ref=e210]:
+              - generic [ref=e211]: ◆
+              - text: PURPLE
+        - generic [ref=e212]:
+          - generic [ref=e213]: INLINE CODE
+          - generic [ref=e215]:
+            - text: Use
+            - code [ref=e216]: 12 characters
+            - text: minimum.
+        - generic [ref=e217]:
+          - generic [ref=e218]: CONTENT TITLE
+          - generic [ref=e220]:
+            - generic [ref=e221]: SECTION 1
+            - generic [ref=e222]: The Basics of Passwords
+    - generic [ref=e224]:
+      - generic [ref=e225]: 03 / TEXT BOXES
+      - generic [ref=e226]: CALLOUTS & DIALOGUE
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - generic [ref=e230]: TEXTBOX — INFO
+          - generic [ref=e232]:
+            - generic [ref=e233]:
+              - generic [ref=e234]: ℹ
+              - generic [ref=e235]: INFO
+            - generic [ref=e236]: This is a info callout box, rendered straight from the design system tokens.
+        - generic [ref=e237]:
+          - generic [ref=e238]: TEXTBOX — TIP
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - generic [ref=e242]: ★
+              - generic [ref=e243]: PRO TIP
+            - generic [ref=e244]: This is a tip callout box, rendered straight from the design system tokens.
+        - generic [ref=e245]:
+          - generic [ref=e246]: TEXTBOX — WARNING
+          - generic [ref=e248]:
+            - generic [ref=e249]:
+              - generic [ref=e250]: ⚠
+              - generic [ref=e251]: WARNING
+            - generic [ref=e252]: This is a warning callout box, rendered straight from the design system tokens.
+        - generic [ref=e253]:
+          - generic [ref=e254]: TEXTBOX — DANGER
+          - generic [ref=e256]:
+            - generic [ref=e257]:
+              - generic [ref=e258]: ✖
+              - generic [ref=e259]: DANGER
+            - generic [ref=e260]: This is a danger callout box, rendered straight from the design system tokens.
+        - generic [ref=e261]:
+          - generic [ref=e262]: TEXTBOX — QUEST
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - generic [ref=e266]: ⚔
+              - generic [ref=e267]: QUEST
+            - generic [ref=e268]: This is a quest callout box, rendered straight from the design system tokens.
+        - generic [ref=e269]:
+          - generic [ref=e270]: TEXTBOX — SECRET
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - generic [ref=e274]: ◆
+              - generic [ref=e275]: SECRET
+            - generic [ref=e276]: This is a secret callout box, rendered straight from the design system tokens.
+        - generic [ref=e277]:
+          - generic [ref=e278]: DIALOGUE BOX
+          - generic [ref=e282]:
+            - generic [ref=e285]: ⚔ DATA PROTECTOR
+            - generic [ref=e286]: Hark! A stranger approaches the gate. State thy business!
+        - generic [ref=e287]:
+          - generic [ref=e288]: KEY TERM
+          - generic [ref=e290]:
+            - generic [ref=e291]:
+              - generic [ref=e292]: NEW WORD
+              - generic [ref=e293]: ◆◆◆
+            - generic [ref=e294]:
+              - generic [ref=e295]: PASSWORD
+              - generic [ref=e296]: A secret string of characters that proves your identity.
+        - generic [ref=e297]:
+          - generic [ref=e298]: QUOTE BOX
+          - generic [ref=e300]:
+            - generic [ref=e301]: "\""
+            - generic [ref=e302]: "\""
+            - generic [ref=e303]: A kingdom is only as safe as its weakest gate.
+            - generic [ref=e304]: — Data Protector
+        - generic [ref=e305]:
+          - generic [ref=e306]: STEP BOX
+          - generic [ref=e308]:
+            - generic [ref=e309]:
+              - generic [ref=e310]: STEP
+              - generic [ref=e311]: "1"
+              - generic [ref=e312]: of 3
+            - generic [ref=e313]: MAKE IT LONG
+            - generic [ref=e314]:
+              - text: Aim for at least
+              - code [ref=e315]: 12 characters
+              - text: .
+    - generic [ref=e316]:
+      - generic [ref=e317]: 04 / LESSON
+      - generic [ref=e318]: LESSON PAGE LAYOUT
+      - generic [ref=e320]:
+        - generic [ref=e321]: LESSON HEADER + FOOTER
+        - generic [ref=e323]:
+          - generic [ref=e324]:
+            - button "← MAP" [ref=e325] [cursor=pointer]
+            - generic [ref=e326]:
+              - generic [ref=e327]: CHAPTER 1 ▸ Privacy & Passwords
+              - generic [ref=e328]: What Is a Password?
+            - generic [ref=e331]:
+              - generic [ref=e332]: STEP 2/3
+              - generic [ref=e333]: 67%
+            - generic [ref=e336]:
+              - generic [ref=e337]: ★
+              - generic [ref=e338]: "40"
+          - generic [ref=e339]:
+            - generic [ref=e341]:
+              - generic [ref=e342]: CHAPTER 1 · LESSON 2
+              - generic [ref=e343]: What Is a Password?
+              - generic [ref=e344]: Every brave hero needs a way to prove who they are.
+            - generic [ref=e345]:
+              - generic [ref=e346]:
+                - generic [ref=e347]: "1"
+                - generic [ref=e348]: THE BASICS
+              - paragraph [ref=e351]: A password is a secret string of characters that proves your identity.
+          - generic [ref=e352]:
+            - button "← BACK" [ref=e353] [cursor=pointer]
+            - button "NEXT →" [ref=e359] [cursor=pointer]
+    - generic [ref=e360]:
+      - generic [ref=e361]: 05 / CONVO LESSON
+      - generic [ref=e362]: KNIGHT & MAGE
+      - generic [ref=e364]:
+        - generic [ref=e365]:
+          - generic [ref=e366]: MAGE PORTRAIT
+          - img [ref=e368]
+        - generic [ref=e405]: KNIGHT (FOR COMPARISON)
+      - generic [ref=e407]:
+        - generic [ref=e408]: FULL CONVO LESSON
+        - generic [ref=e410]:
+          - generic [ref=e413]:
+            - generic [ref=e414]: ⚔ KNIGHT & MAGE ✦
+            - generic [ref=e415]: PASSWORD WISDOM
+          - generic [ref=e420]:
+            - generic [ref=e423]: ⚔ DATA PROTECTOR
+            - generic [ref=e424]: Merlinus! How does a machine break a weak password?
+          - button "▼ THEY SPEAK ON (1 / 2)" [ref=e426] [cursor=pointer]
+    - generic [ref=e427]:
+      - generic [ref=e428]: 06 / QUIZ
+      - generic [ref=e429]: ASSESSMENT TYPES
+      - generic [ref=e431]:
+        - generic [ref=e432]:
+          - generic [ref=e433]: MULTIPLE CHOICE
+          - generic [ref=e435]:
+            - generic [ref=e436]:
+              - generic [ref=e437]:
+                - generic [ref=e438]: "?"
+                - generic [ref=e439]: QUESTION
+              - generic [ref=e440]:
+                - generic [ref=e441]: ★
+                - generic [ref=e442]: +10 XP
+            - generic [ref=e443]:
+              - generic [ref=e444]: Which password is strongest?
+              - generic [ref=e445]:
+                - button "A password123" [ref=e446] [cursor=pointer]:
+                  - generic [ref=e447]: A
+                  - generic [ref=e448]: password123
+                - button "B Tr3k!Moss&Falcon" [ref=e449] [cursor=pointer]:
+                  - generic [ref=e450]: B
+                  - generic [ref=e451]: Tr3k!Moss&Falcon
+                - button "C qwerty" [ref=e452] [cursor=pointer]:
+                  - generic [ref=e453]: C
+                  - generic [ref=e454]: qwerty
+                - button "D 111111" [ref=e455] [cursor=pointer]:
+                  - generic [ref=e456]: D
+                  - generic [ref=e457]: "111111"
+              - button "SUBMIT ▶" [disabled] [ref=e459]
+        - generic [ref=e460]:
+          - generic [ref=e461]: SELECT ALL THAT APPLY
+          - generic [ref=e463]:
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - generic [ref=e466]: ◆
+                - generic [ref=e467]: SELECT ALL THAT APPLY
+              - generic [ref=e468]:
+                - generic [ref=e469]: ★
+                - generic [ref=e470]: +15 XP
+            - generic [ref=e471]:
+              - generic [ref=e472]: Select every quality of a strong password.
+              - generic [ref=e473]: ▸ MORE THAN ONE MAY BE CORRECT
+              - generic [ref=e474]:
+                - button "At least 12 characters" [ref=e475] [cursor=pointer]:
+                  - generic [ref=e477]: At least 12 characters
+                - button "Your pet's name" [ref=e478] [cursor=pointer]:
+                  - generic [ref=e480]: Your pet's name
+                - button "Mixes symbols & numbers" [ref=e481] [cursor=pointer]:
+                  - generic [ref=e483]: Mixes symbols & numbers
+                - button "Unique per account" [ref=e484] [cursor=pointer]:
+                  - generic [ref=e486]: Unique per account
+              - button "SUBMIT ▶" [disabled] [ref=e488]
+        - generic [ref=e489]:
+          - generic [ref=e490]: TRUE / FALSE
+          - generic [ref=e492]:
+            - generic [ref=e493]:
+              - generic [ref=e494]: ⚖ TRUE OR FALSE?
+              - generic [ref=e495]:
+                - generic [ref=e496]: ★
+                - generic [ref=e497]: +5 XP
+            - generic [ref=e498]:
+              - generic [ref=e499]: Using your birthday as a password is safe.
+              - generic [ref=e500]:
+                - button "TRUE" [ref=e501] [cursor=pointer]
+                - button "FALSE" [ref=e502] [cursor=pointer]
+    - generic [ref=e503]:
+      - generic [ref=e504]: 07 / DRAG & DROP
+      - generic [ref=e505]: BUCKET SORT
+      - generic [ref=e507]:
+        - generic [ref=e508]: DRAG DROP SORT
+        - generic [ref=e510]:
+          - generic [ref=e511]:
+            - generic [ref=e512]:
+              - generic [ref=e513]: ⋮⋮
+              - generic [ref=e514]: "SORT: STRONG OR WEAK"
+            - generic [ref=e515]: 1 / 2
+          - generic [ref=e516]:
+            - generic [ref=e521]: "123456"
+            - generic [ref=e522]: ▸ DRAG OR TAP A BUCKET BELOW
+            - generic [ref=e523]:
+              - button "STRONG" [ref=e524] [cursor=pointer]
+              - button "WEAK" [ref=e525] [cursor=pointer]

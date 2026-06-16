@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyberheroes — Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds-styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="ds-primitives.jsx"></script>
+<script type="text/babel" src="ds-textboxes.jsx"></script>
+<script type="text/babel" src="ds-quiz.jsx"></script>
+<script type="text/babel" src="ds-dragdrop.jsx"></script>
+<script type="text/babel" src="ds-lesson.jsx"></script>
+
+<script type="text/babel" data-presets="env,react">
+const {useState, useEffect} = React;
+
+const SECTIONS = [
+  {id:'foundation', label:'FOUNDATION'},
+  {id:'primitives', label:'PRIMITIVES'},
+  {id:'textboxes',  label:'TEXT BOXES'},
+  {id:'lesson',     label:'LESSON PAGE'},
+  {id:'convo',      label:'CONVO LESSON'},
+  {id:'quiz',       label:'QUIZ'},
+  {id:'dragdrop',   label:'DRAG & DROP'},
+  {id:'usage',      label:'USAGE'},
+];
+
+function Nav() {
+  const [active, setActive] = useState('foundation');
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY + 120;
+      for (let i = SECTIONS.length-1; i >= 0; i--) {
+        const el = document.getElementById(SECTIONS[i].id);
+        if (el && el.offsetTop <= y) { setActive(SECTIONS[i].id); break; }
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return (
+    <nav className="ds-nav">
+      <div className="ds-nav-logo">
+        <span className="a">CYBER</span><span className="b">HEROES</span>
+      </div>
+      {SECTIONS.map(s => (
+        <a key={s.id} href={`#${s.id}`}
+          className={`tab ${active===s.id?'active':''}`}>
+          {s.label}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+function Section({id, eyebrow, title, accentWord, desc, children}) {
+  const accentSplit = title.split(accentWord);
+  return (
+    <section id={id} className="ds-section">
+      <div className="ds-section-eyebrow">{eyebrow}</div>
+      <div className="ds-section-title">
+        {accentWord
+          ? <>{accentSplit[0]}<span className="accent">{accentWord}</span>{accentSplit[1]}</>
+          : title}
+      </div>
+      <div className="ds-section-divider"/>
+      {desc && <div className="ds-section-desc">{desc}</div>}
+      {children}
+    </section>
+  );
+}
+
+function Component({label, children}) {
+  return (
+    <div className="ds-component">
+      <div className="ds-component-label">{label}</div>
+      <div style={{paddingTop:14}}>{children}</div>
+    </div>
+  );
+}
+
+/* ── COLOR SWATCH ── */
+function ColorSwatch({name, val, hex}) {
+  return (
+    <div style={{background:'var(--surf)',border:'1px solid var(--border)',padding:14}}>
+      <div style={{height:64,background:val,marginBottom:12,
+        boxShadow:`0 0 16px ${val}88`}}/>
+      <div style={{fontSize:8,color:'var(--text)',letterSpacing:2,marginBottom:4}}>{name}</div>
+      <div style={{fontSize:6,color:'var(--dim)',letterSpacing:1}}>{hex}</div>
+    </div>
+  );
+}
+
+/* ── TYPE SAMPLE ── */
+function TypeSample({size, label, weight}) {
+  return (
+    <div style={{display:'flex',alignItems:'baseline',gap:18,padding:'12px 0',
+      borderBottom:'1px solid var(--border)'}}>
+      <div style={{fontSize:6,color:'var(--dim)',letterSpacing:2,minWidth:80}}>{label}</div>
+      <div style={{fontSize:size,color:'var(--text)',letterSpacing:2}}>
+        DATA PROTECTOR
+      </div>
+      <div style={{fontSize:6,color:'var(--dim)',marginLeft:'auto'}}>{size}px</div>
+    </div>
+  );
+}
+
+/* ═════════════════════════════════════════════
+   APP
+══════════════════════════════════════════════ */
+function App() {
+  return (
+    <>
+      <div className="scan-overlay"/>
+      <div className="vignette"/>
+      <Nav/>
+
+      <main className="ds-page">
+
+        {/* ── FOUNDATION ── */}
+        <Section id="foundation" eyebrow="01 / FOUNDATION"
+          title="DESIGN TOKENS" accentWord="TOKENS"
+          desc="The Cyberheroes universe runs on a tight retro-arcade palette: deep void backgrounds, neon brand accents, and pixel-perfect typography in 'Press Start 2P'. Use these tokens directly via CSS variables — never invent new colors.">
+
+          <div style={{marginBottom:32}}>
+            <h3 style={{fontSize:9,color:'var(--gold)',letterSpacing:3,marginBottom:14}}>COLORS</h3>
+            <div className="ds-grid ds-grid-3">
+              <ColorSwatch name="--bg"     val="#020b18" hex="#020b18 · void"/>
+              <ColorSwatch name="--surf"   val="#071525" hex="#071525 · panel"/>
+              <ColorSwatch name="--surf2"  val="#0d1f35" hex="#0d1f35 · raised"/>
+              <ColorSwatch name="--cyan"   val="#00d4ff" hex="#00d4ff · primary"/>
+              <ColorSwatch name="--gold"   val="#ffd700" hex="#ffd700 · XP / quest"/>
+              <ColorSwatch name="--purple" val="#7c3aed" hex="#7c3aed · secret / AI"/>
+              <ColorSwatch name="--green"  val="#00ff88" hex="#00ff88 · correct"/>
+              <ColorSwatch name="--red"    val="#ff4055" hex="#ff4055 · danger"/>
+              <ColorSwatch name="--orange" val="#ff8c00" hex="#ff8c00 · warning"/>
+            </div>
+          </div>
+
+          <div style={{marginBottom:32}}>
+            <h3 style={{fontSize:9,color:'var(--gold)',letterSpacing:3,marginBottom:14}}>TYPOGRAPHY</h3>
+            <Component label="PRESS START 2P · only">
+              <TypeSample size={20} label="DISPLAY"/>
+              <TypeSample size={14} label="TITLE"/>
+              <TypeSample size={11} label="BODY"/>
+              <TypeSample size={9}  label="SMALL"/>
+              <TypeSample size={7}  label="MICRO"/>
+            </Component>
+          </div>
+
+          <div>
+            <h3 style={{fontSize:9,color:'var(--gold)',letterSpacing:3,marginBottom:14}}>BUTTONS</h3>
+            <Component label="px-btn variants">
+              <div style={{display:'flex',gap:14,flexWrap:'wrap'}}>
+                <button className="px-btn btn-primary">PRIMARY ▶</button>
+                <button className="px-btn btn-gold">⚔ GOLD</button>
+                <button className="px-btn btn-success">✓ SUCCESS</button>
+                <button className="px-btn btn-danger">✕ DANGER</button>
+                <button className="px-btn btn-ghost">GHOST</button>
+                <button className="px-btn btn-primary" disabled>DISABLED</button>
+              </div>
+            </Component>
+          </div>
+        </Section>
+
+        {/* ── PRIMITIVES ── */}
+        <Section id="primitives" eyebrow="02 / ATOMS"
+          title="PRIMITIVES" accentWord="PRIMITIVES"
+          desc="Atomic building blocks: pixel frames, badges, sprites, and progress.">
+
+          <div className="ds-grid ds-grid-2">
+            <Component label="<Knight color>">
+              <div style={{display:'flex',gap:24,alignItems:'center',justifyContent:'center',padding:18}}>
+                <window.Knight size={56} color="cyan"/>
+                <window.Knight size={56} color="purple"/>
+                <window.Knight size={56} color="green"/>
+                <window.Knight size={56} color="gold"/>
+                <window.Knight size={56} color="red"/>
+              </div>
+            </Component>
+
+            <Component label="<XPBadge xp/>">
+              <div style={{display:'flex',gap:14,flexWrap:'wrap',padding:'8px 0'}}>
+                <window.XPBadge xp={5}/>
+                <window.XPBadge xp={25} color="cyan"/>
+                <window.XPBadge xp={100} color="green"/>
+              </div>
+            </Component>
+
+            <Component label="<Chip color/>">
+              <div style={{display:'flex',gap:10,flexWrap:'wrap',padding:'8px 0'}}>
+                <window.Chip color="cyan" icon="◆">QUEST 01</window.Chip>
+                <window.Chip color="gold" icon="★">LEGENDARY</window.Chip>
+                <window.Chip color="green" icon="✓">COMPLETED</window.Chip>
+                <window.Chip color="purple" icon="◆">SECRET</window.Chip>
+                <window.Chip color="red">LOCKED</window.Chip>
+                <window.Chip color="cyan" solid>ACTIVE</window.Chip>
+              </div>
+            </Component>
+
+            <Component label="<ProgressBar/>">
+              <div style={{display:'flex',flexDirection:'column',gap:14,padding:'8px 0'}}>
+                <window.ProgressBar value={70} max={100} color="var(--cyan)" label="QUEST PROGRESS"/>
+                <window.ProgressBar value={3} max={5} color="var(--gold)" label="XP TO NEXT LEVEL"/>
+                <window.ProgressBar value={45} max={100} color="var(--purple)" label="WISDOM"/>
+              </div>
+            </Component>
+
+            <Component label="<StatRow/>">
+              <div style={{display:'flex',flexDirection:'column',gap:14,padding:'8px 0'}}>
+                <window.StatRow label="HP" icon="♥" value={85} max={100} color="var(--green)"/>
+                <window.StatRow label="MP" icon="✦" value={32} max={50} color="var(--cyan)"/>
+                <window.StatRow label="XP" icon="★" value={140} max={200} color="var(--gold)"/>
+              </div>
+            </Component>
+
+            <Component label="<PxFrame color/>">
+              <div style={{display:'flex',justifyContent:'center',padding:18}}>
+                <window.PxFrame color="var(--gold)" padding={20}>
+                  <div style={{textAlign:'center'}}>
+                    <div style={{fontSize:10,color:'var(--gold)',letterSpacing:3}}>DATA PROTECTOR</div>
+                    <div style={{fontSize:7,color:'var(--dim)',marginTop:6,letterSpacing:2}}>TIME-LOST KNIGHT</div>
+                  </div>
+                </window.PxFrame>
+              </div>
+            </Component>
+          </div>
+        </Section>
+
+        {/* ── TEXT BOXES ── */}
+        <Section id="textboxes" eyebrow="03 / CONTENT"
+          title="TEXT BOXES" accentWord="BOXES"
+          desc="Six callout types for surfacing information, hints, warnings, and dialogue throughout lessons.">
+
+          <div className="ds-grid ds-grid-2">
+            <Component label="<TextBox type='info'/>">
+              <window.TextBox type="info" title="DID YOU KNOW">
+                The internet was first invented in 1969, but the World Wide Web didn't arrive until 1989!
+              </window.TextBox>
+            </Component>
+
+            <Component label="<TextBox type='tip'/>">
+              <window.TextBox type="tip">
+                Strong passwords mix letters, numbers, and symbols. Make them at least 12 characters!
+              </window.TextBox>
+            </Component>
+
+            <Component label="<TextBox type='warning'/>">
+              <window.TextBox type="warning">
+                Never share your password with anyone — not even friends. Trust only thy own kingdom!
+              </window.TextBox>
+            </Component>
+
+            <Component label="<TextBox type='danger'/>">
+              <window.TextBox type="danger">
+                If a stranger online asks for personal info, leave the chat at once and tell a trusted adult!
+              </window.TextBox>
+            </Component>
+
+            <Component label="<TextBox type='quest'/>">
+              <window.TextBox type="quest" title="QUEST OBJECTIVE">
+                Identify three signs of a phishing message hidden within the scroll below.
+              </window.TextBox>
+            </Component>
+
+            <Component label="<TextBox type='secret'/>">
+              <window.TextBox type="secret" title="HIDDEN WISDOM">
+                AI models learn from human data — that means biases in data become biases in AI!
+              </window.TextBox>
+            </Component>
+          </div>
+
+          <div style={{marginTop:24}} className="ds-grid ds-grid-2">
+            <Component label="<DialogueBox knightColor='cyan'/>">
+              <window.DialogueBox speaker="DATA PROTECTOR" knightColor="cyan">
+                Verily! I see thou hast met thy first <span style={{color:'var(--gold)'}}>cookie</span>. Fear not — 'tis but a tiny note the realm's websites leave to remember thee!
+              </window.DialogueBox>
+            </Component>
+
+            <Component label="<DialogueBox side='right'/>">
+              <window.DialogueBox speaker="VOID KNIGHT" knightColor="purple" side="right">
+                Beware! In yon dark forests of Spam, even the friendliest scroll may hide a <span style={{color:'var(--red)'}}>phishing curse</span>...
+              </window.DialogueBox>
+            </Component>
+
+            <Component label="<KeyTerm term=...>">
+              <window.KeyTerm term="PHISHING">
+                A trick where evil-doers pretend to be a trusted friend to steal thy passwords or coins. Sound it out: <span style={{color:'var(--cyan)'}}>FISH-ing</span>.
+              </window.KeyTerm>
+            </Component>
+
+            <Component label="<QuoteBox author=...>">
+              <window.QuoteBox author="ANCIENT CYBER-SCROLL, 2026">
+                The strongest shield against the digital darkness is not magic — it is the wisdom to pause before clicking.
+              </window.QuoteBox>
+            </Component>
+
+            <Component label="<StepBox step=...>">
+              <window.StepBox step={2} total={4} title="CREATE A SAFE PASSWORD">
+                Combine a favorite word, two numbers, and a symbol — like <window.InlineCode>Dragon42!</window.InlineCode> — to forge a worthy key.
+              </window.StepBox>
+            </Component>
+
+            <Component label="<InlineCode/>">
+              <div style={{fontSize:11,color:'var(--text)',lineHeight:2.4}}>
+                Type <window.InlineCode>HELP</window.InlineCode> at any time, or press <window.InlineCode>ESC</window.InlineCode> to flee from danger.
+              </div>
+            </Component>
+          </div>
+        </Section>
+
+        {/* ── LESSON PAGE ── */}
+        <Section id="lesson" eyebrow="04 / TEMPLATE"
+          title="LESSON PAGE" accentWord="LESSON"
+          desc="Full-page layout for a single lesson within a chapter. Header, scrollable body, footer with nav. Composes all primitives above.">
+
+          <div style={{
+            background:'var(--bg)',border:'2px solid var(--cyan)',
+            boxShadow:'0 0 32px rgba(0,212,255,.15)',
+            display:'flex',flexDirection:'column',minHeight:600,
+          }}>
+            <window.LessonHeader
+              chapter="THE INTERNET REALM"
+              chapterNum={2}
+              lessonTitle="WHAT IS A PASSWORD?"
+              currentStep={3}
+              totalSteps={6}
+              totalXP={245}/>
+
+            <window.LessonBody>
+              <window.LessonHero
+                eyebrow="LESSON 02 ▸ STEP 03"
+                title="THE FORGOTTEN KEY"
+                knightColor="cyan">
+                Hark! Every kingdom needs a key, and in the digital realm, that key is called a <span style={{color:'var(--gold)'}}>password</span>.
+              </window.LessonHero>
+
+              <window.LessonSection number={1} title="WHAT IS A PASSWORD?">
+                <window.LessonText>
+                  A password is a secret word, phrase, or string of characters that proves to a website that thou art truly thee — not a stranger trying to enter thy account.
+                </window.LessonText>
+                <window.KeyTerm term="PASSWORD">
+                  A secret combination of letters, numbers, and symbols used to verify thy identity and unlock private things online.
+                </window.KeyTerm>
+              </window.LessonSection>
+
+              <window.LessonSection number={2} title="THE THREE LAWS">
+                <window.LessonText>Three rules every cyberhero must follow:</window.LessonText>
+                <window.TextBox type="tip" title="LAW #1 · LONG">
+                  At least <window.InlineCode>12 characters</window.InlineCode>. The longer, the stronger.
+                </window.TextBox>
+                <window.TextBox type="tip" title="LAW #2 · MIXED">
+                  Letters + numbers + symbols. Mix UPPERCASE and lowercase too!
+                </window.TextBox>
+                <window.TextBox type="warning" title="LAW #3 · SECRET">
+                  Never share thy password — not even with friends, not even via scroll.
+                </window.TextBox>
+              </window.LessonSection>
+
+              <window.LessonSection number={3} title="LISTEN TO THE KNIGHT">
+                <window.DialogueBox speaker="DATA PROTECTOR" knightColor="cyan">
+                  In mine own kingdom, the password to mine treasure-chest was <span style={{color:'var(--red)'}}>"123"</span>. The dragon stole everything in three guesses! Learn from mine error.
+                </window.DialogueBox>
+              </window.LessonSection>
+            </window.LessonBody>
+
+            <window.LessonFooter
+              onPrev={() => {}} onNext={() => {}}
+              nextLabel="TAKE THE QUIZ"/>
+          </div>
+        </Section>
+
+        {/* ── CONVO LESSON ── */}
+        <Section id="convo" eyebrow="04b / TEMPLATE"
+          title="CONVERSATIONAL LESSON" accentWord="CONVERSATIONAL"
+          desc="The Knight and the Mage stand on opposite sides of the page and teach the lesson by talking with each other. Click ▼ to reveal each turn — paced storytelling instead of walls of text.">
+
+          <Component label="<ConvoLesson topic=... turns=[...]/>">
+            <window.ConvoLesson
+              topic="WHAT IS A PASSWORD?"
+              knightColor="cyan"
+              turns={[
+                {speaker:'knight',
+                  content:<>Wise Merlinus! I have arrived in this strange digital realm. The townsfolk speak of <span style={{color:'var(--gold)'}}>passwords</span>. What manner of magic is this?</>},
+                {speaker:'mage',
+                  content:<>Ah, brave knight! A password is a secret key — letters, numbers, and symbols woven together — that proves to a website thou art truly thee.</>},
+                {speaker:'knight',
+                  content:<>A key without iron? Most curious! Tell me, mage, what makes a password strong?</>},
+                {speaker:'mage',
+                  content:<>Length is thy first ally. Twelve characters at minimum. Mix UPPERCASE, lowercase, numbers, and a symbol or two — the longer, the stronger!</>},
+                {speaker:'knight',
+                  content:<>Hark! Mine own password was <span style={{color:'var(--red)'}}>"dragon"</span>. The dragon stole everything in one guess!</>},
+                {speaker:'mage',
+                  content:<>A common error, dear knight. And never share thy key — not with friends, not with strangers, not even with a wandering mage. Thy password is thine alone.</>},
+              ]}/>
+          </Component>
+
+          <div style={{marginTop:24}}>
+            <Component label="<ConvoLesson topic='AI HALLUCINATIONS'/>">
+              <window.ConvoLesson
+                topic="WHAT IS AN AI HALLUCINATION?"
+                knightColor="purple"
+                turns={[
+                  {speaker:'knight',
+                    content:<>Mage! The talking scroll told me that dragons live on the moon. Surely this cannot be true?</>},
+                  {speaker:'mage',
+                    content:<>Thou hast witnessed a <span style={{color:'var(--purple)'}}>hallucination</span>, brave knight. When an AI invents facts that sound true but are not.</>},
+                  {speaker:'knight',
+                    content:<>But the scroll spoke with such confidence! How am I to know what is real?</>},
+                  {speaker:'mage',
+                    content:<>Trust, but verify. Especially names, dates, and numbers. Check the scrolls of old before believing the new.</>},
+                ]}/>
+            </Component>
+          </div>
+        </Section>
+
+        {/* ── QUIZ ── */}
+        <Section id="quiz" eyebrow="06 / INTERACTIONS"
+          title="QUIZ COMPONENTS" accentWord="QUIZ"
+          desc="Three question patterns: single-choice, multi-select, and true/false. All are stateful, give feedback, and award XP.">
+
+          <div style={{display:'flex',flexDirection:'column',gap:28}}>
+            <Component label="<QuizQuestion/> · single answer">
+              <window.QuizQuestion
+                question="Which of these makes the STRONGEST password?"
+                options={[
+                  "password123",
+                  "Dragon!Forge_9824",
+                  "qwerty",
+                  "your name + birthday"
+                ]}
+                correct={1}
+                xp={10}/>
+            </Component>
+
+            <Component label="<SelectAllThatApply/> · multi-correct">
+              <window.SelectAllThatApply
+                question="Which of these are signs of a PHISHING message? Select ALL that apply."
+                options={[
+                  "Urgent: 'Your account will close in 1 hour!'",
+                  "Sender's email matches your bank exactly",
+                  "Spelling mistakes and weird grammar",
+                  "Asks you to click a strange link",
+                  "Comes from a friend you talk to daily"
+                ]}
+                correctSet={[0, 2, 3]}
+                xp={15}/>
+            </Component>
+
+            <Component label="<TrueFalse/> · binary">
+              <window.TrueFalse
+                question="It's safe to use the same password for every website, as long as it's a strong one."
+                answer={false}
+                xp={5}/>
+            </Component>
+          </div>
+        </Section>
+
+        {/* ── DRAG & DROP ── */}
+        <Section id="dragdrop" eyebrow="07 / INTERACTIONS"
+          title="DRAG & DROP" accentWord="DRAG &amp; DROP"
+          desc="Sort items into the correct buckets. Native HTML5 drag-and-drop with visual hover states. Submit to validate.">
+
+          <Component label="<DragDropSort/> · 2 buckets · one word at a time">
+            <window.DragDropSort
+              title="SAFE OR UNSAFE?"
+              buckets={[
+                {id:'safe',   label:'✓ SAFE',   color:'var(--green)', rgb:'0,255,136'},
+                {id:'unsafe', label:'✕ UNSAFE', color:'var(--red)',   rgb:'255,64,85'},
+              ]}
+              items={[
+                {id:'a', label:'Password Manager',  bucket:'safe'},
+                {id:'b', label:'Spam Link',         bucket:'unsafe'},
+                {id:'c', label:'2-Factor Auth',     bucket:'safe'},
+                {id:'d', label:'Sharing Password',  bucket:'unsafe'},
+                {id:'e', label:'"password123"',     bucket:'unsafe'},
+                {id:'f', label:'Logging Out',       bucket:'safe'},
+              ]}
+              xp={20}/>
+          </Component>
+
+          <div style={{marginTop:24}}>
+            <Component label="<DragDropSort/> · 3 buckets · one word at a time">
+              <window.DragDropSort
+                title="WHICH REALM?"
+                buckets={[
+                  {id:'web',   label:'WEB',    color:'var(--cyan)',   rgb:'0,212,255'},
+                  {id:'ai',    label:'AI',     color:'var(--purple)', rgb:'124,58,237'},
+                  {id:'safety',label:'SAFETY', color:'var(--gold)',   rgb:'255,215,0'},
+                ]}
+                items={[
+                  {id:'1', label:'URL',           bucket:'web'},
+                  {id:'2', label:'Chatbot',       bucket:'ai'},
+                  {id:'3', label:'Password',      bucket:'safety'},
+                  {id:'4', label:'Browser',       bucket:'web'},
+                  {id:'5', label:'Hallucination', bucket:'ai'},
+                  {id:'6', label:'2FA Code',      bucket:'safety'},
+                ]}
+                xp={25}/>
+            </Component>
+          </div>
+        </Section>
+
+        {/* ── USAGE ── */}
+        <Section id="usage" eyebrow="08 / FOR DEVELOPERS"
+          title="USAGE" accentWord="USAGE"
+          desc="How to compose these components. All components attach to window.* so any Babel-transpiled script in the page can reference them as window.Knight, window.QuizQuestion, etc.">
+
+          <div className="ds-grid ds-grid-2">
+            <Component label="HTML SETUP">
+              <pre style={{fontSize:8,color:'var(--cyan)',lineHeight:2,
+                whiteSpace:'pre-wrap',fontFamily:'var(--font)'}}>
+{`<link rel="stylesheet" 
+  href="ds-styles.css">
+
+<script src="React.18.3.1"/>
+<script src="ReactDOM.18.3.1"/>
+<script src="Babel.7.29"/>
+
+<script type="text/babel" 
+  src="ds-primitives.jsx"/>
+<script type="text/babel" 
+  src="ds-textboxes.jsx"/>
+<script type="text/babel" 
+  src="ds-quiz.jsx"/>
+<script type="text/babel" 
+  src="ds-dragdrop.jsx"/>
+<script type="text/babel" 
+  src="ds-lesson.jsx"/>`}
+              </pre>
+            </Component>
+
+            <Component label="COMPOSE A LESSON">
+              <pre style={{fontSize:8,color:'var(--text)',lineHeight:2,
+                whiteSpace:'pre-wrap',fontFamily:'var(--font)'}}>
+{`<LessonHeader 
+  chapter="..." 
+  lessonTitle="..."
+  currentStep={2}
+  totalSteps={5}/>
+
+<LessonBody>
+  <LessonHero ...>
+  <LessonSection number={1} ...>
+    <LessonText>...</LessonText>
+    <TextBox type="tip">...
+    <DialogueBox>...
+  </LessonSection>
+
+  <QuizQuestion ...>
+  <DragDropSort ...>
+</LessonBody>
+
+<LessonFooter ...>`}
+              </pre>
+            </Component>
+
+            <Component label="COMPONENT INDEX">
+              <div style={{fontSize:8,color:'var(--text)',lineHeight:2.4,letterSpacing:1}}>
+                <div style={{color:'var(--gold)',marginBottom:8}}>PRIMITIVES</div>
+                <div>• Knight, XPBadge, Chip</div>
+                <div>• ProgressBar, StatRow</div>
+                <div>• PxFrame, InlineCode</div>
+                <div>• ContentTitle</div>
+                <div style={{color:'var(--gold)',margin:'14px 0 8px'}}>TEXT BOXES</div>
+                <div>• TextBox · 6 types</div>
+                <div>• DialogueBox</div>
+                <div>• KeyTerm, QuoteBox, StepBox</div>
+                <div style={{color:'var(--gold)',margin:'14px 0 8px'}}>QUIZ</div>
+                <div>• QuizQuestion</div>
+                <div>• SelectAllThatApply</div>
+                <div>• TrueFalse</div>
+                <div style={{color:'var(--gold)',margin:'14px 0 8px'}}>DRAG & DROP</div>
+                <div>• DragDropSort</div>
+                <div style={{color:'var(--gold)',margin:'14px 0 8px'}}>LESSON</div>
+                <div>• LessonHeader/Body/Footer</div>
+                <div>• LessonHero, LessonSection</div>
+                <div>• LessonText</div>
+                <div style={{color:'var(--gold)',margin:'14px 0 8px'}}>CONVERSATIONAL</div>
+                <div>• MagePortrait (Merlinus)</div>
+                <div>• ConvoTurn, ConvoLesson</div>
+              </div>
+            </Component>
+
+            <Component label="CONVENTIONS">
+              <div style={{fontSize:9,color:'var(--text)',lineHeight:2.4}}>
+                <window.TextBox type="info" title="RULES">
+                  ▸ Use CSS vars only — never invent colors<br/>
+                  ▸ Press Start 2P everywhere<br/>
+                  ▸ All knight talk is medieval-flavored<br/>
+                  ▸ Min text size: 9px (legibility)<br/>
+                  ▸ XP: 5/easy, 10/std, 15+/hard<br/>
+                  ▸ knight.png lives at root
+                </window.TextBox>
+              </div>
+            </Component>
+          </div>
+        </Section>
+
+      </main>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

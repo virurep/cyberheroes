@@ -1,0 +1,16 @@
+/* Minimal global reset. Design tokens & component styles live in styles/tokens.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}

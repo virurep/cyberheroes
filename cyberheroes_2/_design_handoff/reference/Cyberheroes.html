@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyberheroes</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020b18;--surf:#071525;--surf2:#0d1f35;
+  --cyan:#00d4ff;--purple:#7c3aed;--gold:#ffd700;
+  --green:#00ff88;--red:#ff4055;--text:#dde8f5;--dim:#4a6080;--border:#0f2a45;
+}
+body{background:var(--bg);color:var(--text);font-family:'Press Start 2P',monospace;overflow:hidden;height:100vh;width:100vw}
+#root{height:100vh;width:100vw;position:relative}
+
+.scanlines{display:none}
+.vignette{position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 65%,rgba(0,0,0,0.6) 100%);pointer-events:none;z-index:199}
+
+.px-btn{font-family:'Press Start 2P',monospace;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:all .1s;position:relative}
+.px-btn:hover{transform:scale(1.06) translateY(-1px);filter:brightness(1.15)}
+.px-btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#000;padding:18px 40px;font-size:13px}
+.btn-cyan{background:var(--cyan);color:#000;padding:14px 28px;font-size:11px}
+.btn-ghost{background:transparent;color:var(--dim);border:2px solid var(--border);padding:8px 14px;font-size:8px}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes glow-text{0%,100%{text-shadow:0 0 10px currentColor,0 0 20px currentColor}50%{text-shadow:0 0 30px currentColor,0 0 60px currentColor,0 0 90px currentColor}}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes up-in{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes streak{from{transform:translateX(-100vw) translateY(-10px);opacity:0}50%{opacity:.5}to{transform:translateX(110vw) translateY(10px);opacity:0}}
+@keyframes spin-slow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState, useEffect, useMemo} = React;
+
+/* ── CHARACTER COLOR PRESETS ───────────────────────────────── */
+const CHAR_COLORS = [
+  { id:'cyan',   label:'Cyber',   glow:'0,180,255',  filter:'brightness(1.4) contrast(1.1) hue-rotate(0deg)' },
+  { id:'purple', label:'Void',    glow:'160,80,255', filter:'brightness(1.3) contrast(1.1) hue-rotate(195deg) saturate(1.4)' },
+  { id:'green',  label:'Neon',    glow:'0,255,120',  filter:'brightness(1.4) contrast(1.1) hue-rotate(100deg) saturate(1.3)' },
+  { id:'red',    label:'Blaze',   glow:'255,60,80',  filter:'brightness(1.4) contrast(1.1) hue-rotate(300deg) saturate(1.5)' },
+  { id:'gold',   label:'Legend',  glow:'255,200,0',  filter:'brightness(1.5) contrast(1.1) hue-rotate(248deg) saturate(1.6)' },
+  { id:'white',  label:'Ghost',   glow:'200,220,255',filter:'brightness(1.8) contrast(0.9) saturate(0.1)' },
+];
+
+/* ── KNIGHT SPRITE ─────────────────────────────────────────── */
+function KnightSprite({scale=1, animate=true, flip=false, colorId='cyan'}) {
+  const size = 50 * scale;
+  const preset = CHAR_COLORS.find(c => c.id === colorId) || CHAR_COLORS[0];
+  const glowFilter = `${preset.filter} drop-shadow(0 0 ${Math.round(scale*1.5)}px rgba(${preset.glow},0.7)) drop-shadow(0 0 ${Math.round(scale*2.5)}px rgba(${preset.glow},0.35))`;
+  return (
+    <div style={{width:size, height:size, flexShrink:0,
+      animation: animate ? 'float 3s ease-in-out infinite' : 'none'}}>
+      <img src="knight.png" alt="Data Protector"
+        style={{width:size, height:size, imageRendering:'pixelated', display:'block',
+          transform: flip ? 'scaleX(-1)' : 'none',
+          filter: glowFilter}}/>
+    </div>
+  );
+}
+
+/* ── PIXEL FRAME ───────────────────────────────────────────── */
+function PixelFrame({children, color='var(--cyan)', pad=16}) {
+  const t = 6;
+  return (
+    <div style={{position:'relative', display:'inline-block'}}>
+      {[{top:0,left:0},{top:0,right:0},{bottom:0,left:0},{bottom:0,right:0}].map((p,i) => (
+        <div key={i} style={{position:'absolute', background:color, width:t, height:t, ...p}}/>
+      ))}
+      <div style={{position:'absolute',top:0,left:t,right:t,height:2,background:color}}/>
+      <div style={{position:'absolute',bottom:0,left:t,right:t,height:2,background:color}}/>
+      <div style={{position:'absolute',left:0,top:t,bottom:t,width:2,background:color}}/>
+      <div style={{position:'absolute',right:0,top:t,bottom:t,width:2,background:color}}/>
+      <div style={{padding:pad}}>{children}</div>
+    </div>
+  );
+}
+
+/* ── STARFIELD ─────────────────────────────────────────────── */
+function StarField() {
+  const stars = useMemo(() => {
+    const s = [];
+    for (let i = 0; i < 200; i++) s.push({
+      x: Math.random()*100, y: Math.random()*100,
+      size: Math.random() < .7 ? 1 : 2,
+      op: .2 + Math.random()*.7,
+      dur: 2 + Math.random()*5, del: Math.random()*6,
+      col: i%9===0 ? '#8b5cf6' : i%6===0 ? '#00d4ff' : '#fff'
+    });
+    return s;
+  }, []);
+  const streaks = useMemo(() => {
+    const s = [];
+    for (let i = 0; i < 7; i++) s.push({
+      top: 10 + Math.random()*70, dur: 3 + Math.random()*6,
+      del: Math.random()*14, w: 80 + Math.random()*140,
+      op: .3 + Math.random()*.4
+    });
+    return s;
+  }, []);
+  return (
+    <div style={{position:'fixed',inset:0,pointerEvents:'none',zIndex:0}}>
+      {[[300,250,'#7c3aed','15%','10%'],[200,180,'#00d4ff','75%','55%'],[400,300,'#1e40af','40%','70%']].map(([w,h,c,l,t],i) => (
+        <div key={i} style={{position:'absolute',width:w,height:h,left:l,top:t,
+          background:`radial-gradient(ellipse,${c}09 0%,transparent 70%)`}}/>
+      ))}
+      {stars.map((s,i) => (
+        <div key={i} style={{position:'absolute',left:`${s.x}%`,top:`${s.y}%`,
+          fontSize:s.size===1?8:10, lineHeight:1,
+          color:s.col, opacity:s.op, userSelect:'none',
+          fontFamily:"'Press Start 2P',monospace",
+          animation:`twinkle ${s.dur}s ${s.del}s ease-in-out infinite`}}>{i%2===0?'0':'1'}</div>
+      ))}
+      {streaks.map((s,i) => (
+        <div key={`sk${i}`} style={{position:'absolute',top:`${s.top}%`,left:0,
+          height:1,width:s.w,
+          background:`linear-gradient(90deg,transparent,rgba(255,255,255,${s.op}),transparent)`,
+          animation:`streak ${s.dur}s ${s.del}s linear infinite`}}/>
+      ))}
+    </div>
+  );
+}
+
+/* ── INTRO SCREEN ──────────────────────────────────────────── */
+function IntroScreen({onStart}) {
+  const [phase, setPhase] = useState(0);
+  const [name, setName] = useState('');
+  const [colorId, setColorId] = useState('cyan');
+
+  return (
+    <div style={{display:'flex', flexDirection:'column', height:'100vh',
+      position:'relative', zIndex:10, overflow:'hidden'}}>
+
+      {/* HEADER */}
+      <div style={{display:'flex', alignItems:'center', gap:16, padding:'12px 24px',
+        borderBottom:`2px solid ${phase === 0 ? 'var(--border)' : 'var(--cyan)'}`,
+        background:'rgba(2,11,24,.88)', backdropFilter:'blur(12px)', flexShrink:0}}>
+        {phase > 0 ? (
+          <button className="px-btn btn-ghost" onClick={() => setPhase(p => p-1)}
+            style={{fontSize:8, padding:'8px 14px'}}>← BACK</button>
+        ) : (
+          <div style={{width:88}}/>
+        )}
+        <div style={{flex:1, textAlign:'center'}}>
+          <span style={{fontSize:'clamp(10px,1.5vw,14px)', color:'var(--cyan)', letterSpacing:6,
+            textShadow:'0 0 14px rgba(0,212,255,.5)'}}>CYBER</span>
+          <span style={{fontSize:'clamp(10px,1.5vw,14px)', color:'var(--gold)', letterSpacing:6,
+            textShadow:'0 0 14px rgba(255,215,0,.4)', marginLeft:6}}>HEROES</span>
+        </div>
+        <div style={{width:88, textAlign:'right', fontSize:7, color:'var(--dim)'}}>
+          {phase > 0 && `${phase} / 2`}
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div style={{flex:1, display:'flex', alignItems:'center', justifyContent:'center',
+        padding:'24px 32px', overflow:'hidden'}}>
+
+        {/* ── PHASE 0: TITLE ── */}
+        {phase === 0 && (
+          <div style={{animation:'up-in .5s ease', display:'grid',
+            gridTemplateColumns:'1fr 1fr', gap:'clamp(24px,4vw,60px)',
+            alignItems:'center', maxWidth:1100, width:'100%'}}>
+
+            {/* Left */}
+            <div>
+              <div style={{lineHeight:1.05, marginBottom:20}}>
+                <div style={{fontSize:'clamp(36px,6.5vw,72px)', color:'var(--cyan)', letterSpacing:8,
+                  animation:'glow-text 2.5s ease-in-out infinite',
+                  textShadow:'0 0 40px rgba(0,212,255,.6),0 2px 0 rgba(0,0,0,.8)'}}>CYBER</div>
+                <div style={{fontSize:'clamp(36px,6.5vw,72px)', color:'var(--gold)', letterSpacing:8,
+                  animation:'glow-text 2.5s ease-in-out infinite', animationDelay:'.5s',
+                  textShadow:'0 0 40px rgba(255,215,0,.5),0 2px 0 rgba(0,0,0,.8)'}}>HEROES</div>
+              </div>
+              <div style={{height:3, marginBottom:28, maxWidth:340,
+                background:'linear-gradient(90deg,var(--cyan),var(--purple) 60%,transparent)'}}/>
+              <div style={{display:'flex', flexDirection:'column', gap:16, marginBottom:36}}>
+                {['Cybersecurity Quests','Internet Safety Training','Safe AI Wisdom'].map(label => (
+                  <div key={label} style={{fontSize:'clamp(10px,1.3vw,14px)', color:'var(--text)',
+                    letterSpacing:2}}>{label}</div>
+                ))}
+              </div>
+              <div style={{height:1, background:'rgba(255,255,255,.07)', maxWidth:320, marginBottom:36}}/>
+              <button className="px-btn btn-gold" onClick={() => setPhase(1)}
+                style={{boxShadow:'0 0 30px rgba(255,215,0,.25),0 4px 0 #8a6000'}}>
+                ▶ &nbsp;START QUEST
+              </button>
+            </div>
+
+            {/* Right: Knight */}
+            <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:16}}>
+              <div style={{display:'flex', justifyContent:'center', alignItems:'center',
+                background:'radial-gradient(circle,rgba(0,100,180,.25) 0%,rgba(0,212,255,.08) 40%, transparent 70%)',
+                padding:20, borderRadius:8, flex:1}}>
+                <KnightSprite scale={9} animate colorId={colorId}/>
+              </div>
+              <div style={{transform:'translate(4px, -83px)'}}>
+                <PixelFrame color="var(--gold)" pad={14}>
+                  <div style={{textAlign:'center'}}>
+                    <div style={{fontSize:'clamp(8px,1vw,11px)', color:'var(--gold)', letterSpacing:3}}>DATA PROTECTOR</div>
+                    <div style={{fontSize:'clamp(6px,.8vw,8px)', color:'var(--dim)', marginTop:6, letterSpacing:2}}>TIME-LOST KNIGHT</div>
+                  </div>
+                </PixelFrame>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── PHASE 1: STORY ── */}
+        {phase === 1 && (
+          <div style={{maxWidth:820, width:'100%', animation:'up-in .4s ease'}}>
+            <div style={{display:'flex', alignItems:'center', gap:14, marginBottom:32}}>
+              <div style={{flex:1, height:2, background:'linear-gradient(90deg,transparent,var(--gold))'}}/>
+              <div style={{fontSize:'clamp(10px,1.3vw,13px)', color:'var(--gold)', letterSpacing:4, whiteSpace:'nowrap'}}>
+                ✦ &nbsp;THE STORY SO FAR&nbsp; ✦
+              </div>
+              <div style={{flex:1, height:2, background:'linear-gradient(90deg,var(--gold),transparent)'}}/>
+            </div>
+
+            <div style={{display:'flex', gap:36, alignItems:'flex-start', flexWrap:'wrap'}}>
+              {/* Knight */}
+              <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:12, flexShrink:0}}>
+                <KnightSprite scale={3.2} animate colorId={colorId}/>
+                <PixelFrame color="var(--cyan)" pad={10}>
+                  <div style={{textAlign:'center'}}>
+                    <div style={{fontSize:'clamp(7px,1vw,9px)', color:'var(--cyan)', letterSpacing:2}}>DATA PROTECTOR</div>
+                    <div style={{fontSize:'clamp(5px,.7vw,7px)', color:'var(--dim)', marginTop:5}}>YEAR: ???</div>
+                  </div>
+                </PixelFrame>
+              </div>
+
+              {/* Bubbles */}
+              <div style={{flex:'1 1 280px', display:'flex', flexDirection:'column', gap:20}}>
+                {[
+                  {col:'var(--cyan)',  text:<>I am <span style={{color:'var(--gold)'}}>Data Protector</span>, noble knight of the Kingdom of Analogia! My wizard's time machine hath malfunctioned spectacularly...</>},
+                  {col:'var(--purple)',text:<>I am surrounded by glowing rectangles, invisible messages, and mysterious creatures called <span style={{color:'var(--purple)'}}>«AI»</span>!</>},
+                  {col:'var(--green)', text:<>Wilt thou join me on a quest to master this digital realm? Together we shall become true <span style={{color:'var(--cyan)'}}>CYBERHEROES!</span></>},
+                ].map(({col,text},i) => (
+                  <div key={i} style={{background:'var(--surf)', border:`3px solid ${col}`,
+                    padding:'22px 26px', position:'relative',
+                    animation:`up-in .4s ${i*.15}s ease both`}}>
+                    <div style={{position:'absolute', left:-15, top:22, width:0, height:0,
+                      borderTop:'8px solid transparent', borderBottom:'8px solid transparent',
+                      borderRight:`15px solid ${col}`}}/>
+                    <div style={{position:'absolute', top:-12, left:14, background:'var(--bg)',
+                      padding:'2px 8px', border:`2px solid ${col}`}}>
+                      <span style={{fontSize:'clamp(6px,.8vw,7px)', color:col, letterSpacing:2}}>⚔ DATA PROTECTOR</span>
+                    </div>
+                    <div style={{fontSize:'clamp(10px,1.2vw,12px)', lineHeight:2.1, color:'var(--text)'}}>
+                      {text}
+                    </div>
+                  </div>
+                ))}
+                <div style={{textAlign:'right', marginTop:4}}>
+                  <button className="px-btn btn-cyan" onClick={() => setPhase(2)}>
+                    I'LL HELP! →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── PHASE 2: NAME ENTRY ── */}
+        {phase === 2 && (
+          <div style={{textAlign:'center', animation:'up-in .4s ease', maxWidth:500, width:'100%'}}>
+            <div style={{display:'flex', justifyContent:'center', marginBottom:28}}>
+              <div style={{position:'relative'}}>
+                <div style={{position:'absolute', inset:-24, borderRadius:'50%',
+                  background:'radial-gradient(circle,rgba(0,212,255,.12) 0%,transparent 70%)'}}/>
+                <KnightSprite scale={3.8} animate colorId={colorId}/>
+              </div>
+            </div>
+            <div style={{fontSize:'clamp(11px,1.5vw,15px)', color:'var(--cyan)',
+              letterSpacing:3, marginBottom:8, lineHeight:1.8}}>WHAT IS THY NAME,</div>
+            <div style={{fontSize:'clamp(11px,1.5vw,15px)', color:'var(--cyan)',
+              letterSpacing:3, marginBottom:16, lineHeight:1.8}}>BRAVE HERO?</div>
+            <div style={{marginBottom:20}}>
+              <div style={{fontSize:'clamp(6px,.9vw,8px)', color:'var(--dim)', letterSpacing:3, marginBottom:12}}>CHOOSE YOUR COLOR</div>
+              <div style={{display:'flex', gap:8, justifyContent:'center', flexWrap:'wrap'}}>
+                {CHAR_COLORS.map(c => {
+                  const active = colorId === c.id;
+                  return (
+                    <button key={c.id} onClick={() => setColorId(c.id)}
+                      style={{
+                        fontFamily:"'Press Start 2P',monospace", fontSize:7, cursor:'pointer',
+                        padding:'8px 10px',
+                        border: active ? `2px solid rgba(${c.glow},1)` : '2px solid var(--border)',
+                        background: active ? `rgba(${c.glow},0.18)` : 'var(--surf)',
+                        color: active ? `rgba(${c.glow},1)` : 'var(--dim)',
+                        letterSpacing:1, transition:'all .15s',
+                        boxShadow: active ? `0 0 10px rgba(${c.glow},.4)` : 'none'
+                      }}>{c.label}</button>
+                  );
+                })}
+              </div>
+            </div>
+            <input value={name} onChange={e => setName(e.target.value.slice(0,12))}
+              placeholder="Enter your name..."
+              onKeyDown={e => e.key==='Enter' && name.trim() && onStart(name.trim())}
+              style={{background:'var(--surf)', border:'3px solid var(--cyan)', color:'var(--text)',
+                fontFamily:"'Press Start 2P',monospace", fontSize:'clamp(12px,1.6vw,16px)',
+                padding:'16px 20px', width:'100%', outline:'none', textAlign:'center',
+                marginBottom:20, display:'block',
+                boxShadow:'0 0 24px rgba(0,212,255,.2),inset 0 0 20px rgba(0,212,255,.04)'}}/>
+            <button className="px-btn btn-gold" disabled={!name.trim()}
+              onClick={() => onStart(name.trim())}
+              style={{opacity:name.trim()?1:.3, width:'100%', padding:'20px',
+                fontSize:'clamp(12px,1.5vw,15px)',
+                boxShadow:name.trim()?'0 0 24px rgba(255,215,0,.25),0 4px 0 #8a6000':'none'}}>
+              ⚔️ &nbsp;LET'S GO!
+            </button>
+            <div style={{marginTop:16, fontSize:'clamp(6px,.9vw,8px)', color:'var(--dim)', lineHeight:2}}>
+              Your progress saves automatically
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ───────────────────────────────────────────────────── */
+function App() {
+  return (
+    <div style={{position:'relative', height:'100vh', overflow:'hidden'}}>
+      <StarField/>
+      <div className="vignette"/>
+      <div className="scanlines"/>
+      <IntroScreen onStart={(n) => {}}/>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
